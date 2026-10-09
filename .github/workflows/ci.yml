@@ -25,6 +25,7 @@ jobs:
         with:
           node-version: 22
       - run: node scripts/lint-skills.mjs
+      - run: node scripts/check-manifests.mjs
 
   validate:
     name: plugin validate --strict
@@ -35,7 +36,9 @@ jobs:
         with:
           node-version: 22
       - run: npm install -g @anthropic-ai/claude-code@${CLAUDE_CODE_VERSION}
+      # `.` is the marketplace now; the plugin manifest (and its hooks) is checked on its own.
       - run: claude plugin validate --strict .
+      - run: claude plugin validate --strict .claude-plugin/plugin.json
 
   drift:
     name: drift vs live manifest and OpenAPI

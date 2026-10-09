@@ -1,0 +1,17 @@
+{
+  "description": "Asks the person before Convertlyft records a live-site change (cvl_change_apply) or starts an operator run (cvl_operator_run).",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "^mcp__(plugin_convertlyft_)?convertlyft__cvl_(change_apply|operator_run)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"Convertlyft: this changes your live site or starts an operator run. Check the preview first, then allow it only if you agree.\"}}'",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
