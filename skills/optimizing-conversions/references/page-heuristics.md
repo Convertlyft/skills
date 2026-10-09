@@ -10,7 +10,7 @@ Walkthrough heuristics for the three surfaces where most conversions are won or 
 
 **One primary action.** Each landing page gets one primary call to action, repeated as the page progresses, with everything else visually subordinate. Several equally-loud buttons is a decision imposed on the visitor that the page owner was unwilling to make.
 
-**Specificity beats slogans.** "Speak to a licensed notary today" beats "Excellence in legal solutions". Concrete nouns, real outcomes, plain verbs. If a sentence could sit unchanged on a competitor's site, it is not saying anything.
+**Specificity beats slogans.** "Same-day boiler repair in Leeds" beats "Excellence in home solutions". Concrete nouns, real outcomes, plain verbs. If a sentence could sit unchanged on a competitor's site, it is not saying anything.
 
 **Hierarchy.** The order in which the eye lands should match the order of importance. Squint at the page: what stands out should be the value statement and the primary action, not a stock photo or a cookie banner.
 
