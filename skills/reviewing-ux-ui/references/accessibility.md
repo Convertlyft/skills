@@ -5,7 +5,7 @@ come up, or when an audit should include an accessibility pass.
 
 Frame it for the owner as quality, not charity: accessibility failures are
 usability failures with a wider blast radius. Low-contrast text is hard for
-everyone in sunlight; keyboard traps break password managers and anyone driving the page by keyboard;
+everyone in sunlight; keyboard traps strand anyone driving the page by keyboard;
 missing labels break autofill. Fixing them helps every visitor, and many of
 these fixes also remove conversion friction. Legal exposure around
 accessibility exists in many places, but do not play lawyer — flag that the
@@ -118,7 +118,7 @@ A short pass that finds most of the serious problems:
 
 ## Honest limits
 
-- Automated accessibility scanners catch only a minority of real issues —
+- Automated accessibility scanners catch only part of the real issues —
   mostly missing attributes and contrast. A clean scan is not an accessible
   site; the keyboard and screen-reader passes above find what scanners miss.
   Say this plainly rather than blessing a site on a scan.

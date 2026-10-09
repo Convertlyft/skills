@@ -59,7 +59,7 @@ the problem on the ladder first.
   spread of referring domains and natural anchor variety. Vendor authority
   scores are third-party estimates, not Google's opinion.
 - **"Brand-new site, no traffic."** Expected. Set the expectation honestly:
-  months, not weeks. Focus on indexing, a handful of winnable specific
+  organic traffic builds slowly, and nobody can promise when. Focus on indexing, a handful of winnable specific
   queries, and one clearly better page per query.
 - **Rewrite or new page:** one page per intent. Two pages chasing the same
   query: consolidate. One page chasing two intents: split.

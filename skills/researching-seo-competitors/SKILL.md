@@ -6,7 +6,7 @@ description: Researches who a site competes with in search using Convertlyft's s
 # Researching SEO competitors
 
 Everything here reads stored rows: research the workspace already bought and checks already run.
-Reading is free and asks no provider anything. Needs a signed-in workspace with `reports:read`;
+Reading only returns stored rows and asks no provider anything. Needs a signed-in workspace with `reports:read`;
 on 401 see `getting-started-with-convertlyft`, on 403 `insufficient_scope` name the scope the
 answer lists. For general SEO method, see `improving-search-rankings`; for a site-wide audit, see
 `auditing-site-seo`.

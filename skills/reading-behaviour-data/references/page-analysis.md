@@ -49,8 +49,8 @@ mismatch between what brought people and what the headline says.
 ### 3. Call to action: placement, words, hierarchy
 
 - Is there one clear primary action?
-- Can people reach it? Compare its position with the scroll reading: if fewer
-  than half of visitors reach it, it sits too low.
+- Can people reach it? Compare its position with the scroll reading: if many
+  visitors never reach it, it sits too low for them.
 - Does the button say what people get ("Get my report") rather than only an
   action ("Submit")?
 - Is there a clear primary and secondary action, repeated at decision points?

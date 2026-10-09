@@ -115,7 +115,7 @@ With a connected workspace, build the plan from stored readings in this order.
 7. **Getting people here.** `cvl_seo_flow` shows where the SEO chain stands;
    `cvl_seo_rank` gives tracked positions (`not_seen` is not "not ranking";
    `missing` means it could not be measured); `cvl_seo_opportunities` is the
-   ranked search to-do list. With no account, the free `cvl_public_seo_scan`
+   ranked search to-do list. With no account, `cvl_public_seo_scan`
    gives a score, the top 3 issues and a report link for any public site.
 8. **Before stating any number**, run `cvl_check_claim` with the sentence and
    the receipt ids. Quote the window and sample size.

@@ -169,9 +169,9 @@ what visitors do with it, instead of guesses.
    and the receipt ids from the results. Quote the sample size and the window
    with every number.
 
-No account: the free `cvl_public_seo_scan` reads any public site and reports
-title, heading and content issues among its top findings, which is a starting
-point for title and H1 copy.
+No account: `cvl_public_seo_scan` reads any public site and returns its top 3
+issues, which can include title and heading problems — a starting point for
+title and H1 copy.
 
 ## Tools
 

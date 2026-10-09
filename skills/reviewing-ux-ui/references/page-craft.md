@@ -115,8 +115,8 @@ the happy path, because feelings at failure decide whether people retry.
 - Never dead-end. A failed payment offers retry and an alternative; a broken
   page offers a way back and a search; an empty result suggests a looser
   query or a category to browse.
-- Preserve people's work. Wiping a form on failure is the single most
-  rage-inducing pattern in forms; assume anyone who loses their input leaves.
+- Preserve people's work. Wiping a form on failure is one of the most
+  rage-inducing patterns in forms; assume anyone who loses their input leaves.
 - Write like a person, without blame. "We couldn't process the card — nothing
   was charged. Check the number or try another card." Note what did NOT
   happen (no charge, nothing lost); uncertainty about consequences is worse
@@ -188,8 +188,8 @@ audience lives there.
   plus a chat bubble can shrink the readable area to a slot; on phones,
   default to less chrome, not more.
 - Hover does not exist. Anything revealed on hover — menus, tooltips,
-  definitions — needs a tap path, or the content is unreachable for the
-  touch majority.
+  definitions — needs a tap path, or the content is unreachable for
+  people on touch screens.
 - Full-screen interstitials and hard-to-dismiss popups are far more hostile
   on phones, where the close control is small and easy to miss.
 - Text readable without zooming, forms usable with the keyboard open, no

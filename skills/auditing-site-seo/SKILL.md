@@ -1,6 +1,6 @@
 ---
 name: auditing-site-seo
-description: Audits a website's SEO with Convertlyft, starting with a free no-account scan of any public site that returns a score, the top 3 issues and a report link, then going deeper for signed-in workspaces with the stored crawl, page content, ranked opportunities, keyword detail and competitor briefs. Use when someone asks to check, scan or audit a site's SEO, asks why a site is not showing up in search, or says "check https://example.com with Convertlyft".
+description: Audits a website's SEO with Convertlyft, starting with a no-account scan of any public site that returns a score, the top 3 issues and a report link, then going deeper for signed-in workspaces with the stored crawl, page content, ranked opportunities, keyword detail and competitor briefs. Use when someone asks to check, scan or audit a site's SEO, asks why a site is not showing up in search, or says "check https://example.com with Convertlyft".
 ---
 
 # Auditing site SEO
@@ -12,7 +12,7 @@ unless the person is already signed in and asks about their own site.
 For how to fix what the audit finds, see `improving-search-rankings`. For competitors, see
 `researching-seo-competitors`.
 
-## Depth 1 — Free scan of any public site (no account)
+## Depth 1 — Scan of any public site (no account)
 
 1. Call `cvl_public_seo_scan` with `url` (like `https://example.com` or `example.com`). It scans up
    to 16 pages, obeys robots.txt, runs no JavaScript and changes nothing on the site. It waits up

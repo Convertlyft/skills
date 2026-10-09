@@ -18,8 +18,8 @@ Googlebot, and revisits on a schedule it sets itself. Diagnosis order:
    crawled late or never, and is judged unimportant. Search the site's own
    navigation and content for links to the page; the sitemap does not count.
 3. **Response health.** The page must return a success status to Googlebot
-   consistently. Watch for: redirect chains (each hop wastes trust — collapse
-   to a single hop), pages that return success but show an error message
+   consistently. Watch for: redirect chains (each hop adds delay and another
+   point of failure — collapse to a single hop), pages that return success but show an error message
    (soft errors — Google eventually treats them as gone), server errors under
    load, and bot protection or geo-blocking that serves Googlebot a challenge
    page while people see content. If a fetch-as-Google check (Search
