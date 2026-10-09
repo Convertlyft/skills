@@ -173,7 +173,7 @@ cited, in current understanding — this field is young, say so:
 
 ## What Ad Rank and landing-page quality share with SEO
 
-Google Ads ranks ads by bid times quality; the quality side (Quality Score)
+Google Ads ranks ads using the bid together with ad quality; the quality side (Quality Score)
 has three published components: expected clickthrough rate, ad relevance,
 and landing-page experience. The third is SEO's territory: page matches the
 promise that was clicked, loads fast, works on phones, easy to navigate,
@@ -181,9 +181,8 @@ transparent about the business. Fix the landing page and both channels pay.
 
 Practical crossovers:
 
-- A low landing-page-experience grade in Ads is a free page-quality
-  diagnosis that applies to organic too — and vice versa: a page that
-  cannot rank organically usually costs more per click in Ads.
+- A low landing-page-experience grade in Ads is a page-quality
+  diagnosis that often applies to organic too.
 - The Ads search-terms report is the best keyword-research source in this
   file — real queries with real conversion outcomes attached.
 - Run Ads on a query the site also ranks for to measure with money what

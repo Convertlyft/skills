@@ -93,9 +93,9 @@ path to older content.
 
 ## Content quality — the people-first test
 
-Google's stated target is content made for people that demonstrates
-first-hand knowledge; its systems reward it sitewide, meaning a mass of
-low-quality pages drags down the good ones. Tests to apply to any page:
+Google's stated target is content created primarily for people, not to
+manipulate rankings. Treat weak pages as a liability, not harmless filler.
+Tests to apply to any page:
 
 - Would this page exist, in this form, if search engines did not? Content
   reverse-engineered from a keyword list reads that way.

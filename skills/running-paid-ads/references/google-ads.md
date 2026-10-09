@@ -155,7 +155,7 @@ Operating rules:
   or stay on simpler bidding until volume exists.
 - When diagnosing a sudden delivery drop, check in this order: budget
   exhaustion, a bidding target recently tightened, a conversion tracking
-  break (smart bidding starves within days of losing its signal), then the
+  break (smart bidding starves quickly once it loses its signal), then the
   auction itself (impression share lost to rank).
 
 ## Reading a search account quickly

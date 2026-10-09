@@ -35,7 +35,7 @@ never to invented benchmarks.
   platform numbers and blended reality diverge widely, trust the books and
   say the platform view is optimistic.
 - Brand campaigns claim people who already chose the business. Their
-  reported performance is always stellar and mostly not incremental. Judge
+  reported performance usually looks strong and is often not incremental. Judge
   the account with brand split out, and treat "should we pay for our own
   brand" as a separate question: worth paying when competitors bid on the
   name or the ad owns meaningfully more of the page than the organic

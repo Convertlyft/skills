@@ -21,9 +21,9 @@ repository root). The page-analysis framework lives in
    visits or people it is based on, and the dates it covers. "`<n>` of `<total>`
    visits clicked the menu between `<from>` and `<to>`" — never "people love the
    menu".
-2. **Under 30 clicks, there is not enough data.** Say "not enough data yet" with
-   the real count, and stop. Do not read shapes into a thin map. This is the
-   same threshold `cvl_heatmap` uses: below it, it returns `not_enough_data`
+2. **A heatmap under 30 clicks is not enough data.** Say "not enough data yet"
+   with the real count, and stop. Do not read shapes into a thin map. This is
+   the threshold `cvl_heatmap` uses: below it, it returns `not_enough_data`
    with the real count and draws nothing.
 3. **Where, not why.** A heatmap or a click count is a location. The reason is a
    hypothesis until a replay shows the mechanism or a test shows the effect.
@@ -68,7 +68,7 @@ repository root). The page-analysis framework lives in
 
 ### Scroll and attention
 
-- **If fewer than half of visitors reach the call to action, it sits too low.**
+- **If many visitors never reach the call to action, it sits too low for them.**
   Read the share reaching each depth from `cvl_heatmap` (`scroll_depth`) or
   `cvl_page_attention`, and compare it with where the call to action sits.
 - **A sharp drop near the top of a landing page** means the first screen fails:

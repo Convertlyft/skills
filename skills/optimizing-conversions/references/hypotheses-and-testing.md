@@ -73,7 +73,7 @@ Standing rules: evidence-backed beats clever; leaks near money beat leaks at the
 
 ## When there is too little traffic to test
 
-Judge by conversions at the tested step, not by visits. A rough rule expressed honestly: if the step completes only a handful of conversions in a week, a split test of a modest improvement will not resolve in business-relevant time, and recommending one wastes months. If weekly conversions number in the hundreds, most sensible tests can resolve. Between those, only large, obvious swings are worth testing — subtle variants are not detectable.
+Judge by conversions at the tested step, not by visits. A rough rule expressed honestly: if the step completes only a handful of conversions in a week, a split test of a modest improvement will not resolve in business-relevant time, and recommending one wastes months. With plenty of weekly conversions, most sensible tests can resolve; run a sample-size calculation on the site's own conversion count before promising one. In between, only large, obvious swings are worth testing — subtle variants are not detectable.
 
 When testing is out of reach, work down this ladder instead:
 

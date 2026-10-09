@@ -192,8 +192,8 @@ Each entry: what it is, why it hurts, and the trace it leaves in readings.
   cue. People give up mid-wait. Signature: replays showing exit during
   loading; leak between two steps with no interaction in between.
 - **Wall of prose.** Long undifferentiated paragraphs where a decision is
-  being made. People do not read online, they scan; unscannable content is
-  unread content. Signature: scroll map racing through the block; time on the
+  being made. Many people scan rather than read; unscannable content is
+  often unread content. Signature: scroll map racing through the block; time on the
   section near zero in replays.
 
 ## Writing up the critique
