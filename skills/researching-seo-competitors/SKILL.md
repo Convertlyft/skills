@@ -1,6 +1,6 @@
 ---
 name: researching-seo-competitors
-description: Researches who a site competes with in search using Convertlyft's stored SEO data, covering the tiered competitor list, the searches rivals win, rankings beside rivals, backlink gaps, AI-assistant mentions, stored briefs and the cross-site matrix for multi-workspace members, and records competitor and keyword choices only with the owner's yes. Use when someone asks who their search competitors are, why a rival outranks them, which searches to go after, or wants to pin, dismiss or track competitors and keywords.
+description: Researches who a site competes with in search using Convertlyft's stored SEO data and, where that does not cover the question, live research on any domain that uses account credits, covering the tiered competitor list, the searches rivals win, rankings beside rivals, backlink gaps, AI-assistant mentions, stored briefs and the cross-site matrix for multi-workspace members, and records competitor and keyword choices only with the owner's yes. Use when someone asks who their search competitors are, why a rival outranks them, which searches to go after, or wants to pin, dismiss or track competitors and keywords.
 ---
 
 # Researching SEO competitors
@@ -64,6 +64,37 @@ never generates one.
   shows each competitor against each of their sites in one market, with its score. Only
   workspaces they are a member of.
 
+## Step 4b — Research on any domain (uses credits)
+
+When the stored data does not cover the question (a site that is not a tracked rival, a search not
+in the keyword list, a fresh look at the top 10), these tools ask the search-data provider directly.
+They work on any domain and need `seo:write`. Each answer bought uses the account's credits,
+inside this site's daily limit, with no per-call confirmation. The answer is stored, so asking the
+same question again uses no credits; `refresh: true` buys it again. Never call them "free", and
+ask the owner before buying more than a handful.
+
+- `cvl_seo_serp` — the live top 10 Google results for one search in one country, with "People
+  also ask".
+- `cvl_seo_keyword_ideas` — searches around one seed: `ideas` (default), `suggestions` (contain
+  the seed) or `related`, each with volume, difficulty, cost per click and intent.
+- `cvl_seo_keyword_metrics` — volume, difficulty, intent and twelve months of volume for searches
+  you name.
+- `cvl_seo_domain_overview` — any site's organic footprint in one country: searches ranked for,
+  how many in the top 3, and the provider's traffic estimate.
+- `cvl_seo_competitor_gap` — searches one `competitor` ranks for that `domain` does not, with
+  volume and the competitor's ranking page.
+- `cvl_seo_backlink_profile` — any site's backlink headline counts: referring domains, backlinks,
+  broken backlinks, referring pages, first seen.
+- `cvl_seo_link_gap` — referring domains linking to the named `competitors` and not to `domain`,
+  with spam score and rank.
+- `cvl_seo_ai_mentions` — answers from the provider's tracked prompt panel saying whether AI
+  assistants name a site. A sample of tracked answers, not every answer an assistant gives.
+
+Volume, difficulty and traffic figures are the provider's estimates: say "estimated". When the
+owner asks what research has cost, `cvl_usage` (`reports:read`) shows today's limit used,
+whether paid work is paused, the research answers bought and stored this month, and, for the
+account owner, the credit balance. It reads stored rows and buys nothing.
+
 ## Step 5 — Acting on it (writes, owner's yes first)
 
 These record choices in Convertlyft. Nothing on the site changes and nothing is bought. They need
@@ -81,10 +112,13 @@ before each one**, naming exactly what will be recorded.
 - `cvl_seo_map_keyword_page` — say which page targets a search; it answers the page it had before.
 - `cvl_seo_add_keywords` — add searches to the keyword list, optionally for one page.
 
-Two more ask for paid work and never run from a token: `cvl_seo_run_flow` (run the SEO chain
-again; it buys search data within the daily limit) and `cvl_seo_make_brief` (crawl the top pages
-for one search and write suggestions). Each becomes a proposal the owner approves in Convertlyft.
-Tell the owner that is what happens; do not say the run or the brief has started.
+Two more buy search data, and run at once under `seo:write` with no per-call confirmation, so ask
+the owner first and name the cost: `cvl_seo_run_flow` runs the SEO chain again (keywords,
+competitors, opportunities and briefs) with the account's credits inside the daily limit; a step that
+meets the limit waits for tomorrow, and `cvl_seo_flow` follows it. `cvl_seo_make_brief` makes the
+competitor page brief for one search (live top results, crawl of the top pages, a model pass) with the
+account's credits inside the daily limit; a brief made in the last 7 days is returned as it is unless
+`force` is true, and `cvl_seo_brief` reads it.
 
 On 403 `insufficient_scope`, say the choice was not recorded and which scope it needs.
 
@@ -120,8 +154,17 @@ Never invent a traffic estimate, a "rank in N weeks" promise or a figure the too
 | `cvl_seo_set_keyword_money` | `POST https://convertlyft.com/api/tools/cvl_seo_set_keyword_money` | `seo:write` |
 | `cvl_seo_map_keyword_page` | `POST https://convertlyft.com/api/tools/cvl_seo_map_keyword_page` | `seo:write` |
 | `cvl_seo_add_keywords` | `POST https://convertlyft.com/api/tools/cvl_seo_add_keywords` | `seo:write` |
-| `cvl_seo_run_flow` | none (MCP only) | `seo:write` |
-| `cvl_seo_make_brief` | none (MCP only) | `seo:write` |
+| `cvl_seo_run_flow` | `POST https://convertlyft.com/api/tools/cvl_seo_run_flow` | `seo:write` |
+| `cvl_seo_make_brief` | `POST https://convertlyft.com/api/tools/cvl_seo_make_brief` | `seo:write` |
+| `cvl_seo_serp` | `POST https://convertlyft.com/api/tools/cvl_seo_serp` | `seo:write` |
+| `cvl_seo_keyword_ideas` | `POST https://convertlyft.com/api/tools/cvl_seo_keyword_ideas` | `seo:write` |
+| `cvl_seo_keyword_metrics` | `POST https://convertlyft.com/api/tools/cvl_seo_keyword_metrics` | `seo:write` |
+| `cvl_seo_domain_overview` | `POST https://convertlyft.com/api/tools/cvl_seo_domain_overview` | `seo:write` |
+| `cvl_seo_competitor_gap` | `POST https://convertlyft.com/api/tools/cvl_seo_competitor_gap` | `seo:write` |
+| `cvl_seo_backlink_profile` | `POST https://convertlyft.com/api/tools/cvl_seo_backlink_profile` | `seo:write` |
+| `cvl_seo_link_gap` | `POST https://convertlyft.com/api/tools/cvl_seo_link_gap` | `seo:write` |
+| `cvl_seo_ai_mentions` | `POST https://convertlyft.com/api/tools/cvl_seo_ai_mentions` | `seo:write` |
+| `cvl_usage` | `GET https://convertlyft.com/api/tools/cvl_usage` | `reports:read` |
 | `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST.

@@ -208,8 +208,9 @@ list so absence is not read as a pass. For the full scan workflow see the
 `cvl_seo_map_keyword_page` shape the keyword list; `cvl_seo_opportunity_track`
 acts on an opportunity; `cvl_seo_set_competitor_state` pins or dismisses a
 rival. None of them changes the site or buys anything. `cvl_seo_run_flow` and
-`cvl_seo_make_brief` never run from a token — they become a proposal the owner
-approves in Convertlyft; say so rather than implying they ran.
+`cvl_seo_make_brief` do buy: they run at once with the account's credits inside
+the daily limit, with no per-call confirmation, so ask the owner first.
+`cvl_usage` shows what was used.
 
 ## Tools
 
@@ -238,7 +239,8 @@ approves in Convertlyft; say so rather than implying they ran.
 | `cvl_seo_map_keyword_page` | `POST https://convertlyft.com/api/tools/cvl_seo_map_keyword_page` | `seo:write` |
 | `cvl_seo_opportunity_track` | `POST https://convertlyft.com/api/tools/cvl_seo_opportunity_track` | `seo:write` |
 | `cvl_seo_set_competitor_state` | `POST https://convertlyft.com/api/tools/cvl_seo_set_competitor_state` | `seo:write` |
-| `cvl_seo_run_flow` | none (MCP only) | `seo:write` |
-| `cvl_seo_make_brief` | none (MCP only) | `seo:write` |
+| `cvl_seo_run_flow` | `POST https://convertlyft.com/api/tools/cvl_seo_run_flow` | `seo:write` |
+| `cvl_seo_make_brief` | `POST https://convertlyft.com/api/tools/cvl_seo_make_brief` | `seo:write` |
+| `cvl_usage` | `GET https://convertlyft.com/api/tools/cvl_usage` | `reports:read` |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST.
