@@ -6,8 +6,21 @@ calls (server `https://mcp.convertlyft.com/mcp`) and that tool's REST twin
 (`https://convertlyft.com/api/…`, header `Authorization: Bearer cvl_pat_…`).
 The expert skills also work without an account.
 
-This repository is the master copy of the skills. It is also a Claude Code
-plugin (`.claude-plugin/plugin.json`, `.mcp.json`).
+This repository is the master copy of the skills.
+
+## Install
+
+| Client | How |
+|---|---|
+| Claude Code | `/plugin marketplace add Convertlyft/skills`, then `/plugin install convertlyft@convertlyft`. Adds the MCP server, every skill, and a hook that asks you before `cvl_change_apply` or `cvl_operator_run` runs. |
+| Codex | `codex plugin marketplace add Convertlyft/skills`, then install the `convertlyft` plugin. Reads `.codex-plugin/plugin.json`. |
+| Cursor | Dashboard → Plugins & MCPs → Add Marketplace → Import from Repo, with this repo. Reads `.cursor-plugin/`. |
+| Any agent with Agent Skills (Codex, Cursor, Gemini CLI, Copilot and others) | `npx skills add Convertlyft/skills` — skills only; add the MCP server from [convertlyft.com/developers](https://convertlyft.com/developers). |
+
+Every MCP config here points at `https://mcp.convertlyft.com/mcp` and sends
+`Convertlyft-Consumer: plugin`, so Convertlyft can tell calls that came
+through a plugin from the rest. The header carries no personal data and changes nothing
+about what a call may do.
 
 ## Skills
 
@@ -29,7 +42,7 @@ plugin (`.claude-plugin/plugin.json`, `.mcp.json`).
 | `reading-behaviour-data` | Teaches how to read visitor behaviour evidence honestly — heatmaps, scroll depth, rage and dead clicks, form friction, funnels, paths and session replays — and how to turn a reading into a page diagnosis and a testable hypothesis. |
 | `researching-seo-competitors` | Researches who a site competes with in search using Convertlyft's stored SEO data, covering the tiered competitor list, the searches rivals win, rankings beside rivals, backlink gaps, AI-assistant mentions, stored briefs and the cross-site matrix for multi-workspace members, and records competitor and keyword choices only with the owner's yes. |
 | `reviewing-ux-ui` | Reviews a website's UX and UI the way a website owner needs it — layout, visual hierarchy, readability, navigation, forms, signup and checkout friction, error and empty states, mobile behaviour, accessibility, trust and perceived speed — and ranks fixes by severity with the evidence for each. |
-| `running-paid-ads` | Diagnoses paid advertising — Google Ads, Meta, Facebook and Instagram ads — in the right order: tracking, then economics, then where the money goes, then query and audience quality, then the landing page, then bidding and structure. |
+| `running-paid-ads` | Diagnoses paid advertising — Google Ads, Meta, Facebook and Instagram ads — in the right order (tracking, then economics, then where the money goes, then query and audience quality, then the landing page, then bidding and structure. |
 | `shipping-cro-fixes` | Takes a conversion fix from finding to owner decision to measured result through Convertlyft, by queueing a proposal for the owner, previewing and recording a change marker only after the owner says yes, undoing a marker when needed, and writing the conclusion to the workspace ledger. |
 | `watching-session-replays` | Finds the right recorded visit and reads one moment of it — the pages, the elements clicked, errors and typing lengths in the seconds around a rage click, dead click or error — so a hypothesis from analytics can be confirmed or ruled out. |
 | `writing-copy` | Writes, rewrites and edits marketing copy for homepages, landing pages, pricing pages, ads, emails and calls to action, checking clarity, specificity, benefits, proof and customer language. |
@@ -42,7 +55,12 @@ CI runs on every push and pull request, and the drift check runs daily:
 - `node scripts/lint-skills.mjs` — gerund names, third-person descriptions,
   bodies under 500 lines, references one level deep, every tool in the skill's
   Tools table with its REST twin.
-- `claude plugin validate --strict .`
+- `node scripts/check-manifests.mjs` — the Claude Code, Codex and Cursor
+  manifests agree on name and version, each MCP config points at the real
+  server and sends the consumer header, and the hook catches exactly
+  `cvl_change_apply` and `cvl_operator_run`.
+- `claude plugin validate --strict .` (the marketplace) and
+  `claude plugin validate --strict .claude-plugin/plugin.json` (the plugin and its hooks).
 - `node scripts/check-drift.mjs` — every tool, REST route and scope a skill
   names must exist on the live server (MCP `tools/list`,
   `/.well-known/convertlyft-capabilities.json`, `/openapi.json`), and the

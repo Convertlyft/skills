@@ -40,6 +40,8 @@ for (const dir of dirs) {
   const desc = fm.description || '';
   if (!desc) fail(where, 'description missing');
   if (desc.length > 1024) fail(where, `description is ${desc.length} chars (max 1024)`);
+  // A plain YAML value cannot hold ": " or " #"; `npx skills add` skips the whole skill.
+  if (/:\s|\s#/.test(desc)) fail(where, 'description contains ": " or " #", which breaks YAML parsing (npx skills add skips the skill)');
   if (!/^[A-Z][a-z]+s\b/.test(desc)) fail(where, 'description must open with a third-person verb (e.g. "Audits …")');
   // Quoted trigger phrases ("why is my traffic down") are the user's words, not the skill's voice.
   const voice = desc.replace(/"[^"]*"|“[^”]*”|'[^']*'/g, '');

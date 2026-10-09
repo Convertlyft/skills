@@ -1,6 +1,6 @@
 ---
 name: running-paid-ads
-description: Diagnoses paid advertising — Google Ads, Meta, Facebook and Instagram ads — in the right order: tracking, then economics, then where the money goes, then query and audience quality, then the landing page, then bidding and structure. Reads ROAS, CPL and CPA against the business's own margins, never against invented benchmarks, and says plainly when not to spend. Use when someone asks about ad spend, campaigns, keywords, match types, negative keywords, Quality Score, bidding, budget pacing, conversion tracking for ads, ad-to-landing-page match, or whether paid traffic is worth buying, even if they only say "my ads are expensive" or "leads dried up".
+description: Diagnoses paid advertising — Google Ads, Meta, Facebook and Instagram ads — in the right order (tracking, then economics, then where the money goes, then query and audience quality, then the landing page, then bidding and structure). Reads ROAS, CPL and CPA against the business's own margins, never against invented benchmarks, and says plainly when not to spend. Use when someone asks about ad spend, campaigns, keywords, match types, negative keywords, Quality Score, bidding, budget pacing, conversion tracking for ads, ad-to-landing-page match, or whether paid traffic is worth buying, even if they only say "my ads are expensive" or "leads dried up".
 ---
 
 # Running paid ads
