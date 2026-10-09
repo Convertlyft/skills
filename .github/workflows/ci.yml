@@ -1,0 +1,86 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    # Daily drift check: the live server can change without a commit here.
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  CLAUDE_CODE_VERSION: 2.1.293
+
+jobs:
+  lint:
+    name: skill rules
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/lint-skills.mjs
+
+  validate:
+    name: plugin validate --strict
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install -g @anthropic-ai/claude-code@${CLAUDE_CODE_VERSION}
+      - run: claude plugin validate --strict .
+
+  drift:
+    name: drift vs live manifest and OpenAPI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/check-drift.mjs
+
+  eval:
+    name: plugin eval (mocked tools)
+    runs-on: ubuntu-latest
+    needs: [lint, validate]
+    if: github.event_name != 'schedule'
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Skip when no API key is configured
+        if: env.ANTHROPIC_API_KEY == ''
+        run: |
+          echo "::notice title=plugin eval skipped::ANTHROPIC_API_KEY is not set for this repository, so claude plugin eval did not run. Add it under Settings > Secrets and variables > Actions to run the eval suite (runs per case are set in each evals/*/prompt.md; cost is capped by --max-cost-usd)."
+      - name: Install Claude Code
+        if: env.ANTHROPIC_API_KEY != ''
+        run: npm install -g @anthropic-ai/claude-code@${CLAUDE_CODE_VERSION}
+      - name: Run eval suite
+        if: env.ANTHROPIC_API_KEY != ''
+        run: |
+          claude plugin eval . \
+            --trust-plugin \
+            --no-publish \
+            --ablation none \
+            --threshold 0.9 \
+            --max-cost-usd 15 \
+            --json eval-results.json
+      - uses: actions/upload-artifact@v4
+        if: always() && env.ANTHROPIC_API_KEY != ''
+        with:
+          name: eval-results
+          path: |
+            eval-results.json
+            evals/results/
+          if-no-files-found: ignore
