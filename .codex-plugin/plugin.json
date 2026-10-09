@@ -1,0 +1,14 @@
+{
+  "name": "convertlyft",
+  "version": "0.2.0",
+  "description": "Skills for reading website behaviour, conversion and SEO evidence with the Convertlyft MCP server and REST API.",
+  "keywords": ["analytics", "cro", "seo", "heatmaps", "session-replay", "mcp"],
+  "skills": "./skills/",
+  "mcpServers": "./.codex-plugin/mcp.json",
+  "interface": {
+    "displayName": "Convertlyft",
+    "shortDescription": "Website behaviour, conversion and SEO evidence from Convertlyft.",
+    "developerName": "Convertlyft",
+    "websiteURL": "https://convertlyft.com"
+  }
+}

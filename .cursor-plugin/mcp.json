@@ -1,7 +1,6 @@
 {
   "mcpServers": {
     "convertlyft": {
-      "type": "http",
       "url": "https://mcp.convertlyft.com/mcp",
       "headers": { "Convertlyft-Consumer": "plugin" }
     }
