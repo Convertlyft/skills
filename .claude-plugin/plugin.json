@@ -1,0 +1,10 @@
+{
+  "name": "convertlyft",
+  "version": "0.1.0",
+  "description": "Skills for reading website behaviour, conversion and SEO evidence with the Convertlyft MCP server and REST API.",
+  "author": { "name": "Convertlyft", "url": "https://convertlyft.com" },
+  "homepage": "https://convertlyft.com",
+  "repository": "https://github.com/Convertlyft/skills",
+  "license": "MIT",
+  "keywords": ["analytics", "cro", "seo", "heatmaps", "session-replay", "mcp"]
+}
