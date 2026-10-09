@@ -68,15 +68,24 @@ Timestamps: strict ISO 8601 with a zone.
 | `cvl_seo_set_keyword_money` | Money keyword or not | writes | `POST https://convertlyft.com/api/tools/cvl_seo_set_keyword_money` | `seo:write` |
 | `cvl_seo_map_keyword_page` | Map a search to a page | writes | `POST https://convertlyft.com/api/tools/cvl_seo_map_keyword_page` | `seo:write` |
 | `cvl_seo_add_keywords` | Add searches | writes | `POST https://convertlyft.com/api/tools/cvl_seo_add_keywords` | `seo:write` |
-| `cvl_seo_run_flow` | Run the SEO chain | writes | none (MCP only) | `seo:write` |
-| `cvl_seo_make_brief` | Generate a competitor page brief | writes | none (MCP only) | `seo:write` |
-| `cvl_public_seo_scan` | Free SEO scan of any public site | reads | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan` | none |
-| `cvl_public_seo_scan_result` | The result of a free SEO scan | reads | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan_result` | none |
+| `cvl_seo_run_flow` | Run the SEO chain | writes | `POST https://convertlyft.com/api/tools/cvl_seo_run_flow` | `seo:write` |
+| `cvl_seo_make_brief` | Generate a competitor page brief | writes | `POST https://convertlyft.com/api/tools/cvl_seo_make_brief` | `seo:write` |
+| `cvl_public_seo_scan` | SEO scan of any public site (no account needed) | reads | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan` | none |
+| `cvl_public_seo_scan_result` | The result of an SEO scan | reads | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan_result` | none |
 | `cvl_public_agent_readiness` | Can AI agents use this site? | reads | `GET https://convertlyft.com/api/tools/cvl_public_agent_readiness` | none |
 | `cvl_docs_search` | Search the Convertlyft docs | reads | `GET https://convertlyft.com/api/tools/cvl_docs_search` | none |
 | `cvl_replay_moment` | One moment of one visit | reads | `GET https://convertlyft.com/api/tools/cvl_replay_moment` | `replays:read`, `sessions:read` |
 | `cvl_funnel_report` | How many people got through a funnel | reads | `GET https://convertlyft.com/api/tools/cvl_funnel_report` | `reports:read` |
 | `cvl_paths` | How people move between pages | reads | `GET https://convertlyft.com/api/tools/cvl_paths` | `reports:read` |
 | `cvl_heatmap` | Where people click on one page, with a picture | reads | `GET https://convertlyft.com/api/tools/cvl_heatmap` | `sessions:read` |
+| `cvl_seo_serp` | Google results for a search | writes | `POST https://convertlyft.com/api/tools/cvl_seo_serp` | `seo:write` |
+| `cvl_seo_keyword_ideas` | Keyword ideas | writes | `POST https://convertlyft.com/api/tools/cvl_seo_keyword_ideas` | `seo:write` |
+| `cvl_seo_keyword_metrics` | Volume and difficulty of searches | writes | `POST https://convertlyft.com/api/tools/cvl_seo_keyword_metrics` | `seo:write` |
+| `cvl_seo_domain_overview` | A domain at a glance | writes | `POST https://convertlyft.com/api/tools/cvl_seo_domain_overview` | `seo:write` |
+| `cvl_seo_competitor_gap` | Searches a competitor wins and a site does not | writes | `POST https://convertlyft.com/api/tools/cvl_seo_competitor_gap` | `seo:write` |
+| `cvl_seo_backlink_profile` | Backlink profile | writes | `POST https://convertlyft.com/api/tools/cvl_seo_backlink_profile` | `seo:write` |
+| `cvl_seo_link_gap` | Sites that link to competitors and not to you | writes | `POST https://convertlyft.com/api/tools/cvl_seo_link_gap` | `seo:write` |
+| `cvl_seo_ai_mentions` | Mentions in AI answers | writes | `POST https://convertlyft.com/api/tools/cvl_seo_ai_mentions` | `seo:write` |
+| `cvl_usage` | Usage and budget | reads | `GET https://convertlyft.com/api/tools/cvl_usage` | `reports:read` |
 | `cvl_search_tools` | Find a tool | reads | none (MCP only) | not in manifest |
 | `cvl_call_read` | Run a read tool | reads | none (MCP only) | not in manifest |
