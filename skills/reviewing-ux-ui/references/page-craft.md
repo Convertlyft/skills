@@ -196,3 +196,18 @@ audience lives there.
   horizontal scrolling ever.
 - Test the phone reality, not the emulator fantasy: mid-range device, mobile
   network, one hand. Mobile replays are the closest available proxy.
+
+## Quick judgment tools
+
+- **The glance test.** Blur the page in your mind. Does the most important
+  thing still stand out — biggest, highest contrast, most space around it? If
+  everything is emphasised, nothing is.
+- **One primary action per screen.** Several equally weighted calls to action
+  split attention (Hick's law: more choices, slower decisions). Demote
+  secondary actions visually rather than deleting them.
+- **Visitor language test.** Navigation labels, headings and buttons use the
+  words visitors would type into a search box, not internal or clever names.
+  Search queries and ad search terms show the real vocabulary.
+- **The stranger test for trust.** Would a sceptical stranger hand this page
+  their card details? Trust comes from specificity — real names, real photos,
+  exact prices, plain policies near the buy button — not badge clutter.

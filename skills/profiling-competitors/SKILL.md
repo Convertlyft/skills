@@ -1,6 +1,6 @@
 ---
 name: profiling-competitors
-description: Profiles one competitor from public evidence — positioning, offer, search footprint, content, site quality and AI-assistant visibility — and turns it into ranked, evidence-backed moves, keeping observed facts apart from guesses. Use when someone asks "who the competition is", "research this competitor", "what is this competitor doing", "how to beat a competitor", "where a competitor gets traffic", or wants a competitor SWOT or competitive landscape.
+description: Profiles one competitor from public evidence — positioning, offer, search footprint, content, site quality and AI-assistant visibility — and turns it into ranked, evidence-backed moves, keeping observed facts apart from guesses. Use when someone asks "who the competition is", "research this competitor", "what is this competitor doing", "how to beat a competitor", "where a competitor gets traffic", or wants a competitor SWOT or competitive landscape. Use researching-seo-competitors instead when the question is who a site competes with in search, which searches rivals win, or ranks beside rivals from Convertlyft's stored SEO data.
 ---
 
 # Profiling competitors
@@ -127,8 +127,10 @@ pages, the first fix, what it did not check, and a `report_url`. If it answers
 `{status: "running", scan_id}`, call `cvl_public_seo_scan_result` with the
 `scan_id`. `cvl_public_agent_readiness` reads the same crawl for which AI
 crawlers robots.txt lets in and whether `llms.txt` exists. Scanning the owner's
-site the same way gives a like-for-like comparison. New scans are limited per
-address per day; a scan of the same site within a day is reused.
+site the same way gives a like-for-like comparison, but it uses 2 of the 5 new
+scans allowed a day (per address, or per workspace when signed in; a scan of
+the same site within a day is reused and does not count). Say that before running both, and do not scan a third or
+fourth competitor without asking.
 
 **Signed in.**
 
@@ -158,6 +160,26 @@ address per day; a scan of the same site within a day is reused.
 - `cvl_seo_set_competitor_state` (write, scope `seo:write`) pins or dismisses
   a competitor so later reads use the right set. Ask the owner first.
 
+**Any domain, live (uses credits).** The reads above cover competitors already
+stored. For a competitor that is not, these work on any domain (scope
+`seo:write`). Each answer is bought with the account's credits, inside the
+site's daily limit, with no per-call confirmation, so never call them free and
+ask the owner before buying more than a few. An answer is stored, so the same
+question again uses no credits unless `refresh: true`. Their traffic and
+volume figures are the provider's estimates: label them.
+
+- `cvl_seo_domain_overview` — the competitor's organic footprint in one
+  country: searches ranked for, how many in the top 3, the provider's traffic
+  estimate.
+- `cvl_seo_competitor_gap` — searches the competitor ranks for that the
+  owner's site does not.
+- `cvl_seo_backlink_profile` — the competitor's backlink headline counts.
+- `cvl_seo_link_gap` — sites linking to the competitor and not to the owner.
+- `cvl_seo_ai_mentions` — whether AI assistants name the competitor, from the
+  provider's tracked prompt panel (a sample, not every answer).
+
+`cvl_usage` shows what was used.
+
 ## Tools
 
 | MCP tool | REST twin | Scope |
@@ -176,6 +198,12 @@ address per day; a scan of the same site within a day is reused.
 | `cvl_crawl_start` | `POST https://convertlyft.com/api/crawl` | `crawl:run` |
 | `cvl_crawl_status` | `GET https://convertlyft.com/api/tools/cvl_crawl_status` | `reports:read` |
 | `cvl_crawl_page` | `GET https://convertlyft.com/api/tools/cvl_crawl_page` | `reports:read` |
+| `cvl_seo_domain_overview` | `POST https://convertlyft.com/api/tools/cvl_seo_domain_overview` | `seo:write` |
+| `cvl_seo_competitor_gap` | `POST https://convertlyft.com/api/tools/cvl_seo_competitor_gap` | `seo:write` |
+| `cvl_seo_backlink_profile` | `POST https://convertlyft.com/api/tools/cvl_seo_backlink_profile` | `seo:write` |
+| `cvl_seo_link_gap` | `POST https://convertlyft.com/api/tools/cvl_seo_link_gap` | `seo:write` |
+| `cvl_seo_ai_mentions` | `POST https://convertlyft.com/api/tools/cvl_seo_ai_mentions` | `seo:write` |
+| `cvl_usage` | `GET https://convertlyft.com/api/tools/cvl_usage` | `reports:read` |
 | `cvl_seo_set_competitor_state` | `POST https://convertlyft.com/api/tools/cvl_seo_set_competitor_state` | `seo:write` |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST.

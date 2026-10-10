@@ -132,6 +132,11 @@ The test: if it would feel like a trick when done to you, do not recommend it.
 4. Say what evidence would show whether it helped. A principle is a hypothesis
    for this site until a test or a measured change confirms it.
 
+Hand-offs: to turn the principle into words on the page, use `writing-copy`;
+to decide which page or step to change first, use `optimizing-conversions`;
+to put the change in front of the owner and measure it, use
+`shipping-cro-fixes`.
+
 ## With Convertlyft
 
 With a connected workspace, psychology stops being a guess about the page and
@@ -147,8 +152,10 @@ starts from what visitors do on it.
   is not enough data; say so. A heatmap shows where, not why.
 - For "too many choices" or "too many fields", read `cvl_form_friction`: per
   form, how many sessions focused a field and how many submitted.
-- Before stating any number to the owner, run `cvl_check_claim` with the
-  sentence and the receipt ids, and quote the window and sample size.
+- Before stating a number from an answer that carries a `receipt_id`, run
+  `cvl_check_claim` with the sentence and that id. An answer with no
+  `receipt_id` cannot be checked this way: quote its figure exactly as
+  returned. Either way, quote the window and sample size.
 
 ## Tools
 

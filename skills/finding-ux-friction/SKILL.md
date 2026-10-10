@@ -79,7 +79,9 @@ For each spot (top three to five):
   `shipping-cro-fixes`.
 
 Close with what this cannot see (capped lists, withheld medians, pages with no data).
-Run `cvl_check_claim` with the sentence and receipt ids before stating a number.
+Before stating a number from an answer that carries a `receipt_id`, run `cvl_check_claim` with
+the sentence and that id. An answer with no `receipt_id` cannot be checked this way; quote its
+figure exactly as returned.
 
 ## Tools
 

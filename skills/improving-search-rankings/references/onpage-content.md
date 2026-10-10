@@ -162,3 +162,10 @@ wellbeing is at stake first.
   read heatmaps on the changed page to see whether people now reach the
   substance. One change per page per measurement window, or attribution is
   guesswork.
+
+## With Convertlyft
+
+Signed in: `cvl_page_content` gives one page's title, description, headings and
+main text for the intent and title checks above; `cvl_seo_brief` says what most
+top-ranking pages for a search do that this page does not;
+`cvl_seo_map_keyword_page` records which page owns a search (owner's yes first).

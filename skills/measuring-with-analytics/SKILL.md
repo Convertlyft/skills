@@ -1,6 +1,6 @@
 ---
 name: measuring-with-analytics
-description: Sets up, audits and repairs website measurement — tag installation, event and key-event tracking, UTM campaign tagging, cross-domain tracking and data verification — for Google Analytics 4 and the Convertlyft tag. Use when someone asks to install tracking, says the numbers look wrong or empty, wants to track a specific action, needs UTM conventions, or asks why two analytics tools disagree.
+description: Sets up, audits and repairs website measurement — tag installation, event and key-event tracking, UTM campaign tagging, cross-domain tracking and data verification — for Google Analytics 4 and the Convertlyft tag. Use when someone asks to install tracking, says the numbers look wrong or empty, wants to track a specific action, needs UTM conventions, or asks why two analytics tools disagree. Audits tracking, not SEO; for an SEO audit use auditing-site-seo instead.
 ---
 
 # Measuring with analytics
@@ -197,11 +197,17 @@ through the tools instead of by eye.
 8. **Connections.** `cvl_connections_list` says which third-party accounts
    (such as Search Console) are connected and whether each needs reconnecting.
 
-Before stating any number to the owner, run `cvl_check_claim` with the
-sentence and the receipt ids, and quote the window with the figure. If a tool
+Before stating a number from an answer that carries a `receipt_id`, run
+`cvl_check_claim` with the sentence and that id; an answer with no
+`receipt_id` cannot be checked this way, so quote its figure exactly as
+returned. Quote the window with every figure. If a tool
 answers 401, the call needs a sign-in; if 403 `insufficient_scope`, the token
 lacks the scope shown below. `cvl_whoami` says which scopes the credential
 holds.
+
+Hand-offs, once the measurement is sound: a drop in conversions goes to
+`diagnosing-conversion-drops`; "where do people get stuck" goes to
+`finding-ux-friction`; ad tracking and spend go to `running-paid-ads`.
 
 ## Tools
 

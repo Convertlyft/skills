@@ -1,6 +1,23 @@
 # Reading the Evidence
 
-How to interpret each behaviour reading — funnels, heatmaps, replays, paths, errors — and turn what you see into a friction diagnosis. The summary of what each reading can and cannot support lives in SKILL.md; this file is the working method.
+How to interpret each behaviour reading — funnels, heatmaps, replays, paths, errors — and turn what you see into a friction diagnosis. The summary of what each reading can and cannot support lives in claims-and-answers.md; this file is the working method.
+
+## Friction classes
+
+Six classes cover nearly every leak. Signals and fix directions follow in this file.
+
+- **Clarity** — people do not understand what this is or what to do next.
+- **Relevance** — the page does not match the intent that brought them.
+- **Anxiety** — they understand, but something feels risky: money, data,
+  commitment.
+- **Distraction** — competing links and messages pull them off the path.
+- **Effort** — the task is more work than their motivation covers,
+  especially on phones.
+- **Breakage** — the site is technically failing for some or all of them.
+
+When several apply, rule out breakage first (checkable and fixable), then
+effort (cheapest human fix), then clarity and relevance (message work), and
+leave anxiety and motivation last (hardest, slowest levers).
 
 ## Funnel analysis method
 
