@@ -1,6 +1,6 @@
 ---
 name: adding-schema-markup
-description: Plans, writes and audits structured data (schema.org JSON-LD) for a site, choosing types by page, filling them only with facts visible on the page, and validating before release. Use when someone asks about schema markup, structured data, JSON-LD, rich results or rich snippets, breadcrumb, product, article, organization or local business schema, or getting star ratings in search results.
+description: Plans, writes and audits structured data (schema.org JSON-LD) for a site, choosing types by page, filling them only with facts visible on the page, and validating before release. Use when someone asks about schema markup, structured data, JSON-LD, rich results or rich snippets, breadcrumb, product, article, organization or local business schema, or getting star ratings in search results. For a whole-site SEO audit use auditing-site-seo instead.
 ---
 
 # Adding schema markup
@@ -57,6 +57,21 @@ If only the raw HTML was available, say the finding is provisional.
 
 One `Organization` and one `WebSite` per site, not per page. Link entities with
 `@id` so blocks reference each other instead of repeating.
+
+**Where the `Organization` facts come from.** None of them can be guessed or
+read off a search result:
+
+- `name` / `legalName` — the name on the site's own footer, imprint or terms
+  page; the legal name only from the owner or the company registration. If
+  only a trading name is shown, use `name` and leave `legalName` out.
+- `logo` — the address of the logo file the site itself serves (from the page
+  header), confirmed by the owner. Never a file from a third-party profile.
+- `sameAs` — only profiles the owner confirms are theirs, each linked from the
+  site or provided by the owner. A profile found by searching the name may
+  belong to someone else; ask before adding it.
+
+If any of these is not confirmed, leave the property out and ask the owner for
+that one fact.
 
 ## Templates
 
@@ -184,7 +199,11 @@ suggestions where a brief exists:
 
 - `cvl_page_content` — one crawled page's title, meta description, H1,
   headings and main text, quoted. Build `headline`, `description` and
-  `BreadcrumbList` names from these so markup matches the page exactly.
+  `BreadcrumbList` names from these so markup matches the page exactly. Read
+  its `rendered` flag first: when it is false the crawl read the raw HTML
+  without running JavaScript, so text and JSON-LD that scripts add are missing.
+  Any "no schema" or "field not on the page" finding is then provisional;
+  confirm it on the rendered page (see Detecting what a page already has).
 - `cvl_site_pages` — one row per page from the newest crawl, to pick which
   templates need which type.
 - `cvl_seo_brief` — the stored brief for one search, which includes suggested

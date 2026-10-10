@@ -1,6 +1,6 @@
 ---
 name: planning-improvements
-description: Turns everything known about a website into one ordered improvement plan, split into on-site work and getting people to the site, with measurement first, repairs second, the biggest leak third and new traffic last. Use when someone asks what to fix first, wants an overall plan or audit, asks how to get more customers or whether the site is healthy — any question spanning pages, search and ads rather than one of them.
+description: Turns everything known about a website into one ordered improvement plan, split into on-site work and getting people to the site, with measurement first, repairs second, the biggest leak third and new traffic last. Use when someone asks what to fix first, wants an overall plan or a whole-business review, asks how to get more customers or whether the site is healthy — any question spanning pages, search and ads rather than one of them. For an audit of SEO alone use auditing-site-seo, of tracking alone measuring-with-analytics.
 ---
 
 # Planning improvements
@@ -107,7 +107,9 @@ With a connected workspace, build the plan from stored readings in this order.
    people start and do not finish; `cvl_page_speed` names slow pages.
 5. **The leak.** `cvl_kpi` gives the headline figures for a window (read each
    figure's `state`; a non-ok figure has no value and is never zero).
-   `cvl_funnel_report` counts people through each step; `cvl_page_conversions`
+   `cvl_funnel_report` counts people through each step: pass `funnel_id`, the id
+   of a steps funnel from `cvl_funnels_list` (never a name or a guessed id);
+   `cvl_page_conversions`
    shows which entry pages convert.
 6. **Practice applied to this site.** `cvl_recommendations` pairs a measured
    observation with advice; quote both and keep them apart. They claim no
@@ -117,8 +119,10 @@ With a connected workspace, build the plan from stored readings in this order.
    `missing` means it could not be measured); `cvl_seo_opportunities` is the
    ranked search to-do list. With no account, `cvl_public_seo_scan`
    gives a score, the top 3 issues and a report link for any public site.
-8. **Before stating any number**, run `cvl_check_claim` with the sentence and
-   the receipt ids. Quote the window and sample size.
+8. **Before stating any number** from an answer that carries a `receipt_id`,
+   run `cvl_check_claim` with the sentence and that id; an answer with none
+   cannot be checked this way, so quote its figure exactly as returned. Quote
+   the window and sample size.
 9. **Hand the first item to the owner.** `cvl_propose` queues a fix for the
    owner to approve; it applies nothing. It needs the opt-in
    `proposals:write` scope, a `baseline` (what was seen) and a `revert_plan`.

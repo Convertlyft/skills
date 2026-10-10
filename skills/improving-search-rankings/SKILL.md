@@ -1,6 +1,6 @@
 ---
 name: improving-search-rankings
-description: Diagnoses why a site does or does not rank in search and decides what to fix first, covering indexing, search intent, titles, internal links, content quality, backlinks, rank tracking, local search, AI-assistant visibility and how landing pages affect Google Ads quality. Use when someone asks about rankings, organic traffic, "traffic is down", "the page does not show up on Google", "how to outrank this competitor", keyword research or an SEO audit, with or without a Convertlyft account.
+description: Diagnoses why a site does or does not rank in search and decides what to fix first, covering indexing, search intent, titles, internal links, content quality, backlinks, rank tracking, local search, AI-assistant visibility and how landing pages affect Google Ads quality. Use when someone asks about rankings, organic traffic, "traffic is down", "the page does not show up on Google", "how to outrank this competitor", or keyword research, with or without a Convertlyft account. For a scan or audit of a site's SEO, use auditing-site-seo instead.
 ---
 
 # Improving search rankings
@@ -24,6 +24,9 @@ below it holds. Most wrong answers start too high on the ladder.
 3. **Authority and competition.** Is this a search the site can realistically
    win, given who ranks now? If every result is a household-name brand or a
    government body, a small site competes for a longer, more specific query.
+   And is it worth winning? A search for something the business does not
+   sell or do brings visits that never buy; check product fit before
+   chasing any search, however large its volume.
 4. **Experience and technical polish.** Speed, Core Web Vitals, mobile
    rendering, clean architecture. These decide close contests and help
    crawling at scale. They are rarely why a page ranks nowhere at all.
@@ -50,86 +53,11 @@ the problem on the ladder first.
   The shape of what ranks defines the intent, the domains that rank define the
   difficulty, and the features present (ads, map pack, AI answer, video)
   define how many clicks are even available.
-- **"Should I fix Core Web Vitals?"** Argue only from field data (what real
-  visitors experienced), never from a lab score alone. Treat it as a
-  tiebreaker in close contests and a conversion issue in its own right — not
-  a rescue plan for a page that ranks nowhere.
-- **"Is this backlink good or bad?"** Judge one link by relevance, editorial
-  placement and whether a real person would click it. Judge a profile by the
-  spread of referring domains and natural anchor variety. Vendor authority
-  scores are third-party estimates, not Google's opinion.
-- **"Brand-new site, no traffic."** Expected. Set the expectation honestly:
-  organic traffic builds slowly, and nobody can promise when. Focus on indexing, a handful of winnable specific
-  queries, and one clearly better page per query.
-- **Rewrite or new page:** one page per intent. Two pages chasing the same
-  query: consolidate. One page chasing two intents: split.
-- **Pages built from a template at scale** (one page per city, product
-  variant or comparison) only work when each page carries data no other page
-  has and answers a distinct search. Swapped nouns on a template are doorway
-  pages. Start small, index only the pages that earn it.
 
-## What can and cannot be concluded
-
-Ground every claim in a reading and say which one backs it.
-
-- **Sessions** show organic volume over time and which landing pages get it.
-  They show that traffic changed, never why a rank changed.
-- **Funnels** show what search visitors do after arriving. A good rank with a
-  bad funnel usually means the wrong query or the wrong intent.
-- **Heatmaps and scroll depth** show how far people read on one page —
-  evidence for content-quality and intent-match arguments.
-- **Replays** show single visits: where search visitors stall and what they
-  fail to find. Hypotheses, not statistics.
-- **Errors** show broken experiences that waste organic clicks, and reveal
-  tracking breaks that masquerade as traffic drops.
-- **Rank data** is the only reading that speaks about rankings directly. It
-  shows movement, not cause.
-- **Ads search terms** show what real searchers type and what it costs —
-  the most honest keyword research there is.
-
-Say plainly when something cannot be concluded:
-
-- *Why* a ranking changed. Google does not disclose causes. Correlating a move
-  with a site edit, an update or a competitor's change is the honest ceiling.
-  Never promise that a fix restores a position.
-- That a specific link, or a disavow, moved a ranking.
-- Penalty versus algorithm: a manual action exists only if Search Console says
-  so.
-- Real-visitor speed from a lab test alone.
-- That AI assistants cite or ignore the site — check, do not assume.
-- Search volume, difficulty or a competitor's traffic without a data source
-  in hand. Offer to check; never estimate from thin air.
-- The owner's own results page is not "the" ranking — results are
-  personalised and localised.
-
-## Gotchas that defy intuition
-
-- Being in the sitemap does not make a page indexed; internal links are the
-  stronger signal.
-- Indexed is the floor, not the goal.
-- The meta description does not affect ranking. It can change how many people
-  click, and Google often replaces it.
-- Google rewrites weak titles. A rewritten title is feedback that the written
-  one was boilerplate or stuffed.
-- A `noindex` or stray canonical on the destination of a redirect chain
-  removes the whole chain from search. Inspect the final URL.
-- "Crawled — currently not indexed" is usually a quality or demand verdict,
-  not a bug that resubmission fixes.
-- Blocking a page in robots.txt does not remove it from the index. Removal
-  needs `noindex`, and the page must be crawlable for `noindex` to be seen.
-- Ranks wobble daily. Judge trends over weeks.
-- Fixing everything an audit tool flags is not a strategy. The ladder decides
-  what matters.
-- `llms.txt` is an emerging convention for AI agents, not a ranking lever.
-  Fine to add; promise nothing from it.
-
-## Ads and SEO share one landing page
-
-Google Ads' landing-page experience (a Quality Score component, beside
-expected clickthrough rate and ad relevance) rewards what organic search
-rewards: a page that matches the query, loads fast, works on phones and is
-open about who is behind it. Fixing a landing page for one channel helps the
-other. Ads stop when spend stops; organic compounds slowly and persists.
+More decision rules (Core Web Vitals, single backlinks, brand-new sites,
+rewrite or new page, template pages at scale), what each reading can and
+cannot prove, counter-intuitive gotchas, and how Ads and SEO share a landing
+page: [references/rules-and-evidence.md](references/rules-and-evidence.md).
 
 ## What to deliver
 
@@ -151,6 +79,10 @@ other. Ads stop when spend stops; organic compounds slowly and persists.
 - `references/research-offsite-measurement.md` — keyword research, reading a
   results page, backlinks, rank tracking, local search, AI-assistant
   visibility, Ads overlap.
+
+- `references/rules-and-evidence.md` — the longer decision rules, what each
+  reading can and cannot prove, gotchas, and the Ads landing-page overlap.
+  Load before stating a cause or a conclusion.
 
 Load only what the question needs.
 
@@ -195,7 +127,10 @@ list so absence is not read as a pass. For the full scan workflow see the
    and structured data. Reading it never generates one.
 7. `cvl_seo_rank` — positions per market and device with history. `not_seen`
    means not found within the depth checked, never "not ranking"; `missing`
-   means it could not be measured.
+   means it could not be measured. An empty answer means no search is tracked
+   yet, which says nothing about where the site ranks. Say so, and offer to
+   track the searches that matter (`cvl_seo_track_keywords`, owner's yes
+   first).
 8. `cvl_seo_competitors`, `cvl_seo_backlinks`, `cvl_seo_ai` — who competes,
    the link snapshot and link gap, and AI-assistant mentions from a tracked
    prompt panel (a sample, never "in ChatGPT" as a whole).
@@ -211,6 +146,14 @@ rival. None of them changes the site or buys anything. `cvl_seo_run_flow` and
 `cvl_seo_make_brief` do buy: they run at once with the account's credits inside
 the daily limit, with no per-call confirmation, so ask the owner first.
 `cvl_usage` shows what was used.
+
+**A live results page (uses credits).** `cvl_seo_serp` returns the live top
+10 Google results for one search in one country, with "People also ask" —
+the results-page reading rungs 2 and 3 need when no stored top 10 exists.
+It needs `seo:write` and buys the answer with the account's credits, inside
+the site's daily limit, with no per-call confirmation. Never call it free,
+and ask the owner before running more than a few. The answer is stored, so
+the same search again uses no credits unless `refresh: true`.
 
 ## Tools
 
@@ -241,6 +184,7 @@ the daily limit, with no per-call confirmation, so ask the owner first.
 | `cvl_seo_set_competitor_state` | `POST https://convertlyft.com/api/tools/cvl_seo_set_competitor_state` | `seo:write` |
 | `cvl_seo_run_flow` | `POST https://convertlyft.com/api/tools/cvl_seo_run_flow` | `seo:write` |
 | `cvl_seo_make_brief` | `POST https://convertlyft.com/api/tools/cvl_seo_make_brief` | `seo:write` |
+| `cvl_seo_serp` | `POST https://convertlyft.com/api/tools/cvl_seo_serp` | `seo:write` |
 | `cvl_usage` | `GET https://convertlyft.com/api/tools/cvl_usage` | `reports:read` |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST.

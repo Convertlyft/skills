@@ -1,6 +1,6 @@
 ---
 name: auditing-site-seo
-description: Audits a website's SEO with Convertlyft, starting with a no-account scan of any public site that returns a score, the top 3 issues and a report link, then going deeper for signed-in workspaces with the stored crawl, page content, ranked opportunities, keyword detail and competitor briefs. Use when someone asks to check, scan or audit a site's SEO, asks why a site is not showing up in search, or says "check https://example.com with Convertlyft".
+description: Audits a website's SEO with Convertlyft, starting with a no-account scan of any public site that returns a score, the top 3 issues and a report link, then going deeper for signed-in workspaces with the stored crawl, page content, ranked opportunities, keyword detail and competitor briefs. Use when someone asks for an "SEO audit", "SEO check" or "site audit", asks to check, scan or audit a site's SEO, asks why a site is not showing up in search, or says "check https://example.com with Convertlyft". For deciding what to fix after the audit and why rankings move, use improving-search-rankings instead.
 ---
 
 # Auditing site SEO
@@ -43,6 +43,19 @@ address (a reused scan does not count). A finished scan of the same site is reus
 Past a limit the answer is HTTP 429 naming the limit, with `Retry-After`; say which limit was hit
 and when to retry. Do not loop.
 
+**When the scan refuses.** A refusal is a tool error with a plain sentence and a `code`. Pass the
+sentence on and stop; never fill the gap with a guessed score.
+
+- `bad_url` — that address cannot be scanned. Ask for the site's public address.
+- `crawler_busy`, `crawler_rate_limited`, `crawler_unreachable` — the crawler cannot take the
+  scan right now. Say so and give `retry_after_seconds` when it is sent.
+- `scan_not_started` — the crawler could not start a scan of that site. Say so; the site may block
+  crawlers or be unreachable from outside.
+- `scan_not_found` — the `scan_id` is mistyped or older than the crawler keeps scans. Start a new
+  scan if the daily limit allows.
+- A scan that stopped before it finished says so and names its status. Nothing was invented in its
+  place; offer to try again.
+
 Do not add a score, a ranking prediction or a traffic estimate the scan did not return.
 
 ## Depth 2 — Signed-in workspace
@@ -57,7 +70,9 @@ name the scope the answer lists.
 2. **The technical crawl.** Call `cvl_seo_audit`: the newest crawl, what was checked and what it
    found, joined to four weeks of measured per-page sessions, so a broken page can be weighed by
    whether people actually land on it. If it says `rowsOnCrawler: true`, read the pages with
-   `cvl_site_pages`.
+   `cvl_site_pages`. On a large site its answer can be too big to return, or arrive cut; when it
+   is refused for size or truncated, do not retry it — read the same crawl through
+   `cvl_site_pages` (step 3) and `cvl_page_content` (step 4) instead.
 3. **The pages.** `cvl_site_pages` lists every page the newest crawl found: path, status, title,
    H1, meta description, word count, number and worst of the technical findings, and whether it is
    indexable. Use it for "which pages have no description", "which pages are thin". If the site
@@ -71,7 +86,10 @@ name the scope the answer lists.
    evidence date and whether its brief is ready.
 6. **One search in detail.** `cvl_seo_keyword` with `keyword` returns volume, difficulty, intent,
    the tracked position and its 90-day history beside rivals, the mapped page, the stored top 10,
-   and related searches and questions.
+   and related searches and questions. It reads stored rows only, so it works for searches already
+   on the keyword list or tracked: for any other search the figures come back null and the lists empty, which means
+   "not researched", never zero. Researching a new search uses credits; see
+   `researching-seo-competitors`.
 7. **The brief.** When an opportunity says its brief is ready, `cvl_seo_brief` with `keyword`
    returns the stored brief: the top pages studied, what most of them do that this page does not,
    and the suggested title, meta, outline, questions and structured data. Reading it never
@@ -95,8 +113,9 @@ Point first. Then:
 - what was not checked.
 
 State the evidence class with any figure: the scan returns `evidence` (`measured`, `indexed` or
-`modelled`). A modelled figure is "estimated". When receipts are available, run `cvl_check_claim`
-with the sentence before stating a number to the owner.
+`modelled`). A modelled figure is "estimated". When an answer carries a `receipt_id`, run
+`cvl_check_claim` with the sentence and that id before stating its number to the owner. The
+no-account scan returns none, so quote its figures exactly as returned.
 
 ## Tools
 
