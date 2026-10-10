@@ -203,3 +203,67 @@ Structure every finding as: observation (what the reading shows), mechanism
 verification (which reading should move after the fix, and in which
 direction). If the owner implements the fix, the follow-up is to re-check that
 reading — that closes the loop and keeps you honest.
+
+## Evidence: what each reading supports
+
+- **Traffic summary** — how many people, on what devices, from where,
+  landing on which pages. Supports "where" and "who". Cannot say why anyone
+  left.
+- **Funnels** — which step loses the most people. Cannot say why; pair with
+  replays of people who dropped at that step.
+- **Heatmaps** — where clicks cluster, how far people scroll, dead clicks on
+  things that are not clickable, bursts of frustrated clicking. Supports
+  "people never see the section below this point" and "people expect this to
+  be clickable". Cannot reveal intent or satisfaction.
+- **Replays** — the closest thing to "why": people hesitating, backtracking,
+  fighting a form. Strongest evidence for a struggle, weakest for frequency.
+- **Errors** — what actually broke, for whom. The only reading that proves
+  "broken". Check it before any design theory about a sudden drop.
+- **Search rankings** — which searches bring people in, so whether the
+  landing page answers the question they arrived with.
+- **Ad data** — which paid messages people clicked. If the ad promises one
+  thing and the page leads with another, the fix is message match, not a
+  redesign.
+
+## What cannot be concluded without evidence
+
+- Never predict a numeric outcome ("this will lift conversions by …"). Say
+  what the change removes or enables, and how to verify it.
+- Never blame design for a drop without first ruling out new errors, a
+  tracking change, a traffic-mix shift (ads paused, rankings moved) and
+  seasonality.
+- A cold zone on a heatmap means unseen or unwanted; you cannot tell which
+  without replays or a copy test.
+- One replay proves a problem exists, not that it is common.
+- "It converted better after the change" is not proof of cause unless
+  everything else held still; only a controlled experiment isolates cause.
+- Half-remembered industry benchmarks are fabrication. Compare the site with
+  its own history, or say no baseline exists.
+
+## Gotchas
+
+- **Heatmaps mix layouts.** Desktop and mobile place elements differently;
+  read position claims only off a single-device heatmap.
+- **There is no single fold.** Screen heights vary. Treat "above the fold" as
+  "the first screenful on a typical phone" and check the scroll reading.
+- **Carousels, tabs and accordions hide content.** A healthy scroll reading
+  can coexist with content nobody opens.
+- **Dead clicks flag phantom affordances.** Clicks on images, headings or
+  cards that do nothing: make them clickable or make them look less so.
+- **Lab speed is not felt speed.** A decent score can coexist with a page
+  that feels slow. Judge the felt sequence in a replay.
+- **The owner cannot see their own page.** Familiarity erases confusion; the
+  funnel and replays arbitrate.
+- **Fixing the wrong step.** The cause of a leak is often the page before it
+  (a promise the next page breaks, a price revealed late). Read one step
+  upstream.
+
+## Delivering a critique — the full shape
+
+Lead with the single highest-severity finding and its evidence. Then a short
+ranked list — for each item: what you observed, which reading shows it, what
+to change, and how to verify it worked (the funnel step recovering, dead
+clicks disappearing, the error count falling to zero). Qualify confidence
+honestly: "confirmed by errors" beats "suggested by one replay" beats
+"hypothesis — needs replays to confirm". One primary recommendation, never a
+wall of twenty tips.

@@ -135,12 +135,19 @@ modelled figure is called an estimate.
 - `cvl_seo_keyword` — one search in detail: volume, difficulty, intent, the
   tracked position and history, the mapped page, the stored top 10, and
   related searches and questions — the raw material for Step 1 and the
-  questions section.
+  questions section. Stored rows only: it works for searches already on the
+  keyword list or tracked. For any other search every figure is null, which
+  means "not researched", never zero; check `cvl_seo_keywords` for what is
+  on file.
 - `cvl_seo_keywords` — research already on file; a search with no volume
   carries null, never 0.
 - `cvl_seo_brief` — the stored brief for one search: what most top pages do
   that this page does not, keyword groups, and a suggested title, meta,
   outline, questions and structured data. Reading it never generates one.
+  A word-count line in the brief (a length band most top pages share) is a
+  signal about how deep the results go, not a target: cover what the reader
+  needs, then stop. Never pad a page to reach the band, and never cut a
+  complete answer to fit it.
   `cvl_seo_make_brief` makes a new brief at once with the account's credits
   inside the daily limit (no per-call confirmation, so ask the owner first); a
   brief from the last 7 days is returned as it is unless `force` is true.

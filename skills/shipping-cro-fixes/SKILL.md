@@ -56,6 +56,9 @@ Once the owner confirms the change is live:
 3. Only on a clear yes, call `cvl_change_apply` with the same `note` and `marked_at` and a fresh
    `idempotency_key`. A retry with the same key returns the same single marker, never a second
    one, so reuse the key if the call fails mid-way.
+   What it records is a timeline marker in Convertlyft: the note and the time the change went
+   live. It does not edit the site, and `cvl_change_undo` removes only the marker, never the
+   change itself. Say it that way to the owner: "recorded", never "applied to your site".
 4. Keep the proposal id it returns. That id is what `cvl_change_undo` takes.
 
 Both calls need `changes:write`, which is an opt-in scope. On 403 `insufficient_scope`, say the
@@ -73,8 +76,9 @@ The marker exists so the impact can be read against it. When the owner comes bac
 - A before-and-after comparison is not a controlled test. Say so. Other changes, seasons and
   campaigns move the same numbers.
 - Too little traffic after the marker means "too early to tell", with the real counts.
-- Before stating any number to the owner, run `cvl_check_claim` with the sentence and the receipt
-  ids of the results it came from. Use the corrected sentence if it returns one.
+- Before stating a number from an answer that carries a `receipt_id`, run `cvl_check_claim` with
+  the sentence and that id, and use the corrected sentence if it returns one. Write results carry
+  no receipt; quote a figure from an answer with none exactly as returned.
 
 ## Step 5 — Undo, if the owner asks
 

@@ -55,8 +55,9 @@ Rules:
 - State the window and, where small, the sample. One day of low traffic swings easily; say
   "too few visits to read" rather than reading a swing as a trend.
 - State the evidence class (`measured`, `indexed`, `modelled`; modelled means "estimated").
-- When receipts are available, run `cvl_check_claim` with each sentence that carries a number
-  before sending the brief, and use any corrected sentence it returns.
+- For each sentence whose number comes from an answer that carries a `receipt_id`, run
+  `cvl_check_claim` with the sentence and that id before sending the brief, and use any
+  corrected sentence it returns. A number from an answer with none is quoted exactly as returned.
 - For "why" questions the brief raises, hand off: friction to `finding-ux-friction`, a drop to
   `diagnosing-conversion-drops`, errors to `fixing-production-errors`.
 

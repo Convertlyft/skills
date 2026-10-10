@@ -165,9 +165,10 @@ what visitors do with it, instead of guesses.
    heatmap shows where people click, not why.
 4. Check which landing pages convert with `cvl_page_conversions` before
    choosing which page's copy to work on first. Attribution is the entry page.
-5. Before telling the owner any figure, run `cvl_check_claim` with the sentence
-   and the receipt ids from the results. Quote the sample size and the window
-   with every number.
+5. Before telling the owner a figure from an answer that carries a
+   `receipt_id`, run `cvl_check_claim` with the sentence and that id; an
+   answer with none cannot be checked this way, so quote its figure exactly as
+   returned. Quote the sample size and the window with every number.
 
 No account: `cvl_public_seo_scan` reads any public site and returns its top 3
 issues, which can include title and heading problems — a starting point for

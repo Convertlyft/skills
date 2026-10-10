@@ -91,3 +91,13 @@ When testing is out of reach, work down this ladder instead:
 - Re-read the same funnel and the same segments after at least one full traffic cycle, and compare the traffic mix before claiming anything.
 - Watch the guardrails: a conversion lift that raises refunds or support contacts is not a win.
 - Record the outcome either way, in the same log as the hypothesis. The log is the asset; individual wins are just entries in it.
+
+## Hypothesis template
+
+> Because we observed [specific reading and what it showed], we believe
+> [specific change] on [page or step] will [expected behaviour change] for
+> [segment], which should appear as [metric movement in a named reading]. We
+> will review after [a defined traffic period].
+
+If the "because" clause names no reading, it is a guess. Guesses are allowed,
+but they go to the bottom of the list and are labelled as guesses.

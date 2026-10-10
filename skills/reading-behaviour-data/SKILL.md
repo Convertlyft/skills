@@ -22,9 +22,12 @@ repository root). The page-analysis framework lives in
    visits clicked the menu between `<from>` and `<to>`" — never "people love the
    menu".
 2. **A heatmap under 30 clicks is not enough data.** Say "not enough data yet"
-   with the real count, and stop. Do not read shapes into a thin map. This is
-   the threshold `cvl_heatmap` uses: below it, it returns `not_enough_data`
-   with the real count and draws nothing.
+   with the real count. Do not read shapes into a thin map. This is the
+   threshold `cvl_heatmap` uses: below it, `status` is `not_enough_data` and no
+   picture is drawn, but the data still comes back (top elements, scroll reach,
+   rage and dead clicks, the sample). Those rows are real counts: quote one only
+   as a count with its sample ("<n> of <total> clicks"), never as a pattern or a share
+   to act on.
 3. **Where, not why.** A heatmap or a click count is a location. The reason is a
    hypothesis until a replay shows the mechanism or a test shows the effect.
 4. **Check a number before stating it.** When the tools returned receipt ids,
@@ -144,7 +147,9 @@ objections and friction, in that order of impact.
 When describing a `cvl_heatmap` result:
 
 1. State `status`. If `not_enough_data`, report the real click count and the
-   minimum, and stop.
+   minimum, and do not walk the elements as a finding: there is no picture,
+   and the rows that still come back are too thin to rank. Quote one only as a
+   raw count with its sample if the person asks.
 2. State the page, the device and whether the device was asked for or chosen
    because it had more visits (`device_chosen_by`), the window, and the sample.
 3. Walk the top elements in rank order. The picture numbers the top 5 to match
@@ -173,7 +178,8 @@ sign-in. Read-only: none of them changes the site.
   `cvl_replays_list` or `cvl_sessions_search` to find recordings and session ids.
 - Check the journey with `cvl_funnel_report` and `cvl_paths`.
 - Check errors on a suspect page with `cvl_issues_list`.
-- Before stating any number to a person, run `cvl_check_claim`.
+- Before stating a number from an answer that carries a `receipt_id`, run
+  `cvl_check_claim` with the sentence and that id.
 
 ## Tools
 

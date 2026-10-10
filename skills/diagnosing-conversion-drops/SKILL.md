@@ -42,7 +42,9 @@ the figures do not show.
 
 **Is it the tag, not the visitors?** If sessions fell along with conversions, call
 `cvl_install_verify` and `cvl_live_feed` before anything else. A tag that went quiet
-looks like a traffic collapse.
+looks like a traffic collapse. If the tag is missing, partial, or the conversion was never
+tracked, stop here and hand off to `measuring-with-analytics`: a drop cannot be diagnosed
+from figures that were never recorded.
 
 ## Step 2 — Locate it
 
@@ -54,7 +56,8 @@ Work down this list and stop at the first place the drop concentrates. Use the s
    fired on. Compare with the previous window by calling it again with that window's
    dates. A page whose converted sessions fell while its sessions held is a lead.
 2. **The funnel** — `cvl_funnels_list` for the funnel ids (never guess one), then
-   `cvl_funnel_report` for the funnel that ends in the conversion, both windows. Counts
+   `cvl_funnel_report` with `funnel_id` set to the id of the steps funnel that ends in the
+   conversion, both windows (a `stage_model` id is not a steps funnel). Counts
    are people, not visits. Name the step where the loss grew. Before calling an empty
    stage a loss, check `funnel_wiring` in `cvl_workspaces_list` — an unmapped stage is
    not a stage with no traffic. A window is at most 90 days.
@@ -88,8 +91,10 @@ Shape:
 
 Rules:
 
-- Every numeral comes from a tool result. Before stating one, run `cvl_check_claim` with
-  the sentence and the receipt ids — it catches a real number on the wrong figure.
+- Every numeral comes from a tool result. Before stating one from an answer that carries a
+  `receipt_id`, run `cvl_check_claim` with the sentence and that id — it catches a real
+  number on the wrong figure. An answer with no `receipt_id` cannot be checked this way;
+  quote its figure exactly as returned, with its window.
 - Small samples: if a page or step has too few sessions to compare, say "too few visits
   to tell" with the count, rather than a percentage.
 - Never say "no effect" or "this caused it". Say "this changed in the same window".

@@ -115,6 +115,17 @@ Then hand off by the question:
 | "Who am I competing with in search" | `researching-seo-competitors` |
 | "What happened on my site today / since yesterday" | `writing-daily-site-briefs` |
 | "We fixed it / ship a change and measure it" | `shipping-cro-fixes` |
+| "Why don't people buy / improve this landing page, form or checkout / should I A/B test" | `optimizing-conversions` |
+| "Does this page look right / is it confusing / review the design or mobile layout" | `reviewing-ux-ui` |
+| "Is my tracking right / install GA4 / set up events or UTMs / two tools disagree" | `measuring-with-analytics` |
+| "My Google or Meta ads / ad spend / cost per lead / ROAS" | `running-paid-ads` |
+| "Write or rewrite the headline, page, ad or email" | `writing-copy` |
+| "Why do people buy / social proof, urgency, pricing psychology" | `applying-marketing-psychology` |
+| "Why don't I rank / organic traffic fell / what to fix for search" | `improving-search-rankings` |
+| "Research one competitor / their positioning, offer or a SWOT" | `profiling-competitors` |
+| "Write or plan an article, guide or landing-page content" | `planning-content` |
+| "Schema markup / structured data / rich results" | `adding-schema-markup` |
+| "What should I fix first / an overall plan across pages, search and ads" | `planning-improvements` |
 
 ## Connecting
 
@@ -132,8 +143,10 @@ Then hand off by the question:
 
 ## Honesty
 
-- Every number comes from a tool result, with its window and sample. Before stating one
-  to the person, run `cvl_check_claim` with the sentence and the receipt ids you were given.
+- Every number comes from a tool result, with its window and sample. When the answer
+  carries a `receipt_id`, run `cvl_check_claim` with the sentence and that id before
+  stating the number. Answers with no `receipt_id` (writes, the no-account scan, some
+  reads) cannot be checked this way: quote their figures exactly as returned.
 - A figure whose `state` is not `ok` does not exist for that workspace or range — it is
   never zero.
 - Say the limit in the same breath: "I can see X. I can't see Y yet, because Z."

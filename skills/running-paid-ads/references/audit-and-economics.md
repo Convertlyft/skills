@@ -168,3 +168,41 @@ The alternative to spending is never "nothing": fix the page (evidence
 already in hand from behaviour readings), build the organic position
 rank data shows is close, or bank the budget until a real test is
 affordable.
+
+## Reading cost metrics - quick rules
+
+- **CPA and CPL mean something only against value.** A cost per lead that
+  sounds high can be excellent for a high-ticket service; a cheap lead that
+  never closes is pure waste.
+- **The ROAS floor comes from gross margin.** A thin-margin business needs a
+  much higher return on ad spend to break even than a fat-margin one. Work it
+  out from their numbers.
+- **Small counts are noise.** A handful of conversions cannot support a
+  verdict on a campaign, an ad or a keyword. Say plainly when the sample is
+  too small.
+- **Recent days look worse.** Conversions are reported with a lag and
+  credited back to the click date, so the last few days of any report are
+  incomplete. Never judge a change on the days right after it, and put an
+  "as of" date on every comparison.
+- **Platform-reported conversions are claims, not ground truth.** Each
+  platform credits itself by its own rules and will disagree with analytics
+  and with other platforms. Gaps are usually definition differences; large or
+  growing gaps deserve a look.
+- **Blended numbers hide brand subsidy.** Brand-keyword campaigns convert
+  people who already searched for the business by name. Split brand from
+  non-brand before judging anything.
+
+## Budget pacing - quick rules
+
+- Platforms pace over a period, not a day; one expensive day is not evidence
+  of a problem.
+- "Limited by budget" and "limited by rank" are different problems.
+  Impression share lost to budget means demand exceeds funding; lost to rank
+  means ads lose auctions — a quality and bid problem more budget does not
+  fix.
+- Spend spread across many campaigns or ad sets starves each of the
+  conversion signal automated bidding needs. Fewer, better-funded campaigns
+  beat many starved ones.
+- Smart bidding needs a steady stream of conversions. With only a handful a
+  month, expect erratic delivery; consider simpler bidding or an honestly
+  labelled higher-volume proxy conversion.

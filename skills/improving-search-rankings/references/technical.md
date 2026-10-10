@@ -160,3 +160,11 @@ replays corroborate experience problems (broken pages, rage clicks during
 load) but cannot show what Googlebot saw. When Search Console access is not
 available, say the diagnosis is provisional and name the exact report that
 would settle it.
+
+## With Convertlyft
+
+Signed in: `cvl_seo_audit` is the newest crawl's technical findings joined to
+measured sessions; `cvl_site_pages` lists every crawled page with its status,
+indexable flag and findings; `cvl_page_content` shows one page's own words and
+findings. None of them is Search Console: they show what Convertlyft's crawler
+saw, not what Google indexed.
