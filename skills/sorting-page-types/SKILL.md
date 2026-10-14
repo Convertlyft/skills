@@ -166,7 +166,7 @@ A jewellery shop asks which products people add to the cart most.
    `measuring-with-analytics`. It is not a measured zero.
 4. Report each product as people who added out of people who viewed, both
    numbers, with the window. Rank by people who added; a page with a handful
-   of viewers is "too few visits to tell", with the count.
+   of viewers is "too few people to tell", with the count.
 
 ### Worked example — does the blog bring buyers
 
