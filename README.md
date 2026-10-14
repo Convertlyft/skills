@@ -12,8 +12,8 @@ This repository is the master copy of the skills.
 
 | Client | How |
 |---|---|
-| Claude Code | `/plugin marketplace add Convertlyft/skills`, then `/plugin install convertlyft@convertlyft`. Adds the MCP server, every skill, and a hook that asks you before `cvl_change_apply` or `cvl_operator_run` runs. |
-| Codex | `codex plugin marketplace add Convertlyft/skills`, then install the `convertlyft` plugin. Reads `.codex-plugin/plugin.json`. |
+| Claude Code | `/plugin marketplace add Convertlyft/skills`, then `/plugin install convertlyft@convertlyft`. Adds the MCP server, every skill, and a hook that asks you before `cvl_change_apply` or `cvl_operator_run` runs. Sign in with `/mcp` → `plugin:convertlyft:convertlyft` → Authenticate. |
+| Codex | `codex plugin marketplace add Convertlyft/skills`, then `codex plugin add convertlyft@convertlyft`. Sign in with `codex mcp login convertlyft`. Reads `.codex-plugin/plugin.json`. |
 | Cursor | Dashboard → Plugins & MCPs → Add Marketplace → Import from Repo, with this repo. Reads `.cursor-plugin/`. |
 | Any agent with Agent Skills (Codex, Cursor, Gemini CLI, Copilot and others) | `npx skills add Convertlyft/skills` — skills only; add the MCP server from [convertlyft.com/developers](https://convertlyft.com/developers). |
 | From the website | `npx skills add https://convertlyft.com` — the same skills, pinned to a commit of this repo, from `convertlyft.com/.well-known/skills/index.json`. |
