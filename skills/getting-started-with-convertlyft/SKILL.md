@@ -125,6 +125,7 @@ Then hand off by the question:
 | "Research one competitor / their positioning, offer or a SWOT" | `profiling-competitors` |
 | "Write or plan an article, guide or landing-page content" | `planning-content` |
 | "Schema markup / structured data / rich results" | `adding-schema-markup` |
+| "Sort my pages / which pages need me / how do my product pages or blog posts do" | `sorting-page-types` |
 | "What should I fix first / an overall plan across pages, search and ads" | `planning-improvements` |
 
 ## Connecting

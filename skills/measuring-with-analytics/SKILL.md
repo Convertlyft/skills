@@ -207,7 +207,8 @@ holds.
 
 Hand-offs, once the measurement is sound: a drop in conversions goes to
 `diagnosing-conversion-drops`; "where do people get stuck" goes to
-`finding-ux-friction`; ad tracking and spend go to `running-paid-ads`.
+`finding-ux-friction`; ad tracking and spend go to `running-paid-ads`; figures by
+kind of page (product pages, blog posts, service pages) go to `sorting-page-types`.
 
 ## Tools
 
