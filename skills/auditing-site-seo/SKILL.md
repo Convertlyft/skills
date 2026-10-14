@@ -131,7 +131,7 @@ no-account scan returns none, so quote its figures exactly as returned.
 | `cvl_seo_opportunities` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
 | `cvl_seo_keyword` | `GET https://convertlyft.com/api/tools/cvl_seo_keyword` | `reports:read` |
 | `cvl_seo_brief` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
-| `cvl_run_crawl` | none (MCP only) | `operator:run` |
+| `cvl_run_crawl` | none (MCP only) | `crawl:run` |
 | `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST. The no-account scan is open over MCP only; its REST twin asks for a token.

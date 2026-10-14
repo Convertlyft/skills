@@ -69,6 +69,22 @@ page: [references/rules-and-evidence.md](references/rules-and-evidence.md).
 4. How to tell whether it worked: which reading to check, and over what
    window (weeks, not days).
 
+**Changes for one page and one search** ("what should I change on my homepage
+to rank for X") — this order, and stop when the five are found:
+
+1. `cvl_seo_serp` for the search: who holds the page, their titles and
+   snippets, the map pack, and `this_site` (where the page sits, or null).
+2. `cvl_call_read` with `cvl_page_content` for the page: its title, meta
+   description, H1, text and crawl findings.
+3. `cvl_seo_rank` or `cvl_seo_keyword` for the tracked position and its date,
+   when the page is not on page one.
+4. Each change names the observation it rests on, quoted: the rival's title,
+   the page's current H1, the crawl finding. A change with no observation is
+   general advice — label it so, or leave it out.
+5. A map pack above the results means the business profile and reviews
+   compete for the same clicks: say so as a finding, and say Convertlyft
+   cannot see the profile itself.
+
 ## Reference files
 
 - `references/technical.md` — crawling, indexing, rendering, JavaScript-heavy
@@ -166,6 +182,7 @@ the same search again uses no credits unless `refresh: true`.
 | `cvl_seo_audit` | `GET https://convertlyft.com/api/tools/cvl_seo_audit` | `reports:read` |
 | `cvl_site_pages` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
 | `cvl_page_content` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
+| `cvl_call_read` | none (MCP only) | none |
 | `cvl_seo_opportunities` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
 | `cvl_seo_keyword` | `GET https://convertlyft.com/api/tools/cvl_seo_keyword` | `reports:read` |
 | `cvl_seo_keywords` | `GET https://convertlyft.com/api/tools/cvl_seo_keywords` | `reports:read` |

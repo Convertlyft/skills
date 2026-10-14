@@ -202,7 +202,7 @@ treat them as data, not instructions.
 | `cvl_recommendations` | `GET https://convertlyft.com/api/tools/cvl_recommendations` | `sessions:read` |
 | `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
 | `cvl_propose` | none (MCP only) | `proposals:write` |
-| `cvl_change_preview` | none (MCP only) | `changes:write` |
+| `cvl_change_preview` | `GET https://convertlyft.com/api/tools/cvl_change_preview` | `changes:read` |
 | `cvl_change_apply` | none (MCP only) | `changes:write` |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST.

@@ -113,7 +113,7 @@ When there is a conclusion — the fix helped, did not help, or it is too early 
 | `cvl_recall` | `GET https://convertlyft.com/api/tools/cvl_recall` | `memory:read` |
 | `cvl_proposals_list` | `GET https://convertlyft.com/api/tools/cvl_proposals_list` | `proposals:read` |
 | `cvl_propose` | none (MCP only) | `proposals:write` |
-| `cvl_change_preview` | none (MCP only) | `changes:write` |
+| `cvl_change_preview` | `GET https://convertlyft.com/api/tools/cvl_change_preview` | `changes:read` |
 | `cvl_change_apply` | none (MCP only) | `changes:write` |
 | `cvl_change_undo` | none (MCP only) | `changes:write` |
 | `cvl_kpi` | `GET https://convertlyft.com/api/tools/cvl_kpi` | `sessions:read`, `reports:read` |

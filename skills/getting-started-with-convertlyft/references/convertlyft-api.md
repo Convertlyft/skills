@@ -20,7 +20,7 @@ Timestamps: strict ISO 8601 with a zone.
 | `cvl_kpi` | Key figures for a window | reads | `GET https://convertlyft.com/api/tools/cvl_kpi` | `sessions:read`, `reports:read` |
 | `cvl_explain` | How is this figure defined? | reads | `GET https://convertlyft.com/api/tools/cvl_explain` | `sessions:read`, `reports:read` |
 | `cvl_check_claim` | Check a claim against its receipts | reads | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
-| `cvl_change_preview` | Preview a change marker | reads | none (MCP only) | `changes:write` |
+| `cvl_change_preview` | Preview a change marker | reads | `GET https://convertlyft.com/api/tools/cvl_change_preview` | `changes:read` |
 | `cvl_change_apply` | Mark a change | writes | none (MCP only) | `changes:write` |
 | `cvl_change_undo` | Undo a change marker | writes | none (MCP only) | `changes:write` |
 | `cvl_recall` | What this workspace already knows | reads | `GET https://convertlyft.com/api/tools/cvl_recall` | `memory:read` |
@@ -29,7 +29,7 @@ Timestamps: strict ISO 8601 with a zone.
 | `cvl_proposals_list` | What is queued for the owner to decide | reads | `GET https://convertlyft.com/api/tools/cvl_proposals_list` | `proposals:read` |
 | `cvl_propose` | Put a fix in front of the owner | writes | none (MCP only) | `proposals:write` |
 | `cvl_operator_run` | Ask for today’s operator run | writes | `POST https://convertlyft.com/api/operator/run` | `operator:run` |
-| `cvl_sessions_summary` | Sessions, all time | reads | `GET https://convertlyft.com/api/tools/cvl_sessions_summary` | `sessions:read` |
+| `cvl_sessions_summary` | Sessions and their channels | reads | `GET https://convertlyft.com/api/tools/cvl_sessions_summary` | `sessions:read` |
 | `cvl_issues_list` | JavaScript errors, grouped | reads | `GET https://convertlyft.com/api/tools/cvl_issues_list` | `issues:read` |
 | `cvl_replays_list` | Session recordings held | reads | `GET https://convertlyft.com/api/tools/cvl_replays_list` | `replays:read` |
 | `cvl_connections_list` | Connected accounts | reads | `GET https://convertlyft.com/api/tools/cvl_connections_list` | `workspaces:read` |
@@ -48,7 +48,7 @@ Timestamps: strict ISO 8601 with a zone.
 | `cvl_recommendations` | What established practice says about this site | reads | `GET https://convertlyft.com/api/tools/cvl_recommendations` | `sessions:read` |
 | `cvl_page_conversions` | Which pages the converted sessions came from | reads | `GET https://convertlyft.com/api/tools/cvl_page_conversions` | `sessions:read` |
 | `cvl_page_speed` | How fast each page is | reads | `GET https://convertlyft.com/api/tools/cvl_page_speed` | `sessions:read` |
-| `cvl_run_crawl` | Crawl this site | writes | none (MCP only) | `operator:run` |
+| `cvl_run_crawl` | Crawl this site | writes | none (MCP only) | `crawl:run` |
 | `cvl_site_pages` | The pages on this site | reads | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
 | `cvl_page_content` | What one page says | reads | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
 | `cvl_error_brief` | The fix brief for one error | reads | `GET https://convertlyft.com/api/tools/cvl_error_brief` | `issues:read` |
@@ -70,9 +70,10 @@ Timestamps: strict ISO 8601 with a zone.
 | `cvl_seo_add_keywords` | Add searches | writes | `POST https://convertlyft.com/api/tools/cvl_seo_add_keywords` | `seo:write` |
 | `cvl_seo_run_flow` | Run the SEO chain | writes | `POST https://convertlyft.com/api/tools/cvl_seo_run_flow` | `seo:write` |
 | `cvl_seo_make_brief` | Generate a competitor page brief | writes | `POST https://convertlyft.com/api/tools/cvl_seo_make_brief` | `seo:write` |
-| `cvl_public_seo_scan` | SEO scan of any public site (no account needed) | reads | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan` | none |
+| `cvl_seo_add_market` | Add a market | writes | `POST https://convertlyft.com/api/tools/cvl_seo_add_market` | `seo:write` |
+| `cvl_public_seo_scan` | SEO scan of any public site (no account needed) | writes | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan` | none |
 | `cvl_public_seo_scan_result` | The result of an SEO scan | reads | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan_result` | none |
-| `cvl_public_agent_readiness` | Can AI agents use this site? | reads | `GET https://convertlyft.com/api/tools/cvl_public_agent_readiness` | none |
+| `cvl_public_agent_readiness` | Can AI agents use this site? | writes | `GET https://convertlyft.com/api/tools/cvl_public_agent_readiness` | none |
 | `cvl_docs_search` | Search the Convertlyft docs | reads | `GET https://convertlyft.com/api/tools/cvl_docs_search` | none |
 | `cvl_replay_moment` | One moment of one visit | reads | `GET https://convertlyft.com/api/tools/cvl_replay_moment` | `replays:read`, `sessions:read` |
 | `cvl_funnel_report` | How many people got through a funnel | reads | `GET https://convertlyft.com/api/tools/cvl_funnel_report` | `reports:read` |
@@ -89,3 +90,5 @@ Timestamps: strict ISO 8601 with a zone.
 | `cvl_usage` | Usage and budget | reads | `GET https://convertlyft.com/api/tools/cvl_usage` | `reports:read` |
 | `cvl_search_tools` | Find a tool | reads | none (MCP only) | not in manifest |
 | `cvl_call_read` | Run a read tool | reads | none (MCP only) | not in manifest |
+| `cvl_skills_list` | List the Convertlyft skills | reads | none (MCP only) | not in manifest |
+| `cvl_skill_read` | Open a Convertlyft skill | reads | none (MCP only) | not in manifest |

@@ -12,6 +12,30 @@ on 401 see `getting-started-with-convertlyft`, on 403 `insufficient_scope` name 
 answer lists. For general SEO method, see `improving-search-rankings`; for a site-wide audit, see
 `auditing-site-seo`.
 
+## Who competes for one search (the quick answer)
+
+When the ask names one search ("who are my competitors for notary near me"), the
+live results page answers it. Eight calls is plenty.
+
+1. `cvl_seo_serp` for the search (a stored answer is free; `dry_run: true`
+   shows the cost first). Its `this_site` says where this site sits, or
+   `position: null` when it is not on page one; `cvl_seo_rank` gives the
+   tracked position below page one, with its date.
+2. List who holds the page: the map pack in `features` (businesses by name,
+   rating, reviews — it sits above the organic results) and each organic
+   result. Label each one: a business like this one, a directory, a government
+   or official page, or social. A government page or a directory takes a place
+   but is not a rival to copy.
+3. For the 3 to 5 business rivals, put their `title` and `description` (the
+   snippet) beside this site's own (`cvl_call_read` with `cvl_page_content`)
+   and say what they promise that this page does not. Domain size
+   (`cvl_seo_domain_overview`, credits) only if the owner asks; say
+   "estimated".
+4. Report a table — place, who, type, title and snippet — then this site's
+   position and the gap. The stored competitor list (`cvl_seo_competitors`)
+   is the long-run view across every tracked search: name it separately,
+   never merge it into the live page.
+
 ## Step 0 — Is the data there?
 
 Call `cvl_seo_flow`. It says whether keywords, competitors, opportunities and briefs are done,
@@ -172,6 +196,7 @@ Never invent a traffic estimate, a "rank in N weeks" promise or a figure the too
 | `cvl_seo_keyword` | `GET https://convertlyft.com/api/tools/cvl_seo_keyword` | `reports:read` |
 | `cvl_seo_brief` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
 | `cvl_page_content` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
+| `cvl_call_read` | none (MCP only) | none |
 | `cvl_seo_rank` | `GET https://convertlyft.com/api/tools/cvl_seo_rank` | `reports:read` |
 | `cvl_seo_keywords` | `GET https://convertlyft.com/api/tools/cvl_seo_keywords` | `reports:read` |
 | `cvl_seo_backlinks` | `GET https://convertlyft.com/api/tools/cvl_seo_backlinks` | `reports:read` |

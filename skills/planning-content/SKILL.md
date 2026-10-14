@@ -15,6 +15,38 @@ experience on a topic, the piece cannot invent them. Ask instead: "To make
 this stronger than what already ranks, is there a result, a number from your
 own work, or a customer example you can share?"
 
+## The quick job — one page's title, meta description or opening
+
+When the ask is a title tag, a meta description or an opening paragraph for
+one existing page, skip Steps 1 to 3 and do this. Five reads at most.
+
+1. **The page today.** `cvl_call_read` with
+   `{"name": "cvl_page_content", "arguments": {"url": "<the page>"}}`: the
+   current title, meta description, H1 and text.
+2. **The fact sheet.** Before drafting, list every claim the copy may use,
+   each copied word for word from the page: prices ("from $49"),
+   inclusions, turnaround times, years, licences, ways to apply. A promise
+   that is not on the sheet is not written: no "same day", "24/7", "fast",
+   "entirely online", "without leaving home", "skip the queue", "secure",
+   "best" or "trusted" unless the page itself says it. To add one, ask the
+   owner for it in one sentence.
+3. **The results page.** `cvl_seo_serp` for the search (stored answers are
+   free; `dry_run: true` shows the cost first). Read every rival's `title`
+   and `description` (the snippet people see), the map pack in `features`
+   (businesses listed by name), and `this_site`: where the page sits now, or
+   `position: null` when it is not on page one.
+4. **Draft against them.**
+   - Title: the search as people type it first, then the strongest fact from
+     the sheet. 50–60 characters, so Google does not cut it.
+   - Meta description: 140–155 characters, one or two facts from the sheet
+     and the next step ("Book a free call"). Say what the rivals'
+     snippets do not.
+   - Opening paragraph: answer the search in the first sentence, then the
+     facts, then the next step. 50–90 words.
+5. **Check before handing it over.** Count the characters and say the count.
+   Mark each fact in the draft with the page line it came from. Anything
+   without a line comes out.
+
 ## Step 1 — Decide whether the piece should exist
 
 1. **Topic and target search.** One primary search per piece, plus close
@@ -176,6 +208,8 @@ enough data yet" when the rows are thin.
 | `cvl_seo_make_brief` | `POST https://convertlyft.com/api/tools/cvl_seo_make_brief` | `seo:write` |
 | `cvl_site_pages` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
 | `cvl_page_content` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
+| `cvl_call_read` | none (MCP only) | none |
+| `cvl_seo_serp` | `POST https://convertlyft.com/api/tools/cvl_seo_serp` | `seo:write` |
 | `cvl_seo_rank` | `GET https://convertlyft.com/api/tools/cvl_seo_rank` | `reports:read` |
 | `cvl_page_attention` | `GET https://convertlyft.com/api/tools/cvl_page_attention` | `sessions:read` |
 | `cvl_page_conversions` | `GET https://convertlyft.com/api/tools/cvl_page_conversions` | `sessions:read` |
