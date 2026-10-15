@@ -72,7 +72,10 @@ name the scope the answer lists.
    whether people actually land on it. If it says `rowsOnCrawler: true`, read the pages with
    `cvl_site_pages`. On a large site its answer can be too big to return, or arrive cut; when it
    is refused for size or truncated, do not retry it — read the same crawl through
-   `cvl_site_pages` (step 3) and `cvl_page_content` (step 4) instead.
+   `cvl_site_pages` (step 3) and `cvl_page_content` (step 4) instead. Issues the owner marked as
+   deliberate come back under `on_purpose` and are not counted; do not report them as problems.
+   Files a platform manages and the owner cannot change (Shopify's `/checkouts/` and web-pixel
+   paths blocked by its own robots.txt) are not flagged at all.
 3. **The pages.** `cvl_site_pages` lists every page the newest crawl found: path, status, title,
    H1, meta description, word count, number and worst of the technical findings, and whether it is
    indexable. Use it for "which pages have no description", "which pages are thin". If the site
@@ -84,7 +87,8 @@ name the scope the answer lists.
 5. **What to do next.** `cvl_seo_opportunities` is the ranked to-do list: searches competitors win
    and this site does not, related searches around money keywords, and Search Console near-misses —
    each mapped to a page or "new page" with one action (improve, create or track), the reason, the
-   evidence date and whether its brief is ready.
+   evidence date, whether its brief is ready, and the plan's `stage` (`new`, `draft-ready`,
+   `published`, `live` once a crawl read it on the page, `"ranking-moved"`).
 6. **One search in detail.** `cvl_seo_keyword` with `keyword` returns volume, difficulty, intent,
    the tracked position and its 90-day history beside rivals, the mapped page, the stored top 10,
    and related searches and questions. It reads stored rows only, so it works for searches already
@@ -95,6 +99,22 @@ name the scope the answer lists.
    returns the stored brief: the top pages studied, what most of them do that this page does not,
    and the suggested title, meta, outline, questions and structured data. Reading it never
    generates one.
+
+### Fixing an issue (writes, owner's yes first)
+
+- **Words on the page** — a missing, too long, too short or duplicate title, meta description or H1:
+  `cvl_seo_write_fix` with `issue` and `page_url` (one of the issue's sample pages) writes a new one
+  from the page's own words and saves it as a draft. It buys one model pass with credits; run it
+  with `dry_run: true` first and tell the owner the estimate. It refuses any other issue and says
+  how to fix it instead.
+- **Everything else** is technical: give the fix text `cvl_seo_audit` returns for that issue (with
+  `issue: "<id>"`) as steps the owner can pass to their developer. Never write a draft for it.
+- **On purpose** — when the owner says an issue is deliberate (a redirect they put there, a page kept
+  out of Google on purpose), `cvl_seo_issue_on_purpose` with `issue` stops counting it;
+  `on_purpose: false` counts it again. Free.
+
+Both need the opt-in `seo:write` scope. On 403 `insufficient_scope`, say nothing was changed and
+which scope it needs.
 
 ### Starting a crawl
 
@@ -132,6 +152,8 @@ no-account scan returns none, so quote its figures exactly as returned.
 | `cvl_seo_opportunities` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
 | `cvl_seo_keyword` | `GET https://convertlyft.com/api/tools/cvl_seo_keyword` | `reports:read` |
 | `cvl_seo_brief` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
+| `cvl_seo_write_fix` | `POST https://convertlyft.com/api/tools/cvl_seo_write_fix` | `seo:write` |
+| `cvl_seo_issue_on_purpose` | `POST https://convertlyft.com/api/tools/cvl_seo_issue_on_purpose` | `seo:write` |
 | `cvl_run_crawl` | none (MCP only) | `crawl:run` |
 | `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
 
