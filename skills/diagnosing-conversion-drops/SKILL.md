@@ -55,6 +55,8 @@ Work down this list and stop at the first place the drop concentrates. Use the s
    page people landed on. Attribution is the entry page, not the page the purchase
    fired on. Compare with the previous window by calling it again with that window's
    dates. A page whose converted sessions fell while its sessions held is a lead.
+   To see whether one kind of page (say, every product page) carries the drop, see
+   `sorting-page-types`.
 2. **The funnel** — `cvl_funnels_list` for the funnel ids (never guess one), then
    `cvl_funnel_report` with `funnel_id` set to the id of the steps funnel that ends in the
    conversion, both windows (a `stage_model` id is not a steps funnel). Counts

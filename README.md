@@ -12,7 +12,7 @@ This repository is the master copy of the skills.
 
 | Client | How |
 |---|---|
-| Claude Code | `/plugin marketplace add Convertlyft/skills`, then `/plugin install convertlyft@convertlyft`. Adds the MCP server, every skill, and a hook that asks you before `cvl_change_apply` or `cvl_operator_run` runs. Sign in with `/mcp` → `plugin:convertlyft:convertlyft` → Authenticate. |
+| Claude Code | `/plugin marketplace add Convertlyft/skills`, then `/plugin install convertlyft@convertlyft`. Adds the MCP server, every skill, and a hook that asks you before `cvl_change_apply`, `cvl_operator_run`, `cvl_set_page_type` or `cvl_remove_page_type_rule` runs. Sign in with `/mcp` → `plugin:convertlyft:convertlyft` → Authenticate. |
 | Codex | `codex plugin marketplace add Convertlyft/skills`, then `codex plugin add convertlyft@convertlyft`. Sign in with `codex mcp login convertlyft`. Reads `.codex-plugin/plugin.json`. |
 | Cursor | Dashboard → Plugins & MCPs → Add Marketplace → Import from Repo, with this repo. Reads `.cursor-plugin/`. |
 | Any agent with Agent Skills (Codex, Cursor, Gemini CLI, Copilot and others) | `npx skills add Convertlyft/skills` — skills only; add the MCP server from [convertlyft.com/developers](https://convertlyft.com/developers). |
@@ -45,6 +45,7 @@ about what a call may do.
 | `reviewing-ux-ui` | Reviews a website's UX and UI the way a website owner needs it — layout, visual hierarchy, readability, navigation, forms, signup and checkout friction, error and empty states, mobile behaviour, accessibility, trust and perceived speed — and ranks fixes by severity with the evidence for each. |
 | `running-paid-ads` | Diagnoses paid advertising — Google Ads, Meta, Facebook and Instagram ads — in the right order (tracking, then economics, then where the money goes, then query and audience quality, then the landing page, then bidding and structure. |
 | `shipping-cro-fixes` | Takes a conversion fix from finding to owner decision to measured result through Convertlyft, by queueing a proposal for the owner, previewing and recording a change marker only after the owner says yes, undoing a marker when needed, and writing the conclusion to the workspace ledger. |
+| `sorting-page-types` | Sorts a site's pages into page types with the owner, working through the pages that need the owner busiest first, proposing a type from what each page actually shows, previewing every change and applying it only after the owner says yes in chat, then uses the types to answer analytics and SEO questions by kind of page. |
 | `watching-session-replays` | Finds the right recorded visit and reads one moment of it — the pages, the elements clicked, errors and typing lengths in the seconds around a rage click, dead click or error — so a hypothesis from analytics can be confirmed or ruled out. |
 | `writing-copy` | Writes, rewrites and edits marketing copy for homepages, landing pages, pricing pages, ads, emails and calls to action, checking clarity, specificity, benefits, proof and customer language. |
 | `writing-daily-site-briefs` | Writes a short daily brief for a site from Convertlyft, covering whether the tag is sending, what the live watcher flagged, the key figures for yesterday against the day before, new errors, what is open on the action board and what waits for the owner's decision, without repeating what the workspace already knows. |
@@ -59,7 +60,8 @@ CI runs on every push and pull request, and the drift check runs daily:
 - `node scripts/check-manifests.mjs` — the Claude Code, Codex and Cursor
   manifests agree on name and version, each MCP config points at the real
   server and sends the consumer header, and the hook catches exactly
-  `cvl_change_apply` and `cvl_operator_run`.
+  `cvl_change_apply`, `cvl_operator_run`, `cvl_set_page_type` and
+  `cvl_remove_page_type_rule`.
 - `claude plugin validate --strict .` (the marketplace) and
   `claude plugin validate --strict .claude-plugin/plugin.json` (the plugin and its hooks).
 - `node scripts/check-drift.mjs` — every tool, REST route and scope a skill

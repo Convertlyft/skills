@@ -131,7 +131,8 @@ scroll depth, rage and dead clicks, forms and replays, see the
 Hand-offs: to find and rank where people struggle across the site, use
 `finding-ux-friction`; to put a chosen fix in front of the owner and measure
 it after it ships, use `shipping-cro-fixes`; to write the new headline, page
-or call to action, use `writing-copy`.
+or call to action, use `writing-copy`; to compare kinds of page (product pages,
+blog posts, service pages) instead of single pages, use `sorting-page-types`.
 
 How the method maps to the tools:
 

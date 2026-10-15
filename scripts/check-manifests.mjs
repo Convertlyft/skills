@@ -2,7 +2,8 @@
 // Offline check that the Claude Code, Codex and Cursor manifests agree:
 // one plugin name and version, every MCP config points at the real server
 // and sends the consumer header, and the Claude hook asks before the two
-// tools that change a live site. Exit 1 with one line per problem.
+// tools that change a live site and the two page-type writes. Exit 1 with
+// one line per problem.
 import { readFileSync } from 'node:fs';
 
 const MCP_URL = 'https://mcp.convertlyft.com/mcp';
@@ -43,12 +44,12 @@ for (const [file, key] of servers) {
 const hooks = read(claude.hooks.replace(/^\.\//, ''));
 const pre = hooks.hooks?.PreToolUse?.[0];
 const re = new RegExp(pre?.matcher ?? '^$');
-for (const tool of ['cvl_change_apply', 'cvl_operator_run']) {
+for (const tool of ['cvl_change_apply', 'cvl_operator_run', 'cvl_set_page_type', 'cvl_remove_page_type_rule']) {
   for (const prefix of ['mcp__plugin_convertlyft_convertlyft__', 'mcp__convertlyft__']) {
     expect(re.test(prefix + tool), `PreToolUse matcher misses ${prefix + tool}`);
   }
 }
-for (const tool of ['cvl_change_preview', 'cvl_change_undo', 'cvl_kpi']) {
+for (const tool of ['cvl_change_preview', 'cvl_change_undo', 'cvl_kpi', 'cvl_page_types', 'cvl_page_type_rules']) {
   expect(!re.test(`mcp__plugin_convertlyft_convertlyft__${tool}`), `PreToolUse matcher must not catch ${tool}`);
 }
 const out = /echo '(.*)'$/.exec(pre?.hooks?.[0]?.command ?? '')?.[1];
