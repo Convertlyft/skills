@@ -88,6 +88,9 @@ Timestamps: strict ISO 8601 with a zone.
 | `cvl_seo_link_gap` | Sites that link to competitors and not to you | writes | `POST https://convertlyft.com/api/tools/cvl_seo_link_gap` | `seo:write` |
 | `cvl_seo_ai_mentions` | Mentions in AI answers | writes | `POST https://convertlyft.com/api/tools/cvl_seo_ai_mentions` | `seo:write` |
 | `cvl_usage` | Usage and budget | reads | `GET https://convertlyft.com/api/tools/cvl_usage` | `reports:read` |
+| `cvl_page_types` | What each page is for | reads | `GET https://convertlyft.com/api/tools/cvl_page_types` | `reports:read` |
+| `cvl_seo_sitemaps` | Sitemaps in Search Console | reads | `GET https://convertlyft.com/api/tools/cvl_seo_sitemaps` | `reports:read` |
+| `cvl_seo_submit_sitemap` | Submit a sitemap to Google | writes | `POST https://convertlyft.com/api/tools/cvl_seo_submit_sitemap` | `seo:write` |
 | `cvl_search_tools` | Find a tool | reads | none (MCP only) | not in manifest |
 | `cvl_call_read` | Run a read tool | reads | none (MCP only) | not in manifest |
 | `cvl_skills_list` | List the Convertlyft skills | reads | none (MCP only) | not in manifest |

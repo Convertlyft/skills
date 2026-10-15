@@ -85,6 +85,44 @@ to rank for X") — this order, and stop when the five are found:
    compete for the same clicks: say so as a finding, and say Convertlyft
    cannot see the profile itself.
 
+## The quick job — get the sitemap to Google
+
+When the owner asks to "submit the sitemap", "get Google to see my pages" or
+"why is Google not finding my new pages", do this. Rung 1 of the ladder.
+
+1. **What Google has.** `cvl_seo_sitemaps`. Each sitemap is at one of
+   Google's own stages: `submitted`, `read` (Google downloaded it) or
+   `processed` (with Google's warning and error counts and how many pages it
+   lists). None of these means the pages are on Google; say so. If `status`
+   is `disconnected`, stop: Search Console is not connected, and the owner
+   connects it from the Indexing tab in the SEO room.
+2. **Fix errors first.** A processed sitemap with errors, or warnings, gets
+   fixed on the site before anything is resubmitted: a sitemap that lists
+   redirects, missing pages or blocked pages wastes Google's reads. Name each
+   problem with the page it is on (`cvl_seo_audit` holds the crawl's sitemap
+   findings).
+3. **Preview.** `cvl_seo_submit_sitemap` with `feedpath` and no `confirm`. It
+   sends nothing and answers what would be sent. If `write_access` is false,
+   the connection was granted read-only access: the owner grants it once from
+   the Indexing tab ("Grant once"), then you continue.
+4. **Submit, on the owner's yes.** Show the preview, ask, and only then call
+   it again with `confirm: true`. The answer is `submitted` with a `next`
+   hint. Do not resubmit an unchanged sitemap to "speed things up"; Google
+   reads it on its own schedule either way.
+5. **Re-check later.** `cvl_seo_sitemaps` with `path` set to the sitemap,
+   hours or days later, not in a loop. Report "Read by Google" with the date
+   when `readAt` is newer than `submittedAt`, then the processed counts.
+6. **Single pages.** For a page that matters now (a new product, a fixed
+   page), give the owner its Search Console link: each page in
+   `cvl_seo_sitemaps` → `inspection.pages` carries `inspect_url`, where they
+   press Request indexing themselves. That press is manual by Google's
+   design; no tool, and no Convertlyft call, can do it. Never use the Indexing
+   API for an ordinary page: it only works for job postings and livestreams.
+
+Never tell the owner a page "is indexed" because a sitemap was submitted or
+read. Only Google's URL Inspection answer says where one page stands, and
+quote it as Google's words with its date.
+
 ## Reference files
 
 - `references/technical.md` — crawling, indexing, rendering, JavaScript-heavy
@@ -147,7 +185,11 @@ list so absence is not read as a pass. For the full scan workflow see the
    yet, which says nothing about where the site ranks. Say so, and offer to
    track the searches that matter (`cvl_seo_track_keywords`, owner's yes
    first).
-8. `cvl_seo_competitors`, `cvl_seo_backlinks`, `cvl_seo_ai` — who competes,
+8. `cvl_seo_sitemaps` — rung 1: the site's sitemaps as Search Console
+   reports them (submitted, read by Google, processed with Google's counts),
+   whether the connection may submit, and Google's URL Inspection answer for
+   the pages the last crawl checked, each with its Search Console link.
+9. `cvl_seo_competitors`, `cvl_seo_backlinks`, `cvl_seo_ai` — who competes,
    the link snapshot and link gap, and AI-assistant mentions from a tracked
    prompt panel (a sample, never "in ChatGPT" as a whole).
    `cvl_seo_agency_matrix` compares competitors across every workspace the
@@ -158,7 +200,9 @@ list so absence is not read as a pass. For the full scan workflow see the
 `cvl_seo_add_keywords`, `cvl_seo_set_keyword_money` and
 `cvl_seo_map_keyword_page` shape the keyword list; `cvl_seo_opportunity_track`
 acts on an opportunity; `cvl_seo_set_competitor_state` pins or dismisses a
-rival. None of them changes the site or buys anything. `cvl_seo_run_flow` and
+rival. None of them changes the site or buys anything.
+`cvl_seo_submit_sitemap` sends a sitemap to the site's own Search Console: a
+preview unless `confirm: true`, so show the preview and ask first. `cvl_seo_run_flow` and
 `cvl_seo_make_brief` do buy: they run at once with the account's credits inside
 the daily limit, with no per-call confirmation, so ask the owner first.
 `cvl_usage` shows what was used.
@@ -202,6 +246,8 @@ the same search again uses no credits unless `refresh: true`.
 | `cvl_seo_run_flow` | `POST https://convertlyft.com/api/tools/cvl_seo_run_flow` | `seo:write` |
 | `cvl_seo_make_brief` | `POST https://convertlyft.com/api/tools/cvl_seo_make_brief` | `seo:write` |
 | `cvl_seo_serp` | `POST https://convertlyft.com/api/tools/cvl_seo_serp` | `seo:write` |
+| `cvl_seo_sitemaps` | `GET https://convertlyft.com/api/tools/cvl_seo_sitemaps` | `reports:read` |
+| `cvl_seo_submit_sitemap` | `POST https://convertlyft.com/api/tools/cvl_seo_submit_sitemap` | `seo:write` |
 | `cvl_usage` | `GET https://convertlyft.com/api/tools/cvl_usage` | `reports:read` |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST.
