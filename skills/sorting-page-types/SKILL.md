@@ -76,16 +76,17 @@ When the owner asks about one page ("what type is /gold-ring?", "make
    fact tips it; if no fact tips it, ask the owner which of the two it is.
 5. **Preview.** Call `cvl_set_page_type` with the pages and the type,
    `dry_run` left at its default of true. Show the owner what the preview
-   returns: how many pages would change, which are kept because they are
-   already Confirmed, the example pages, and the sentence describing the
-   change. Group pages that share a type into one preview of at most 100.
+   returns: how many pages would change, how many are kept as they are
+   because a person confirmed them (`kept_confirmed`), how many already have
+   that type, the example pages with their type now, and the sentence to show
+   the owner. Group pages that share a type into one preview of at most 100.
 6. **Ask.** "Shall I set these <n> pages to <type name>?" Apply only on an
    explicit yes in this chat. Silence, "looks fine" about something else, or
    a yes to an earlier preview is not a yes to this one.
 7. **Apply.** Call `cvl_set_page_type` again with the same arguments and
-   `dry_run: false`. Report what the answer says changed, and keep the undo
-   call it returns. Pages set this way become Confirmed, shown to the owner
-   as set by the connected app.
+   `dry_run: false`. Report the pages the answer says changed, and keep the
+   `undo` call it returns. Pages set this way become Confirmed, shown to the
+   owner as set by the connected app.
 8. **Next batch.** Back to step 2 until the busy pages are done or the owner
    stops.
 
@@ -116,9 +117,11 @@ unreadable.
 ## Folder rules — always ask
 
 `cvl_set_page_type` also takes `pattern` instead of `pages`: `under` (every
-page under a path, like `/products/`) or `like` (addresses matching a shape).
-With `include_future: true` it also types pages added later under that
-pattern. That is a standing rule the owner owns, so:
+page under a folder, like `/products/`) or `like` (every page built like one
+page, such as `/products/gold-ring`). Applied, a pattern becomes one of the
+owner's page type rules, and its pages show as set by the owner's rule. With
+`include_future: true`, pages found later that match get the type too. That
+is a standing rule the owner owns, so:
 
 - Never apply a pattern without the owner's yes in this chat, even when every
   page in the preview looks right.
@@ -127,18 +130,26 @@ pattern. That is a standing rule the owner owns, so:
 - Ask about `include_future` as its own question: "Should pages added under
   /products/ later get this type too?" Default to no unless the owner says
   yes.
-- Pages already Confirmed are kept as they are; say how many the preview
-  keeps.
+- Pages a person confirmed are kept as they are, and with a pattern so are
+  pages an app confirmed on its own; say how many the preview keeps
+  (`kept_confirmed`).
+- One page set by name still outranks a rule, so a single page can be
+  corrected later without removing the rule.
 
-`cvl_page_type_rules` lists the owner's rules. `cvl_remove_page_type_rule`
-removes one; it is a write, so preview what it removes in words and ask
-first.
+`cvl_page_type_rules` lists the owner's rules, each with its sentence, how
+many pages it holds and who made it. `cvl_remove_page_type_rule` with a
+rule's `id` previews first (its `dry_run` is also true by default): how many
+pages it holds and what each would go back to. Show that, ask, and remove
+with `dry_run: false` only on a yes.
 
 ## Undo
 
-Every applied change returns the call that undoes it. Keep it, and offer it
-when the owner says "that was wrong" or "put it back". Undo is a write: say
-what it will put back, then run it on a yes.
+Every applied change answers with `undo`: the exact call that puts every
+page back as it was (for `cvl_set_page_type`, an `undo_batch`; for a removed
+rule, the call that brings the rule and its pages back). Keep it, and offer it
+when the owner says "that was wrong" or "put it back". The undo call previews
+too: run it as given, show what it would put back, and repeat it with
+`dry_run: false` only on a yes.
 
 ## Using the types
 
