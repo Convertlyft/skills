@@ -95,6 +95,11 @@ Timestamps: strict ISO 8601 with a zone.
 | `cvl_page_type_rules` | Your page type rules | reads | `GET https://convertlyft.com/api/tools/cvl_page_type_rules` | `reports:read` |
 | `cvl_remove_page_type_rule` | Remove one of your page type rules | writes | none (MCP only) | `pages:write` |
 | `cvl_set_recording_paths` | Pages to mask or skip in recordings | writes | `POST https://convertlyft.com/api/tools/cvl_set_recording_paths` | `seo:write` |
+| `cvl_set_site_type` | Set what kind of site this is | writes | none (MCP only) | `pages:write` |
+| `cvl_forms` | What each form is for | reads | `GET https://convertlyft.com/api/tools/cvl_forms` | `reports:read` |
+| `cvl_set_form_purpose` | Set what forms are for | writes | none (MCP only) | `pages:write` |
+| `cvl_event_meanings` | What the site’s own events mean | reads | `GET https://convertlyft.com/api/tools/cvl_event_meanings` | `reports:read` |
+| `cvl_set_event_meaning` | Set what the site’s own events mean | writes | none (MCP only) | `pages:write` |
 | `cvl_search_tools` | Find a tool | reads | none (MCP only) | not in manifest |
 | `cvl_call_read` | Run a read tool | reads | none (MCP only) | not in manifest |
 | `cvl_skills_list` | List the Convertlyft skills | reads | none (MCP only) | not in manifest |
