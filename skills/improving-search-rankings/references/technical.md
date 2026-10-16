@@ -58,7 +58,7 @@ Decision rules by reported state:
   bothered. On a new site this is patience; on an established site it means
   the page looks unimportant — add internal links from strong pages.
 - **"Crawled — currently not indexed".** Google fetched it and declined.
-  This is a quality or demand verdict on the page (or the site), not a
+  This is Google's judgment on quality or demand for the page (or the site), not a
   switch to flip. Resubmitting does nothing. Improve the page or accept that
   some pages (tag archives, near-duplicates, thin listings) do not deserve
   indexing.
@@ -109,11 +109,11 @@ Absent from both: broken.
 Two data types exist and must never be conflated:
 
 - **Field data**: what real visitors experienced, collected by Chrome and
-  reported in Search Console and PageSpeed Insights ("what real people
+  reported in Search Console and Google's speed test (PageSpeed Insights) ("what real people
   experienced"). This is what Google uses. Judged at the slower end of real
   visits, graded good / needs improvement / poor.
 - **Lab data**: a synthetic one-off test (Lighthouse scores). Useful for
-  debugging, meaningless as a verdict. A poor lab score with good field data
+  debugging, meaningless as a result. A poor lab score with good field data
   is a non-problem; never open with a lab score.
 
 The three vitals, in plain terms:
@@ -136,7 +136,7 @@ The three vitals, in plain terms:
 Judgment call for owners: fix vitals when field data is outside "good" AND
 either rankings are close contests with similar competitors or replays and
 funnels show people bouncing before the page settles. Frame speed primarily
-as a conversion and experience win with a modest ranking side effect. Never
+as a sales-and-enquiries and experience win with a modest ranking side effect. Never
 promise a ranking jump from speed work, and never diagnose vitals as the
 cause of a page ranking nowhere — absence is an index, intent, or authority
 problem.
@@ -163,8 +163,8 @@ would settle it.
 
 ## With Convertlyft
 
-Signed in: `cvl_seo_audit` is the newest crawl's technical findings joined to
-measured sessions; `cvl_site_pages` lists every crawled page with its status,
-indexable flag and findings; `cvl_page_content` shows one page's own words and
-findings. None of them is Search Console: they show what Convertlyft's crawler
+Signed in: `cvl_seo_audit` is what the newest crawl found, joined to
+counted visits; `cvl_site_pages` lists every crawled page with its status,
+indexable flag and what the crawl found; `cvl_page_content` shows one page's own words and
+what the crawl found. None of them is Search Console: they show what Convertlyft's crawler
 saw, not what Google indexed.

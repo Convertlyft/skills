@@ -1,25 +1,25 @@
-# Conversion Tracking Integrity, and Meta Ads Basics
+# Counting Sales and Leads Honestly (Conversion Tracking), and Meta Ads Basics
 
 Tracking comes first because every other paid-ads judgment stands on it.
 Meta follows because its failure modes are mostly tracking and automation
 failure modes.
 
-## Conversion tracking integrity
+## Counting sales and leads honestly (conversion tracking)
 
 ### What a trustworthy setup looks like
 
-- Each platform tracks a conversion that is a **real business event** - a
+- Each platform counts a sale or lead that is a **real business event** - a
   submitted lead, a purchase, a booked call - not a pageview, a button
   click that can fire without success, or a scroll milestone dressed up as
-  a conversion.
-- Exactly **one primary conversion action per goal** per platform. Multiple
+  a sale.
+- Exactly **one primary counted action (conversion action) per goal** per platform. Multiple
   overlapping actions (a form event and a thank-you pageview and an
   imported event, all primary) double- or triple-count, and automated
   bidding optimizes to the inflated total.
 - **Click identifiers flow end to end**: auto-tagging on for Google so the
   click id reaches analytics and any offline import; the Meta pixel or
   server-side events carrying proper event ids for deduplication.
-- The platform's conversion count **roughly reconciles** with an
+- The platform's count of sales and leads **roughly reconciles** with an
   independent source - analytics, the CRM, the order database, even the
   inbox. Rough agreement is the standard; exact agreement never happens
   because attribution definitions differ.
@@ -29,12 +29,12 @@ failure modes.
 Run this whenever tracking has never been audited, after any site or tag
 change, and whenever numbers feel off:
 
-1. **Name the event.** Ask precisely what fires the conversion and where.
-   If nobody can answer, that is the finding.
-2. **Fire a test conversion** on the live site and watch it arrive in the
+1. **Name the event.** Ask precisely what fires the count and where.
+   If nobody can answer, that is the answer.
+2. **Send a test sale or enquiry** on the live site and watch it arrive in the
    platform's diagnostics. Confirm it arrives once, not twice.
 3. **Reconcile counts over a recent full month** (not recent days -
-   conversion lag makes them incomplete): platform versus analytics versus
+   reporting lag makes them incomplete): platform versus analytics versus
    CRM or orders. Expect differences from attribution windows, view-through
    counting, consent losses, and cross-device gaps. Investigate gaps that
    are large, growing, or one-sided.
@@ -42,35 +42,35 @@ change, and whenever numbers feel off:
    window, and counting mode ("every" versus "one per click" - lead
    generation should almost always count one per click, or one person
    submitting twice becomes two leads).
-5. **Walk the conversion path with behaviour analytics**: the funnel shows whether
+5. **Walk the path to buying with behaviour analytics**: the funnel shows whether
    people reach the counted step; error readings show whether the path
-   throws errors; a replay of a converting session shows whether the
+   throws errors; a recording of a visit that bought shows whether the
    confirmation state the tag depends on actually appears. A form that
-   fails silently for some people undercounts conversions and miscounts
+   fails silently for some people undercounts sales and leads and miscounts
    ad performance through no fault of the ads.
 
 ### Common breakages
 
 - The thank-you page or success state changed in a redesign and the tag
-  no longer fires. Symptom: conversions fall off a cliff on a deploy date
-  while sessions hold steady. Check deploy history against the drop date.
+  no longer fires. Symptom: counted sales or leads fall off a cliff on a deploy date
+  while visits hold steady. Check deploy history against the drop date.
 - Consent banners or script blockers suppress tags for a share of people.
   Symptom: a persistent one-sided gap, platform below reality, worse on
   some browsers and regions. This is partially recoverable (server-side
   events), never fully - state the uncertainty rather than pretending
   precision.
 - Duplicate tags after a migration - old and new containers both firing.
-  Symptom: conversions near-doubled with no matching revenue change.
+  Symptom: counted sales or leads near-doubled with no matching revenue change.
 - Redirects stripping click ids or tags placed on an intermediate page.
-- An eager "conversion" defined on a soft event, silently inflating
+- An eager "sale" (conversion) defined on a soft event, silently inflating
   everything downstream. Not a technical break - a definition break,
   and an easy one to miss.
 
 ### Lead-gen specifics
 
 Cost per lead is only half a metric: the other half is whether leads close.
-Where the owner can share CRM outcomes, connect them - offline conversion
-import (uploading closed deals keyed by click id) teaches bidding to chase
+Where the owner can share CRM outcomes, connect them - an offline import (offline conversion import)
+of closed deals keyed by click id teaches bidding to chase
 leads that become customers, not forms that get filled. Without CRM
 evidence, never claim lead quality is good or bad; say it is unmeasured and
 that it is the single most valuable measurement to add.
@@ -92,7 +92,7 @@ manufactures it. This changes what good looks like.
 2. **The pixel plus server-side events.** Meta's optimization is only as
    good as the events it receives. Browser-only tracking loses a share of
    events to blockers and privacy features; pairing the pixel with the
-   conversions API and correct event deduplication is the standard setup
+   server-side events (Conversions API) and correct event deduplication is the standard setup
    worth recommending.
 3. **Creative is the targeting.** With modern broad delivery, the ad itself
    selects the audience: who stops scrolling defines who sees more of it.
@@ -113,7 +113,7 @@ manufactures it. This changes what good looks like.
 - Advantage-style automation expands audiences and placements beyond what
   was configured. Read the breakdown reports to see where delivery and
   spend actually went before concluding anything about "the audience".
-- Meta's attribution can include view-through conversions, depending on the
+- Meta's attribution can include sales after an ad was only seen (view-through conversions), depending on the
   attribution setting in use: people who saw an ad, never clicked, and converted later - some of whom would
   have converted anyway. Meta-reported ROAS then tends to run optimistic
   against analytics, and the gap is expected. For decisions, prefer

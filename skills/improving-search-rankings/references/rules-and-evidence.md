@@ -7,7 +7,7 @@ than the short decision rules, or before stating what a reading proves.
 
 - **"Should I fix Core Web Vitals?"** Argue only from field data (what real
   visitors experienced), never from a lab score alone. Treat it as a
-  tiebreaker in close contests and a conversion issue in its own right — not
+  tiebreaker in close contests and a sales-and-enquiries issue in its own right — not
   a rescue plan for a page that ranks nowhere.
 - **"Is this backlink good or bad?"** Judge one link by relevance, editorial
   placement and whether a real person would click it. Judge a profile by the
@@ -27,7 +27,7 @@ than the short decision rules, or before stating what a reading proves.
 
 Ground every claim in a reading and say which one backs it.
 
-- **Sessions** show organic volume over time and which landing pages get it.
+- **Visits** (sessions) show search volume over time and which landing pages get it.
   They show that traffic changed, never why a rank changed.
 - **Funnels** show what search visitors do after arriving. A good rank with a
   bad funnel usually means the wrong query or the wrong intent.
@@ -68,7 +68,7 @@ Say plainly when something cannot be concluded:
   one was boilerplate or stuffed.
 - A `noindex` or stray canonical on the destination of a redirect chain
   removes the whole chain from search. Inspect the final URL.
-- "Crawled — currently not indexed" is usually a quality or demand verdict,
+- "Crawled — currently not indexed" is usually Google's judgment on quality or demand,
   not a bug that resubmission fixes.
 - Blocking a page in robots.txt does not remove it from the index. Removal
   needs `noindex`, and the page must be crawlable for `noindex` to be seen.

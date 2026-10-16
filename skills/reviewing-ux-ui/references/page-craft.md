@@ -62,7 +62,7 @@ When the budget runs out, people leave — usually without knowing why.
   choices with obvious labels beat elegant nesting where every level is a
   gamble. People fail silently in deep trees.
 - Current location must be visible: highlighted section, breadcrumbs on deep
-  sites. "Where am I" confusion ends sessions.
+  sites. "Where am I" confusion ends visits.
 - The footer is the safety net — contact, policies, and key pages live there
   because people scroll to the bottom when lost. Heavy footer clicks in the
   heatmap usually mean the main navigation failed, not that the footer is good.
@@ -79,7 +79,7 @@ effort and risk.
 
 - Every field must justify itself against the action being taken. If it is
   not needed to deliver this thing, cut it or defer it to after the
-  conversion. The classic offender: demanding a phone number for something
+  sale or enquiry. The classic offender: demanding a phone number for something
   that will never involve a call.
 - Single column, one thing per row. Multi-column forms create ambiguous
   fill order and broken tabbing.
@@ -145,7 +145,7 @@ expertise plus perceived trustworthiness).
 - Coherence is a trust signal: broken images, mixed fonts, typos, and one
   dated page infect the credibility of everything else, including the parts
   done well.
-- Honest friction builds trust: stating limits ("not suitable for X",
+- Honest limits build trust: stating limits ("not suitable for X",
   "delivery takes a while to Y") makes the rest of the page believable.
 - Do not stack badge rows. One or two recognizable marks near the payment
   step beat a strip of logos nobody recognizes, which reads as protesting
@@ -175,7 +175,7 @@ page that flashes, jumps, and reflows feels broken at any score.
 ## Mobile-first behavior
 
 Design judgments made on a desktop monitor fail quietly on a phone. Critique
-on the small screen first; the sessions summary tells you how much of the
+on the small screen first; the visits summary tells you how much of the
 audience lives there.
 
 - Thumb reach: primary actions belong where a thumb rests — lower half of

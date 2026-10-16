@@ -1,12 +1,12 @@
 ---
 name: shipping-cro-fixes
-description: Takes a conversion fix from finding to owner decision to measured result through Convertlyft, by queueing a proposal for the owner, previewing and recording a change marker only after the owner says yes, undoing a marker when needed, and writing the conclusion to the workspace ledger. Use when a fix has been found and the next step is to put it in front of the owner, mark that it shipped, measure it later, or roll the marker back.
+description: Takes a change that should bring more sales or enquiries from what was found, to owner decision, to measured result through Convertlyft, by queueing a proposal for the owner, previewing and recording a change marker only after the owner says yes, undoing a marker when needed, and writing the conclusion to the workspace ledger. Use when a fix has been found and the next step is to put it in front of the owner, mark that it shipped, measure it later, or roll the marker back.
 ---
 
 # Shipping CRO fixes
 
 A fix only counts when the owner chose it, the change is marked on the date it went live, and the
-result is read against that marker later. This skill is the procedure for that chain. Finding the
+result is read against that marker later. This skill is the procedure for that chain. Spotting the
 fix belongs to `finding-ux-friction`, `diagnosing-conversion-drops` and `reading-behaviour-data`.
 
 The rule that overrides everything here: **nothing is applied without the owner's explicit yes in
@@ -14,7 +14,7 @@ this conversation.** A proposal sitting in the queue is not a yes. Silence is no
 
 ## Before anything: what is already known
 
-1. Call `cvl_recall`. Anything in the ledger has already been established — a finding, a decision,
+1. Call `cvl_recall`. Anything in the ledger has already been established — something found, a decision,
    a preference ("never touch the checkout"), or a question nobody answered. A row marked
    `receipt_stale` is historical: quote it with its date, never as a current figure.
 2. Call `cvl_proposals_list`. By default it lists what still needs a decision. If the same fix is
@@ -78,7 +78,7 @@ The marker exists so the impact can be read against it. When the owner comes bac
 - Too little traffic after the marker means "too early to tell", with the real counts.
 - Before stating a number from an answer that carries a `receipt_id`, run `cvl_check_claim` with
   the sentence and that id, and use the corrected sentence if it returns one. Write results carry
-  no receipt; quote a figure from an answer with none exactly as returned.
+  no evidence id; quote a figure from an answer with none exactly as returned.
 
 ## Step 5 — Undo, if the owner asks
 
@@ -89,12 +89,12 @@ Calling it twice is safe; the second call removes nothing. Ask the owner first.
 ## Step 6 — Write the conclusion down
 
 When there is a conclusion — the fix helped, did not help, or it is too early — record it with
-`cvl_remember` so the next session does not derive it again:
+`cvl_remember` so the next conversation does not derive it again:
 
-- `kind` — a finding, a decision, a preference or a question.
+- `kind` — one of four (`finding` for something the data showed, `decision`, `preference`, `question`).
 - `statement` — one plain sentence.
-- A finding must carry the `receipt_id` of the call it came from and the window it covers
-  (`window_from`, `window_to`). A claim with no receipt is refused by design.
+- Something the data showed must carry the evidence id (`receipt_id`) of the call it came from and the window it covers
+  (`window_from`, `window_to`). A claim with no evidence id is refused by design.
 - Nothing in the ledger can be deleted from here; only the owner can, from their settings. Write
   carefully.
 
@@ -103,7 +103,7 @@ When there is a conclusion — the fix helped, did not help, or it is too early 
 - What was proposed, and that it waits for the owner's decision.
 - Whether a marker was recorded, with its time and the proposal id.
 - Any measured result with its window, sample size and evidence class (`measured`, `indexed` or
-  `modelled`; a modelled figure is "estimated").
+  `modelled`; that last one is "estimated").
 - What was not done, and why (missing scope, no yes from the owner, too little data).
 
 ## Tools

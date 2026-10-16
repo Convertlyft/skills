@@ -12,7 +12,7 @@ If one call answers 403 `insufficient_scope`, leave that section out and say whi
 
 ## Order of calls
 
-1. **What is already known.** `cvl_recall`. Do not re-announce a finding already in the ledger.
+1. **What is already known.** `cvl_recall`. Do not re-announce something already in the ledger.
    A row marked `receipt_stale` is historical: quote it with its date, never as current.
 2. **Is data arriving?** `cvl_live_feed` returns the newest events, newest first. Use it to say
    when something last arrived. An empty list means the tag is not sending, which is not a quiet
@@ -25,7 +25,7 @@ If one call answers 403 `insufficient_scope`, leave that section out and say whi
    quote it, then say what to read next. An empty list means nothing the watcher covers is
    tripping, not that nothing is wrong.
 4. **Key figures.** `cvl_kpi` with `from` and `to` for yesterday (a date alone means the whole UTC
-   day). It returns visitors, sessions, conversion rate, revenue by currency, median engaged time
+   day). It returns visitors, visits, the rate of sales or enquiries, revenue by currency, median engaged time
    and site health, each with its own `previous` and `delta`. Read `state` first: a non-ok figure
    has no value and a `reason` sentence — show the reason, never a zero.
 5. **New errors.** `cvl_issues_list` (a small `limit`) gives error groups ordered by when each was
@@ -58,7 +58,7 @@ Rules:
 - For each sentence whose number comes from an answer that carries a `receipt_id`, run
   `cvl_check_claim` with the sentence and that id before sending the brief, and use any
   corrected sentence it returns. A number from an answer with none is quoted exactly as returned.
-- For "why" questions the brief raises, hand off: friction to `finding-ux-friction`, a drop to
+- For "why" questions the brief raises, hand off: where people get stuck to `finding-ux-friction`, a drop to
   `diagnosing-conversion-drops`, errors to `fixing-production-errors`.
 
 ## Optional: queue the operator run
@@ -70,7 +70,7 @@ workspace has spent its daily cap the call is refused and names the cap. It is a
 
 ## Remember, sparingly
 
-If the brief establishes something worth keeping, record it with `cvl_remember` (a finding needs
+If the brief establishes something worth keeping, record it with `cvl_remember` (it needs
 the `receipt_id` and window it came from). Do not log the brief itself.
 
 ## Tools

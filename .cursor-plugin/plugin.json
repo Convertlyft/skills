@@ -1,7 +1,7 @@
 {
   "name": "convertlyft",
   "displayName": "Convertlyft",
-  "description": "Skills for reading website behaviour, conversion and SEO evidence with the Convertlyft MCP server and REST API.",
+  "description": "Skills for reading what visitors do on a site, why they don't buy, and SEO evidence, with the Convertlyft MCP server and REST API.",
   "version": "0.3.2",
   "author": { "name": "Convertlyft" },
   "homepage": "https://convertlyft.com",

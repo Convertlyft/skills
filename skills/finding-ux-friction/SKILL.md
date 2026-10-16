@@ -1,16 +1,16 @@
 ---
 name: finding-ux-friction
-description: Finds where visitors struggle on a site — rage clicks, dead clicks, forms people start and abandon, pages nobody scrolls far enough on, slow pages — from measured Convertlyft data, and ranks the spots by how many people they touch. Use when someone asks where people get stuck, what frustrates visitors, why nobody gets through a page or form, what people click that does nothing, or wants a UX friction review backed by real visits.
+description: Finds where visitors struggle on a site — rage clicks, dead clicks, forms people start and abandon, pages nobody scrolls far enough on, slow pages — from measured Convertlyft data, and ranks the spots by how many people they touch. Use when someone asks where people get stuck, what frustrates visitors, why nobody gets through a page or form, what people click that does nothing, or wants a review of where people get stuck, backed by real visits.
 ---
 
-# Finding UX friction
+# Where people get stuck on the site
 
 Goal: a short, ranked list of the places on the site where real visitors struggle,
 each with the element or page, how many people it touched, the window, and what to
 look at next. This skill finds the spots; `reading-behaviour-data` holds the rules for
 what each signal means.
 
-Needs a signed-in connection with `sessions:read`. If `cvl_whoami` fails, run
+Needs a signed-in connection with the visits scope (`sessions:read`). If `cvl_whoami` fails, run
 `getting-started-with-convertlyft` first.
 
 ## Step 1 — Pick one window
@@ -26,7 +26,7 @@ Start broad, then go narrow:
 1. `cvl_watch` — what the live watcher has flagged and not seen fixed (dead or rage
    clicking concentrating on one element, a form losing starters). Quote each line as
    the trigger's own arithmetic, then read what it points at.
-2. `cvl_behavior_report` — friction for the window in one call: pages people spend
+2. `cvl_behavior_report` — stuck spots for the window in one call: pages people spend
    time on and scroll through, rage and dead clicks, and the form start-vs-submit
    funnel. Every collection is always present: an empty list means nobody did it.
    `counts` says which lists were capped and their true size — say so when a list is cut.
@@ -34,7 +34,7 @@ Start broad, then go narrow:
    - `cvl_rage_clicks` — bursts of repeated clicking on one element. Counted as
      bursts: one person, one tantrum, one row.
    - `cvl_dead_clicks` — clicks with no captured response, grouped by page and element.
-   - `cvl_form_friction` — per form: sessions that focused a field, sessions that
+   - `cvl_form_friction` — per form: visits that focused a field, visits that
      submitted, the gap. A form nobody started has completion rate null, never 0%.
    - `cvl_page_attention` — per page: views, typical scroll depth, engaged time. A
      median over too few readings comes back with its sample count; withhold it.

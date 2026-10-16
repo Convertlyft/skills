@@ -1,8 +1,8 @@
 # Reading the Evidence
 
-How to interpret each behaviour reading — funnels, heatmaps, replays, paths, errors — and turn what you see into a friction diagnosis. The summary of what each reading can and cannot support lives in claims-and-answers.md; this file is the working method.
+How to interpret each behaviour reading — funnels, heatmaps, replays, paths, errors — and turn what you see into a diagnosis of where people get stuck. The summary of what each reading can and cannot support lives in claims-and-answers.md; this file is the working method.
 
-## Friction classes
+## Stuck-spot classes
 
 Six classes cover nearly every leak. Signals and fix directions follow in this file.
 
@@ -51,13 +51,13 @@ Judging whether a drop is even a problem: hold each step against its realistic i
 **Aggregation traps.**
 - Always split by device; a blended map of phone and desktop layouts describes neither.
 - Check deploy dates against the reading window; a map spanning a page change is a blend of two pages.
-- A map built from a handful of sessions is noise. Say so rather than reading tea leaves.
+- A map built from a handful of visits is noise. Say so rather than reading tea leaves.
 
 What a heatmap proves: what got seen and clicked on this page, in aggregate. What it cannot prove: intent, emotion, comprehension, or anything off the page.
 
 ## Reading replays
 
-**Selection discipline.** Sample by failure signal at the step you are diagnosing — rage click, error, form abandoned, reached-but-not-completed — never by session length. Length-sorted replays skew toward the strange and the idle.
+**Selection discipline.** Sample by failure signal at the step you are diagnosing — rage click, error, form abandoned, reached-but-not-completed — never by visit length. Length-sorted replays skew toward the strange and the idle.
 
 **Watching discipline.** For each replay note: device, step reached, the exact moment of struggle, any error shown, and what the person did next. Stop watching when new replays stop revealing new failure modes — saturation, not a fixed count, is the stopping rule.
 
@@ -65,35 +65,35 @@ What a heatmap proves: what got seen and clicked on this page, in aggregate. Wha
 - Rage clicks (rapid repeated clicks on one spot): the expected response did not happen. Pair with the error stream to decide breakage versus slowness.
 - Dead clicks (clicks on inert elements): affordance confusion or silent breakage; the error stream tells you which.
 - Rapid back-and-forth between two pages: a question one page raises and the other fails to answer.
-- Form struggle: re-entering a field, long pauses at one field, a validation loop, or abandonment right after one particular field — that field is your suspect. Entered data wiped by an error is a severe finding on its own.
+- Form struggle: re-entering a field, long pauses at one field, a validation loop, or abandonment right after one particular field — that field is your suspect. Entered data wiped by an error is a serious problem on its own.
 - Scroll hunting (fast sweeps up and down): the person believes something exists and cannot find it.
 
 **Prevalence discipline.** Replays prove existence and mechanism, never frequency. "Several replays show people stuck at the card field" is honest. "Most people struggle with the card field", from replays alone, is not — count prevalence with funnels and error counts.
 
 ## Reading paths
 
-- Write down the intended path first, then lay actual paths against it. The gaps are the findings.
+- Write down the intended path first, then lay actual paths against it. The gaps are what you found.
 - Loops between two pages: an unanswered question spanning both.
 - Mid-funnel detours to pricing, shipping, returns, FAQ, or privacy pages: information missing at the point of need. The usual fix is answering it inline at the step where the detour starts, not improving the destination page.
 - Deep entries from search that bounce: the entry page assumes context that arriving visitors do not have. Rank data tells you what they searched for; check the page against that intent.
 - Repeated returns to the home page: navigation is failing as a recovery tool; people reset and start over.
-- Sessions ending at comparison-stage pages suggest comparison shopping or unresolved doubt — hypothesis material only, never a conclusion.
+- Visits ending at comparison-stage pages suggest comparison shopping or unresolved doubt — hypothesis material only, never a conclusion.
 
 ## Reading the error stream
 
 - Correlate spikes with the funnel. An error cluster at the leaking step, concentrated in the leaking segment's device or browser, upgrades a diagnosis from inference to near-certainty.
 - Concentration by device or browser means compatibility breakage. This is a repair, not a test.
 - Silent failures — a click that produces no navigation and no request — pair with dead clicks in replays. The page swallowed the action.
-- Third-party scripts (payment widgets, chat, tag managers) fail intermittently and unevenly; an intermittent conversion problem on a clean-looking site often lives here.
-- The absence of errors at a leaking step is also information: it moves suspicion from breakage to the human friction classes below.
+- Third-party scripts (payment widgets, chat, tag managers) fail intermittently and unevenly; an intermittent problem with sales or enquiries on a clean-looking site often lives here.
+- The absence of errors at a leaking step is also information: it moves suspicion from breakage to the human stuck-spot classes below.
 
-## Friction diagnosis
+## Where people get stuck: diagnosis
 
 Map observed signals to a class. The class dictates the direction of the fix.
 
 | Class | Typical signals | Fix direction |
 |---|---|---|
-| Clarity | short visits ending at the landing page; scroll collapse near the top; no engagement with the value message; deep-entry bounces | rewrite the first screen: what this is, for whom, why here, what to do next |
+| Clarity | short visits ending at the landing page; scroll collapse near the top; nobody reading or clicking the value message; deep-entry bounces | rewrite the first screen: what this is, for whom, why here, what to do next |
 | Relevance | one source or campaign drops far harder than others; ad promise absent from the page; query intent mismatched to page (rank data) | match the page message to the intent that brought people |
 | Anxiety | drop at payment or personal-detail fields; detours to privacy, returns, guarantees; replays hesitating at card entry with no errors present | reassure at the exact point of doubt; ask for less |
 | Distraction | mid-funnel clicks on navigation, banners, cross-sells; heatmap attention on competing elements | remove competing exits from money pages |
@@ -104,12 +104,12 @@ Classes co-occur — checkout leaks are often anxiety and effort together. Name 
 
 ## Funnel review checklist
 
-- [ ] Conversion and money path defined
+- [ ] Main result (sale, enquiry or sign-up) and money path defined
 - [ ] Window covers a full traffic cycle with no site change inside it
 - [ ] Steps are commitments, not idle pageviews
 - [ ] Leaks ranked by people lost, weighted by proximity to money
 - [ ] Leaking step segmented by device, source, landing page, new versus returning
 - [ ] Error stream checked for the step and segment
 - [ ] Heatmap and replay evidence gathered at the step
-- [ ] Friction class named, with the signals that support it cited
+- [ ] Stuck-spot class named, with the signals that support it cited
 - [ ] Observed facts separated from inferences in the write-up
