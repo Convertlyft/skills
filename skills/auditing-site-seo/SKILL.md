@@ -87,7 +87,7 @@ name the scope the answer lists.
 5. **What to do next.** `cvl_seo_opportunities` is the ranked to-do list: searches competitors win
    and this site does not, related searches around money keywords, and Search Console near-misses —
    each mapped to a page or "new page" with one action (improve, create or track), the reason, the
-   evidence date, whether its brief is ready, and the plan's `stage` (`new`, `draft-ready`,
+   evidence date, whether its page plan is ready, and the plan's `stage` (`new`, `draft-ready`,
    `published`, `live` once a crawl read it on the page, `"ranking-moved"`).
 6. **One search in detail.** `cvl_seo_keyword` with `keyword` returns volume, difficulty, intent,
    the tracked position and its 90-day history beside rivals, the mapped page, the stored top 10,
