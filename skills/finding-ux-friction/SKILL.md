@@ -17,7 +17,7 @@ Needs a signed-in connection with `sessions:read`. If `cvl_whoami` fails, run
 
 Ask which period matters, or use the recent window the person names. Use the same
 `from` / `to` on every call that takes a window. Timestamps are ISO 8601 with a zone; a
-date alone means that whole day in the site's report timezone.
+date alone means that whole day in UTC.
 
 ## Step 2 — Sweep
 
