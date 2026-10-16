@@ -176,6 +176,7 @@ Then hand off by the question:
 | `cvl_public_agent_readiness` | `GET https://convertlyft.com/api/tools/cvl_public_agent_readiness` | none (no account over MCP) |
 | `cvl_kpi` | `GET https://convertlyft.com/api/tools/cvl_kpi` | `sessions:read`, `reports:read` |
 | `cvl_behavior_report` | `GET https://convertlyft.com/api/tools/cvl_behavior_report` | `sessions:read` |
+| `cvl_usage` | `GET https://convertlyft.com/api/tools/cvl_usage` | `reports:read` |
 | `cvl_heatmap` | `GET https://convertlyft.com/api/tools/cvl_heatmap` | `sessions:read` |
 | `cvl_issues_list` | `GET https://convertlyft.com/api/tools/cvl_issues_list` | `issues:read` |
 | `cvl_error_brief` | `GET https://convertlyft.com/api/tools/cvl_error_brief` | `issues:read` |
