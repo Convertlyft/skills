@@ -3,7 +3,9 @@
 //   node scripts/check-drift.mjs          fail if a skill names a tool, REST path or scope that is not live,
 //                                         or if the generated API reference is stale
 //   node scripts/check-drift.mjs --write  regenerate skills/getting-started-with-convertlyft/references/convertlyft-api.md
-// Sources: MCP tools/list (?features=all, no token), /.well-known/convertlyft-capabilities.json, /openapi.json.
+//                                         and scripts/live-tools.json (the offline copy lint-skills checks skills against)
+// Sources: MCP tools/list (?features=all, and the default list without it; no token),
+// /.well-known/convertlyft-capabilities.json, /openapi.json.
 import { readFileSync, writeFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { toolsTable } from './lint-skills-lib.mjs';
@@ -14,6 +16,8 @@ const EVALS = join(ROOT, 'evals');
 const GENERATED = join(SKILLS, 'getting-started-with-convertlyft', 'references', 'convertlyft-api.md');
 const SITE = 'https://convertlyft.com';
 const MCP = 'https://mcp.convertlyft.com/mcp?features=all';
+const MCP_CORE = 'https://mcp.convertlyft.com/mcp';
+const CACHE = join(ROOT, 'scripts', 'live-tools.json');
 const MANIFEST = `${SITE}/.well-known/convertlyft-capabilities.json`;
 const OPENAPI = `${SITE}/openapi.json`;
 const TOOL_RE = /(?<![A-Za-z0-9])cvl_(?!pat_)[a-z][a-z0-9_]*[a-z0-9]/g;
@@ -25,8 +29,8 @@ async function getJson(url, init) {
   return res.json();
 }
 
-async function liveTools() {
-  const body = await getJson(MCP, {
+async function liveTools(url) {
+  const body = await getJson(url, {
     method: 'POST',
     headers: { 'content-type': 'application/json', accept: 'application/json, text/event-stream' },
     body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'tools/list' }),
@@ -63,7 +67,20 @@ function twinOf(tool, manifest, openapi) {
   return null;
 }
 
-function generateReference(tools, manifest, openapi) {
+// The offline copy of the live list: per tool, whether the default list has it, its arguments and scopes.
+function liveToolsCache(tools, core, manifest) {
+  const scopes = Object.fromEntries(manifest.mcp.tools.map((t) => [t.name, t.scopes]));
+  const rows = tools.map((t) => ({
+    name: t.name,
+    core: core.has(t.name),
+    reads: Boolean(t.annotations?.readOnlyHint),
+    args: Object.keys(t.inputSchema?.properties || {}).sort(),
+    scopes: scopes[t.name] ?? null,
+  }));
+  return JSON.stringify(rows, null, 2) + '\n';
+}
+
+function generateReference(tools, core, manifest, openapi) {
   const scopes = Object.fromEntries(manifest.mcp.tools.map((t) => [t.name, t.scopes]));
   const out = [
     '# Convertlyft API reference',
@@ -76,15 +93,17 @@ function generateReference(tools, manifest, openapi) {
     `REST: \`${SITE}\`, header \`Authorization: Bearer ${manifest.auth.token_prefix}…\`. GET arguments go in the query string, POST arguments in a JSON body.`,
     `Timestamps: ${manifest.timestamps.format}.`,
     '',
-    '| MCP tool | Title | Reads or writes | REST twin | Scopes |',
-    '|---|---|---|---|---|',
+    'A tool marked "via `cvl_call_read`" is not in the default tool list: find it with `cvl_search_tools` and run it with `cvl_call_read`.',
+    '',
+    '| MCP tool | Title | Reads or writes | How to call | REST twin | Scopes |',
+    '|---|---|---|---|---|---|',
   ];
   for (const t of tools) {
     const twin = twinOf(t.name, manifest, openapi);
     const rw = t.annotations?.readOnlyHint ? 'reads' : 'writes';
     const sc = scopes[t.name];
     const scopeCell = sc === undefined ? 'not in manifest' : sc.length ? sc.map((s) => `\`${s}\``).join(', ') : 'none';
-    out.push(`| \`${t.name}\` | ${(t.title || '').replace(/\|/g, '\\|')} | ${rw} | ${twin ? `\`${twin.replace(' ', ' ' + SITE)}\`` : 'none (MCP only)'} | ${scopeCell} |`);
+    out.push(`| \`${t.name}\` | ${(t.title || '').replace(/\|/g, '\\|')} | ${rw} | ${core.has(t.name) ? 'direct' : 'via `cvl_call_read`'} | ${twin ? `\`${twin.replace(' ', ' ' + SITE)}\`` : 'none (MCP only)'} | ${scopeCell} |`);
   }
   return out.join('\n') + '\n';
 }
@@ -100,11 +119,14 @@ function walk(dir, files = []) {
   return files;
 }
 
-const [tools, manifest, openapi] = await Promise.all([liveTools(), getJson(MANIFEST), getJson(OPENAPI)]);
-const reference = generateReference(tools, manifest, openapi);
+const [tools, coreTools, manifest, openapi] = await Promise.all([liveTools(MCP), liveTools(MCP_CORE), getJson(MANIFEST), getJson(OPENAPI)]);
+const core = new Set(coreTools.map((t) => t.name));
+const reference = generateReference(tools, core, manifest, openapi);
+const cache = liveToolsCache(tools, core, manifest);
 if (process.argv.includes('--write')) {
   writeFileSync(GENERATED, reference);
-  console.log(`wrote ${GENERATED} (${tools.length} tools)`);
+  writeFileSync(CACHE, cache);
+  console.log(`wrote ${GENERATED} and ${CACHE} (${tools.length} tools, ${core.size} in the default list)`);
   process.exit(0);
 }
 
@@ -144,6 +166,8 @@ for (const file of [...walk(SKILLS), ...walk(EVALS)]) {
 
 const current = existsSync(GENERATED) ? readFileSync(GENERATED, 'utf8').replace(/\r\n/g, '\n') : '';
 if (current !== reference) problems.push(`${rel(GENERATED)} is stale: run node scripts/check-drift.mjs --write`);
+const cached = existsSync(CACHE) ? readFileSync(CACHE, 'utf8').replace(/\r\n/g, '\n') : '';
+if (cached !== cache) problems.push(`${rel(CACHE)} is stale: run node scripts/check-drift.mjs --write`);
 
 if (problems.length) {
   console.error(problems.join('\n'));
