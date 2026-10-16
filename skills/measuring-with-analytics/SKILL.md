@@ -214,17 +214,18 @@ kind of page (product pages, blog posts, service pages) go to `sorting-page-type
 
 | MCP tool | REST twin | Scope |
 |---|---|---|
-| `cvl_install_verify` | `GET https://convertlyft.com/api/tools/cvl_install_verify` | `workspaces:read` |
-| `cvl_live_feed` | `GET https://convertlyft.com/api/tools/cvl_live_feed` | `sessions:read` |
-| `cvl_watch` | `GET https://convertlyft.com/api/tools/cvl_watch` | `sessions:read` |
+| `cvl_install_verify` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_install_verify` | `workspaces:read` |
+| `cvl_live_feed` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_live_feed` | `sessions:read` |
+| `cvl_watch` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_watch` | `sessions:read` |
 | `cvl_kpi` | `GET https://convertlyft.com/api/tools/cvl_kpi` | `sessions:read`, `reports:read` |
 | `cvl_explain` | `GET https://convertlyft.com/api/tools/cvl_explain` | `sessions:read`, `reports:read` |
-| `cvl_sessions_summary` | `GET https://convertlyft.com/api/tools/cvl_sessions_summary` | `sessions:read` |
-| `cvl_funnels_list` | `GET https://convertlyft.com/api/tools/cvl_funnels_list` | `reports:read` |
-| `cvl_funnel_report` | `GET https://convertlyft.com/api/tools/cvl_funnel_report` | `reports:read` |
-| `cvl_workspaces_list` | `GET https://convertlyft.com/api/tools/cvl_workspaces_list` | `workspaces:read` |
-| `cvl_connections_list` | `GET https://convertlyft.com/api/tools/cvl_connections_list` | `workspaces:read` |
+| `cvl_sessions_summary` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_sessions_summary` | `sessions:read` |
+| `cvl_funnels_list` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_funnels_list` | `reports:read` |
+| `cvl_funnel_report` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_funnel_report` | `reports:read` |
+| `cvl_workspaces_list` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_workspaces_list` | `workspaces:read` |
+| `cvl_connections_list` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_connections_list` | `workspaces:read` |
 | `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
 | `cvl_whoami` | `GET https://convertlyft.com/api/tools/cvl_whoami` | none |
+| `cvl_call_read` | none (MCP only) | none |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST.
