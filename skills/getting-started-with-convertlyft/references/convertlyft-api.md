@@ -17,7 +17,7 @@ A tool marked "via `cvl_call_read`" is not in the default tool list: find it wit
 | `cvl_install_verify` | Is the Convertlyft tag working on this site? | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_install_verify` | `workspaces:read` |
 | `cvl_funnels_list` | Which funnels does this workspace have? | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_funnels_list` | `reports:read` |
 | `cvl_issue_detail` | One error, in full | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_issue_detail` | `issues:read`, `sessions:read` |
-| `cvl_sessions_search` | Which sessions match this? | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_sessions_search` | `sessions:read` |
+| `cvl_sessions_search` | Which visits match this? | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_sessions_search` | `sessions:read` |
 | `cvl_behavior_report` | Where do people struggle? | reads | direct | `GET https://convertlyft.com/api/tools/cvl_behavior_report` | `sessions:read` |
 | `cvl_kpi` | Key figures for a window | reads | direct | `GET https://convertlyft.com/api/tools/cvl_kpi` | `sessions:read`, `reports:read` |
 | `cvl_explain` | How is this figure defined? | reads | direct | `GET https://convertlyft.com/api/tools/cvl_explain` | `sessions:read`, `reports:read` |
@@ -31,9 +31,9 @@ A tool marked "via `cvl_call_read`" is not in the default tool list: find it wit
 | `cvl_proposals_list` | What is queued for the owner to decide | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_proposals_list` | `proposals:read` |
 | `cvl_propose` | Put a fix in front of the owner | writes | direct | none (MCP only) | `proposals:write` |
 | `cvl_operator_run` | Ask for today’s operator run | writes | direct | `POST https://convertlyft.com/api/operator/run` | `operator:run` |
-| `cvl_sessions_summary` | Sessions and their channels | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_sessions_summary` | `sessions:read` |
+| `cvl_sessions_summary` | Visits and where they came from | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_sessions_summary` | `sessions:read` |
 | `cvl_issues_list` | JavaScript errors, grouped | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_issues_list` | `issues:read` |
-| `cvl_replays_list` | Session recordings held | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_replays_list` | `replays:read` |
+| `cvl_replays_list` | Visit recordings held | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_replays_list` | `replays:read` |
 | `cvl_connections_list` | Connected accounts | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_connections_list` | `workspaces:read` |
 | `cvl_seo_rank` | Search rankings | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_rank` | `reports:read` |
 | `cvl_seo_keywords` | Keyword research on file | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_keywords` | `reports:read` |
@@ -48,7 +48,7 @@ A tool marked "via `cvl_call_read`" is not in the default tool list: find it wit
 | `cvl_watch` | What tripped since the last look | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_watch` | `sessions:read` |
 | `cvl_live_feed` | What the Live page is showing | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_live_feed` | `sessions:read` |
 | `cvl_recommendations` | What established practice says about this site | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_recommendations` | `sessions:read` |
-| `cvl_page_conversions` | Which pages the converted sessions came from | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_conversions` | `sessions:read` |
+| `cvl_page_conversions` | Which pages the sales and enquiries came from | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_conversions` | `sessions:read` |
 | `cvl_page_speed` | How fast each page is | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_speed` | `sessions:read` |
 | `cvl_run_crawl` | Crawl this site | writes | direct | none (MCP only) | `crawl:run` |
 | `cvl_site_pages` | The pages on this site | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
@@ -60,15 +60,15 @@ A tool marked "via `cvl_call_read`" is not in the default tool list: find it wit
 | `cvl_crawl_page` | One crawled page, in full | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_crawl_page` | `reports:read` |
 | `cvl_seo_flow` | SEO chain status | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_flow` | `reports:read` |
 | `cvl_seo_keyword` | One keyword in detail | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_keyword` | `reports:read` |
-| `cvl_seo_opportunities` | SEO opportunities | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
+| `cvl_seo_opportunities` | SEO to-dos | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
 | `cvl_seo_brief` | Competitor page brief | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
 | `cvl_seo_agency_matrix` | Competitors across your sites | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_agency_matrix` | `reports:read` |
 | `cvl_seo_track_keywords` | Track searches | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_track_keywords` | `seo:write` |
 | `cvl_seo_untrack_keywords` | Stop tracking searches | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_untrack_keywords` | `seo:write` |
 | `cvl_seo_set_competitor_state` | Pin or dismiss a competitor | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_set_competitor_state` | `seo:write` |
-| `cvl_seo_brief_keywords` | Add or skip keywords in a brief | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_brief_keywords` | `seo:write` |
+| `cvl_seo_brief_keywords` | Add or skip keywords in a page plan | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_brief_keywords` | `seo:write` |
 | `cvl_seo_issue_on_purpose` | Mark a Site audit issue as on purpose | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_issue_on_purpose` | `seo:write` |
-| `cvl_seo_opportunity_track` | Track an opportunity | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_opportunity_track` | `seo:write` |
+| `cvl_seo_opportunity_track` | Track an SEO to-do | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_opportunity_track` | `seo:write` |
 | `cvl_seo_set_keyword_money` | Money keyword or not | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_set_keyword_money` | `seo:write` |
 | `cvl_seo_map_keyword_page` | Map a search to a page | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_map_keyword_page` | `seo:write` |
 | `cvl_seo_add_keywords` | Add searches | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_add_keywords` | `seo:write` |
