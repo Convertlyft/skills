@@ -1,0 +1,1369 @@
+[
+  {
+    "name": "cvl_whoami",
+    "core": true,
+    "reads": true,
+    "args": [
+      "fields"
+    ],
+    "scopes": []
+  },
+  {
+    "name": "cvl_workspaces_list",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields"
+    ],
+    "scopes": [
+      "workspaces:read"
+    ]
+  },
+  {
+    "name": "cvl_install_verify",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "verbose"
+    ],
+    "scopes": [
+      "workspaces:read"
+    ]
+  },
+  {
+    "name": "cvl_funnels_list",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_issue_detail",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "fingerprint",
+      "from",
+      "to",
+      "window_handle"
+    ],
+    "scopes": [
+      "issues:read",
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_sessions_search",
+    "core": false,
+    "reads": true,
+    "args": [
+      "channel",
+      "converted",
+      "crashed",
+      "device",
+      "fields",
+      "from",
+      "limit",
+      "path",
+      "to"
+    ],
+    "scopes": [
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_behavior_report",
+    "core": true,
+    "reads": true,
+    "args": [
+      "dead_clicks_cursor",
+      "fields",
+      "from",
+      "limit",
+      "pages_cursor",
+      "rage_clicks_cursor",
+      "to",
+      "window_handle"
+    ],
+    "scopes": [
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_kpi",
+    "core": true,
+    "reads": true,
+    "args": [
+      "campaign",
+      "fields",
+      "from",
+      "source",
+      "to",
+      "window_handle"
+    ],
+    "scopes": [
+      "sessions:read",
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_explain",
+    "core": true,
+    "reads": true,
+    "args": [
+      "campaign",
+      "fields",
+      "figure",
+      "from",
+      "source",
+      "to",
+      "verbose",
+      "window_handle"
+    ],
+    "scopes": [
+      "sessions:read",
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_check_claim",
+    "core": true,
+    "reads": true,
+    "args": [
+      "fields",
+      "receipt_ids",
+      "sentence"
+    ],
+    "scopes": []
+  },
+  {
+    "name": "cvl_change_preview",
+    "core": true,
+    "reads": true,
+    "args": [
+      "fields",
+      "marked_at",
+      "note"
+    ],
+    "scopes": [
+      "changes:read"
+    ]
+  },
+  {
+    "name": "cvl_change_apply",
+    "core": true,
+    "reads": false,
+    "args": [
+      "fields",
+      "idempotency_key",
+      "marked_at",
+      "note",
+      "preview_token"
+    ],
+    "scopes": [
+      "changes:write"
+    ]
+  },
+  {
+    "name": "cvl_change_undo",
+    "core": true,
+    "reads": false,
+    "args": [
+      "fields",
+      "proposal_id"
+    ],
+    "scopes": [
+      "changes:write"
+    ]
+  },
+  {
+    "name": "cvl_recall",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "kind",
+      "since"
+    ],
+    "scopes": [
+      "memory:read"
+    ]
+  },
+  {
+    "name": "cvl_remember",
+    "core": true,
+    "reads": false,
+    "args": [
+      "fields",
+      "from",
+      "kind",
+      "receipt_id",
+      "statement",
+      "to",
+      "window_from",
+      "window_to"
+    ],
+    "scopes": [
+      "memory:write"
+    ]
+  },
+  {
+    "name": "cvl_board_list",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "from",
+      "to"
+    ],
+    "scopes": [
+      "board:read"
+    ]
+  },
+  {
+    "name": "cvl_proposals_list",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "status"
+    ],
+    "scopes": [
+      "proposals:read"
+    ]
+  },
+  {
+    "name": "cvl_propose",
+    "core": true,
+    "reads": false,
+    "args": [
+      "baseline",
+      "detail",
+      "fields",
+      "fix_identity",
+      "revert_plan",
+      "title"
+    ],
+    "scopes": [
+      "proposals:write"
+    ]
+  },
+  {
+    "name": "cvl_operator_run",
+    "core": true,
+    "reads": false,
+    "args": [
+      "fields",
+      "run_type"
+    ],
+    "scopes": [
+      "operator:run"
+    ]
+  },
+  {
+    "name": "cvl_sessions_summary",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "from",
+      "to"
+    ],
+    "scopes": [
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_issues_list",
+    "core": false,
+    "reads": true,
+    "args": [
+      "cursor",
+      "fields",
+      "from",
+      "limit",
+      "to"
+    ],
+    "scopes": [
+      "issues:read"
+    ]
+  },
+  {
+    "name": "cvl_replays_list",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "limit"
+    ],
+    "scopes": [
+      "replays:read"
+    ]
+  },
+  {
+    "name": "cvl_connections_list",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields"
+    ],
+    "scopes": [
+      "workspaces:read"
+    ]
+  },
+  {
+    "name": "cvl_seo_rank",
+    "core": false,
+    "reads": true,
+    "args": [
+      "cursor",
+      "fields",
+      "limit",
+      "location_code",
+      "market"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_seo_keywords",
+    "core": false,
+    "reads": true,
+    "args": [
+      "cursor",
+      "fields",
+      "grid_cursor",
+      "limit",
+      "location_code",
+      "market",
+      "money",
+      "q",
+      "source",
+      "trend"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_seo_competitors",
+    "core": false,
+    "reads": true,
+    "args": [
+      "cursor",
+      "fields",
+      "lane",
+      "limit",
+      "location_code",
+      "market"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_seo_backlinks",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_seo_audit",
+    "core": false,
+    "reads": true,
+    "args": [
+      "cursor",
+      "fields",
+      "issue",
+      "limit"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_seo_ai",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_dead_clicks",
+    "core": false,
+    "reads": true,
+    "args": [
+      "cursor",
+      "fields",
+      "from",
+      "limit",
+      "to"
+    ],
+    "scopes": [
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_rage_clicks",
+    "core": false,
+    "reads": true,
+    "args": [
+      "cursor",
+      "fields",
+      "from",
+      "limit",
+      "to"
+    ],
+    "scopes": [
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_form_friction",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "from",
+      "to"
+    ],
+    "scopes": [
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_page_attention",
+    "core": false,
+    "reads": true,
+    "args": [
+      "cursor",
+      "fields",
+      "from",
+      "limit",
+      "path",
+      "to"
+    ],
+    "scopes": [
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_watch",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields"
+    ],
+    "scopes": [
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_live_feed",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields"
+    ],
+    "scopes": [
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_recommendations",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields"
+    ],
+    "scopes": [
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_page_conversions",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "from",
+      "to",
+      "type"
+    ],
+    "scopes": [
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_page_speed",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "from",
+      "to"
+    ],
+    "scopes": [
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_run_crawl",
+    "core": true,
+    "reads": false,
+    "args": [
+      "confirm_cost",
+      "dry_run",
+      "fields",
+      "max_pages"
+    ],
+    "scopes": [
+      "crawl:run"
+    ]
+  },
+  {
+    "name": "cvl_site_pages",
+    "core": false,
+    "reads": true,
+    "args": [
+      "cursor",
+      "fields",
+      "limit",
+      "type"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_page_content",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "fixes",
+      "path"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_error_brief",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "fingerprint",
+      "ref"
+    ],
+    "scopes": [
+      "issues:read"
+    ]
+  },
+  {
+    "name": "cvl_error_fix_shipped",
+    "core": true,
+    "reads": false,
+    "args": [
+      "fields",
+      "fingerprint",
+      "ref"
+    ],
+    "scopes": [
+      "issues:write"
+    ]
+  },
+  {
+    "name": "cvl_crawl_start",
+    "core": true,
+    "reads": false,
+    "args": [
+      "depth",
+      "fields",
+      "limit",
+      "mode",
+      "render",
+      "url",
+      "webhook"
+    ],
+    "scopes": [
+      "crawl:run"
+    ]
+  },
+  {
+    "name": "cvl_crawl_status",
+    "core": false,
+    "reads": true,
+    "args": [
+      "crawl_id",
+      "fields",
+      "limit",
+      "offset"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_crawl_page",
+    "core": false,
+    "reads": true,
+    "args": [
+      "crawl_id",
+      "fields",
+      "screenshot",
+      "url"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_seo_flow",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_seo_keyword",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "keyword",
+      "location_code",
+      "market"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_seo_opportunities",
+    "core": false,
+    "reads": true,
+    "args": [
+      "action",
+      "cursor",
+      "fields",
+      "limit",
+      "location_code",
+      "market"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_seo_brief",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "keyword",
+      "location_code",
+      "market"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_seo_agency_matrix",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "location_code",
+      "market"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_seo_track_keywords",
+    "core": true,
+    "reads": false,
+    "args": [
+      "fields",
+      "keywords",
+      "location_code",
+      "market"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_untrack_keywords",
+    "core": true,
+    "reads": false,
+    "args": [
+      "fields",
+      "keywords",
+      "location_code",
+      "market"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_set_competitor_state",
+    "core": true,
+    "reads": false,
+    "args": [
+      "domain",
+      "fields",
+      "location_code",
+      "market",
+      "state"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_brief_keywords",
+    "core": true,
+    "reads": false,
+    "args": [
+      "decision",
+      "fields",
+      "keywords",
+      "location_code",
+      "market",
+      "search"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_issue_on_purpose",
+    "core": true,
+    "reads": false,
+    "args": [
+      "fields",
+      "issue",
+      "on_purpose"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_opportunity_track",
+    "core": true,
+    "reads": false,
+    "args": [
+      "fields",
+      "keyword",
+      "location_code",
+      "market"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_set_keyword_money",
+    "core": true,
+    "reads": false,
+    "args": [
+      "fields",
+      "keyword",
+      "location_code",
+      "market",
+      "money"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_map_keyword_page",
+    "core": true,
+    "reads": false,
+    "args": [
+      "fields",
+      "keyword",
+      "location_code",
+      "market",
+      "pageUrl",
+      "page_url"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_add_keywords",
+    "core": true,
+    "reads": false,
+    "args": [
+      "fields",
+      "keywords",
+      "location_code",
+      "market",
+      "pageUrl",
+      "page_url"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_run_flow",
+    "core": true,
+    "reads": false,
+    "args": [
+      "confirm_cost",
+      "dry_run",
+      "fields",
+      "fromStep",
+      "from_step"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_write_fix",
+    "core": true,
+    "reads": false,
+    "args": [
+      "confirm_cost",
+      "dry_run",
+      "fields",
+      "issue",
+      "page_url"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_make_brief",
+    "core": true,
+    "reads": false,
+    "args": [
+      "confirm_cost",
+      "dry_run",
+      "fields",
+      "force",
+      "fresh",
+      "keyword",
+      "location_code",
+      "market"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_add_market",
+    "core": true,
+    "reads": false,
+    "args": [
+      "device",
+      "dry_run",
+      "fields",
+      "language_code",
+      "location_code"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_public_seo_scan",
+    "core": true,
+    "reads": false,
+    "args": [
+      "fields",
+      "url"
+    ],
+    "scopes": []
+  },
+  {
+    "name": "cvl_public_seo_scan_result",
+    "core": true,
+    "reads": true,
+    "args": [
+      "fields",
+      "scan_id"
+    ],
+    "scopes": []
+  },
+  {
+    "name": "cvl_public_agent_readiness",
+    "core": true,
+    "reads": false,
+    "args": [
+      "fields",
+      "scan_id",
+      "url"
+    ],
+    "scopes": []
+  },
+  {
+    "name": "cvl_docs_search",
+    "core": true,
+    "reads": true,
+    "args": [
+      "fields",
+      "query"
+    ],
+    "scopes": []
+  },
+  {
+    "name": "cvl_replay_moment",
+    "core": false,
+    "reads": true,
+    "args": [
+      "at",
+      "element",
+      "fields",
+      "fingerprint",
+      "kind",
+      "path",
+      "session_id"
+    ],
+    "scopes": [
+      "replays:read",
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_funnel_report",
+    "core": false,
+    "reads": true,
+    "args": [
+      "device",
+      "fields",
+      "from",
+      "funnel_id",
+      "steps",
+      "to"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_paths",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "from",
+      "limit",
+      "path",
+      "to",
+      "type"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_heatmap",
+    "core": false,
+    "reads": true,
+    "args": [
+      "device",
+      "fields",
+      "from",
+      "path",
+      "picture",
+      "to"
+    ],
+    "scopes": [
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_seo_serp",
+    "core": true,
+    "reads": false,
+    "args": [
+      "confirm_cost",
+      "device",
+      "dry_run",
+      "fields",
+      "keyword",
+      "language_code",
+      "location_code",
+      "refresh"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_keyword_ideas",
+    "core": true,
+    "reads": false,
+    "args": [
+      "confirm_cost",
+      "dry_run",
+      "fields",
+      "keyword",
+      "language_code",
+      "limit",
+      "location_code",
+      "mode",
+      "refresh"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_keyword_metrics",
+    "core": true,
+    "reads": false,
+    "args": [
+      "confirm_cost",
+      "dry_run",
+      "fields",
+      "keywords",
+      "language_code",
+      "location_code",
+      "refresh"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_domain_overview",
+    "core": true,
+    "reads": false,
+    "args": [
+      "confirm_cost",
+      "domain",
+      "dry_run",
+      "fields",
+      "language_code",
+      "location_code",
+      "refresh"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_competitor_gap",
+    "core": true,
+    "reads": false,
+    "args": [
+      "competitor",
+      "confirm_cost",
+      "domain",
+      "dry_run",
+      "fields",
+      "language_code",
+      "limit",
+      "location_code",
+      "refresh"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_backlink_profile",
+    "core": true,
+    "reads": false,
+    "args": [
+      "confirm_cost",
+      "domain",
+      "dry_run",
+      "fields",
+      "refresh"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_link_gap",
+    "core": true,
+    "reads": false,
+    "args": [
+      "competitors",
+      "confirm_cost",
+      "domain",
+      "dry_run",
+      "fields",
+      "limit",
+      "refresh"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_ai_mentions",
+    "core": true,
+    "reads": false,
+    "args": [
+      "confirm_cost",
+      "domain",
+      "dry_run",
+      "fields",
+      "limit",
+      "refresh"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_usage",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_page_types",
+    "core": false,
+    "reads": true,
+    "args": [
+      "cursor",
+      "fields",
+      "limit",
+      "path_prefix",
+      "status",
+      "type",
+      "with_views"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_seo_sitemaps",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "path"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_seo_submit_sitemap",
+    "core": true,
+    "reads": false,
+    "args": [
+      "confirm",
+      "feedpath",
+      "fields"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_set_page_type",
+    "core": true,
+    "reads": false,
+    "args": [
+      "custom_type",
+      "dry_run",
+      "fields",
+      "include_future",
+      "pages",
+      "pattern",
+      "type",
+      "undo_batch"
+    ],
+    "scopes": [
+      "pages:write"
+    ]
+  },
+  {
+    "name": "cvl_page_type_rules",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_remove_page_type_rule",
+    "core": true,
+    "reads": false,
+    "args": [
+      "dry_run",
+      "fields",
+      "id"
+    ],
+    "scopes": [
+      "pages:write"
+    ]
+  },
+  {
+    "name": "cvl_set_recording_paths",
+    "core": true,
+    "reads": false,
+    "args": [
+      "confirm",
+      "fields",
+      "mask_paths",
+      "skip_paths"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_set_site_type",
+    "core": true,
+    "reads": false,
+    "args": [
+      "dry_run",
+      "fields",
+      "type"
+    ],
+    "scopes": [
+      "pages:write"
+    ]
+  },
+  {
+    "name": "cvl_forms",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "path",
+      "purpose",
+      "status"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_set_form_purpose",
+    "core": true,
+    "reads": false,
+    "args": [
+      "back_to_estimate",
+      "dry_run",
+      "fields",
+      "forms",
+      "purpose"
+    ],
+    "scopes": [
+      "pages:write"
+    ]
+  },
+  {
+    "name": "cvl_event_meanings",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "meaning",
+      "status"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_set_event_meaning",
+    "core": true,
+    "reads": false,
+    "args": [
+      "back_to_estimate",
+      "dry_run",
+      "events",
+      "fields",
+      "meaning"
+    ],
+    "scopes": [
+      "pages:write"
+    ]
+  },
+  {
+    "name": "cvl_search_tools",
+    "core": true,
+    "reads": true,
+    "args": [
+      "fields",
+      "limit",
+      "query",
+      "schema"
+    ],
+    "scopes": null
+  },
+  {
+    "name": "cvl_call_read",
+    "core": true,
+    "reads": true,
+    "args": [
+      "arguments",
+      "fields",
+      "name"
+    ],
+    "scopes": null
+  },
+  {
+    "name": "cvl_skills_list",
+    "core": true,
+    "reads": true,
+    "args": [
+      "fields"
+    ],
+    "scopes": null
+  },
+  {
+    "name": "cvl_skill_read",
+    "core": true,
+    "reads": true,
+    "args": [
+      "fields",
+      "file",
+      "name"
+    ],
+    "scopes": null
+  }
+]
