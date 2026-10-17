@@ -145,7 +145,7 @@ limit used and the month's allowances, not a price list.
 Volume, difficulty and traffic figures are the provider's estimates: say "estimated". When the
 owner asks what research has cost, `cvl_usage` (`reports:read`) shows today's limit used,
 whether paid work is paused, the research answers bought and stored this month, and the month's
-allowances (SEO content briefs, Google rankings tracked, competitors tracked, fix drafts: used and left). It reads
+allowances (SEO content briefs, Google rankings tracked, competitors tracked: used and left). It reads
 stored rows and buys nothing.
 
 ## Step 5 — Acting on it (writes, owner's yes first)
