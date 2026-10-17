@@ -4,7 +4,7 @@ Scope: why an indexed page underperforms for its target query, and how to fix
 the page itself. Everything here assumes the technical floor holds (page is
 indexed and renderable) — verify that first.
 
-## Search intent: the verdict is on the results page
+## Search intent: the result is on the results page
 
 Before judging any page, search its target query and read what ranks. The
 results page is Google's public statement of what people want for that query.
@@ -26,7 +26,7 @@ Decision rules:
   can win the minority slot, but expect a ceiling.
 - Forums and community threads ranking prominently signal that searchers
   want first-hand experience and distrust polished marketing — an
-  opportunity for genuinely experience-based content.
+  opening for genuinely experience-based content.
 - If the results are all household-name brands, the honest advice is to
   target a longer, more specific variant of the query instead. Say this
   plainly rather than proposing a doomed content project.
@@ -78,7 +78,7 @@ Method:
    "read more" waste the signal. Vary phrasing naturally; identical
    exact-match anchors everywhere look mechanical.
 3. **Link from strength to need.** Find the site's strongest pages (most
-   organic sessions, most external links) and add in-content links from them
+   visits from search, most external links) and add in-content links from them
    to pages that need to rank. In-content links beat footer and sidebar
    links, which are discounted as boilerplate.
 4. **Hunt orphans.** Any page meant to rank with no internal links pointing

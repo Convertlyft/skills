@@ -1,9 +1,9 @@
 ---
 name: diagnosing-conversion-drops
-description: Diagnoses why conversions, sales, sign-ups or enquiries fell on a site by comparing two windows of measured Convertlyft data, narrowing the drop to a source, a landing page, a funnel step, an error or a speed change, and reporting only what the data proves. Use when someone says conversions dropped, sales are down, fewer leads came in, "what changed since last week", or asks why a conversion rate moved.
+description: Works out why sales, sign-ups or enquiries fell on a site by comparing two windows of measured Convertlyft data, narrowing the drop to a source, a landing page, a funnel step, an error or a speed change, and reporting only what the data proves. Use when someone says sales dropped, sign-ups are down, fewer leads came in, "what changed since last week", or asks why their rate of sales or enquiries (conversion rate) moved.
 ---
 
-# Diagnosing conversion drops
+# Why sales or enquiries dropped
 
 Goal: name where the drop happened and what changed alongside it — with the window,
 the sample and the evidence for each line. A drop is located before it is explained,
@@ -14,7 +14,7 @@ fails or the tag is not reporting, run `getting-started-with-convertlyft` first.
 
 ## Step 0 — What is already known
 
-Call `cvl_recall`. If a prior finding already covers this window, quote it with its date
+Call `cvl_recall`. If something already found covers this window, quote it with its date
 instead of deriving it again. Also call `cvl_watch`: anything the live watcher has
 flagged and not seen fixed (an error group that wasn't there yesterday, a form losing
 starters, the tag going quiet) is the first lead. Quote its line as the trigger's own
@@ -31,18 +31,18 @@ unclear; a date alone means that whole day in the site's report timezone). Then 
 - A non-`ok` figure has no value at all; its `reason` is a sentence you can show. It
   means the number does not exist for this workspace or range — **never** that it is zero.
 - If the person asked about a specific source or campaign, pass `source` / `campaign`.
-- If the definition matters ("what counts as a conversion here?"), call `cvl_explain`
+- If the definition matters ("what counts as a sale here?"), call `cvl_explain`
   with the same `window_handle` and the same `source` / `campaign`. It returns the
   definition, the population and the condition under which a figure is withheld, and the
   attribution epoch before which campaign-filtered counts are undercounted.
 
-If `delta` shows no real drop, say so and stop: "Conversion rate for <window> was
+If `delta` shows no real drop, say so and stop: "The rate of sales for <window> was
 <display>, against <previous display> before." Do not hunt for a cause of a drop that
 the figures do not show.
 
-**Is it the tag, not the visitors?** If sessions fell along with conversions, call
+**Is it the tag, not the visitors?** If visits fell along with sales or enquiries, call
 `cvl_install_verify` and `cvl_live_feed` before anything else. A tag that went quiet
-looks like a traffic collapse. If the tag is missing, partial, or the conversion was never
+looks like a traffic collapse. If the tag is missing, partial, or the sale or enquiry was never
 tracked, stop here and hand off to `measuring-with-analytics`: a drop cannot be diagnosed
 from figures that were never recorded.
 
@@ -51,15 +51,15 @@ from figures that were never recorded.
 Work down this list and stop at the first place the drop concentrates. Use the same
 `from` / `to` for each.
 
-1. **Landing pages** — `cvl_page_conversions`: sessions and converted sessions by the
-   page people landed on. Attribution is the entry page, not the page the purchase
+1. **Landing pages** — `cvl_page_conversions`: visits, and visits that bought or got in
+   touch, by the page people landed on. Attribution is the entry page, not the page the purchase
    fired on. Compare with the previous window by calling it again with that window's
-   dates. A page whose converted sessions fell while its sessions held is a lead.
+   dates. A page whose buying visits fell while its visits held is a lead.
    To see whether one kind of page (say, every product page) carries the drop, see
    `sorting-page-types`.
 2. **The funnel** — `cvl_funnels_list` for the funnel ids (never guess one), then
    `cvl_funnel_report` with `funnel_id` set to the id of the steps funnel that ends in the
-   conversion, both windows (a `stage_model` id is not a steps funnel). Counts
+   sale or enquiry, both windows (a `stage_model` id is not a steps funnel). Counts
    are people, not visits. Name the step where the loss grew. Before calling an empty
    stage a loss, check `funnel_wiring` in `cvl_workspaces_list` — an unmapped stage is
    not a stage with no traffic. A window is at most 90 days.
@@ -68,11 +68,11 @@ Work down this list and stop at the first place the drop concentrates. Use the s
    outside the window is not an error that does not exist).
 4. **Speed** — `cvl_page_speed` for the pages found in 1 or 2. It reports the 75th
    percentile; pages with too few readings are left out rather than reported thin.
-5. **Friction** — `cvl_form_friction` if the conversion is a form; `cvl_behavior_report`
+5. **Where people get stuck** — `cvl_form_friction` if the sale or enquiry is a form; `cvl_behavior_report`
    for rage and dead clicks on the pages found above. Interpretation rules live in
    `reading-behaviour-data`.
 6. **Changes the owner made** — `cvl_recall` decisions, and any change markers the
-   person mentions. A drop that starts on the day of a change is a lead, not a verdict.
+   person mentions. A drop that starts on the day of a change is a lead, not a result.
 
 For "what did people do instead", `cvl_paths` with `path` set to the page found gives
 what happened next — on to another page, viewed again, or left.
@@ -87,7 +87,7 @@ Shape:
 3. **What changed alongside it**, clearly marked as co-occurring, not proven cause.
 4. **What we can't see**: any figure whose state was not `ok`, any capped list
    (`truncated`, `counts`), and anything the tools don't cover.
-5. **One next step**: a replay of an affected visit (`watching-session-replays`), a fix
+5. **One next step**: a recording of an affected visit (`watching-session-replays`), a fix
    brief for an error (`fixing-production-errors`), or a change to test
    (`shipping-cro-fixes`).
 
@@ -97,11 +97,11 @@ Rules:
   `receipt_id`, run `cvl_check_claim` with the sentence and that id — it catches a real
   number on the wrong figure. An answer with no `receipt_id` cannot be checked this way;
   quote its figure exactly as returned, with its window.
-- Small samples: if a page or step has too few sessions to compare, say "too few visits
+- Small samples: if a page or step has too few visits to compare, say "too few visits
   to tell" with the count, rather than a percentage.
 - Never say "no effect" or "this caused it". Say "this changed in the same window".
-- If the person wants the finding kept, `cvl_remember` with kind finding, the
-  `receipt_id` and the window (a finding without a receipt is refused, by design).
+- If the person wants what we found kept, `cvl_remember` (kind `finding`) with the
+  `receipt_id` and the window (one without an evidence id is refused, by design).
   Ask first — rows cannot be deleted by a credential.
 
 ## Tools
