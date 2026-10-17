@@ -180,7 +180,7 @@ modelled figure is called an estimate.
   signal about how deep the results go, not a target: cover what the reader
   needs, then stop. Never pad a page to reach the band, and never cut a
   complete answer to fit it.
-  `cvl_seo_make_brief` makes a new brief at once with the account's credits
+  `cvl_seo_make_brief` makes a new page plan at once and uses one of the month's page plans
   inside the daily limit (no per-call confirmation, so ask the owner first); a
   brief from the last 7 days is returned as it is unless `force` is true.
 - `cvl_site_pages` and `cvl_page_content` — what the site already has (to

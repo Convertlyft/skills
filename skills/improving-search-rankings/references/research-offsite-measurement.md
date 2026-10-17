@@ -206,7 +206,7 @@ offer that check as the next step.
 
 Signed in: keyword research on file is `cvl_seo_keywords` and `cvl_seo_keyword`
 (stored rows only; a search not on file comes back empty, not zero). A live
-results page is `cvl_seo_serp` (uses credits). Rank tracking is `cvl_seo_rank`
+results page is `cvl_seo_serp` (bought live, included in the plan). Rank tracking is `cvl_seo_rank`
 (`not_seen` is not "not ranking"). Links are `cvl_seo_backlinks`. AI-assistant
 mentions are `cvl_seo_ai`, a tracked prompt panel, never every answer an
 assistant gives.

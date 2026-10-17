@@ -203,17 +203,17 @@ acts on an opportunity; `cvl_seo_set_competitor_state` pins or dismisses a
 rival. None of them changes the site or buys anything.
 `cvl_seo_submit_sitemap` sends a sitemap to the site's own Search Console: a
 preview unless `confirm: true`, so show the preview and ask first. `cvl_seo_run_flow` and
-`cvl_seo_make_brief` do buy: they run at once with the account's credits inside
+`cvl_seo_make_brief` do buy: they run at once, included in the plan inside
 the daily limit, with no per-call confirmation, so ask the owner first.
 `cvl_usage` shows what was used.
 
-**A live results page (uses credits).** `cvl_seo_serp` returns the live top
+**A live results page (bought live, included in the plan).** `cvl_seo_serp` returns the live top
 10 Google results for one search in one country, with "People also ask" —
 the results-page reading rungs 2 and 3 need when no stored top 10 exists.
-It needs `seo:write` and buys the answer with the account's credits, inside
+It needs `seo:write` and buys the answer live, included in the plan inside
 the site's daily limit, with no per-call confirmation. Never call it free,
 and ask the owner before running more than a few. The answer is stored, so
-the same search again uses no credits unless `refresh: true`.
+the same search again reads the stored answer unless `refresh: true`.
 
 ## Tools
 

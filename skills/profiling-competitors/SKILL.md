@@ -160,12 +160,12 @@ fourth competitor without asking.
 - `cvl_seo_set_competitor_state` (write, scope `seo:write`) pins or dismisses
   a competitor so later reads use the right set. Ask the owner first.
 
-**Any domain, live (uses credits).** The reads above cover competitors already
+**Any domain, live (bought live, included in the plan).** The reads above cover competitors already
 stored. For a competitor that is not, these work on any domain (scope
-`seo:write`). Each answer is bought with the account's credits, inside the
+`seo:write`). Each answer is bought live, included in the plan, inside the
 site's daily limit, with no per-call confirmation, so never call them free and
 ask the owner before buying more than a few. An answer is stored, so the same
-question again uses no credits unless `refresh: true`. Their traffic and
+question again reads the stored answer unless `refresh: true`. Their traffic and
 volume figures are the provider's estimates: label them.
 
 - `cvl_seo_domain_overview` — the competitor's organic footprint in one
