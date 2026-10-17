@@ -2,7 +2,7 @@
 
 What each reading can support, what no reading here can conclude, how to
 shape the common answers, and the traps that make a correct reading say the
-wrong thing. Load before writing a diagnosis or verdict for the owner.
+wrong thing. Load before writing a diagnosis or result for the owner.
 
 ## Which reading supports which claim
 
@@ -39,41 +39,42 @@ Say these limits plainly.
   too small and what volume would change that.
 - **How the site feels or reads.** Copy quality and trust need qualitative
   input; analytics shows only their behavioural shadow.
-- **What happens off the site.** Calls, emails and later visits that convert
-  are invisible unless tracked. Say where visibility ends.
+- **What happens off the site.** Calls, emails and later visits that end in
+  a sale or enquiry are invisible unless tracked. Say where visibility ends.
 
 ## Answer shapes
 
-**A diagnosis** ("why aren't people converting?"): funnel finding, then
-segment finding, then page evidence, then friction class, then the change —
+***A diagnosis** ("why aren't people buying?"): what the funnel shows, then
+what the segments show, then page evidence, then the stuck-spot class, then
+the change —
 each with its reading named, facts and inferences visibly separate.
 
 **A page review** ("what do you think of my landing page?"): use
 page-heuristics.md, but first check whether this page is where
-the funnel leaks, and pair every heuristic finding with the reading that
+the funnel leaks, and pair every heuristic point with the reading that
 would confirm people hit it.
 
 **A test recommendation** ("should I A/B test this?"): is it testable at this
-site's conversion volume; what exactly is the hypothesis; what is the primary
+site's volume of sales or enquiries; what exactly is the hypothesis; what is the primary
 metric and the stopping rule. If volume is too low, say so and offer the
 alternatives ladder in hypotheses-and-testing.md.
 
-**A verdict on a past change** ("did the redesign work?"): what the
+***The result of a past change** ("did the redesign work?"): what the
 before-and-after readings honestly support given the traffic mix, and what
 they do not. "Not determinable from this data" is often the honest answer.
 
-**Life after the first conversion** (onboarding, activation, cancellations,
+***Life after the first sale or sign-up** (onboarding, activation, cancellations,
 failed payments, win-back): read after-the-conversion.md.
 
 ## Reporting to the owner
 
-- Lead with the finding that costs the most, not the first one found.
-- One recommendation per finding, evidence named inline: "The checkout drop
+- Lead with what costs the most, not the first thing found.
+- One recommendation per point, evidence named inline: "The checkout drop
   is concentrated on phones (funnel by device); replays show the card field
   rejecting valid input; fix the card field validation."
 - A plain confidence label on every claim: "confirmed" (reproduced, or
   several readings agree), "likely" (one clear reading), "possible" (pattern
-  or inference). Never present a "possible" as a finding.
+  or inference). Never present a "possible" as something we found.
 - Quantify impact only in observed terms — people lost at a step in a named
   window, from the actual reading — never as a projected uplift.
 - Every recommendation states how it will be verified and which reading will
@@ -87,15 +88,16 @@ failed payments, win-back): read after-the-conversion.md.
   sheds most of them by design. Judge each step against its realistic intent.
 - Averages hide mixtures. A site-wide fall is often one segment collapsing
   while everything else is flat.
-- A falling conversion rate is not always a page problem. Colder traffic from
-  new rankings or broader ads can raise conversions while the rate falls.
+- A falling rate of sales or enquiries is not always a page problem. Colder
+  traffic from new rankings or broader ads can raise sales and enquiries while
+  the rate falls.
 - Heatmaps blend screen sizes and page versions. If the page changed inside
   the window, the map shows two pages at once.
 - Pick replays by failure signal (rage click, error, abandoned form at the
   leaking step), not by length.
 - Do not test what is broken. Fix it and verify.
 - More people reaching the next step means nothing if the money metric is
-  flat; always report the primary conversion beside any micro-step.
+  flat; always report the main result beside any micro-step.
 - Full redesigns destroy learning. Prefer targeted changes unless the owner
   accepts that trade.
 - Never recommend fake scarcity, invented reviews, countdowns that reset, or

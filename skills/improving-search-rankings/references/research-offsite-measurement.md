@@ -112,8 +112,8 @@ easiest to over-read.
 - **Location and personalization**: rank differs by city and history. The
   owner's own browser is anecdote; neutral rank data is the record. For
   local businesses, rank only means rank-in-a-place.
-- Tie rank to sessions and funnels before celebrating: a rank win that
-  produces no sessions is a features-took-the-clicks story; sessions
+- Tie rank to visits and funnels before celebrating: a rank win that
+  produces no visits is a features-took-the-clicks story; visits
   without funnel progress is an intent-mismatch story.
 
 ## Local SEO basics
@@ -184,7 +184,7 @@ Practical crossovers:
 - A low landing-page-experience grade in Ads is a page-quality
   diagnosis that often applies to organic too.
 - The Ads search-terms report is the best keyword-research source in this
-  file — real queries with real conversion outcomes attached.
+  file — real queries with real sales and enquiries attached.
 - Run Ads on a query the site also ranks for to measure with money what
   the organic listing is worth — and to hold the SERP while organic builds.
 - The differences to state plainly: Ads is an auction rerun on every

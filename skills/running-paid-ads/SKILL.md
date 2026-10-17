@@ -1,6 +1,6 @@
 ---
 name: running-paid-ads
-description: Diagnoses paid advertising — Google Ads, Meta, Facebook and Instagram ads — in the right order (tracking, then economics, then where the money goes, then query and audience quality, then the landing page, then bidding and structure). Reads ROAS, CPL and CPA against the business's own margins, never against invented benchmarks, and says plainly when not to spend. Use when someone asks about ad spend, campaigns, keywords, match types, negative keywords, Quality Score, bidding, budget pacing, conversion tracking for ads, ad-to-landing-page match, or whether paid traffic is worth buying, even if they only say "my ads are expensive" or "leads dried up".
+description: Diagnoses paid advertising — Google Ads, Meta, Facebook and Instagram ads — in the right order (tracking, then economics, then where the money goes, then query and audience quality, then the landing page, then bidding and structure). Reads ROAS, CPL and CPA against the business's own margins, never against invented benchmarks, and says plainly when not to spend. Use when someone asks about ad spend, campaigns, keywords, match types, negative keywords, Quality Score, bidding, budget pacing, tracking sales and leads from ads (conversion tracking), ad-to-landing-page match, or whether paid traffic is worth buying, even if they only say "my ads are expensive" or "leads dried up".
 ---
 
 # Running paid ads
@@ -9,7 +9,8 @@ Advice for a website owner who sees money going out and is not sure what is
 coming back. Diagnose before prescribing. Read every cost metric against the
 business's own economics. Be honest about what the data can and cannot prove.
 
-Never quote benchmark figures, average conversion rates or "typical" costs.
+Never quote benchmark figures, average rates of sales (conversion rates) or
+"typical" costs.
 They are not known for this account, and an invented number next to real
 spend destroys trust. Express every threshold relative to the account's own
 history, its own economics or its own other campaigns.
@@ -23,12 +24,12 @@ Convertlyft adds after the click.
 Each step can invalidate everything after it.
 
 1. **Tracking first.** Before reading any performance number, establish
-   whether conversion tracking can be trusted: what counts as a conversion,
-   where it fires, and whether the platform's count roughly agrees with an
+   whether the ad platform's count of sales and leads (conversion tracking)
+   can be trusted: what it counts as a sale or lead, where it fires, and whether the platform's count roughly agrees with an
    independent source (analytics, the CRM, the inbox). If tracking is broken,
    double-counted or measuring the wrong event, every optimisation built on
    it is noise. The method is in `references/tracking-and-meta.md`.
-2. **Economics second.** What is one conversion worth — margin per sale, or
+2. **Economics second.** What is one sale or lead worth — margin per sale, or
    for lead generation the close rate and the value of a closed deal? A
    campaign is only expensive or cheap relative to that.
 3. **Spend distribution third.** Which campaigns, ad groups, search terms or
@@ -72,14 +73,15 @@ More depth, and the full audit walkthrough, is in
 
 Saying "stop" or "do not start" is often the most valuable advice:
 
-- Conversion tracking is broken or has never been verified.
-- The landing page demonstrably cannot convert — funnels show near-total
+- The ad platform's count of sales and leads (conversion tracking) is broken
+  or has never been verified.
+- The landing page demonstrably cannot sell — funnels show near-total
   drop-off, replays show people failing at a form, or errors break the
-  conversion path. Ads multiply whatever the page does, including failure.
+  path to buying. Ads multiply whatever the page does, including failure.
 - The economics cannot work at any realistic click price.
 - There is no search demand for the offer (search) or no concrete offer to
   put in front of cold audiences (social).
-- The budget is too small to produce a readable conversion signal in a
+- The budget is too small to produce a readable count of sales or leads in a
   reasonable time.
 
 ## Limits, refusals and gotchas
@@ -87,7 +89,7 @@ Saying "stop" or "do not start" is often the most valuable advice:
 Before concluding anything, or when asked for a benchmark, a maximum score,
 an impact estimate or fake urgency, read `references/limits-and-gotchas.md`:
 what the data cannot prove, the requests to refuse or reframe, and the
-settings traps (what a counted conversion is, match types, network settings,
+settings traps (what the platform counts as a sale or lead, match types, network settings,
 auto-applied changes, learning phases, seasonality, time zones).
 
 
@@ -95,27 +97,27 @@ auto-applied changes, learning phases, seasonality, time zones).
 
 - `references/google-ads.md` — search campaign structure, Quality Score,
   match types, negative keywords, choosing and tuning bidding.
-- `references/tracking-and-meta.md` — verifying or fixing conversion
-  tracking, platform-versus-analytics gaps, and Meta, Facebook and Instagram
+- `references/tracking-and-meta.md` — verifying or fixing how sales and
+  leads are counted (conversion tracking), platform-versus-analytics gaps, and Meta, Facebook and Instagram
   campaigns.
 - `references/audit-and-economics.md` — the end-to-end waste audit, ROAS, CPL
   and CPA in depth, reading cost metrics, budgets and pacing, message match,
   and when to stop.
 - `references/limits-and-gotchas.md` — what cannot be concluded without
   specific evidence, requests to refuse or reframe, and reporting and settings
-  gotchas. Load before stating a verdict.
+  gotchas. Load before stating a result.
 
 ## With Convertlyft
 
 Convertlyft has no ad-platform connection: it does not read spend,
-impressions, clicks, click prices, search terms or ad-reported conversions.
+impressions, clicks, click prices, search terms or the sales and leads the ads report (conversions).
 Get those from the ad platform. What it adds is step 5 — what paid visitors
 did after the click, on the owner's own site — plus the tracking check in
 step 1. The tools need an account and a token with the scope shown; with no
 account, start with the `getting-started-with-convertlyft` skill.
 
-- **Paid traffic's headline figures.** `cvl_kpi` returns visitors, sessions,
-  conversion rate, revenue by currency and median engaged time for a window,
+- **Paid traffic's headline figures.** `cvl_kpi` returns visitors, visits,
+  the rate of sales or enquiries, revenue by currency and median engaged time for a window,
   and accepts `source` and `campaign` filters. Read each figure's `state`
   first: when it is not `ok`, the figure does not exist for that range —
   never report it as zero.
@@ -123,11 +125,11 @@ account, start with the `getting-started-with-convertlyft` skill.
   and population behind a figure, and the attribution epoch before which
   campaign-filtered counts are undercounted. Pass the same `source` or
   `campaign` you gave `cvl_kpi`, or it describes the unfiltered population.
-- **Paid sessions in detail.** `cvl_sessions_search` filters by `channel`,
+- **Paid visits in detail.** `cvl_sessions_search` filters by `channel`,
   `path`, `device` and `converted` (capped at 50, and it says when it was
   cut).
-- **Which landing pages convert.** `cvl_page_conversions` gives sessions and
-  converted sessions by entry page. It is not split by channel, so pair it
+- **Which landing pages sell.** `cvl_page_conversions` gives visits, and
+  visits that bought or got in touch, by entry page. It is not split by channel, so pair it
   with `cvl_sessions_search` or a `cvl_kpi` campaign filter when the question
   is about paid traffic only.
 - **What people did on the landing page.** `cvl_heatmap` (top clicked

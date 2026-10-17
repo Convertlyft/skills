@@ -14,7 +14,7 @@ the same breath, or names the measurement that would produce it.
 
 ## The two halves of any plan
 
-**On the site** — what happens after people arrive. Evidence: sessions,
+**On the site** — what happens after people arrive. Evidence: visits,
 funnels, errors, replays, page speed, install checks, heatmaps and forms.
 Question: of the people who came, why did they not act?
 
@@ -33,11 +33,11 @@ one list hides which lever the owner is pulling.
 Each stage can make later ones pointless, so do not skip ahead.
 
 1. **Measurement before opinion.** Is tracking installed and sending? Is a
-   conversion defined and counting? Is there a funnel on the money path? If
+   sale, enquiry or sign-up defined and counting? Is there a funnel on the money path? If
    not, fixing that is the first item, ahead of any page critique or search
    work (see `measuring-with-analytics`).
 2. **Repairs before experiments.** Anything measured as broken goes to the top,
-   whichever half it sits in: a button that does nothing, sessions ending in an
+   whichever half it sits in: a button that does nothing, visits ending in an
    error, a form people start and cannot finish, an important page with a crawl
    problem, tracked searches that fell out of sight. Broken things are not
    hypotheses. Fix, then confirm the reading clears.
@@ -92,8 +92,8 @@ the reading or connection that would change that.
 
 With a connected workspace, build the plan from stored readings in this order.
 
-1. **What is already known.** `cvl_recall` returns prior findings, decisions
-   and unanswered questions with their receipts. Do not re-derive what is
+1. **What is already known.** `cvl_recall` returns what was found before, decisions
+   and unanswered questions with their evidence. Do not re-derive what is
    there; quote a stale row with its date, never as a current figure.
 2. **Open work.** `cvl_board_list` is the queue of what was found and is still
    open. `briefed:false` means nobody has looked yet, which differs from an
@@ -127,8 +127,8 @@ With a connected workspace, build the plan from stored readings in this order.
    owner to approve; it applies nothing. It needs the opt-in
    `proposals:write` scope, a `baseline` (what was seen) and a `revert_plan`.
    Ask the owner before proposing. Record the plan's conclusions with
-   `cvl_remember` (opt-in `memory:write`) so the next session does not derive
-   them again; a finding must carry its receipt.
+   `cvl_remember` (opt-in `memory:write`) so the next conversation does not derive
+   them again; each one must carry its evidence id (`receipt_id`).
 
 If a tool answers 401, it needs a sign-in. If it answers 403
 `insufficient_scope`, the token lacks the scope listed below; plan around the

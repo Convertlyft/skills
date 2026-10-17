@@ -38,7 +38,7 @@ live results page answers it. Eight calls is plenty.
 
 ## Step 0 — Is the data there?
 
-Call `cvl_seo_flow`. It says whether keywords, competitors, opportunities and briefs are done,
+Call `cvl_seo_flow`. It says whether keywords, competitors, to-dos and page plans are done,
 running, waiting for the daily limit, or failed with a reason. If a step has not run, say so —
 "no competitors yet" is not "no competition".
 
@@ -65,12 +65,12 @@ same searches but is not a business to copy.
 Call `cvl_seo_opportunities`. Each row is a search competitors win and this site does not, a
 related search around a money keyword, or a Search Console near-miss — mapped to a page or "new
 page" with one action (improve, create or track), the reason, the evidence date and whether its
-brief is ready. The order is the tool's, not a verdict. Before recommending a row, check two things
+brief is ready. The order is the tool's, not a result. Before recommending a row, check two things
 and say both:
 
 - **Product fit.** Does the search match something this business sells or does? Read the mapped
   page (`cvl_page_content` or the site's own pages); a search for a product the business does not
-  offer is not an opportunity, however large its volume.
+  offer is not a to-do, however large its volume.
 - **Winnability.** Who holds the top 10 now (`cvl_seo_keyword`'s stored top 10 and labels)? A
   results page held by directories and authority sites, or a difficulty far above what this site
   ranks for today, is a long play; say so rather than ranking it first.
@@ -157,7 +157,7 @@ before each one**, naming exactly what will be recorded.
 - `cvl_seo_set_competitor_state` — pin a competitor (always used), dismiss one (hidden 180 days, or
   until it shares twice as many money keywords), or clear the choice. An authority site cannot be
   pinned.
-- `cvl_seo_opportunity_track` — act on an opportunity by tracking its search.
+- `cvl_seo_opportunity_track` — act on a to-do by tracking its search.
 - `cvl_seo_track_keywords` / `cvl_seo_untrack_keywords` — add searches to, or remove them from,
   rank tracking in a market. Checks follow the market's existing schedule.
 - `cvl_seo_set_keyword_money` — mark a search as a money keyword or not; the same call with the
@@ -179,9 +179,9 @@ On 403 `insufficient_scope`, say the choice was not recorded and which scope it 
 
 Point first: who the real business rivals are, and the one or two searches where closing the gap
 matters most. Then, for each search: this site's position (or `not_seen`), the rivals' positions
-from the same check, the date of that check, and the action the opportunity names. Quote figures
+from the same check, the date of that check, and the action the to-do names. Quote figures
 as the tools return them with their dates; state the evidence class (`measured`, `indexed`,
-`modelled` — modelled means "estimated"). When an answer carries a `receipt_id`, run
+`modelled` — the last one means "estimated"). When an answer carries an evidence id (`receipt_id`), run
 `cvl_check_claim` with the sentence and that id before stating its number; an answer with none
 cannot be checked this way, so quote its figure exactly as returned.
 

@@ -1,6 +1,6 @@
 # Diagnosis: reading the evidence and running a critique
 
-How to turn behaviour readings (funnels, heatmaps, replays, errors) into defensible findings, and how to run a
+How to turn behaviour readings (funnels, heatmaps, replays, errors) into to-dos you can defend, and how to run a
 page critique that a skeptical owner will believe. Load this when you have
 actual readings in front of you or are asked to critique a specific page.
 
@@ -9,7 +9,7 @@ actual readings in front of you or are asked to critique a specific page.
 Run this before looking at any data, so the data confirms or kills your
 hypotheses instead of writing them for you.
 
-1. **Arrival.** Imagine landing from the most common source (check sessions
+1. **Arrival.** Imagine landing from the most common source (check the visits
    summary: search, ads, direct, social). What promise did that source make?
    The first screenful must repeat that promise in the visitor's own words.
 2. **The three-question glance.** Without scrolling: What is this? Who is it
@@ -29,11 +29,11 @@ hypotheses instead of writing them for you.
 
 ## Reading each source correctly
 
-### Sessions summary
+### Visits summary
 
 - What it answers: volume, device split, top landing pages, sources, trends
   over time.
-- First use: establish the device reality. If most sessions are mobile, every
+- First use: establish the device reality. If most visits are on phones, every
   further judgment happens on the mobile layout first.
 - Misread trap: a bounce is not always failure — someone who landed, read the
   answer, and called the phone number bounced happily. Judge bounce against
@@ -54,8 +54,8 @@ hypotheses instead of writing them for you.
 - Misread trap: comparing funnels across periods with different traffic mixes.
   A funnel fed by cold ad traffic will always leak more than one fed by
   returning visitors; segment before comparing.
-- A funnel says where. It never says why. Pair the leaking step with replays
-  of sessions that dropped exactly there.
+- A funnel says where. It never says why. Pair the leaking step with recordings
+  of visits that dropped exactly there.
 
 ### Heatmaps
 
@@ -84,9 +84,9 @@ hypotheses instead of writing them for you.
 
 - The only reading that shows struggle directly: hesitation before a field,
   backtracking, re-reading, form corrections, abandoning mid-payment.
-- Watch replays selected by the question, not at random: sessions that dropped
-  at the leaking funnel step, sessions with rage clicks, sessions that hit an
-  error, mobile sessions on the page in question.
+- Watch replays selected by the question, not at random: visits that dropped
+  at the leaking funnel step, visits with rage clicks, visits that hit an
+  error, phone visits on the page in question.
 - What to log per replay: where attention stalled, what they tried that
   failed, the exact moment of exit and what was on screen.
 - Misread trap: sample bias. Replays you chose because something went wrong
@@ -129,16 +129,16 @@ hypotheses instead of writing them for you.
 
 ## Triangulation rules
 
-- A finding is **confirmed** when two independent readings agree (funnel leak
+- What you found is **confirmed** when two independent readings agree (funnel leak
   at a step plus replays showing the struggle there; dead-click cluster plus
   replays of people tapping it) or when errors prove breakage directly.
-- A finding is **supported** on one strong reading with a plausible mechanism.
+- What you found is **supported** on one strong reading with a plausible mechanism.
 - Anything else is a **hypothesis** — say so, and name the reading that would
   settle it.
-- Present findings with these labels. Advice inherits the confidence of its
+- Present each to-do with these labels. Advice inherits the confidence of its
   weakest evidence.
 
-## Prioritizing findings
+## Putting the to-dos in order
 
 Rank by severity first (broken, blocking, confusing, slow, unpersuasive,
 unpolished — see SKILL.md), then within a tier by reach (share of visitors who
@@ -198,7 +198,7 @@ Each entry: what it is, why it hurts, and the trace it leaves in readings.
 
 ## Writing up the critique
 
-Structure every finding as: observation (what the reading shows), mechanism
+Structure every to-do as: observation (what the reading shows), mechanism
 (why that behavior follows from the design), recommendation (the one change),
 verification (which reading should move after the fix, and in which
 direction). If the owner implements the fix, the follow-up is to re-check that
@@ -260,7 +260,7 @@ reading — that closes the loop and keeps you honest.
 
 ## Delivering a critique — the full shape
 
-Lead with the single highest-severity finding and its evidence. Then a short
+Lead with the single highest-severity to-do and its evidence. Then a short
 ranked list — for each item: what you observed, which reading shows it, what
 to change, and how to verify it worked (the funnel step recovering, dead
 clicks disappearing, the error count falling to zero). Qualify confidence
