@@ -104,7 +104,7 @@ name the scope the answer lists.
 
 - **Words on the page** — a missing, too long, too short or duplicate title, meta description or H1:
   `cvl_seo_write_fix` with `issue` and `page_url` (one of the issue's sample pages) writes a new one
-  from the page's own words and saves it as a draft. It buys one model pass with credits; run it
+  from the page's own words and saves it as a draft. It uses one of the month's fix drafts; run it
   with `dry_run: true` first and tell the owner the estimate. It refuses any other issue and says
   how to fix it instead.
 - **Everything else** is technical: give the fix text `cvl_seo_audit` returns for that issue (with
