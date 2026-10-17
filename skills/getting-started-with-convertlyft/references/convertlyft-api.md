@@ -15,7 +15,7 @@ Timestamps: strict ISO 8601 with a zone.
 | `cvl_install_verify` | Is the Convertlyft tag working on this site? | reads | `GET https://convertlyft.com/api/tools/cvl_install_verify` | `workspaces:read` |
 | `cvl_funnels_list` | Which funnels does this workspace have? | reads | `GET https://convertlyft.com/api/tools/cvl_funnels_list` | `reports:read` |
 | `cvl_issue_detail` | One error, in full | reads | `GET https://convertlyft.com/api/tools/cvl_issue_detail` | `issues:read`, `sessions:read` |
-| `cvl_sessions_search` | Which sessions match this? | reads | `GET https://convertlyft.com/api/tools/cvl_sessions_search` | `sessions:read` |
+| `cvl_sessions_search` | Which visits match this? | reads | `GET https://convertlyft.com/api/tools/cvl_sessions_search` | `sessions:read` |
 | `cvl_behavior_report` | Where do people struggle? | reads | `GET https://convertlyft.com/api/tools/cvl_behavior_report` | `sessions:read` |
 | `cvl_kpi` | Key figures for a window | reads | `GET https://convertlyft.com/api/tools/cvl_kpi` | `sessions:read`, `reports:read` |
 | `cvl_explain` | How is this figure defined? | reads | `GET https://convertlyft.com/api/tools/cvl_explain` | `sessions:read`, `reports:read` |
@@ -29,9 +29,9 @@ Timestamps: strict ISO 8601 with a zone.
 | `cvl_proposals_list` | What is queued for the owner to decide | reads | `GET https://convertlyft.com/api/tools/cvl_proposals_list` | `proposals:read` |
 | `cvl_propose` | Put a fix in front of the owner | writes | none (MCP only) | `proposals:write` |
 | `cvl_operator_run` | Ask for today’s operator run | writes | `POST https://convertlyft.com/api/operator/run` | `operator:run` |
-| `cvl_sessions_summary` | Sessions and their channels | reads | `GET https://convertlyft.com/api/tools/cvl_sessions_summary` | `sessions:read` |
+| `cvl_sessions_summary` | Visits and where they came from | reads | `GET https://convertlyft.com/api/tools/cvl_sessions_summary` | `sessions:read` |
 | `cvl_issues_list` | JavaScript errors, grouped | reads | `GET https://convertlyft.com/api/tools/cvl_issues_list` | `issues:read` |
-| `cvl_replays_list` | Session recordings held | reads | `GET https://convertlyft.com/api/tools/cvl_replays_list` | `replays:read` |
+| `cvl_replays_list` | Visit recordings held | reads | `GET https://convertlyft.com/api/tools/cvl_replays_list` | `replays:read` |
 | `cvl_connections_list` | Connected accounts | reads | `GET https://convertlyft.com/api/tools/cvl_connections_list` | `workspaces:read` |
 | `cvl_seo_rank` | Search rankings | reads | `GET https://convertlyft.com/api/tools/cvl_seo_rank` | `reports:read` |
 | `cvl_seo_keywords` | Keyword research on file | reads | `GET https://convertlyft.com/api/tools/cvl_seo_keywords` | `reports:read` |
@@ -46,7 +46,7 @@ Timestamps: strict ISO 8601 with a zone.
 | `cvl_watch` | What tripped since the last look | reads | `GET https://convertlyft.com/api/tools/cvl_watch` | `sessions:read` |
 | `cvl_live_feed` | What the Live page is showing | reads | `GET https://convertlyft.com/api/tools/cvl_live_feed` | `sessions:read` |
 | `cvl_recommendations` | What established practice says about this site | reads | `GET https://convertlyft.com/api/tools/cvl_recommendations` | `sessions:read` |
-| `cvl_page_conversions` | Which pages the converted sessions came from | reads | `GET https://convertlyft.com/api/tools/cvl_page_conversions` | `sessions:read` |
+| `cvl_page_conversions` | Which pages the sales and enquiries came from | reads | `GET https://convertlyft.com/api/tools/cvl_page_conversions` | `sessions:read` |
 | `cvl_page_speed` | How fast each page is | reads | `GET https://convertlyft.com/api/tools/cvl_page_speed` | `sessions:read` |
 | `cvl_run_crawl` | Crawl this site | writes | none (MCP only) | `crawl:run` |
 | `cvl_site_pages` | The pages on this site | reads | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
@@ -58,17 +58,20 @@ Timestamps: strict ISO 8601 with a zone.
 | `cvl_crawl_page` | One crawled page, in full | reads | `GET https://convertlyft.com/api/tools/cvl_crawl_page` | `reports:read` |
 | `cvl_seo_flow` | SEO chain status | reads | `GET https://convertlyft.com/api/tools/cvl_seo_flow` | `reports:read` |
 | `cvl_seo_keyword` | One keyword in detail | reads | `GET https://convertlyft.com/api/tools/cvl_seo_keyword` | `reports:read` |
-| `cvl_seo_opportunities` | SEO opportunities | reads | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
+| `cvl_seo_opportunities` | SEO to-dos | reads | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
 | `cvl_seo_brief` | Competitor page brief | reads | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
 | `cvl_seo_agency_matrix` | Competitors across your sites | reads | `GET https://convertlyft.com/api/tools/cvl_seo_agency_matrix` | `reports:read` |
 | `cvl_seo_track_keywords` | Track searches | writes | `POST https://convertlyft.com/api/tools/cvl_seo_track_keywords` | `seo:write` |
 | `cvl_seo_untrack_keywords` | Stop tracking searches | writes | `POST https://convertlyft.com/api/tools/cvl_seo_untrack_keywords` | `seo:write` |
 | `cvl_seo_set_competitor_state` | Pin or dismiss a competitor | writes | `POST https://convertlyft.com/api/tools/cvl_seo_set_competitor_state` | `seo:write` |
-| `cvl_seo_opportunity_track` | Track an opportunity | writes | `POST https://convertlyft.com/api/tools/cvl_seo_opportunity_track` | `seo:write` |
+| `cvl_seo_brief_keywords` | Add or skip keywords in an SEO content brief | writes | `POST https://convertlyft.com/api/tools/cvl_seo_brief_keywords` | `seo:write` |
+| `cvl_seo_issue_on_purpose` | Mark a Site audit issue as on purpose | writes | `POST https://convertlyft.com/api/tools/cvl_seo_issue_on_purpose` | `seo:write` |
+| `cvl_seo_opportunity_track` | Track an SEO to-do | writes | `POST https://convertlyft.com/api/tools/cvl_seo_opportunity_track` | `seo:write` |
 | `cvl_seo_set_keyword_money` | Money keyword or not | writes | `POST https://convertlyft.com/api/tools/cvl_seo_set_keyword_money` | `seo:write` |
 | `cvl_seo_map_keyword_page` | Map a search to a page | writes | `POST https://convertlyft.com/api/tools/cvl_seo_map_keyword_page` | `seo:write` |
 | `cvl_seo_add_keywords` | Add searches | writes | `POST https://convertlyft.com/api/tools/cvl_seo_add_keywords` | `seo:write` |
 | `cvl_seo_run_flow` | Run the SEO chain | writes | `POST https://convertlyft.com/api/tools/cvl_seo_run_flow` | `seo:write` |
+| `cvl_seo_write_fix` | Write the fix for a Site audit issue | writes | `POST https://convertlyft.com/api/tools/cvl_seo_write_fix` | `seo:write` |
 | `cvl_seo_make_brief` | Generate a competitor page brief | writes | `POST https://convertlyft.com/api/tools/cvl_seo_make_brief` | `seo:write` |
 | `cvl_seo_add_market` | Add a market | writes | `POST https://convertlyft.com/api/tools/cvl_seo_add_market` | `seo:write` |
 | `cvl_public_seo_scan` | SEO scan of any public site (no account needed) | writes | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan` | none |

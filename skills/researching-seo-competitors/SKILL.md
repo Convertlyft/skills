@@ -1,13 +1,13 @@
 ---
 name: researching-seo-competitors
-description: Researches who a site competes with in search using Convertlyft's stored SEO data and, where that does not cover the question, live research on any domain that uses account credits, covering the tiered competitor list, the searches rivals win, rankings beside rivals, backlink gaps, AI-assistant mentions, stored briefs and the cross-site matrix for multi-workspace members, and records competitor and keyword choices only with the owner's yes. Use when someone asks who their search competitors are, why a rival outranks them, which searches to go after, or wants to pin, dismiss or track competitors and keywords. Use profiling-competitors instead when the question is one competitor's positioning, offer, content or a SWOT.
+description: Researches who a site competes with in search using Convertlyft's stored SEO data and, where that does not cover the question, live research on any domain (bought live, included in the plan), covering the tiered competitor list, the searches rivals win, rankings beside rivals, backlink gaps, AI-assistant mentions, stored briefs and the cross-site matrix for multi-workspace members, and records competitor and keyword choices only with the owner's yes. Use when someone asks who their search competitors are, why a rival outranks them, which searches to go after, or wants to pin, dismiss or track competitors and keywords. Use profiling-competitors instead when the question is one competitor's positioning, offer, content or a SWOT.
 ---
 
 # Researching SEO competitors
 
 Steps 0 to 4 read stored rows: research the workspace already bought and checks already run. They
-ask no provider anything and use no credits. Step 4b is different: those tools buy live answers from
-the search-data provider with the account's credits. Needs a signed-in workspace with `reports:read`;
+ask no provider anything and buy nothing. Step 4b is different: those tools buy live answers from
+the search-data provider, included in the plan inside a daily limit. Needs a signed-in workspace with `reports:read`;
 on 401 see `getting-started-with-convertlyft`, on 403 `insufficient_scope` name the scope the
 answer lists. For general SEO method, see `improving-search-rankings`; for a site-wide audit, see
 `auditing-site-seo`.
@@ -29,7 +29,7 @@ live results page answers it. Eight calls is plenty.
 3. For the 3 to 5 business rivals, put their `title` and `description` (the
    snippet) beside this site's own (`cvl_call_read` with `cvl_page_content`)
    and say what they promise that this page does not. Domain size
-   (`cvl_seo_domain_overview`, credits) only if the owner asks; say
+   (`cvl_seo_domain_overview`, bought live) only if the owner asks; say
    "estimated".
 4. Report a table — place, who, type, title and snippet — then this site's
    position and the gap. The stored competitor list (`cvl_seo_competitors`)
@@ -46,7 +46,7 @@ running, waiting for the daily limit, or failed with a reason. If a step has not
 there is nothing stored to read. Say that plainly, then offer the two ways forward: with the owner's
 yes, start the SEO chain with `cvl_seo_run_flow` or add the searches that matter with
 `cvl_seo_add_keywords` and `cvl_seo_track_keywords` (Step 5); or answer one question now with a
-live research tool (Step 4b). The chain and the live tools use credits; adding a search to the list
+live research tool (Step 4b). The chain and the live tools buy live answers, included in the plan inside a daily limit; adding a search to the list
 buys nothing by itself, and a tracked search is checked on the market's existing schedule.
 
 ## Step 1 — Who competes
@@ -84,7 +84,7 @@ difficulty, intent, the tracked position and its 90-day history beside rivals on
 the mapped page, the stored top 10, and related searches and questions. It reads stored rows only,
 so it works for searches already on the keyword list or tracked. For any other search the figures
 come back null and the lists empty: say "not researched yet", never zero, and use `cvl_seo_keyword_metrics` (Step 4b,
-uses credits) or, with the owner's yes, `cvl_seo_add_keywords` (Step 5).
+bought live) or, with the owner's yes, `cvl_seo_add_keywords` (Step 5).
 
 If the brief is ready, call `cvl_seo_brief` with `keyword`: the top pages studied and how each
 crawl went, what most of them do that this page does not (only items at least 3 pages and 60%
@@ -111,19 +111,19 @@ never generates one.
   granted one site, so through it the matrix shows that one site only; a personal access token the
   person made shows every workspace they belong to. A one-site matrix is not "no other sites".
 
-## Step 4b — Research on any domain (uses credits)
+## Step 4b — Research on any domain (bought live)
 
 When the stored data does not cover the question (a site that is not a tracked rival, a search not
 in the keyword list, a fresh look at the top 10), these tools ask the search-data provider directly.
-They work on any domain and need `seo:write`. Each answer bought uses the account's credits,
+They work on any domain and need `seo:write`. Each answer bought is included in the plan,
 inside this site's daily limit, with no per-call confirmation. The answer is stored, so asking the
-same question again uses no credits; `refresh: true` buys it again. Never call them "free", and
+same question again reads the stored answer; `refresh: true` buys it again. Never call them "free", and
 ask the owner before buying more than a handful.
 
-There is no fixed price per call. Each answer is charged what the provider charged for it, turned
-into credits, so the same tool costs more or less depending on how much it returns. Do not quote a
-per-call figure from memory. To say what research has cost, read `cvl_usage`: it shows what was used,
-not a price list, and only the account owner sees credits by what used them.
+There is no fixed price per call. Research is included in the plan, inside a daily limit for paid
+search data, and each answer uses more or less of that day's limit depending on how much it returns.
+Do not quote a per-call figure. To say what research has used, read `cvl_usage`: it shows today's
+limit used and the month's allowances, not a price list.
 
 - `cvl_seo_serp` — the live top 10 Google results for one search in one country, with "People
   also ask".
@@ -144,8 +144,9 @@ not a price list, and only the account owner sees credits by what used them.
 
 Volume, difficulty and traffic figures are the provider's estimates: say "estimated". When the
 owner asks what research has cost, `cvl_usage` (`reports:read`) shows today's limit used,
-whether paid work is paused, the research answers bought and stored this month, and, for the
-account owner, the credit balance. It reads stored rows and buys nothing.
+whether paid work is paused, the research answers bought and stored this month, and the month's
+allowances (SEO content briefs, Google rankings tracked, competitors tracked, fix drafts: used and left). It reads
+stored rows and buys nothing.
 
 ## Step 5 — Acting on it (writes, owner's yes first)
 
@@ -166,10 +167,10 @@ before each one**, naming exactly what will be recorded.
 
 Two more buy search data, and run at once under `seo:write` with no per-call confirmation, so ask
 the owner first and name the cost: `cvl_seo_run_flow` runs the SEO chain again (keywords,
-competitors, opportunities and briefs) with the account's credits inside the daily limit; a step that
+competitors, to-dos and SEO content briefs), included in the plan inside the daily limit; a step that
 meets the limit waits for tomorrow, and `cvl_seo_flow` follows it. `cvl_seo_make_brief` makes the
 competitor page brief for one search (live top results, crawl of the top pages, a model pass) with the
-account's credits inside the daily limit; a brief made in the last 7 days is returned as it is unless
+uses one of the month's SEO content briefs, inside the daily limit; a brief made in the last 7 days is returned as it is unless
 `force` is true, and `cvl_seo_brief` reads it.
 
 On 403 `insufficient_scope`, say the choice was not recorded and which scope it needs.

@@ -89,7 +89,7 @@ name the scope the answer lists.
    the tracked position and its 90-day history beside rivals, the mapped page, the stored top 10,
    and related searches and questions. It reads stored rows only, so it works for searches already
    on the keyword list or tracked: for any other search the figures come back null and the lists empty, which means
-   "not researched", never zero. Researching a new search uses credits; see
+   "not researched", never zero. Researching a new search is included in the plan, inside a daily limit; see
    `researching-seo-competitors`.
 7. **The brief.** When an opportunity says its brief is ready, `cvl_seo_brief` with `keyword`
    returns the stored brief: the top pages studied, what most of them do that this page does not,
