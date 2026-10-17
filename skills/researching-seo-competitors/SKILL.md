@@ -145,7 +145,7 @@ limit used and the month's allowances, not a price list.
 Volume, difficulty and traffic figures are the provider's estimates: say "estimated". When the
 owner asks what research has cost, `cvl_usage` (`reports:read`) shows today's limit used,
 whether paid work is paused, the research answers bought and stored this month, and the month's
-allowances (page plans, keywords tracked, competitors watched, fix drafts: used and left). It reads
+allowances (SEO content briefs, Google rankings tracked, competitors tracked, fix drafts: used and left). It reads
 stored rows and buys nothing.
 
 ## Step 5 — Acting on it (writes, owner's yes first)
@@ -167,10 +167,10 @@ before each one**, naming exactly what will be recorded.
 
 Two more buy search data, and run at once under `seo:write` with no per-call confirmation, so ask
 the owner first and name the cost: `cvl_seo_run_flow` runs the SEO chain again (keywords,
-competitors, to-dos and page plans), included in the plan inside the daily limit; a step that
+competitors, to-dos and SEO content briefs), included in the plan inside the daily limit; a step that
 meets the limit waits for tomorrow, and `cvl_seo_flow` follows it. `cvl_seo_make_brief` makes the
 competitor page brief for one search (live top results, crawl of the top pages, a model pass) with the
-uses one of the month's page plans, inside the daily limit; a plan made in the last 7 days is returned as it is unless
+uses one of the month's SEO content briefs, inside the daily limit; a brief made in the last 7 days is returned as it is unless
 `force` is true, and `cvl_seo_brief` reads it.
 
 On 403 `insufficient_scope`, say the choice was not recorded and which scope it needs.
