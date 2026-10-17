@@ -166,7 +166,7 @@ before each one**, naming exactly what will be recorded.
 
 Two more buy search data, and run at once under `seo:write` with no per-call confirmation, so ask
 the owner first and name the cost: `cvl_seo_run_flow` runs the SEO chain again (keywords,
-competitors, to-dos and page plans) with the account's credits inside the daily limit; a step that
+competitors, to-dos and page plans), included in the plan inside the daily limit; a step that
 meets the limit waits for tomorrow, and `cvl_seo_flow` follows it. `cvl_seo_make_brief` makes the
 competitor page brief for one search (live top results, crawl of the top pages, a model pass) with the
 account's credits inside the daily limit; a brief made in the last 7 days is returned as it is unless
