@@ -69,6 +69,15 @@ scopes it holds, when it expires, and how many calls are left.
 - **`token_expired`** → the credential has expired. Pass on what the answer says about
   renewing it; the person connects again to get a new one.
 
+- **`allowance_used`** (HTTP 429) → the plan's monthly allowance for that kind of work is
+  used: page plans, fix drafts, tracked keywords or watched competitors. The `reason` is the
+  sentence to pass on as it is ("All 10 page plans for this month are used. Refills on the 1st,
+  or move up a step."); `allowance` says which, how many and how many are left. Do not retry
+  and do not look for another tool to do the same work; offer what the sentence offers.
+  `cvl_usage` answers `allowances` (limit, used, left) on accounts that have them. Monthly
+  allowances refill on the 1st; keywords and competitors are how many are on now. Moving up a
+  step, and turning auto-scale on or off, are the owner's own presses in Billing.
+
 When any tool refuses, call `cvl_whoami` first — its answer usually names the fix.
 
 ## Step 2 — Which site?
@@ -167,6 +176,7 @@ Then hand off by the question:
 | `cvl_public_agent_readiness` | `GET https://convertlyft.com/api/tools/cvl_public_agent_readiness` | none (no account over MCP) |
 | `cvl_kpi` | `GET https://convertlyft.com/api/tools/cvl_kpi` | `sessions:read`, `reports:read` |
 | `cvl_behavior_report` | `GET https://convertlyft.com/api/tools/cvl_behavior_report` | `sessions:read` |
+| `cvl_usage` | `GET https://convertlyft.com/api/tools/cvl_usage` | `reports:read` |
 | `cvl_heatmap` | `GET https://convertlyft.com/api/tools/cvl_heatmap` | `sessions:read` |
 | `cvl_issues_list` | `GET https://convertlyft.com/api/tools/cvl_issues_list` | `issues:read` |
 | `cvl_error_brief` | `GET https://convertlyft.com/api/tools/cvl_error_brief` | `issues:read` |

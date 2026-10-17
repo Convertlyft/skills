@@ -65,7 +65,10 @@ same searches but is not a business to copy.
 Call `cvl_seo_opportunities`. Each row is a search competitors win and this site does not, a
 related search around a money keyword, or a Search Console near-miss — mapped to a page or "new
 page" with one action (improve, create or track), the reason, the evidence date and whether its
-brief is ready. The order is the tool's, not a verdict. Before recommending a row, check two things
+page plan is ready, and `stage`: where it stands — `new`, `draft-ready`, `published`,
+`live` (a crawl read the published draft on the page, `liveSeenAt`) or `"ranking-moved"` (a rank
+check after it went live beat `positionThen`; `positionNow` is the new one). Only `live` and
+`"ranking-moved"` mean the change is on the site. The order is the tool's, not a verdict. Before recommending a row, check two things
 and say both:
 
 - **Product fit.** Does the search match something this business sells or does? Read the mapped
@@ -87,9 +90,13 @@ come back null and the lists empty: say "not researched yet", never zero, and us
 uses credits) or, with the owner's yes, `cvl_seo_add_keywords` (Step 5).
 
 If the brief is ready, call `cvl_seo_brief` with `keyword`: the top pages studied and how each
-crawl went, what most of them do that this page does not (only items at least 3 pages and 60%
-agree on), and the suggested title, meta, outline, questions and structured data. Reading a brief
-never generates one.
+crawl went, what most of them do that this page does not (items at least 2 of the pages read, and
+60% of them, agree on; when only 2 pages could be read the plan says `lowConfidence` — say "from
+fewer pages than usual"), and the suggested title, meta, outline, questions and structured data.
+Rival pages that are marketplaces or social sites are skipped and replaced by the next results.
+`checklistSeen` marks the checklist items a later crawl saw on the page (`by: "crawl"`, with the
+date) or the owner ticked (`by: "you"`); report a crawl tick as seen on the page, a hand tick as the
+owner's word. Reading a page plan never makes one.
 
 ## Step 4 — The wider picture
 
@@ -163,6 +170,8 @@ before each one**, naming exactly what will be recorded.
   other value undoes it.
 - `cvl_seo_map_keyword_page` — say which page targets a search; it answers the page it had before.
 - `cvl_seo_add_keywords` — add searches to the keyword list, optionally for one page.
+- `cvl_seo_brief_keywords` — add, skip or clear several of a page plan's "Keywords to add" at once (the
+  room's "Add all"), naming the plan by its own `search`.
 
 Two more buy search data, and run at once under `seo:write` with no per-call confirmation, so ask
 the owner first and name the cost: `cvl_seo_run_flow` runs the SEO chain again (keywords,
@@ -209,6 +218,7 @@ Never invent a traffic estimate, a "rank in N weeks" promise or a figure the too
 | `cvl_seo_set_keyword_money` | `POST https://convertlyft.com/api/tools/cvl_seo_set_keyword_money` | `seo:write` |
 | `cvl_seo_map_keyword_page` | `POST https://convertlyft.com/api/tools/cvl_seo_map_keyword_page` | `seo:write` |
 | `cvl_seo_add_keywords` | `POST https://convertlyft.com/api/tools/cvl_seo_add_keywords` | `seo:write` |
+| `cvl_seo_brief_keywords` | `POST https://convertlyft.com/api/tools/cvl_seo_brief_keywords` | `seo:write` |
 | `cvl_seo_run_flow` | `POST https://convertlyft.com/api/tools/cvl_seo_run_flow` | `seo:write` |
 | `cvl_seo_make_brief` | `POST https://convertlyft.com/api/tools/cvl_seo_make_brief` | `seo:write` |
 | `cvl_seo_serp` | `POST https://convertlyft.com/api/tools/cvl_seo_serp` | `seo:write` |

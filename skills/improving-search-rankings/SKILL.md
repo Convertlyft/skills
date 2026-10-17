@@ -95,7 +95,7 @@ When the owner asks to "submit the sitemap", "get Google to see my pages" or
    `processed` (with Google's warning and error counts and how many pages it
    lists). None of these means the pages are on Google; say so. If `status`
    is `disconnected`, stop: Search Console is not connected, and the owner
-   connects it from the Indexing tab in the SEO room.
+   connects it from the Indexing tab under Site audit in the SEO room.
 2. **Fix errors first.** A processed sitemap with errors, or warnings, gets
    fixed on the site before anything is resubmitted: a sitemap that lists
    redirects, missing pages or blocked pages wastes Google's reads. Name each
@@ -104,7 +104,7 @@ When the owner asks to "submit the sitemap", "get Google to see my pages" or
 3. **Preview.** `cvl_seo_submit_sitemap` with `feedpath` and no `confirm`. It
    sends nothing and answers what would be sent. If `write_access` is false,
    the connection was granted read-only access: the owner grants it once from
-   the Indexing tab ("Grant once"), then you continue.
+   the Indexing tab under Site audit ("Grant once"), then you continue.
 4. **Submit, on the owner's yes.** Show the preview, ask, and only then call
    it again with `confirm: true`. The answer is `submitted` with a `next`
    hint. Do not resubmit an unchanged sitemap to "speed things up"; Google
