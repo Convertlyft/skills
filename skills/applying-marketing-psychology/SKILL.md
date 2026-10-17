@@ -127,7 +127,7 @@ The test: if it would feel like a trick when done to you, do not recommend it.
 ## How to apply a principle
 
 1. Name the decision the visitor faces on this page.
-2. Name the doubt or friction stopping it.
+2. Name the doubt, or the spot where people get stuck, stopping it.
 3. Pick the principle that addresses that doubt honestly.
 4. Say what evidence would show whether it helped. A principle is a hypothesis
    for this site until a test or a measured change confirms it.
@@ -151,7 +151,7 @@ starts from what visitors do on it.
 - See where attention lands with `cvl_heatmap`. Under 30 clicks it says there
   is not enough data; say so. A heatmap shows where, not why.
 - For "too many choices" or "too many fields", read `cvl_form_friction`: per
-  form, how many sessions focused a field and how many submitted.
+  form, how many visits started a field and how many sent the form.
 - Before stating a number from an answer that carries a `receipt_id`, run
   `cvl_check_claim` with the sentence and that id. An answer with no
   `receipt_id` cannot be checked this way: quote its figure exactly as

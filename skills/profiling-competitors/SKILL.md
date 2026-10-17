@@ -17,11 +17,11 @@ pages, the search results, public registries and reviews, and third-party
 estimates. State this boundary at the top of every profile.
 
 Cannot be known from outside, so never stated as fact: the competitor's real
-traffic, revenue, customer count, conversion rate, ad spend, or internal
+traffic, revenue, customer count, share of visitors who buy or get in touch, ad spend, or internal
 plans. Third-party traffic and authority figures are vendor estimates; label
 them as estimates and name the source, or leave them out.
 
-Tag every finding as one of:
+Tag everything you found as one of:
 
 - **Observed** — read directly from a page or a results page, with the URL.
 - **Measured** — from a data source with a date (a crawl, a rank check).
@@ -92,25 +92,25 @@ From their blog, guides and resources:
 
 ## Step 5 — SWOT and moves
 
-Write each quadrant as finding → evidence → what to do about it.
+Write each quadrant as what you found → evidence → what to do about it.
 
 - **Strengths** — what they do well, with the evidence.
 - **Weaknesses** — where their story or site is weak, and how the owner can
   use it.
-- **Opportunities** — searches, topics or audiences they leave open.
+- **Openings** (the O in SWOT) — searches, topics or audiences they leave open.
 - **Threats** — where they are ahead and the owner must defend or
   differentiate.
 
 Then up to five moves, ordered by effort against impact, each naming the
 evidence and the reading that will show whether it worked. No move rests on
-an inferred finding alone.
+an inference alone.
 
 ## Deliverable
 
 1. The boundary line: public evidence only, and the date it was gathered.
 2. Three sentences: who they are, their biggest strength, their biggest
    weakness.
-3. Positioning, search footprint, content, site quality — each finding
+3. Positioning, search footprint, content, site quality — each thing found
    tagged observed, measured or inferred.
 4. SWOT.
 5. The ranked moves.

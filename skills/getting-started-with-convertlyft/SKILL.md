@@ -19,13 +19,13 @@ plan, a limit or a retention period from memory.
 
 What the tools show it can see, once the site's tag is installed and a person has signed in:
 
-- Visits and the headline figures for a window — visitors, sessions, conversion rate,
+- Visits and the headline figures for a window — visitors, visits, the share who bought or got in touch (conversion rate),
   revenue by currency, engaged time (`cvl_kpi`).
 - Where people struggle — rage clicks, dead clicks, scroll depth, form starts vs submits
   (`cvl_behavior_report` and the narrower behaviour tools).
 - Per-page heatmaps with a picture (`cvl_heatmap`), paths, funnels, page speed.
 - JavaScript errors visitors hit, grouped, with a fix brief (`cvl_issues_list`, `cvl_error_brief`).
-- Session recordings — the structure of a visit: what was reached, clicked and typed
+- Visit recordings (session replays) — the structure of a visit: what was reached, clicked and typed
   into as lengths, never the content typed (`cvl_replays_list`, `cvl_replay_moment`).
 - SEO readings on file: rankings, keyword research, competitors, backlinks, crawls,
   AI-assistant mentions.
@@ -69,7 +69,7 @@ scopes it holds, when it expires, and how many calls are left.
 - **`token_expired`** → the credential has expired. Pass on what the answer says about
   renewing it; the person connects again to get a new one.
 
-When any tool refuses, call `cvl_whoami` first — its answer usually names the fix.
+When any tool refuses, call `cvl_whoami` first — its answer usually says what to change.
 
 ## Step 2 — Which site?
 
@@ -97,8 +97,8 @@ events. An empty list means the tag is not sending, which is not the same as a q
 
 ## Step 4 — Hand off
 
-Read what the workspace already knows first: `cvl_recall` returns prior findings (each
-with its receipt and window), decisions, preferences and unanswered questions. Anything
+Read what the workspace already knows first: `cvl_recall` returns what was found before (each
+with its evidence and window), decisions, preferences and unanswered questions. Anything
 there does not need deriving again; a row marked `receipt_stale` is history — quote it
 with its date.
 
@@ -106,7 +106,7 @@ Then hand off by the question:
 
 | The person asks | Skill |
 |---|---|
-| "Sales / sign-ups / conversions dropped" | `diagnosing-conversion-drops` |
+| "Sales / sign-ups / enquiries dropped" | `diagnosing-conversion-drops` |
 | "Where are people getting stuck / frustrated" | `finding-ux-friction` |
 | "Show me what people did / watch a visit" | `watching-session-replays` |
 | "Errors / something is broken / a bug report" | `fixing-production-errors` |

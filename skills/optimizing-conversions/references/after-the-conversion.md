@@ -1,6 +1,6 @@
-# After the conversion
+# After the first sale or sign-up
 
-A conversion is the start of a customer, not the end of the job. This file
+A first sale or sign-up is the start of a customer, not the end of the job. This file
 covers onboarding, activation, cancellations, failed payments and win-back —
 and, above all, where site analytics can and cannot see. State that boundary
 before giving advice: most of the lifecycle happens in billing systems,
