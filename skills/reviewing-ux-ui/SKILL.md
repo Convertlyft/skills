@@ -1,6 +1,6 @@
 ---
 name: reviewing-ux-ui
-description: Reviews a website's UX and UI the way a website owner needs it — layout, visual hierarchy, readability, navigation, forms, where people get stuck at sign-up and checkout, error and empty states, mobile behaviour, accessibility, trust and perceived speed — and ranks fixes by severity with the evidence for each. Use when someone asks why people leave a page, whether a site looks professional or trustworthy, what is wrong with a layout, menu or form, how a page works on phones, or how to read heatmaps, replays and funnels for design problems.
+description: Reviews a website's UX and UI the way a website owner needs it — layout, visual hierarchy, readability, navigation, forms, signup and checkout friction, error and empty states, mobile behaviour, accessibility, trust and perceived speed — and ranks fixes by severity with the evidence for each. Use when someone asks why people leave a page, whether a site looks professional or trustworthy, what is wrong with a layout, menu or form, how a page works on phones, or how to read heatmaps, replays and funnels for design problems.
 ---
 
 # Reviewing UX and UI
@@ -20,7 +20,7 @@ Never open with a fix. Run this order every time:
 
 1. **Establish the page's one job.** Every page exists to produce one primary
    action (buy, sign up, call, read on). If the owner cannot name it, that is
-   to-do number one. An element is good if it moves people toward the job,
+   finding number one. An element is good if it moves people toward the job,
    noise if it does not.
 2. **Check what evidence exists.** Traffic summary, funnels, heatmaps,
    replays, errors, search rankings, ad data. Match every claim to a reading
@@ -76,7 +76,7 @@ tiers one to three — redirect them, with evidence.
 
 ## Delivering a critique
 
-Lead with the single highest-severity to-do and its evidence. Then a short
+Lead with the single highest-severity finding and its evidence. Then a short
 ranked list: what you observed, which reading shows it, what to change, and
 how to verify it worked. Qualify confidence honestly: "confirmed by errors"
 beats "suggested by one replay" beats "hypothesis — needs replays to
@@ -100,14 +100,14 @@ write-up shape is in `references/diagnosis.md`.
 
 ## With Convertlyft
 
-With a Convertlyft account, the evidence for each to-do can come from the
+With a Convertlyft account, the evidence for each finding can come from the
 owner's own visitors. The tools need a token with the scope shown. With no
 account, run the method on whatever the owner has, or start with the
 `getting-started-with-convertlyft` skill. The `reading-behaviour-data` skill
 covers how to interpret these readings in depth. When the fix is the words on
 the page (a headline, a label, an error message), hand off to `writing-copy`.
 
-- **Device and traffic.** `cvl_sessions_search` filters visits by `device`,
+- **Device and traffic.** `cvl_sessions_search` filters sessions by `device`,
   `path`, `channel` and `converted` (capped at 50, and it says when it was
   cut). `cvl_kpi` gives the headline figures for a window.
 - **Where people click and how far they get.** `cvl_heatmap` returns one
@@ -120,8 +120,8 @@ the page (a headline, a label, an error message), hand off to `writing-copy`.
 - **Phantom affordances and frustration.** `cvl_dead_clicks` (clicks with no
   response, by page and element) and `cvl_rage_clicks` (bursts of repeated
   clicking, counted as bursts).
-- **Forms.** `cvl_form_friction` — per form, visits that focused a field
-  versus visits that submitted.
+- **Forms.** `cvl_form_friction` — per form, sessions that focused a field
+  versus sessions that submitted.
 - **The struggle itself.** `cvl_replay_moment` — the 10 seconds either side
   of a moment: pages, clicked labels, errors and typed lengths (never the
   text typed).

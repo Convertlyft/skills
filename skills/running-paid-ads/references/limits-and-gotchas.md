@@ -9,7 +9,7 @@ reframe, and the settings and reporting traps that mislead a diagnosis.
   data or search terms. Without the ad platform's own data, do not state any
   cost figure — say it is needed.
 - **From the ad platform alone:** what people did on the page after the
-  click, beyond the sale or enquiry it counts.
+  click, beyond the conversion event it counts.
 - **True incrementality** — whether these sales would have happened without
   ads — needs a holdout test. Rankings alone cannot prove paid clicks would
   be replaced by organic ones.
@@ -24,9 +24,9 @@ reframe, and the settings and reporting traps that mislead a diagnosis.
   instead.
 - "Are we above the industry average?" — no honest benchmark exists for this
   account and traffic mix; compare with the account's own history.
-- "Estimate the ROAS impact of X" — any estimate is only an estimate; label it as an
+- "Estimate the ROAS impact of X" — any estimate is modelled; label it as an
   estimate with its assumptions, or decline.
-- "Upload our leads" (as conversions) into an action that is already primary —
+- "Upload our leads as conversions" into an action that is already primary —
   this double-counts and trains bidding on inflated numbers; set up a
   separate, properly deduplicated import instead.
 - Fake urgency in ads or on the landing page — refuse; it is a deceptive
@@ -34,9 +34,9 @@ reframe, and the settings and reporting traps that mislead a diagnosis.
 
 ## Gotchas
 
-- What a platform counts as a sale or lead (a conversion) may be a pageview goal, a button click or an
+- A platform "conversion" may be a pageview goal, a button click or an
   imported event. Ask what the counted event actually is before reading any
-  cost per sale or lead (cost per conversion).
+  cost per conversion.
 - Broad match plus smart bidding without a maintained negative list drifts
   spend toward loosely related queries.
 - Negative keywords match close to literally; misspellings and variants must

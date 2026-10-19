@@ -82,10 +82,6 @@ are required. See `shipping-cro-fixes` for that flow.
 3. The brief rendering for whoever will fix it.
 4. What happens after deploy: call `cvl_error_fix_shipped`, then wait for "stayed fixed".
 
-## Playbooks
-
-A to-do on the What to do page names one section of [references/playbooks.md](references/playbooks.md) by its id (`PB-…`). Read that section for its steps.
-
 ## Tools
 
 | MCP tool | REST twin | Scope |

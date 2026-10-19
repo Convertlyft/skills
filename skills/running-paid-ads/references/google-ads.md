@@ -18,7 +18,7 @@ Structural judgment calls, in order of importance:
   non-brand waste invisibly.
 - **Split campaigns where the settings must differ**: different budgets for
   different product lines, different locations, different bidding targets.
-  Do not split for any other reason - every split divides the count of sales and enquiries
+  Do not split for any other reason - every split divides conversion data
   and starves automated bidding.
 - **Group keywords by shared intent, not by shared words.** An ad group is a
   promise: everyone searching these terms should be well served by the same
@@ -85,9 +85,9 @@ cause real waste:
 Decision rules:
 
 - Default new spend to exact and phrase on proven intent. Add broad match
-  only when paired with smart bidding that learns from sales and enquiries and an actively
+  only when paired with conversion-based smart bidding and an actively
   maintained negative list - broad match hands query selection to the
-  algorithm, and the algorithm aims at whatever sale or enquiry count it is
+  algorithm, and the algorithm optimizes toward the conversion signal it is
   given, including a bad one.
 - The search terms report is the only truth about what any match type is
   buying. Review it on a regular cadence - weekly for an account spending
@@ -123,47 +123,47 @@ The families, and when each fits:
 
 - **Manual and enhanced-style CPC bidding** gives control per keyword but no
   machine learning. Fitting only for tiny accounts, brand-new accounts with
-  no history of sales or enquiries, or when tracking is not yet trustworthy - bidding
-  automation trained on a bad count of sales automates the waste.
+  no conversion history, or when tracking is not yet trustworthy - bidding
+  automation trained on bad conversions automates the waste.
 - **Maximize clicks** buys traffic volume with no regard for quality. Fit
   for short traffic tests when tracking is not ready. Left running, it
   reliably finds the cheapest clicks, and the cheapest clicks are cheap for
-  a reason. Never leave an account on it once sales and enquiries are tracked.
-- **The maximize strategies** (Google's Maximize conversions / Maximize conversion value, without a target)
-  spend the full budget chasing the most sales, enquiries or value they can find.
-  Fit when the budget is fixed and the account has a steady volume of sales or enquiries.
+  a reason. Never leave an account on it once conversions are tracked.
+- **Maximize conversions / maximize conversion value** (without a target)
+  spends the full budget chasing the most conversions or value it can find.
+  Fit when the budget is fixed and the account has steady conversion volume.
   Watch for it paying silly prices at the margin when the budget is generous
   relative to demand.
 - **Target CPA / target ROAS** (a target set on the maximize strategies)
-  trades volume for efficiency. Fit for accounts with a solid history of
-  sales or enquiries and a known break-even. Setting the target far more aggressive
+  trades volume for efficiency. Fit for accounts with solid conversion
+  history and a known break-even. Setting the target far more aggressive
   than recent actual performance throttles delivery sharply - move targets
   in modest steps and let each settle.
 
 Operating rules:
 
-- Smart bidding learns from the sale or enquiry it is told to aim at. Verify
-  the action Google counts as primary (the conversion action) is the real business event, not a
+- Smart bidding learns from the conversion it is told to optimize. Verify
+  the conversion action set as primary is the real business event, not a
   soft event like a pageview - the algorithm will happily maximize whatever
   it is pointed at.
 - After any bidding change, expect a learning period with unstable delivery.
   Judge nothing during it, and never judge the change on the incomplete
   most-recent days (conversion lag).
-- An account with only a handful of sales or enquiries a month cannot feed target
+- An account with only a handful of conversions a month cannot feed target
   based bidding. Options, in order: consolidate campaigns to pool signal,
   optimize to a higher-volume upstream event honestly labeled as a proxy,
   or stay on simpler bidding until volume exists.
 - When diagnosing a sudden delivery drop, check in this order: budget
-  exhaustion, a bidding target recently tightened, a break in how sales
-  are counted (conversion tracking) (smart bidding starves quickly once it loses its signal), then the
+  exhaustion, a bidding target recently tightened, a conversion tracking
+  break (smart bidding starves quickly once it loses its signal), then the
   auction itself (impression share lost to rank).
 
 ## Reading a search account quickly
 
 A fast read, in order, when handed access or an export:
 
-1. What Google counts (conversion actions): which are primary, when each
-   last recorded a sale or enquiry.
+1. Conversion actions: what is counted, which are primary, when each last
+   recorded a conversion.
 2. Spend by campaign: where the money goes; brand versus non-brand split.
 3. Search terms by cost: the top spending terms - are they buyable intent?
 4. Impression share lost to budget versus rank, per campaign.

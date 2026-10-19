@@ -16,12 +16,12 @@ Rules:
 
 ## LIFT, applied honestly
 
-Use LIFT as a structured vocabulary for critiquing a page that should sell or get enquiries. The value proposition is the anchor; relevance, clarity, and urgency lift it; anxiety and distraction drag it.
+Use LIFT as a structured vocabulary for critiquing a conversion page. The value proposition is the anchor; relevance, clarity, and urgency lift it; anxiety and distraction drag it.
 
-- **Value proposition.** The strongest lever and the hardest to fix with tactics. If the offer is weak relative to alternatives, no button color rescues it. Evidence that the value proposition itself is the problem: strong traffic, clean pages, no breakage, and still few sales or enquiries across all segments. Say this to the owner plainly when the readings point there.
+- **Value proposition.** The strongest lever and the hardest to fix with tactics. If the offer is weak relative to alternatives, no button color rescues it. Evidence that the value proposition itself is the problem: strong traffic, clean pages, no breakage, and still weak conversion across all segments. Say this to the owner plainly when the readings point there.
 - **Relevance.** Continuity between what brought the person (ad, query, link) and what the page says. Diagnose with ads data and rank data against the page's actual first screen.
 - **Clarity.** Can the visitor understand the offer and the next step at a glance? Diagnosed through scroll collapse, short visits, and the glance test in the page heuristics reference.
-- **Urgency, honestly.** Only real deadlines and real limits: an actual booking cutoff, actual remaining stock, a genuine seasonal reason. Manufactured countdowns that reset and fake "only a few left" claims destroy trust when discovered and can be unlawful. If nothing is genuinely urgent, do not simulate it — remove the stuck spots instead; that lever is always available.
+- **Urgency, honestly.** Only real deadlines and real limits: an actual booking cutoff, actual remaining stock, a genuine seasonal reason. Manufactured countdowns that reset and fake "only a few left" claims destroy trust when discovered and can be unlawful. If nothing is genuinely urgent, do not simulate it — reduce friction instead; that lever is always available.
 - **Anxiety.** What the page asks the person to risk: money, data, embarrassment, time. Locate it with detours and hesitation evidence, reduce it with reassurance at the exact point of doubt.
 - **Distraction.** Everything competing with the primary action. Diagnose with click maps; fix by removal.
 
@@ -30,7 +30,7 @@ Use LIFT as a structured vocabulary for critiquing a page that should sell or ge
 Behavior happens when motivation, ability, and a prompt come together at the same moment. When a desired action is not happening, ask which of the three is missing — in this order:
 
 - **Prompt first.** Is the call to action present, visible, and noticeable at the moment of decision? Heatmaps answer this. A missing or buried prompt is the cheapest fix in optimization.
-- **Ability second.** People attempt the action and abandon it: they get stuck on effort. Replays and field-level evidence answer this. Simplification is cheaper and more reliable than persuasion — raising ability nearly always beats trying to raise motivation.
+- **Ability second.** People attempt the action and abandon it: effort friction. Replays and field-level evidence answer this. Simplification is cheaper and more reliable than persuasion — raising ability nearly always beats trying to raise motivation.
 - **Motivation last.** The prompt is seen, the task is easy, and people still do not act: the value or the message is failing. This is the expensive lever — it means offer, framing, proof, or audience.
 
 The practical rule: never propose motivational fixes (stronger copy, more persuasion) while ability problems are visible in the replays. Make it easy before making it compelling.
@@ -57,7 +57,7 @@ The test for any persuasion tactic: would it survive the owner explaining it to 
 - **Confidence:** strength of evidence, ranked from strongest to weakest: reproduced breakage; multiple independent readings converging; a single clear reading; a pattern that worked elsewhere; an opinion. Confidence scores come from this ladder, never from enthusiasm.
 - **Ease:** build cost plus risk plus how reversible it is.
 
-**PXL-style scoring** replaces gut feel with mostly yes-or-no questions, answered from evidence: Is the change above the fold? Would a visitor notice it within a glance? Does it add or remove something, rather than restyle? Does it remove a stuck spot? Is it supported by qualitative evidence from this site? By quantitative evidence from this site? Is it on a high-traffic page or step? Is it cheap to build? Count the yeses and rank. The virtue of this style is that "I love this idea" earns nothing.
+**PXL-style scoring** replaces gut feel with mostly yes-or-no questions, answered from evidence: Is the change above the fold? Would a visitor notice it within a glance? Does it add or remove something, rather than restyle? Does it remove friction? Is it supported by qualitative evidence from this site? By quantitative evidence from this site? Is it on a high-traffic page or step? Is it cheap to build? Count the yeses and rank. The virtue of this style is that "I love this idea" earns nothing.
 
 Standing rules: evidence-backed beats clever; leaks near money beat leaks at the top; repairs skip the queue entirely.
 
@@ -66,14 +66,14 @@ Standing rules: evidence-backed beats clever; leaks near money beat leaks at the
 - **One primary metric, chosen before launch,** as close to money as the traffic volume allows. Everything else is secondary or a guardrail. Guardrails worth watching: revenue per visitor, refund rate, support contact rate.
 - **Randomize by person, not by pageview,** and keep each person in their assigned arm for the whole test. Mixed exposure poisons the comparison.
 - **Run whole traffic cycles.** Full weeks, covering weekday and weekend rhythm, through at least one complete business cycle for the site. Never stop on a good day — stopping the moment results look favorable is the most common way teams fool themselves.
-- **Set the stopping point in advance** from the expected effect size. Qualitatively: the smaller the effect you hope to detect, the more sales or enquiries the test needs, and the need grows steeply as effects get small. Most small sites cannot detect modest effects in any reasonable time — see the next section before promising otherwise.
+- **Set the stopping point in advance** from the expected effect size. Qualitatively: the smaller the effect you hope to detect, the more conversions the test needs, and the need grows steeply as effects get small. Most small sites cannot detect modest effects in any reasonable time — see the next section before promising otherwise.
 - **Check the split.** Arms should divide as configured; a lopsided assignment means the mechanism is broken and the results are void, however exciting they look.
 - **Post-hoc segment digging is exploration, not confirmation.** A "win in one segment" discovered after the fact is a new hypothesis to test, not a result to ship.
 - **Write it all down:** hypothesis, variant description, dates, exposure, result, decision. Losing tests are tuition — the record of why something failed is often worth more than a win.
 
 ## When there is too little traffic to test
 
-Judge by sales or enquiries at the tested step, not by visits. A rough rule expressed honestly: if the step completes only a handful of sales or enquiries in a week, a split test of a modest improvement will not resolve in business-relevant time, and recommending one wastes months. With plenty of weekly sales or enquiries, most sensible tests can resolve; run a sample-size calculation on the site's own count of sales or enquiries before promising one. In between, only large, obvious swings are worth testing — subtle variants are not detectable.
+Judge by conversions at the tested step, not by visits. A rough rule expressed honestly: if the step completes only a handful of conversions in a week, a split test of a modest improvement will not resolve in business-relevant time, and recommending one wastes months. With plenty of weekly conversions, most sensible tests can resolve; run a sample-size calculation on the site's own conversion count before promising one. In between, only large, obvious swings are worth testing — subtle variants are not detectable.
 
 When testing is out of reach, work down this ladder instead:
 
@@ -89,7 +89,7 @@ When testing is out of reach, work down this ladder instead:
 
 - Verify in production, on real devices, in the segments that mattered — especially the phone.
 - Re-read the same funnel and the same segments after at least one full traffic cycle, and compare the traffic mix before claiming anything.
-- Watch the guardrails: a rise in sales that raises refunds or support contacts is not a win.
+- Watch the guardrails: a conversion lift that raises refunds or support contacts is not a win.
 - Record the outcome either way, in the same log as the hypothesis. The log is the asset; individual wins are just entries in it.
 
 ## Hypothesis template

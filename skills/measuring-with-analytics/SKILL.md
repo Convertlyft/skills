@@ -5,7 +5,7 @@ description: Sets up, audits and repairs website measurement — tag installatio
 
 # Measuring with analytics
 
-Bad tracking data is worse than none. A dashboard showing no sales or enquiries when
+Bad tracking data is worse than none. A dashboard showing no conversions when
 people are buying leads to bad decisions; a funnel that drops to nothing
 because a tag is missing on one page causes panic. The job here is to make
 sure the numbers are real before anyone acts on them.
@@ -14,9 +14,9 @@ sure the numbers are real before anyone acts on them.
 
 1. Is the tag installed, once, on every page that matters?
 2. Are the events that matter being recorded?
-3. Is a sale, enquiry or sign-up (GA4: a key event) defined and counting?
+3. Is a conversion (GA4: a key event) defined and counting?
 4. Do campaign links carry consistent UTM tags?
-5. Does a visit survive the move between the owner's domains?
+5. Does a session survive the move between the owner's domains?
 6. Has someone verified, with their own visit, that data arrives?
 
 Do not interpret any report until steps 1–3 pass.
@@ -73,9 +73,9 @@ Events are what people did, not only what they viewed.
 
 | Category | Examples | Why |
 |---|---|---|
-| Sales, enquiries, sign-ups | Form submit, purchase, signup, demo request | The outcomes the business runs on |
+| Conversions | Form submit, purchase, signup, demo request | The outcomes the business runs on |
 | Funnel steps | Each step of signup or checkout | Where people drop |
-| What people did | Scroll, video play, download | Whether content is read |
+| Engagement | Scroll, video play, download | Whether content is read |
 | Errors | JavaScript exceptions, failed requests | What is broken |
 
 GA4 custom and recommended events:
@@ -94,20 +94,20 @@ gtag('event', 'purchase', {
 Use GA4's recommended event names where one fits; reports and integrations
 understand them.
 
-## 3. Sales, enquiries and sign-ups
+## 3. Conversions
 
-In GA4, mark the events that represent business outcomes as key events
-(older interfaces call them conversions). Funnel steps such as `begin_checkout` are
+In GA4, mark the events that represent business outcomes as key events (older
+interfaces call them conversions). Funnel steps such as `begin_checkout` are
 useful for analysis but are usually not the goal itself.
 
 One clear definition beats several overlapping ones. Write down what counts as
-a sale, enquiry or sign-up and make sure every tool uses the same definition before
+a conversion and make sure every tool uses the same definition before
 comparing them.
 
 ## 4. UTM tagging
 
 UTM parameters say where a visit came from. Without them, campaign traffic
-blends into "direct" or other websites ("referral").
+blends into "direct" or "referral".
 
 | Parameter | Answers | Example |
 |---|---|---|
@@ -131,7 +131,7 @@ Rules:
 | One domain | Nothing extra |
 | Subdomains | Same property or workspace on each; check the cookie domain covers them |
 | Separate domains | GA4: list every domain under the stream's "configure your domains" setting |
-| Hosted third-party checkout | Expect the visit to break at the hand-off unless the provider supports your tag; record the purchase from a confirmation page or server-side event instead |
+| Hosted third-party checkout | Expect the session to break at the hand-off unless the provider supports your tag; record the purchase from a confirmation page or server-side event instead |
 
 ## 6. Verification
 
@@ -146,8 +146,8 @@ Rules:
 
 ## When two tools disagree
 
-Different tools count different things: users versus visits (sessions) versus people,
-different visit timeouts, different bot filtering, different attribution
+Different tools count different things: users versus sessions versus people,
+different session timeouts, different bot filtering, different attribution
 rules, blockers affecting one tag more than another. Before calling a
 difference an error, put each tool's definition side by side. A difference
 that the definitions explain is not a bug.
@@ -179,15 +179,15 @@ through the tools instead of by eye.
 3. **Is anything tripping?** `cvl_watch` lists what the live watcher has
    flagged and not seen fixed, such as the tag going quiet. An empty list means
    nothing it covers is tripping, not that nothing is wrong.
-4. **Headline figures.** `cvl_kpi` returns visitors, visits, the rate of sales or
-   enquiries, revenue by currency, engaged time and site health for a window. Every
+4. **Headline figures.** `cvl_kpi` returns visitors, sessions, conversion rate,
+   revenue by currency, engaged time and site health for a window. Every
    figure has a `state`: when it is not `ok` there is no value, and `reason`
    says why. A missing figure is never zero. Pass the returned
    `window.handle` on later calls so every figure reads the same window.
 5. **What does a figure mean?** `cvl_explain` gives the definition,
    population, filters and withholding rule for one KPI figure. Use it when
    comparing with GA4 so the definitions sit side by side.
-6. **All-time visits and channels.** `cvl_sessions_summary` has visit
+6. **All-time sessions and channels.** `cvl_sessions_summary` has session
    counts, crash-free rate and channel split over the whole history; it takes
    no date range.
 7. **Funnels.** `cvl_funnels_list` gives funnel ids; `cvl_funnel_report`
@@ -205,14 +205,10 @@ answers 401, the call needs a sign-in; if 403 `insufficient_scope`, the token
 lacks the scope shown below. `cvl_whoami` says which scopes the credential
 holds.
 
-Hand-offs, once the measurement is sound: a drop in sales or enquiries goes to
+Hand-offs, once the measurement is sound: a drop in conversions goes to
 `diagnosing-conversion-drops`; "where do people get stuck" goes to
 `finding-ux-friction`; ad tracking and spend go to `running-paid-ads`; figures by
 kind of page (product pages, blog posts, service pages) go to `sorting-page-types`.
-
-## Playbooks
-
-A to-do on the What to do page names one section of [references/playbooks.md](references/playbooks.md) by its id (`PB-…`). Read that section for its steps.
 
 ## Tools
 

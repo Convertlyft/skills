@@ -112,8 +112,8 @@ easiest to over-read.
 - **Location and personalization**: rank differs by city and history. The
   owner's own browser is anecdote; neutral rank data is the record. For
   local businesses, rank only means rank-in-a-place.
-- Tie rank to visits and funnels before celebrating: a rank win that
-  produces no visits is a features-took-the-clicks story; visits
+- Tie rank to sessions and funnels before celebrating: a rank win that
+  produces no sessions is a features-took-the-clicks story; sessions
   without funnel progress is an intent-mismatch story.
 
 ## Local SEO basics
@@ -184,7 +184,7 @@ Practical crossovers:
 - A low landing-page-experience grade in Ads is a page-quality
   diagnosis that often applies to organic too.
 - The Ads search-terms report is the best keyword-research source in this
-  file — real queries with real sales and enquiries attached.
+  file — real queries with real conversion outcomes attached.
 - Run Ads on a query the site also ranks for to measure with money what
   the organic listing is worth — and to hold the SERP while organic builds.
 - The differences to state plainly: Ads is an auction rerun on every
@@ -206,7 +206,7 @@ offer that check as the next step.
 
 Signed in: keyword research on file is `cvl_seo_keywords` and `cvl_seo_keyword`
 (stored rows only; a search not on file comes back empty, not zero). A live
-results page is `cvl_seo_serp` (bought live, included in the plan). Rank tracking is `cvl_seo_rank`
+results page is `cvl_seo_serp` (uses credits). Rank tracking is `cvl_seo_rank`
 (`not_seen` is not "not ranking"). Links are `cvl_seo_backlinks`. AI-assistant
 mentions are `cvl_seo_ai`, a tracked prompt panel, never every answer an
 assistant gives.

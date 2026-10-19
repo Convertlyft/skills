@@ -14,7 +14,7 @@ It gives the order in which to look at the page itself.
 Identify, from the owner or from the page:
 
 1. **Page type**: home, landing, pricing, feature, blog, about, other.
-2. **The one result this page is for**: sign up, request a demo, buy,
+2. **The one conversion goal** for this page: sign up, request a demo, buy,
    subscribe, download, contact.
 3. **Where visitors come from**: organic search, paid, email, social, direct.
    Behaviour differs by source; read the page against the intent that brought
@@ -85,7 +85,7 @@ comparisons or a clear description of the process.
 
 Behaviour signal: loops between this page and pricing or FAQ pages.
 
-### 7. Where people get stuck
+### 7. Friction
 
 - Too many form fields; unclear next steps; confusing navigation; information
   required that should be optional; mobile problems; slow loading.
@@ -96,7 +96,7 @@ concentrated on phones, slow pages in `cvl_page_speed` terms if measured.
 ## Page-type notes
 
 - **Home page**: clear positioning for cold visitors; a quick path to the most
-  common sale, enquiry or sign-up; room for both "ready now" and "still looking".
+  common conversion; room for both "ready now" and "still looking".
 - **Landing page**: message match with the traffic source; a single call to
   action; the whole argument on one page.
 - **Pricing page**: clear plan comparison; a recommended option; help with

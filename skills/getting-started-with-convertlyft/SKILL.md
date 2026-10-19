@@ -19,13 +19,13 @@ plan, a limit or a retention period from memory.
 
 What the tools show it can see, once the site's tag is installed and a person has signed in:
 
-- Visits and the headline figures for a window — visitors, visits, the share who bought or got in touch (conversion rate),
+- Visits and the headline figures for a window — visitors, sessions, conversion rate,
   revenue by currency, engaged time (`cvl_kpi`).
 - Where people struggle — rage clicks, dead clicks, scroll depth, form starts vs submits
   (`cvl_behavior_report` and the narrower behaviour tools).
 - Per-page heatmaps with a picture (`cvl_heatmap`), paths, funnels, page speed.
 - JavaScript errors visitors hit, grouped, with a fix brief (`cvl_issues_list`, `cvl_error_brief`).
-- Visit recordings (session replays) — the structure of a visit: what was reached, clicked and typed
+- Session recordings — the structure of a visit: what was reached, clicked and typed
   into as lengths, never the content typed (`cvl_replays_list`, `cvl_replay_moment`).
 - SEO readings on file: rankings, keyword research, competitors, backlinks, crawls,
   AI-assistant mentions.
@@ -69,7 +69,16 @@ scopes it holds, when it expires, and how many calls are left.
 - **`token_expired`** → the credential has expired. Pass on what the answer says about
   renewing it; the person connects again to get a new one.
 
-When any tool refuses, call `cvl_whoami` first — its answer usually says what to change.
+- **`allowance_used`** (HTTP 429) → the plan's monthly allowance for that kind of work is
+  used: page plans, fix drafts, tracked keywords or watched competitors. The `reason` is the
+  sentence to pass on as it is ("All 10 page plans for this month are used. Refills on the 1st,
+  or move up a step."); `allowance` says which, how many and how many are left. Do not retry
+  and do not look for another tool to do the same work; offer what the sentence offers.
+  `cvl_usage` answers `allowances` (limit, used, left) on accounts that have them. Monthly
+  allowances refill on the 1st; keywords and competitors are how many are on now. Moving up a
+  step, and turning auto-scale on or off, are the owner's own presses in Billing.
+
+When any tool refuses, call `cvl_whoami` first — its answer usually names the fix.
 
 ## Step 2 — Which site?
 
@@ -97,8 +106,8 @@ events. An empty list means the tag is not sending, which is not the same as a q
 
 ## Step 4 — Hand off
 
-Read what the workspace already knows first: `cvl_recall` returns what was found before (each
-with its evidence and window), decisions, preferences and unanswered questions. Anything
+Read what the workspace already knows first: `cvl_recall` returns prior findings (each
+with its receipt and window), decisions, preferences and unanswered questions. Anything
 there does not need deriving again; a row marked `receipt_stale` is history — quote it
 with its date.
 
@@ -106,7 +115,7 @@ Then hand off by the question:
 
 | The person asks | Skill |
 |---|---|
-| "Sales / sign-ups / enquiries dropped" | `diagnosing-conversion-drops` |
+| "Sales / sign-ups / conversions dropped" | `diagnosing-conversion-drops` |
 | "Where are people getting stuck / frustrated" | `finding-ux-friction` |
 | "Show me what people did / watch a visit" | `watching-session-replays` |
 | "Errors / something is broken / a bug report" | `fixing-production-errors` |
@@ -152,10 +161,6 @@ Then hand off by the question:
   never zero.
 - Say the limit in the same breath: "I can see X. I can't see Y yet, because Z."
 
-## Playbooks
-
-A to-do on the What to do page names one section of [references/playbooks.md](references/playbooks.md) by its id (`PB-…`). Read that section for its steps.
-
 ## Tools
 
 | MCP tool | REST twin | Scope |
@@ -171,6 +176,7 @@ A to-do on the What to do page names one section of [references/playbooks.md](re
 | `cvl_public_agent_readiness` | `GET https://convertlyft.com/api/tools/cvl_public_agent_readiness` | none (no account over MCP) |
 | `cvl_kpi` | `GET https://convertlyft.com/api/tools/cvl_kpi` | `sessions:read`, `reports:read` |
 | `cvl_behavior_report` | `GET https://convertlyft.com/api/tools/cvl_behavior_report` | `sessions:read` |
+| `cvl_usage` | `GET https://convertlyft.com/api/tools/cvl_usage` | `reports:read` |
 | `cvl_heatmap` | `GET https://convertlyft.com/api/tools/cvl_heatmap` | `sessions:read` |
 | `cvl_issues_list` | `GET https://convertlyft.com/api/tools/cvl_issues_list` | `issues:read` |
 | `cvl_error_brief` | `GET https://convertlyft.com/api/tools/cvl_error_brief` | `issues:read` |

@@ -17,11 +17,11 @@ pages, the search results, public registries and reviews, and third-party
 estimates. State this boundary at the top of every profile.
 
 Cannot be known from outside, so never stated as fact: the competitor's real
-traffic, revenue, customer count, share of visitors who buy or get in touch, ad spend, or internal
+traffic, revenue, customer count, conversion rate, ad spend, or internal
 plans. Third-party traffic and authority figures are vendor estimates; label
 them as estimates and name the source, or leave them out.
 
-Tag everything you found as one of:
+Tag every finding as one of:
 
 - **Observed** — read directly from a page or a results page, with the URL.
 - **Measured** — from a data source with a date (a crawl, a rank check).
@@ -92,25 +92,25 @@ From their blog, guides and resources:
 
 ## Step 5 — SWOT and moves
 
-Write each quadrant as what you found → evidence → what to do about it.
+Write each quadrant as finding → evidence → what to do about it.
 
 - **Strengths** — what they do well, with the evidence.
 - **Weaknesses** — where their story or site is weak, and how the owner can
   use it.
-- **Openings** (the O in SWOT) — searches, topics or audiences they leave open.
+- **Opportunities** — searches, topics or audiences they leave open.
 - **Threats** — where they are ahead and the owner must defend or
   differentiate.
 
 Then up to five moves, ordered by effort against impact, each naming the
 evidence and the reading that will show whether it worked. No move rests on
-an inference alone.
+an inferred finding alone.
 
 ## Deliverable
 
 1. The boundary line: public evidence only, and the date it was gathered.
 2. Three sentences: who they are, their biggest strength, their biggest
    weakness.
-3. Positioning, search footprint, content, site quality — each thing found
+3. Positioning, search footprint, content, site quality — each finding
    tagged observed, measured or inferred.
 4. SWOT.
 5. The ranked moves.
@@ -160,12 +160,12 @@ fourth competitor without asking.
 - `cvl_seo_set_competitor_state` (write, scope `seo:write`) pins or dismisses
   a competitor so later reads use the right set. Ask the owner first.
 
-**Any domain, live (bought live, included in the plan).** The reads above cover competitors already
+**Any domain, live (uses credits).** The reads above cover competitors already
 stored. For a competitor that is not, these work on any domain (scope
-`seo:write`). Each answer is bought live, included in the plan, inside the
+`seo:write`). Each answer is bought with the account's credits, inside the
 site's daily limit, with no per-call confirmation, so never call them free and
 ask the owner before buying more than a few. An answer is stored, so the same
-question again reads the stored answer unless `refresh: true`. Their traffic and
+question again uses no credits unless `refresh: true`. Their traffic and
 volume figures are the provider's estimates: label them.
 
 - `cvl_seo_domain_overview` — the competitor's organic footprint in one

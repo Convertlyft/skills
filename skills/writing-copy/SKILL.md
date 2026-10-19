@@ -10,7 +10,7 @@ the next step. Copy that only informs is a manual; copy that only sells is a
 pitch nobody believes. Good copy does both, in the reader's own words.
 
 This skill handles the craft of the words. Where they sit on the page is a
-question of what makes people buy (see `optimizing-conversions`); why a principle persuades
+conversion question (see `optimizing-conversions`); why a principle persuades
 is covered in `applying-marketing-psychology`.
 
 ## Before writing anything

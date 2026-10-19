@@ -181,8 +181,8 @@ A jewellery shop asks which products people add to the cart most.
 
 ### Worked example — does the blog bring buyers
 
-1. `cvl_page_conversions` with `type: "blog_post"`: visits, and visits that
-   bought or got in touch, that landed on a blog post. Attribution is the entry page, so
+1. `cvl_page_conversions` with `type: "blog_post"`: sessions and converted
+   sessions that landed on a blog post. Attribution is the entry page, so
    this answers "visits that started on a blog post", not "visits that read
    one".
 2. The same call without `type`, or with `type: "product"` or
@@ -217,7 +217,7 @@ Hand the fixing to `auditing-site-seo` and `improving-search-rankings`.
 
 ## Honesty
 
-- Views are page views, not visits or people, over the last 30 days, from
+- Views are page views, not sessions or people, over the last 30 days, from
   the site's own visitors. Say "page views" every time.
 - An Estimated type is estimated. Say so whenever it carries a figure, and
   never present it as the owner's decision.
@@ -239,7 +239,7 @@ Hand the fixing to `auditing-site-seo` and `improving-search-rankings`.
   owner's yes in this chat.
 - That an Estimated type is confirmed, or that a Needs you page is one type.
 - A figure "for all product pages" while some product pages are unsorted.
-- A sale, an enquiry or a message from a page view or a tap.
+- A conversion, a sale or a message from a page view or a tap.
 - Why one page converts better than another; the readings show where, not
   why.
 

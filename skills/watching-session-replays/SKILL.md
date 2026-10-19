@@ -1,15 +1,15 @@
 ---
 name: watching-session-replays
-description: Finds the right recorded visit and reads one moment of it — the pages, the elements clicked, errors and typing lengths in the seconds around a rage click, dead click or error — so a hypothesis from analytics can be confirmed or ruled out. Use when someone asks to see what a visitor did, watch a recording, find visits that hit a page or an error, or check why people rage-click or abandon at one spot.
+description: Finds the right recorded visit and reads one moment of it — the pages, the elements clicked, errors and typing lengths in the seconds around a rage click, dead click or error — so a hypothesis from analytics can be confirmed or ruled out. Use when someone asks to see what a visitor did, watch a replay, find sessions that hit a page or an error, or check why people rage-click or abandon at one spot.
 ---
 
-# Watching visit recordings (session replays)
+# Watching session replays
 
 Goal: turn "people seem stuck here" into "here is what one real visit did, second by
 second" — without ever exposing what anyone typed. A replay confirms or rules out a
 hypothesis; one visit is an example, not a rate.
 
-Needs a signed-in connection with the recordings and visits scopes (`replays:read` and `sessions:read`). If a call returns
+Needs a signed-in connection with `replays:read` and `sessions:read`. If a call returns
 403 `insufficient_scope`, the body names the missing scope; tell the person the owner
 grants it by connecting again.
 
@@ -31,9 +31,9 @@ matches what you already know:
 |---|---|---|
 | A rage-click target | `path` + `element` (opens its newest burst) | `cvl_rage_clicks` |
 | An error group | `fingerprint` (its newest visit, one with a recording first) | `cvl_issues_list` |
-| A specific visit | `session_id`, optionally `at` (otherwise it opens at the visit's first error, rage click or dead click) | `cvl_sessions_search` |
+| A specific session | `session_id`, optionally `at` (otherwise it opens at the visit's first error, rage click or dead click) | `cvl_sessions_search` |
 
-To look up a visit:
+Finding a session:
 
 - `cvl_sessions_search` filters by `path` (substring of the entry or exit path),
   `channel`, `device`, `converted`, `crashed`, `from`, `to`, `limit`. Filters AND
@@ -70,16 +70,12 @@ moments for the same target (`cvl_sessions_search` with the same `path`, or the 
 
 ## Step 4 — Report
 
-- The moment, as plain steps, with the visit's date and device.
+- The moment, as plain steps, with the session's date and device.
 - How many visits you opened and how many matched.
 - What it confirms or rules out from the earlier hypothesis.
 - What it cannot show (no frames yet; no typed content, by design).
 - One next step: a fix brief (`fixing-production-errors`) or a change to propose
   (`shipping-cro-fixes`).
-
-## Playbooks
-
-A to-do on the What to do page names one section of [references/playbooks.md](references/playbooks.md) by its id (`PB-…`). Read that section for its steps.
 
 ## Tools
 

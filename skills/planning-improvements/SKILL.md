@@ -14,7 +14,7 @@ the same breath, or names the measurement that would produce it.
 
 ## The two halves of any plan
 
-**On the site** — what happens after people arrive. Evidence: visits,
+**On the site** — what happens after people arrive. Evidence: sessions,
 funnels, errors, replays, page speed, install checks, heatmaps and forms.
 Question: of the people who came, why did they not act?
 
@@ -33,11 +33,11 @@ one list hides which lever the owner is pulling.
 Each stage can make later ones pointless, so do not skip ahead.
 
 1. **Measurement before opinion.** Is tracking installed and sending? Is a
-   sale, enquiry or sign-up defined and counting? Is there a funnel on the money path? If
+   conversion defined and counting? Is there a funnel on the money path? If
    not, fixing that is the first item, ahead of any page critique or search
    work (see `measuring-with-analytics`).
 2. **Repairs before experiments.** Anything measured as broken goes to the top,
-   whichever half it sits in: a button that does nothing, visits ending in an
+   whichever half it sits in: a button that does nothing, sessions ending in an
    error, a form people start and cannot finish, an important page with a crawl
    problem, tracked searches that fell out of sight. Broken things are not
    hypotheses. Fix, then confirm the reading clears.
@@ -92,14 +92,12 @@ the reading or connection that would change that.
 
 With a connected workspace, build the plan from stored readings in this order.
 
-1. **What is already known.** `cvl_recall` returns what was found before, decisions
-   and unanswered questions with their evidence. Do not re-derive what is
+1. **What is already known.** `cvl_recall` returns prior findings, decisions
+   and unanswered questions with their receipts. Do not re-derive what is
    there; quote a stale row with its date, never as a current figure.
-2. **Open work.** `cvl_todos_list` is What to do: the site's to-dos, one tab
-   at a time (`to_do`, `good_news`, `fixed`, `hidden`), broken ones first, then
-   the most at stake. `checks_delayed: true` means a check did not run last
-   time, so the list shows what it last knew; say so. `cvl_todo_detail` opens
-   one, with the change to make.
+2. **Open work.** `cvl_board_list` is the queue of what was found and is still
+   open. `briefed:false` means nobody has looked yet, which differs from an
+   empty board.
 3. **Measurement.** `cvl_install_verify` (read `reason` and `detail`),
    `cvl_funnels_list` and `cvl_workspaces_list` (`funnel_wiring`: an unmapped
    stage is not an empty stage). `cvl_connections_list` shows whether Search
@@ -113,11 +111,9 @@ With a connected workspace, build the plan from stored readings in this order.
    of a steps funnel from `cvl_funnels_list` (never a name or a guessed id);
    `cvl_page_conversions`
    shows which entry pages convert.
-6. **The owner's answer.** `cvl_todo_mark` records Later, Not a problem,
-   back to To do, or that the owner fixed it (`fix_claimed`). It is a preview
-   unless the call says `dry_run:false`: show the owner the preview and apply
-   only on their yes. Confirmed fixed and Came back are set by the next check,
-   never by a call.
+6. **Practice applied to this site.** `cvl_recommendations` pairs a measured
+   observation with advice; quote both and keep them apart. They claim no
+   effect size.
 7. **Getting people here.** `cvl_seo_flow` shows where the SEO chain stands;
    `cvl_seo_rank` gives tracked positions (`not_seen` is not "not ranking";
    `missing` means it could not be measured); `cvl_seo_opportunities` is the
@@ -131,8 +127,8 @@ With a connected workspace, build the plan from stored readings in this order.
    owner to approve; it applies nothing. It needs the opt-in
    `proposals:write` scope, a `baseline` (what was seen) and a `revert_plan`.
    Ask the owner before proposing. Record the plan's conclusions with
-   `cvl_remember` (opt-in `memory:write`) so the next conversation does not derive
-   them again; each one must carry its evidence id (`receipt_id`).
+   `cvl_remember` (opt-in `memory:write`) so the next session does not derive
+   them again; a finding must carry its receipt.
 
 If a tool answers 401, it needs a sign-in. If it answers 403
 `insufficient_scope`, the token lacks the scope listed below; plan around the
@@ -143,8 +139,7 @@ gap and say so.
 | MCP tool | REST twin | Scope |
 |---|---|---|
 | `cvl_recall` | `GET https://convertlyft.com/api/tools/cvl_recall` | `memory:read` |
-| `cvl_todos_list` | `GET https://convertlyft.com/api/tools/cvl_todos_list` | `board:read` |
-| `cvl_todo_detail` | `GET https://convertlyft.com/api/tools/cvl_todo_detail` | `board:read` |
+| `cvl_board_list` | `GET https://convertlyft.com/api/tools/cvl_board_list` | `board:read` |
 | `cvl_install_verify` | `GET https://convertlyft.com/api/tools/cvl_install_verify` | `workspaces:read` |
 | `cvl_funnels_list` | `GET https://convertlyft.com/api/tools/cvl_funnels_list` | `reports:read` |
 | `cvl_workspaces_list` | `GET https://convertlyft.com/api/tools/cvl_workspaces_list` | `workspaces:read` |
@@ -156,7 +151,7 @@ gap and say so.
 | `cvl_kpi` | `GET https://convertlyft.com/api/tools/cvl_kpi` | `sessions:read`, `reports:read` |
 | `cvl_funnel_report` | `GET https://convertlyft.com/api/tools/cvl_funnel_report` | `reports:read` |
 | `cvl_page_conversions` | `GET https://convertlyft.com/api/tools/cvl_page_conversions` | `sessions:read` |
-| `cvl_todo_mark` | `POST https://convertlyft.com/api/tools/cvl_todo_mark` | `board:write` |
+| `cvl_recommendations` | `GET https://convertlyft.com/api/tools/cvl_recommendations` | `sessions:read` |
 | `cvl_seo_flow` | `GET https://convertlyft.com/api/tools/cvl_seo_flow` | `reports:read` |
 | `cvl_seo_rank` | `GET https://convertlyft.com/api/tools/cvl_seo_rank` | `reports:read` |
 | `cvl_seo_opportunities` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |

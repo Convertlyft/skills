@@ -7,7 +7,7 @@ Frame it for the owner as quality, not charity: accessibility failures are
 usability failures with a wider blast radius. Low-contrast text is hard for
 everyone in sunlight; keyboard traps strand anyone driving the page by keyboard;
 missing labels break autofill. Fixing them helps every visitor, and many of
-these fixes also remove spots where buyers get stuck. Legal exposure around
+these fixes also remove conversion friction. Legal exposure around
 accessibility exists in many places, but do not play lawyer — flag that the
 owner may want advice if it concerns them, and stick to the craft.
 
@@ -82,7 +82,7 @@ to a checker tool rather than reciting numbers.
 - **Predictability.** Nothing surprising on focus or while typing — no forms
   that submit when a dropdown changes, no context switches nobody asked for.
 - **Plain language everywhere.** The simplest words that are accurate. This
-  overlaps entirely with the craft of getting people to buy or get in touch.
+  overlaps entirely with conversion craft.
 
 ### Robust
 
