@@ -109,6 +109,7 @@ Timestamps: strict ISO 8601 with a zone.
 | `cvl_todo_detail` | One to-do | reads | `GET https://convertlyft.com/api/tools/cvl_todo_detail` | `board:read` |
 | `cvl_todo_mark` | Mark a to-do | writes | `POST https://convertlyft.com/api/tools/cvl_todo_mark` | `board:write` |
 | `cvl_seo_check_now` | Check where tracked searches rank now | writes | `POST https://convertlyft.com/api/tools/cvl_seo_check_now` | `seo:write` |
+| `cvl_todo_add` | Add a to-do | writes | `POST https://convertlyft.com/api/tools/cvl_todo_add` | `board:write` |
 | `cvl_search_tools` | Find a tool | reads | none (MCP only) | not in manifest |
 | `cvl_call_read` | Run a read tool | reads | none (MCP only) | not in manifest |
 | `cvl_skills_list` | List the Convertlyft skills | reads | none (MCP only) | not in manifest |
