@@ -1,0 +1,14 @@
+{
+  "name": "convertlyft",
+  "owner": { "name": "Convertlyft" },
+  "metadata": {
+    "description": "The Convertlyft plugin: the Convertlyft MCP server, its skills, and a check before live-site changes."
+  },
+  "plugins": [
+    {
+      "name": "convertlyft",
+      "source": "./",
+      "description": "Skills for reading website behaviour, conversion and SEO evidence with the Convertlyft MCP server and REST API."
+    }
+  ]
+}

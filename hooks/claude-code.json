@@ -1,0 +1,17 @@
+{
+  "description": "Asks the person before Convertlyft records a live-site change (cvl_change_apply), starts an operator run (cvl_operator_run), or sets or removes a page type or folder rule (cvl_set_page_type, cvl_remove_page_type_rule).",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "^mcp__(plugin_convertlyft_)?convertlyft__cvl_(change_apply|operator_run|set_page_type|remove_page_type_rule)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"Convertlyft: this records a site change, starts an operator run, or changes your page types. Check the preview first, then allow it only if you agree.\"}}'",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
