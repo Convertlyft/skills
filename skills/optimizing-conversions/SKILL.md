@@ -61,7 +61,7 @@ to look.
    counts and the shortest realistic sequence of pages leading to it.
 2. **Read the funnel before forming any opinion.** Note volume, trend, and
    where the largest losses sit.
-3. **Find the biggest fixable leak.** Rank steps by people lost, weighted by
+3. **Find the biggest fixable leak.** Rank steps by visits lost, weighted by
    closeness to the money. A loss right before payment usually outranks a
    larger loss at the top, because those people had proven intent.
 4. **Segment the leak.** Cut by device, traffic source, landing page, and new
@@ -100,7 +100,7 @@ gotchas. The rules that never bend:
 - A claim is strong when two independent readings point the same way.
 - Label every claim "confirmed", "likely" or "possible"; never present a
   "possible" as something we found.
-- Quantify impact only as people lost at a step in a named window, never as
+- Quantify impact only as visits lost at a step in a named window, never as
   a projected uplift; no external benchmarks.
 - Never recommend fake scarcity, invented reviews, resetting countdowns or
   late-revealed costs.
@@ -148,9 +148,11 @@ How the method maps to the tools:
    once, then reuse the returned `window.handle` so the whole chain reads one
    window. `cvl_explain` gives the definition and population behind a figure.
 2. **The funnel.** `cvl_funnels_list` gives the funnel ids;
-   `cvl_funnel_report` counts people (not visits) through up to 6 steps, can
-   be narrowed by `device`, and covers at most 90 days. No funnel defined?
-   Pass `steps` directly, or recommend defining one.
+   `cvl_funnel_report` counts visits (not people) through up to 6 steps, can
+   be narrowed by `device` (`phones` or `computers`), and covers at most 90 days.
+   With no `funnel_id` and no `steps` it counts the site's main funnel, set up
+   for its site type. A step naming an event the site has never sent comes
+   back in `unknown_events`, beside the events it does send (`sent_events`).
 3. **Where sales and enquiries come from.** `cvl_page_conversions` breaks
    visits, and visits that bought or got in touch, down by entry page.
    `cvl_sessions_search` finds visits by `path`, `channel`, `device`,

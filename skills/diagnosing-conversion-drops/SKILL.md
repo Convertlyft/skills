@@ -60,7 +60,8 @@ Work down this list and stop at the first place the drop concentrates. Use the s
 2. **The funnel** — `cvl_funnels_list` for the funnel ids (never guess one), then
    `cvl_funnel_report` with `funnel_id` set to the id of the steps funnel that ends in the
    sale or enquiry, both windows (a `stage_model` id is not a steps funnel). Counts
-   are people, not visits. Name the step where the loss grew. Before calling an empty
+   are visits, not people: each visit's own journey, and a landing visit counts (a
+   journey that spans two visits isn't joined). Name the step where the loss grew. Before calling an empty
    stage a loss, check `funnel_wiring` in `cvl_workspaces_list` — an unmapped stage is
    not a stage with no traffic. A window is at most 90 days.
 3. **Errors** — `cvl_issues_list` (ordered by last seen). For any group first seen
