@@ -56,7 +56,13 @@ CI runs on every push and pull request, and the drift check runs daily:
 
 - `node scripts/lint-skills.mjs` — gerund names, third-person descriptions,
   bodies under 500 lines, references one level deep, every tool in the skill's
-  Tools table with its REST twin.
+  Tools table with its REST twin. Against `scripts/live-tools.json` (the live
+  tools list, kept by the drift check): every tool a skill names exists, every
+  argument it passes (`{"name": …, "arguments": {…}}`, or "`cvl_x` with `a`")
+  is in that tool's inputSchema, a scope tied to a tool is one the tool needs,
+  and a tool outside the default list has a Tools row that says
+  "via `cvl_call_read`". `node --test scripts/lint-skills-lib.test.mjs` tests
+  these rules.
 - `node scripts/check-manifests.mjs` — the Claude Code, Codex and Cursor
   manifests agree on name and version, each MCP config points at the real
   server and sends the consumer header, and the hook catches exactly
@@ -68,7 +74,7 @@ CI runs on every push and pull request, and the drift check runs daily:
   names must exist on the live server (MCP `tools/list`,
   `/.well-known/convertlyft-capabilities.json`, `/openapi.json`), and the
   generated `skills/getting-started-with-convertlyft/references/convertlyft-api.md`
-  must match it. `--write` regenerates that file.
+  must match it, and so must `scripts/live-tools.json`. `--write` regenerates both.
 - `claude plugin eval .` with mocked tools (`evals/`). Skipped with a notice
   when the `ANTHROPIC_API_KEY` secret is not set.
 
