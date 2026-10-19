@@ -109,8 +109,9 @@ With a connected workspace, build the plan from stored readings in this order.
    people start and do not finish; `cvl_page_speed` names slow pages.
 5. **The leak.** `cvl_kpi` gives the headline figures for a window (read each
    figure's `state`; a non-ok figure has no value and is never zero).
-   `cvl_funnel_report` counts people through each step: pass `funnel_id`, the id
-   of a steps funnel from `cvl_funnels_list` (never a name or a guessed id);
+   `cvl_funnel_report` counts visits through each step: pass `funnel_id`, the id
+   of a steps funnel from `cvl_funnels_list` (never a name or a guessed id), or
+   neither it nor `steps` for the site's main funnel;
    `cvl_page_conversions`
    shows which entry pages convert.
 6. **The owner's answer.** `cvl_todo_mark` records Later, Not a problem,

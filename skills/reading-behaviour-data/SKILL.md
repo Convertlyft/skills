@@ -93,8 +93,10 @@ repository root). The page-analysis framework lives in
 
 ### Funnels and paths
 
-- `cvl_funnel_report` counts **people**, not visits. Say "people" when quoting it.
-- Rank leaks by people lost first, proportion second, and weight leaks closer to
+- `cvl_funnel_report` counts **visits**, not people: each visit's own journey, and a
+  landing visit counts. Say "visits" when quoting it; a journey that spans two
+  visits isn't joined. Step 1 "Visited" is the same number as Home's visits.
+- Rank leaks by visits lost first, proportion second, and weight leaks closer to
   money (checkout, payment, final submit) above leaks near the top.
 - Segment a leaking step by device before diagnosing. One device far worse than
   the other usually means breakage or layout, not copy.
