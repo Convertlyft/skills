@@ -70,8 +70,8 @@ scopes it holds, when it expires, and how many calls are left.
   renewing it; the person connects again to get a new one.
 
 - **`allowance_used`** (HTTP 429) → the plan's monthly allowance for that kind of work is
-  used: page plans, fix drafts, tracked keywords or watched competitors. The `reason` is the
-  sentence to pass on as it is ("All 10 page plans for this month are used. Refills on the 1st,
+  used: SEO content briefs, tracked keywords or watched competitors. The `reason` is the
+  sentence to pass on as it is ("All 10 SEO content briefs for this month are used. Refills on the 1st,
   or move up a step."); `allowance` says which, how many and how many are left. Do not retry
   and do not look for another tool to do the same work; offer what the sentence offers.
   `cvl_usage` answers `allowances` (limit, used, left) on accounts that have them. Monthly

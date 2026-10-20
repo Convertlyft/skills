@@ -65,7 +65,7 @@ same searches but is not a business to copy.
 Call `cvl_seo_opportunities`. Each row is a search competitors win and this site does not, a
 related search around a money keyword, or a Search Console near-miss — mapped to a page or "new
 page" with one action (improve, create or track), the reason, the evidence date and whether its
-page plan is ready, and `stage`: where it stands — `new`, `draft-ready`, `published`,
+SEO content brief is ready, and `stage`: where it stands — `new`, `draft-ready`, `published`,
 `live` (a crawl read the published draft on the page, `liveSeenAt`) or `"ranking-moved"` (a rank
 check after it went live beat `positionThen`; `positionNow` is the new one). Only `live` and
 `"ranking-moved"` mean the change is on the site. The order is the tool's, not a verdict. Before recommending a row, check two things
@@ -96,7 +96,7 @@ fewer pages than usual"), and the suggested title, meta, outline, questions and 
 Rival pages that are marketplaces or social sites are skipped and replaced by the next results.
 `checklistSeen` marks the checklist items a later crawl saw on the page (`by: "crawl"`, with the
 date) or the owner ticked (`by: "you"`); report a crawl tick as seen on the page, a hand tick as the
-owner's word. Reading a page plan never makes one.
+owner's word. Reading an SEO content brief never makes one.
 
 ## Step 4 — The wider picture
 
@@ -170,7 +170,7 @@ before each one**, naming exactly what will be recorded.
   other value undoes it.
 - `cvl_seo_map_keyword_page` — say which page targets a search; it answers the page it had before.
 - `cvl_seo_add_keywords` — add searches to the keyword list, optionally for one page.
-- `cvl_seo_brief_keywords` — add, skip or clear several of a page plan's "Keywords to add" at once (the
+- `cvl_seo_brief_keywords` — add, skip or clear several of an SEO content brief's "Keywords to add" at once (the
   room's "Add all"), naming the plan by its own `search`.
 
 Two more buy search data, and run at once under `seo:write` with no per-call confirmation, so ask
