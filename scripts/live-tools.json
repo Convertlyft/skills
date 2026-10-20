@@ -503,6 +503,7 @@
     "args": [
       "fields",
       "from",
+      "source",
       "to",
       "type"
     ],
@@ -1324,6 +1325,158 @@
     ]
   },
   {
+    "name": "cvl_attribution",
+    "core": true,
+    "reads": true,
+    "args": [
+      "fields",
+      "first_purchase",
+      "from",
+      "goal",
+      "group",
+      "lookback",
+      "models",
+      "to"
+    ],
+    "scopes": [
+      "sessions:read",
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_conversion_paths",
+    "core": true,
+    "reads": true,
+    "args": [
+      "collapse",
+      "fields",
+      "first_purchase",
+      "from",
+      "goal",
+      "group",
+      "lookback",
+      "to"
+    ],
+    "scopes": [
+      "sessions:read",
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_todos_list",
+    "core": true,
+    "reads": true,
+    "args": [
+      "area",
+      "fields",
+      "tab"
+    ],
+    "scopes": [
+      "board:read"
+    ]
+  },
+  {
+    "name": "cvl_todo_detail",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "todo_id"
+    ],
+    "scopes": [
+      "board:read"
+    ]
+  },
+  {
+    "name": "cvl_todo_mark",
+    "core": true,
+    "reads": false,
+    "args": [
+      "dry_run",
+      "fields",
+      "mark",
+      "note",
+      "snooze_days",
+      "todo_id"
+    ],
+    "scopes": [
+      "board:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_check_now",
+    "core": true,
+    "reads": false,
+    "args": [
+      "device",
+      "fields",
+      "keyword",
+      "location_code",
+      "market"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_todo_add",
+    "core": true,
+    "reads": false,
+    "args": [
+      "dry_run",
+      "fields",
+      "title"
+    ],
+    "scopes": [
+      "board:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_issue_not_a_problem",
+    "core": true,
+    "reads": false,
+    "args": [
+      "fields",
+      "issue",
+      "not_a_problem"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_draft",
+    "core": true,
+    "reads": false,
+    "args": [
+      "confirm_cost",
+      "dry_run",
+      "fields",
+      "force",
+      "fresh",
+      "keyword",
+      "market",
+      "page_url"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_draft_status",
+    "core": false,
+    "reads": true,
+    "args": [
+      "brief_id",
+      "fields",
+      "keyword",
+      "market"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
     "name": "cvl_search_tools",
     "core": true,
     "reads": true,
@@ -1362,7 +1515,8 @@
     "args": [
       "fields",
       "file",
-      "name"
+      "name",
+      "section"
     ],
     "scopes": null
   }

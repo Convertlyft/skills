@@ -66,14 +66,14 @@ A tool marked "via `cvl_call_read`" is not in the default tool list: find it wit
 | `cvl_seo_track_keywords` | Track searches | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_track_keywords` | `seo:write` |
 | `cvl_seo_untrack_keywords` | Stop tracking searches | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_untrack_keywords` | `seo:write` |
 | `cvl_seo_set_competitor_state` | Pin or dismiss a competitor | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_set_competitor_state` | `seo:write` |
-| `cvl_seo_brief_keywords` | Add or skip keywords in a page plan | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_brief_keywords` | `seo:write` |
-| `cvl_seo_issue_on_purpose` | Mark a Site audit issue as on purpose | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_issue_on_purpose` | `seo:write` |
+| `cvl_seo_brief_keywords` | Add or skip keywords in an SEO content brief | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_brief_keywords` | `seo:write` |
+| `cvl_seo_issue_on_purpose` | Mark a Site audit issue as on purpose (deprecated: use cvl_seo_issue_not_a_problem) | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_issue_on_purpose` | `seo:write` |
 | `cvl_seo_opportunity_track` | Track an SEO to-do | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_opportunity_track` | `seo:write` |
 | `cvl_seo_set_keyword_money` | Money keyword or not | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_set_keyword_money` | `seo:write` |
 | `cvl_seo_map_keyword_page` | Map a search to a page | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_map_keyword_page` | `seo:write` |
 | `cvl_seo_add_keywords` | Add searches | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_add_keywords` | `seo:write` |
 | `cvl_seo_run_flow` | Run the SEO chain | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_run_flow` | `seo:write` |
-| `cvl_seo_write_fix` | Write the fix for a Site audit issue | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_write_fix` | `seo:write` |
+| `cvl_seo_write_fix` | Write the fix for a Site audit issue (retired) | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_write_fix` | `seo:write` |
 | `cvl_seo_make_brief` | Generate a competitor page brief | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_make_brief` | `seo:write` |
 | `cvl_seo_add_market` | Add a market | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_add_market` | `seo:write` |
 | `cvl_public_seo_scan` | SEO scan of any public site (no account needed) | writes | direct | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan` | none |
@@ -81,7 +81,7 @@ A tool marked "via `cvl_call_read`" is not in the default tool list: find it wit
 | `cvl_public_agent_readiness` | Can AI agents use this site? | writes | direct | `GET https://convertlyft.com/api/tools/cvl_public_agent_readiness` | none |
 | `cvl_docs_search` | Search the Convertlyft docs | reads | direct | `GET https://convertlyft.com/api/tools/cvl_docs_search` | none |
 | `cvl_replay_moment` | One moment of one visit | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_replay_moment` | `replays:read`, `sessions:read` |
-| `cvl_funnel_report` | How many people got through a funnel | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_funnel_report` | `reports:read` |
+| `cvl_funnel_report` | How many visits got through a funnel | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_funnel_report` | `reports:read` |
 | `cvl_paths` | How people move between pages | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_paths` | `reports:read` |
 | `cvl_heatmap` | Where people click on one page, with a picture | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_heatmap` | `sessions:read` |
 | `cvl_seo_serp` | Google results for a search | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_serp` | `seo:write` |
@@ -105,6 +105,16 @@ A tool marked "via `cvl_call_read`" is not in the default tool list: find it wit
 | `cvl_set_form_purpose` | Set what forms are for | writes | direct | none (MCP only) | `pages:write` |
 | `cvl_event_meanings` | What the site’s own events mean | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_event_meanings` | `reports:read` |
 | `cvl_set_event_meaning` | Set what the site’s own events mean | writes | direct | none (MCP only) | `pages:write` |
+| `cvl_attribution` | Which channels earned the sales | reads | direct | `GET https://convertlyft.com/api/tools/cvl_attribution` | `sessions:read`, `reports:read` |
+| `cvl_conversion_paths` | The paths buyers took | reads | direct | `GET https://convertlyft.com/api/tools/cvl_conversion_paths` | `sessions:read`, `reports:read` |
+| `cvl_todos_list` | What to do | reads | direct | `GET https://convertlyft.com/api/tools/cvl_todos_list` | `board:read` |
+| `cvl_todo_detail` | One to-do | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_todo_detail` | `board:read` |
+| `cvl_todo_mark` | Mark a to-do | writes | direct | `POST https://convertlyft.com/api/tools/cvl_todo_mark` | `board:write` |
+| `cvl_seo_check_now` | Check where tracked searches rank now | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_check_now` | `seo:write` |
+| `cvl_todo_add` | Add a to-do | writes | direct | `POST https://convertlyft.com/api/tools/cvl_todo_add` | `board:write` |
+| `cvl_seo_issue_not_a_problem` | Mark a Site audit issue Not a problem | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_issue_not_a_problem` | `seo:write` |
+| `cvl_seo_draft` | Draft a page for a search | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_draft` | `seo:write` |
+| `cvl_seo_draft_status` | A page draft, and where it stands | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_draft_status` | `reports:read` |
 | `cvl_search_tools` | Find a tool | reads | direct | none (MCP only) | not in manifest |
 | `cvl_call_read` | Run a read tool | reads | direct | none (MCP only) | not in manifest |
 | `cvl_skills_list` | List the Convertlyft skills | reads | direct | none (MCP only) | not in manifest |
