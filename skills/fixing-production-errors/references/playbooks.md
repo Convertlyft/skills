@@ -2,26 +2,38 @@
 
 Each section is one to-do's steps. A to-do on the What to do page names its section by id.
 
-### PB-ERR-CANTSEE — Errors from outside the site's own code
-
-**When:** Errors come from browser extensions or other code the visitor's browser adds, or from a widget or script the site loads from someone else.
-
-**Do:**
-1. From a browser extension or code the visitor's browser adds: nothing to fix on the site. Listed so it is clear these were checked.
-2. From a widget or script the site loads: the fix may be to remove or replace it, or to report it to its maker.
-
-**Check after:** For a loaded widget or script, whether the error stops after it is removed, replaced or fixed by its maker.
-
 ### PB-ERR-YOURS — An error in the site's own code
 
-**When:** An error comes from the site's own code and keeps happening.
+**When:** An error comes from the site's own code (`lane` yours_to_fix) and keeps happening.
 
 **Do:**
-1. Open it on the Errors page for the stack, the page it happened on and when it was first seen.
+1. Open it on the Errors page for where it breaks, the page it happened on and when it was first seen. "How sure are we" says whether the exact spot is known.
 2. Reproduce it on that page and device before changing anything.
-3. Fix it, ship it, then record the fix so the next run can check it stopped.
+3. Hand it over: "Copy for your developer", or "Fix it with your AI" through the AI app connected to Convertlyft.
+4. Ship the fix, then press "I fixed it" so the next run watches whether it stays fixed.
 
-**Check after:** Whether the error still appears after the fix is live.
+**Check after:** Whether the error comes back once the fix is live (Fixed — checking, then Confirmed fixed or Came back).
+
+### PB-ERR-APPMAKER — An error in an app the site added, or its platform
+
+**When:** An error comes from an app, widget or plugin the site loads, or from the platform it runs on (`lane` tell_app_maker).
+
+**Do:**
+1. Nothing in the site's own code can fix it. Copy the message for the app's maker from the error's page: it names the app, what broke, the browsers and how many visits it reached.
+2. Send it to the maker's support. If the app is not needed, removing or replacing it is the fix.
+
+**Check after:** Whether the error stops after the maker's fix, or after the app is removed or replaced.
+
+### PB-ERR-CANTSEE — An error nobody can trace to a file yet
+
+**When:** The browser reported the error with no stack, or nothing could place it (`lane` cant_see).
+
+**Do:**
+1. Do not blame an app or the platform: nothing shows where it came from.
+2. Answer "Is this mine?" on its page if you know; the answer moves it to the right list.
+3. Watch a recorded visit at the moment it fired to see what the person was doing, and use the page it happened on most to narrow it down.
+
+**Check after:** Whether a stack arrives on a later report, or the answer moves it.
 
 ### PB-ERR-CRASHED-VISITS — Visits that ended in an error
 
