@@ -3,12 +3,14 @@
 // Exit 1 with one line per problem.
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
-import { parseFrontmatter, toolsTable } from './lint-skills-lib.mjs';
+import { parseFrontmatter, toolsTable, toolIndex, skillToolProblems, tableCallReadProblems } from './lint-skills-lib.mjs';
 
 const ROOT = new URL('..', import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1');
 const SKILLS = join(ROOT, 'skills');
 const GENERATED = 'getting-started-with-convertlyft/references/convertlyft-api.md';
 const MAX_LINES = 500;
+// The live tools list as of the last `node scripts/check-drift.mjs --write`; the drift job fails when it is stale.
+const LIVE = toolIndex(JSON.parse(readFileSync(join(ROOT, 'scripts', 'live-tools.json'), 'utf8')));
 const TOOL_RE = /(?<![A-Za-z0-9])cvl_(?!pat_)[a-z][a-z0-9_]*[a-z0-9]/g;
 const problems = [];
 const fail = (where, msg) => problems.push(`${where}: ${msg}`);
@@ -51,6 +53,8 @@ for (const dir of dirs) {
   if (lines(text) >= MAX_LINES) fail(where, `SKILL.md is ${lines(text)} lines (must be under ${MAX_LINES})`);
 
   const table = toolsTable(text);
+  for (const p of skillToolProblems(text, LIVE)) fail(where, p);
+  for (const p of tableCallReadProblems(table, LIVE)) fail(where, p);
   let named = new Set(text.match(TOOL_RE) || []);
 
   // References: one level deep, each linked target must exist.
@@ -73,7 +77,10 @@ for (const dir of dirs) {
     for (const m of rtext.matchAll(/\]\(([^)#\s]+)(#[^)]*)?\)/g)) {
       if (!/^[a-z]+:/i.test(m[1])) fail(`skills/${rel}`, `links "${m[1]}"; references must not link further (one level deep)`);
     }
-    if (rel !== GENERATED) for (const t of rtext.match(TOOL_RE) || []) named.add(t);
+    if (rel !== GENERATED) {
+      for (const t of rtext.match(TOOL_RE) || []) named.add(t);
+      for (const p of skillToolProblems(rtext, LIVE)) fail(`skills/${rel}`, p);
+    }
     if (/^author:/m.test(rtext)) fail(`skills/${rel}`, 'contains a removed author tag');
   }
 
