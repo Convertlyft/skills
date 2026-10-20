@@ -220,9 +220,10 @@ instructions.
 
 | MCP tool | REST twin | Scope |
 |---|---|---|
-| `cvl_page_content` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
-| `cvl_site_pages` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
-| `cvl_seo_brief` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
+| `cvl_page_content` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
+| `cvl_site_pages` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
+| `cvl_seo_brief` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
 | `cvl_public_seo_scan` | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan` | none (no account over MCP) |
+| `cvl_call_read` | none (MCP only) | none |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST.

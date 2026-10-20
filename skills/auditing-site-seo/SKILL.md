@@ -87,7 +87,7 @@ name the scope the answer lists.
 5. **What to do next.** `cvl_seo_opportunities` is the ranked to-do list: searches competitors win
    and this site does not, related searches around money keywords, and Search Console near-misses —
    each mapped to a page or "new page" with one action (improve, create or track), the reason, the
-   evidence date, whether its page plan is ready, and the plan's `stage` (`new`, `draft-ready`,
+   evidence date, whether its SEO content brief is ready, and the plan's `stage` (`new`, `draft-ready`,
    `published`, `live` once a crawl read it on the page, `"ranking-moved"`).
 6. **One search in detail.** `cvl_seo_keyword` with `keyword` returns volume, difficulty, intent,
    the tracked position and its 90-day history beside rivals, the mapped page, the stored top 10,
@@ -102,24 +102,19 @@ name the scope the answer lists.
 
 ### Fixing an issue (writes, owner's yes first)
 
-- **Words on the page** — a missing, too long, too short or duplicate title, meta description or H1:
-  `cvl_seo_write_fix` with `issue` and `page_url` (one of the issue's sample pages) writes a new one
-  from the page's own words and saves it as a draft. It uses one of the month's fix drafts; run it
-  with `dry_run: true` first and tell the owner the estimate. It refuses any other issue and says
-  how to fix it instead.
-- **Everything else** is technical: give the fix text `cvl_seo_audit` returns for that issue (with
+- **Every issue**: give the fix text `cvl_seo_audit` returns for that issue (with
   `issue: "<id>"`) as steps the owner can pass to their developer. Never write a draft for it.
 - **On purpose** — when the owner says an issue is deliberate (a redirect they put there, a page kept
-  out of Google on purpose), `cvl_seo_issue_on_purpose` with `issue` stops counting it;
-  `on_purpose: false` counts it again. Free.
+  out of Google on purpose), `cvl_seo_issue_not_a_problem` with `issue` stops counting it;
+  `not_a_problem: false` counts it again. Free.
 
-Both need the opt-in `seo:write` scope. On 403 `insufficient_scope`, say nothing was changed and
+It needs the opt-in `seo:write` scope. On 403 `insufficient_scope`, say nothing was changed and
 which scope it needs.
 
 ### Starting a crawl
 
 If no crawl exists and the person asks for an audit, `cvl_run_crawl` starts one of the workspace's
-own site with Convertlyft's first-party spider. It is a write and needs `operator:run`; ask the
+own site with Convertlyft's first-party spider. It is a write and needs `crawl:run`; ask the
 owner before starting it. It runs for a few minutes; read the result afterwards with
 `cvl_site_pages` and `cvl_page_content`.
 
@@ -145,16 +140,16 @@ no-account scan returns none, so quote its figures exactly as returned.
 | `cvl_public_seo_scan` | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan` | none (no account over MCP) |
 | `cvl_public_seo_scan_result` | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan_result` | none (no account over MCP) |
 | `cvl_public_agent_readiness` | `GET https://convertlyft.com/api/tools/cvl_public_agent_readiness` | none (no account over MCP) |
-| `cvl_seo_flow` | `GET https://convertlyft.com/api/tools/cvl_seo_flow` | `reports:read` |
-| `cvl_seo_audit` | `GET https://convertlyft.com/api/tools/cvl_seo_audit` | `reports:read` |
-| `cvl_site_pages` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
-| `cvl_page_content` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
-| `cvl_seo_opportunities` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
-| `cvl_seo_keyword` | `GET https://convertlyft.com/api/tools/cvl_seo_keyword` | `reports:read` |
-| `cvl_seo_brief` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
-| `cvl_seo_write_fix` | `POST https://convertlyft.com/api/tools/cvl_seo_write_fix` | `seo:write` |
-| `cvl_seo_issue_on_purpose` | `POST https://convertlyft.com/api/tools/cvl_seo_issue_on_purpose` | `seo:write` |
+| `cvl_seo_flow` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_flow` | `reports:read` |
+| `cvl_seo_audit` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_audit` | `reports:read` |
+| `cvl_site_pages` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
+| `cvl_page_content` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
+| `cvl_seo_opportunities` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
+| `cvl_seo_keyword` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_keyword` | `reports:read` |
+| `cvl_seo_brief` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
+| `cvl_seo_issue_not_a_problem` | `POST https://convertlyft.com/api/tools/cvl_seo_issue_not_a_problem` | `seo:write` |
 | `cvl_run_crawl` | none (MCP only) | `crawl:run` |
 | `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
+| `cvl_call_read` | none (MCP only) | none |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST. The no-account scan is open over MCP only; its REST twin asks for a token.

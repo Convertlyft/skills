@@ -247,16 +247,17 @@ Hand the fixing to `auditing-site-seo` and `improving-search-rankings`.
 
 | MCP tool | REST twin | Scope |
 |---|---|---|
-| `cvl_page_types` | `GET https://convertlyft.com/api/tools/cvl_page_types` | `reports:read` |
-| `cvl_page_content` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
+| `cvl_page_types` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_types` | `reports:read` |
+| `cvl_page_content` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
 | `cvl_set_page_type` | none (MCP only) | `pages:write` |
-| `cvl_page_type_rules` | `GET https://convertlyft.com/api/tools/cvl_page_type_rules` | `reports:read` |
+| `cvl_page_type_rules` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_type_rules` | `reports:read` |
 | `cvl_remove_page_type_rule` | none (MCP only) | `pages:write` |
-| `cvl_paths` | `GET https://convertlyft.com/api/tools/cvl_paths` | `reports:read` |
-| `cvl_page_conversions` | `GET https://convertlyft.com/api/tools/cvl_page_conversions` | `sessions:read` |
-| `cvl_site_pages` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
-| `cvl_funnel_report` | `GET https://convertlyft.com/api/tools/cvl_funnel_report` | `reports:read` |
+| `cvl_paths` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_paths` | `reports:read` |
+| `cvl_page_conversions` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_conversions` | `sessions:read` |
+| `cvl_site_pages` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
+| `cvl_funnel_report` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_funnel_report` | `reports:read` |
 | `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
 | `cvl_whoami` | `GET https://convertlyft.com/api/tools/cvl_whoami` | none |
+| `cvl_call_read` | none (MCP only) | none |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST.
