@@ -85,10 +85,11 @@ A to-do on the What to do page names one section of [references/playbooks.md](re
 
 | MCP tool | REST twin | Scope |
 |---|---|---|
-| `cvl_replay_moment` | `GET https://convertlyft.com/api/tools/cvl_replay_moment` | `replays:read`, `sessions:read` |
-| `cvl_replays_list` | `GET https://convertlyft.com/api/tools/cvl_replays_list` | `replays:read` |
-| `cvl_sessions_search` | `GET https://convertlyft.com/api/tools/cvl_sessions_search` | `sessions:read` |
-| `cvl_rage_clicks` | `GET https://convertlyft.com/api/tools/cvl_rage_clicks` | `sessions:read` |
-| `cvl_issues_list` | `GET https://convertlyft.com/api/tools/cvl_issues_list` | `issues:read` |
+| `cvl_replay_moment` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_replay_moment` | `replays:read`, `sessions:read` |
+| `cvl_replays_list` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_replays_list` | `replays:read` |
+| `cvl_sessions_search` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_sessions_search` | `sessions:read` |
+| `cvl_rage_clicks` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_rage_clicks` | `sessions:read` |
+| `cvl_issues_list` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_issues_list` | `issues:read` |
+| `cvl_call_read` | none (MCP only) | none |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST.

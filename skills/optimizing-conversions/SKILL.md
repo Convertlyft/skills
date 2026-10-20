@@ -198,25 +198,26 @@ A to-do on the What to do page names one section of [references/playbooks.md](re
 |---|---|---|
 | `cvl_kpi` | `GET https://convertlyft.com/api/tools/cvl_kpi` | `sessions:read`, `reports:read` |
 | `cvl_explain` | `GET https://convertlyft.com/api/tools/cvl_explain` | `sessions:read`, `reports:read` |
-| `cvl_funnels_list` | `GET https://convertlyft.com/api/tools/cvl_funnels_list` | `reports:read` |
-| `cvl_funnel_report` | `GET https://convertlyft.com/api/tools/cvl_funnel_report` | `reports:read` |
-| `cvl_page_conversions` | `GET https://convertlyft.com/api/tools/cvl_page_conversions` | `sessions:read` |
-| `cvl_sessions_search` | `GET https://convertlyft.com/api/tools/cvl_sessions_search` | `sessions:read` |
-| `cvl_heatmap` | `GET https://convertlyft.com/api/tools/cvl_heatmap` | `sessions:read` |
-| `cvl_page_attention` | `GET https://convertlyft.com/api/tools/cvl_page_attention` | `sessions:read` |
-| `cvl_rage_clicks` | `GET https://convertlyft.com/api/tools/cvl_rage_clicks` | `sessions:read` |
-| `cvl_dead_clicks` | `GET https://convertlyft.com/api/tools/cvl_dead_clicks` | `sessions:read` |
-| `cvl_form_friction` | `GET https://convertlyft.com/api/tools/cvl_form_friction` | `sessions:read` |
-| `cvl_paths` | `GET https://convertlyft.com/api/tools/cvl_paths` | `reports:read` |
-| `cvl_replay_moment` | `GET https://convertlyft.com/api/tools/cvl_replay_moment` | `replays:read`, `sessions:read` |
-| `cvl_issues_list` | `GET https://convertlyft.com/api/tools/cvl_issues_list` | `issues:read` |
-| `cvl_issue_detail` | `GET https://convertlyft.com/api/tools/cvl_issue_detail` | `issues:read`, `sessions:read` |
-| `cvl_page_speed` | `GET https://convertlyft.com/api/tools/cvl_page_speed` | `sessions:read` |
+| `cvl_funnels_list` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_funnels_list` | `reports:read` |
+| `cvl_funnel_report` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_funnel_report` | `reports:read` |
+| `cvl_page_conversions` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_conversions` | `sessions:read` |
+| `cvl_sessions_search` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_sessions_search` | `sessions:read` |
+| `cvl_heatmap` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_heatmap` | `sessions:read` |
+| `cvl_page_attention` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_attention` | `sessions:read` |
+| `cvl_rage_clicks` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_rage_clicks` | `sessions:read` |
+| `cvl_dead_clicks` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_dead_clicks` | `sessions:read` |
+| `cvl_form_friction` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_form_friction` | `sessions:read` |
+| `cvl_paths` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_paths` | `reports:read` |
+| `cvl_replay_moment` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_replay_moment` | `replays:read`, `sessions:read` |
+| `cvl_issues_list` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_issues_list` | `issues:read` |
+| `cvl_issue_detail` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_issue_detail` | `issues:read`, `sessions:read` |
+| `cvl_page_speed` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_speed` | `sessions:read` |
 | `cvl_todos_list` | `GET https://convertlyft.com/api/tools/cvl_todos_list` | `board:read` |
-| `cvl_todo_detail` | `GET https://convertlyft.com/api/tools/cvl_todo_detail` | `board:read` |
+| `cvl_todo_detail` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_todo_detail` | `board:read` |
 | `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
 | `cvl_propose` | none (MCP only) | `proposals:write` |
 | `cvl_change_preview` | `GET https://convertlyft.com/api/tools/cvl_change_preview` | `changes:read` |
 | `cvl_change_apply` | none (MCP only) | `changes:write` |
+| `cvl_call_read` | none (MCP only) | none |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST.

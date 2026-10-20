@@ -77,16 +77,17 @@ the `receipt_id` and window it came from). Do not log the brief itself.
 
 | MCP tool | REST twin | Scope |
 |---|---|---|
-| `cvl_recall` | `GET https://convertlyft.com/api/tools/cvl_recall` | `memory:read` |
-| `cvl_live_feed` | `GET https://convertlyft.com/api/tools/cvl_live_feed` | `sessions:read` |
-| `cvl_install_verify` | `GET https://convertlyft.com/api/tools/cvl_install_verify` | `workspaces:read` |
-| `cvl_watch` | `GET https://convertlyft.com/api/tools/cvl_watch` | `sessions:read` |
+| `cvl_recall` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_recall` | `memory:read` |
+| `cvl_live_feed` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_live_feed` | `sessions:read` |
+| `cvl_install_verify` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_install_verify` | `workspaces:read` |
+| `cvl_watch` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_watch` | `sessions:read` |
 | `cvl_kpi` | `GET https://convertlyft.com/api/tools/cvl_kpi` | `sessions:read`, `reports:read` |
-| `cvl_issues_list` | `GET https://convertlyft.com/api/tools/cvl_issues_list` | `issues:read` |
+| `cvl_issues_list` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_issues_list` | `issues:read` |
 | `cvl_todos_list` | `GET https://convertlyft.com/api/tools/cvl_todos_list` | `board:read` |
-| `cvl_proposals_list` | `GET https://convertlyft.com/api/tools/cvl_proposals_list` | `proposals:read` |
+| `cvl_proposals_list` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_proposals_list` | `proposals:read` |
 | `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
 | `cvl_operator_run` | `POST https://convertlyft.com/api/operator/run` | `operator:run` |
 | `cvl_remember` | `POST https://convertlyft.com/api/memory` | `memory:write` |
+| `cvl_call_read` | none (MCP only) | none |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST.

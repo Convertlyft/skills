@@ -110,8 +110,8 @@ When there is a conclusion — the fix helped, did not help, or it is too early 
 
 | MCP tool | REST twin | Scope |
 |---|---|---|
-| `cvl_recall` | `GET https://convertlyft.com/api/tools/cvl_recall` | `memory:read` |
-| `cvl_proposals_list` | `GET https://convertlyft.com/api/tools/cvl_proposals_list` | `proposals:read` |
+| `cvl_recall` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_recall` | `memory:read` |
+| `cvl_proposals_list` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_proposals_list` | `proposals:read` |
 | `cvl_propose` | none (MCP only) | `proposals:write` |
 | `cvl_change_preview` | `GET https://convertlyft.com/api/tools/cvl_change_preview` | `changes:read` |
 | `cvl_change_apply` | none (MCP only) | `changes:write` |
@@ -119,5 +119,6 @@ When there is a conclusion — the fix helped, did not help, or it is too early 
 | `cvl_kpi` | `GET https://convertlyft.com/api/tools/cvl_kpi` | `sessions:read`, `reports:read` |
 | `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
 | `cvl_remember` | `POST https://convertlyft.com/api/memory` | `memory:write` |
+| `cvl_call_read` | none (MCP only) | none |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST.

@@ -21,7 +21,7 @@ When the ask is a title tag, a meta description or an opening paragraph for
 one existing page, skip Steps 1 to 3 and do this. Five reads at most.
 
 1. **The page today.** `cvl_call_read` with
-   `{"name": "cvl_page_content", "arguments": {"url": "<the page>"}}`: the
+   `{"name": "cvl_page_content", "arguments": {"path": "<the page path, like /pricing>"}}`: the
    current title, meta description, H1 and text.
 2. **The fact sheet.** Before drafting, list every claim the copy may use,
    each copied word for word from the page: prices ("from $49"),
@@ -201,17 +201,17 @@ enough data yet" when the rows are thin.
 
 | MCP tool | REST twin | Scope |
 |---|---|---|
-| `cvl_seo_opportunities` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
-| `cvl_seo_keyword` | `GET https://convertlyft.com/api/tools/cvl_seo_keyword` | `reports:read` |
-| `cvl_seo_keywords` | `GET https://convertlyft.com/api/tools/cvl_seo_keywords` | `reports:read` |
-| `cvl_seo_brief` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
+| `cvl_seo_opportunities` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
+| `cvl_seo_keyword` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_keyword` | `reports:read` |
+| `cvl_seo_keywords` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_keywords` | `reports:read` |
+| `cvl_seo_brief` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
 | `cvl_seo_make_brief` | `POST https://convertlyft.com/api/tools/cvl_seo_make_brief` | `seo:write` |
-| `cvl_site_pages` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
-| `cvl_page_content` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
+| `cvl_site_pages` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
+| `cvl_page_content` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
 | `cvl_call_read` | none (MCP only) | none |
 | `cvl_seo_serp` | `POST https://convertlyft.com/api/tools/cvl_seo_serp` | `seo:write` |
-| `cvl_seo_rank` | `GET https://convertlyft.com/api/tools/cvl_seo_rank` | `reports:read` |
-| `cvl_page_attention` | `GET https://convertlyft.com/api/tools/cvl_page_attention` | `sessions:read` |
-| `cvl_page_conversions` | `GET https://convertlyft.com/api/tools/cvl_page_conversions` | `sessions:read` |
+| `cvl_seo_rank` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_rank` | `reports:read` |
+| `cvl_page_attention` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_attention` | `sessions:read` |
+| `cvl_page_conversions` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_conversions` | `sessions:read` |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST.

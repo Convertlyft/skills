@@ -161,10 +161,11 @@ starts from what visitors do on it.
 
 | MCP tool | REST twin | Scope |
 |---|---|---|
-| `cvl_page_content` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
-| `cvl_page_attention` | `GET https://convertlyft.com/api/tools/cvl_page_attention` | `sessions:read` |
-| `cvl_heatmap` | `GET https://convertlyft.com/api/tools/cvl_heatmap` | `sessions:read` |
-| `cvl_form_friction` | `GET https://convertlyft.com/api/tools/cvl_form_friction` | `sessions:read` |
+| `cvl_page_content` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
+| `cvl_page_attention` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_attention` | `sessions:read` |
+| `cvl_heatmap` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_heatmap` | `sessions:read` |
+| `cvl_form_friction` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_form_friction` | `sessions:read` |
 | `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
+| `cvl_call_read` | none (MCP only) | none |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST.

@@ -1,6 +1,6 @@
 ---
 name: auditing-site-seo
-description: Audits a website's SEO with Convertlyft, starting with a no-account scan of any public site that returns a score, the top 3 issues and a report link, then going deeper for signed-in workspaces with the stored crawl, page content, ranked to-dos, keyword detail and page plans built from competitors. Use when someone asks for an "SEO audit", "SEO check" or "site audit", asks to check, scan or audit a site's SEO, asks why a site is not showing up in search, or says "check https://example.com with Convertlyft". For deciding what to fix after the audit and why rankings move, use improving-search-rankings instead.
+description: Audits a website's SEO with Convertlyft, starting with a no-account scan of any public site that returns a score, the top 3 issues and a report link, then going deeper for signed-in workspaces with the stored crawl, page content, ranked to-dos, keyword detail and SEO content briefs built from competitors. Use when someone asks for an "SEO audit", "SEO check" or "site audit", asks to check, scan or audit a site's SEO, asks why a site is not showing up in search, or says "check https://example.com with Convertlyft". For deciding what to fix after the audit and why rankings move, use improving-search-rankings instead.
 ---
 
 # Auditing site SEO
@@ -65,7 +65,7 @@ needs to sign in; see `getting-started-with-convertlyft`. If it answers 403 `ins
 name the scope the answer lists.
 
 1. **Where the SEO chain stands.** Call `cvl_seo_flow`. It says, for crawl, keywords, competitors,
-   to-dos and page plans, whether each is done, running, waiting for the daily limit, or failed
+   to-dos and SEO content briefs, whether each is done, running, waiting for the daily limit, or failed
    with its reason. Read this first so you do not report an empty step as "no problems".
 2. **The technical crawl.** Call `cvl_seo_audit`: the newest crawl, what was checked and what it
    found, joined to four weeks of counted visits per page, so a broken page can be weighed by
@@ -91,7 +91,7 @@ name the scope the answer lists.
    on the keyword list or tracked: for any other search the figures come back null and the lists empty, which means
    "not researched", never zero. Researching a new search is included in the plan, inside a daily limit; see
    `researching-seo-competitors`.
-7. **The page plan.** When a to-do says its brief is ready, `cvl_seo_brief` with `keyword`
+7. **The SEO content brief.** When a to-do says its brief is ready, `cvl_seo_brief` with `keyword`
    returns the stored brief: the top pages studied, what most of them do that this page does not,
    and the suggested title, meta, outline, questions and structured data. Reading it never
    generates one.
@@ -99,7 +99,7 @@ name the scope the answer lists.
 ### Starting a crawl
 
 If no crawl exists and the person asks for an audit, `cvl_run_crawl` starts one of the workspace's
-own site with Convertlyft's first-party spider. It is a write and needs `operator:run`; ask the
+own site with Convertlyft's first-party spider. It is a write and needs `crawl:run`; ask the
 owner before starting it. It runs for a few minutes; read the result afterwards with
 `cvl_site_pages` and `cvl_page_content`.
 
@@ -129,14 +129,15 @@ A to-do on the What to do page names one section of [references/playbooks.md](re
 | `cvl_public_seo_scan` | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan` | none (no account over MCP) |
 | `cvl_public_seo_scan_result` | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan_result` | none (no account over MCP) |
 | `cvl_public_agent_readiness` | `GET https://convertlyft.com/api/tools/cvl_public_agent_readiness` | none (no account over MCP) |
-| `cvl_seo_flow` | `GET https://convertlyft.com/api/tools/cvl_seo_flow` | `reports:read` |
-| `cvl_seo_audit` | `GET https://convertlyft.com/api/tools/cvl_seo_audit` | `reports:read` |
-| `cvl_site_pages` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
-| `cvl_page_content` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
-| `cvl_seo_opportunities` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
-| `cvl_seo_keyword` | `GET https://convertlyft.com/api/tools/cvl_seo_keyword` | `reports:read` |
-| `cvl_seo_brief` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
+| `cvl_seo_flow` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_flow` | `reports:read` |
+| `cvl_seo_audit` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_audit` | `reports:read` |
+| `cvl_site_pages` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
+| `cvl_page_content` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
+| `cvl_seo_opportunities` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
+| `cvl_seo_keyword` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_keyword` | `reports:read` |
+| `cvl_seo_brief` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
 | `cvl_run_crawl` | none (MCP only) | `crawl:run` |
 | `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
+| `cvl_call_read` | none (MCP only) | none |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST. The no-account scan is open over MCP only; its REST twin asks for a token.

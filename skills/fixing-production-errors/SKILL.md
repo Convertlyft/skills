@@ -127,13 +127,14 @@ A to-do on the What to do page names one section of [references/playbooks.md](re
 
 | MCP tool | REST twin | Scope |
 |---|---|---|
-| `cvl_issues_list` | `GET https://convertlyft.com/api/tools/cvl_issues_list` | `issues:read` |
-| `cvl_watch` | `GET https://convertlyft.com/api/tools/cvl_watch` | `sessions:read` |
-| `cvl_issue_detail` | `GET https://convertlyft.com/api/tools/cvl_issue_detail` | `issues:read`, `sessions:read` |
-| `cvl_error_brief` | `GET https://convertlyft.com/api/tools/cvl_error_brief` | `issues:read` |
-| `cvl_replay_moment` | `GET https://convertlyft.com/api/tools/cvl_replay_moment` | `replays:read`, `sessions:read` |
+| `cvl_issues_list` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_issues_list` | `issues:read` |
+| `cvl_watch` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_watch` | `sessions:read` |
+| `cvl_issue_detail` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_issue_detail` | `issues:read`, `sessions:read` |
+| `cvl_error_brief` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_error_brief` | `issues:read` |
+| `cvl_replay_moment` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_replay_moment` | `replays:read`, `sessions:read` |
 | `cvl_error_fix_shipped` | none (MCP only) | `issues:write` |
 | `cvl_todo_mark` | `POST https://convertlyft.com/api/tools/cvl_todo_mark` | `board:write` |
 | `cvl_propose` | none (MCP only) | `proposals:write` |
+| `cvl_call_read` | none (MCP only) | none |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST.
