@@ -23,7 +23,7 @@ Each section is one to-do's steps. A to-do on the What to do page names its sect
 3. If its `swipes` lead: make the card or carousel move on a swipe, or remove what makes it look swipeable (arrows, dots, a cut-off next card).
 4. Evidence, not the fix: one recording of it (`cvl_replay_moment` with `path` and `element`) shows what people expected.
 
-**Check after:** Clicks and swipes with no response on that element (`clicks`, `swipes`) on the next run.
+**Check after:** `clicks` and `swipes` on that element in `cvl_dead_clicks` on the next run; the to-do clears when the page's count falls under its bar.
 
 ### PB-FRICTION-STUCK-CONTACT — A contact control does not respond
 
