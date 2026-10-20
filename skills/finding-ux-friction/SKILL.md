@@ -91,19 +91,20 @@ A to-do on the What to do page names one section of [references/playbooks.md](re
 
 | MCP tool | REST twin | Scope |
 |---|---|---|
-| `cvl_watch` | `GET https://convertlyft.com/api/tools/cvl_watch` | `sessions:read` |
+| `cvl_watch` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_watch` | `sessions:read` |
 | `cvl_behavior_report` | `GET https://convertlyft.com/api/tools/cvl_behavior_report` | `sessions:read` |
-| `cvl_rage_clicks` | `GET https://convertlyft.com/api/tools/cvl_rage_clicks` | `sessions:read` |
-| `cvl_dead_clicks` | `GET https://convertlyft.com/api/tools/cvl_dead_clicks` | `sessions:read` |
-| `cvl_form_friction` | `GET https://convertlyft.com/api/tools/cvl_form_friction` | `sessions:read` |
-| `cvl_page_attention` | `GET https://convertlyft.com/api/tools/cvl_page_attention` | `sessions:read` |
-| `cvl_page_speed` | `GET https://convertlyft.com/api/tools/cvl_page_speed` | `sessions:read` |
-| `cvl_heatmap` | `GET https://convertlyft.com/api/tools/cvl_heatmap` | `sessions:read` |
+| `cvl_rage_clicks` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_rage_clicks` | `sessions:read` |
+| `cvl_dead_clicks` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_dead_clicks` | `sessions:read` |
+| `cvl_form_friction` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_form_friction` | `sessions:read` |
+| `cvl_page_attention` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_attention` | `sessions:read` |
+| `cvl_page_speed` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_speed` | `sessions:read` |
+| `cvl_heatmap` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_heatmap` | `sessions:read` |
 | `cvl_todos_list` | `GET https://convertlyft.com/api/tools/cvl_todos_list` | `board:read` |
-| `cvl_todo_detail` | `GET https://convertlyft.com/api/tools/cvl_todo_detail` | `board:read` |
-| `cvl_page_conversions` | `GET https://convertlyft.com/api/tools/cvl_page_conversions` | `sessions:read` |
-| `cvl_replay_moment` | `GET https://convertlyft.com/api/tools/cvl_replay_moment` | `replays:read`, `sessions:read` |
+| `cvl_todo_detail` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_todo_detail` | `board:read` |
+| `cvl_page_conversions` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_conversions` | `sessions:read` |
+| `cvl_replay_moment` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_replay_moment` | `replays:read`, `sessions:read` |
 | `cvl_whoami` | `GET https://convertlyft.com/api/tools/cvl_whoami` | none |
 | `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
+| `cvl_call_read` | none (MCP only) | none |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST.

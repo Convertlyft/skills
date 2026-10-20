@@ -187,23 +187,24 @@ volume figures are the provider's estimates: label them.
 | `cvl_public_seo_scan` | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan` | none (no account over MCP) |
 | `cvl_public_seo_scan_result` | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan_result` | none (no account over MCP) |
 | `cvl_public_agent_readiness` | `GET https://convertlyft.com/api/tools/cvl_public_agent_readiness` | none (no account over MCP) |
-| `cvl_seo_competitors` | `GET https://convertlyft.com/api/tools/cvl_seo_competitors` | `reports:read` |
-| `cvl_seo_rank` | `GET https://convertlyft.com/api/tools/cvl_seo_rank` | `reports:read` |
-| `cvl_seo_keyword` | `GET https://convertlyft.com/api/tools/cvl_seo_keyword` | `reports:read` |
-| `cvl_seo_opportunities` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
-| `cvl_seo_brief` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
-| `cvl_seo_backlinks` | `GET https://convertlyft.com/api/tools/cvl_seo_backlinks` | `reports:read` |
-| `cvl_seo_ai` | `GET https://convertlyft.com/api/tools/cvl_seo_ai` | `reports:read` |
-| `cvl_seo_agency_matrix` | `GET https://convertlyft.com/api/tools/cvl_seo_agency_matrix` | `reports:read` |
+| `cvl_seo_competitors` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_competitors` | `reports:read` |
+| `cvl_seo_rank` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_rank` | `reports:read` |
+| `cvl_seo_keyword` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_keyword` | `reports:read` |
+| `cvl_seo_opportunities` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
+| `cvl_seo_brief` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
+| `cvl_seo_backlinks` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_backlinks` | `reports:read` |
+| `cvl_seo_ai` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_ai` | `reports:read` |
+| `cvl_seo_agency_matrix` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_agency_matrix` | `reports:read` |
 | `cvl_crawl_start` | `POST https://convertlyft.com/api/crawl` | `crawl:run` |
-| `cvl_crawl_status` | `GET https://convertlyft.com/api/tools/cvl_crawl_status` | `reports:read` |
-| `cvl_crawl_page` | `GET https://convertlyft.com/api/tools/cvl_crawl_page` | `reports:read` |
+| `cvl_crawl_status` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_crawl_status` | `reports:read` |
+| `cvl_crawl_page` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_crawl_page` | `reports:read` |
 | `cvl_seo_domain_overview` | `POST https://convertlyft.com/api/tools/cvl_seo_domain_overview` | `seo:write` |
 | `cvl_seo_competitor_gap` | `POST https://convertlyft.com/api/tools/cvl_seo_competitor_gap` | `seo:write` |
 | `cvl_seo_backlink_profile` | `POST https://convertlyft.com/api/tools/cvl_seo_backlink_profile` | `seo:write` |
 | `cvl_seo_link_gap` | `POST https://convertlyft.com/api/tools/cvl_seo_link_gap` | `seo:write` |
 | `cvl_seo_ai_mentions` | `POST https://convertlyft.com/api/tools/cvl_seo_ai_mentions` | `seo:write` |
-| `cvl_usage` | `GET https://convertlyft.com/api/tools/cvl_usage` | `reports:read` |
+| `cvl_usage` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_usage` | `reports:read` |
 | `cvl_seo_set_competitor_state` | `POST https://convertlyft.com/api/tools/cvl_seo_set_competitor_state` | `seo:write` |
+| `cvl_call_read` | none (MCP only) | none |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST.

@@ -159,7 +159,7 @@ list so absence is not read as a pass. For the full scan workflow see the
 **Signed in, the SEO room.**
 
 1. `cvl_seo_flow` — where the automatic chain stands (crawl, keywords,
-   competitors, to-dos, page plans) and why a step is waiting or failed.
+   competitors, to-dos, SEO content briefs) and why a step is waiting or failed.
    Read it first; a step that has not run means its readings are empty, not
    zero.
 2. `cvl_seo_audit` and `cvl_site_pages` — rung 1 and 4: what the newest crawl
@@ -226,20 +226,20 @@ A to-do on the What to do page names one section of [references/playbooks.md](re
 | `cvl_public_seo_scan` | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan` | none (no account over MCP) |
 | `cvl_public_seo_scan_result` | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan_result` | none (no account over MCP) |
 | `cvl_public_agent_readiness` | `GET https://convertlyft.com/api/tools/cvl_public_agent_readiness` | none (no account over MCP) |
-| `cvl_seo_flow` | `GET https://convertlyft.com/api/tools/cvl_seo_flow` | `reports:read` |
-| `cvl_seo_audit` | `GET https://convertlyft.com/api/tools/cvl_seo_audit` | `reports:read` |
-| `cvl_site_pages` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
-| `cvl_page_content` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
+| `cvl_seo_flow` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_flow` | `reports:read` |
+| `cvl_seo_audit` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_audit` | `reports:read` |
+| `cvl_site_pages` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
+| `cvl_page_content` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
 | `cvl_call_read` | none (MCP only) | none |
-| `cvl_seo_opportunities` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
-| `cvl_seo_keyword` | `GET https://convertlyft.com/api/tools/cvl_seo_keyword` | `reports:read` |
-| `cvl_seo_keywords` | `GET https://convertlyft.com/api/tools/cvl_seo_keywords` | `reports:read` |
-| `cvl_seo_brief` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
-| `cvl_seo_rank` | `GET https://convertlyft.com/api/tools/cvl_seo_rank` | `reports:read` |
-| `cvl_seo_competitors` | `GET https://convertlyft.com/api/tools/cvl_seo_competitors` | `reports:read` |
-| `cvl_seo_backlinks` | `GET https://convertlyft.com/api/tools/cvl_seo_backlinks` | `reports:read` |
-| `cvl_seo_ai` | `GET https://convertlyft.com/api/tools/cvl_seo_ai` | `reports:read` |
-| `cvl_seo_agency_matrix` | `GET https://convertlyft.com/api/tools/cvl_seo_agency_matrix` | `reports:read` |
+| `cvl_seo_opportunities` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
+| `cvl_seo_keyword` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_keyword` | `reports:read` |
+| `cvl_seo_keywords` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_keywords` | `reports:read` |
+| `cvl_seo_brief` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
+| `cvl_seo_rank` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_rank` | `reports:read` |
+| `cvl_seo_competitors` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_competitors` | `reports:read` |
+| `cvl_seo_backlinks` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_backlinks` | `reports:read` |
+| `cvl_seo_ai` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_ai` | `reports:read` |
+| `cvl_seo_agency_matrix` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_agency_matrix` | `reports:read` |
 | `cvl_seo_track_keywords` | `POST https://convertlyft.com/api/tools/cvl_seo_track_keywords` | `seo:write` |
 | `cvl_seo_untrack_keywords` | `POST https://convertlyft.com/api/tools/cvl_seo_untrack_keywords` | `seo:write` |
 | `cvl_seo_add_keywords` | `POST https://convertlyft.com/api/tools/cvl_seo_add_keywords` | `seo:write` |
@@ -250,8 +250,8 @@ A to-do on the What to do page names one section of [references/playbooks.md](re
 | `cvl_seo_run_flow` | `POST https://convertlyft.com/api/tools/cvl_seo_run_flow` | `seo:write` |
 | `cvl_seo_make_brief` | `POST https://convertlyft.com/api/tools/cvl_seo_make_brief` | `seo:write` |
 | `cvl_seo_serp` | `POST https://convertlyft.com/api/tools/cvl_seo_serp` | `seo:write` |
-| `cvl_seo_sitemaps` | `GET https://convertlyft.com/api/tools/cvl_seo_sitemaps` | `reports:read` |
+| `cvl_seo_sitemaps` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_sitemaps` | `reports:read` |
 | `cvl_seo_submit_sitemap` | `POST https://convertlyft.com/api/tools/cvl_seo_submit_sitemap` | `seo:write` |
-| `cvl_usage` | `GET https://convertlyft.com/api/tools/cvl_usage` | `reports:read` |
+| `cvl_usage` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_usage` | `reports:read` |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST.

@@ -161,21 +161,21 @@ A to-do on the What to do page names one section of [references/playbooks.md](re
 | MCP tool | REST twin | Scope |
 |---|---|---|
 | `cvl_whoami` | `GET https://convertlyft.com/api/tools/cvl_whoami` | none |
-| `cvl_workspaces_list` | `GET https://convertlyft.com/api/tools/cvl_workspaces_list` | `workspaces:read` |
-| `cvl_install_verify` | `GET https://convertlyft.com/api/tools/cvl_install_verify` | `workspaces:read` |
-| `cvl_live_feed` | `GET https://convertlyft.com/api/tools/cvl_live_feed` | `sessions:read` |
-| `cvl_recall` | `GET https://convertlyft.com/api/tools/cvl_recall` | `memory:read` |
+| `cvl_workspaces_list` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_workspaces_list` | `workspaces:read` |
+| `cvl_install_verify` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_install_verify` | `workspaces:read` |
+| `cvl_live_feed` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_live_feed` | `sessions:read` |
+| `cvl_recall` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_recall` | `memory:read` |
 | `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
 | `cvl_docs_search` | `GET https://convertlyft.com/api/tools/cvl_docs_search` | none (no account over MCP) |
 | `cvl_public_seo_scan` | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan` | none (no account over MCP) |
 | `cvl_public_agent_readiness` | `GET https://convertlyft.com/api/tools/cvl_public_agent_readiness` | none (no account over MCP) |
 | `cvl_kpi` | `GET https://convertlyft.com/api/tools/cvl_kpi` | `sessions:read`, `reports:read` |
 | `cvl_behavior_report` | `GET https://convertlyft.com/api/tools/cvl_behavior_report` | `sessions:read` |
-| `cvl_heatmap` | `GET https://convertlyft.com/api/tools/cvl_heatmap` | `sessions:read` |
-| `cvl_issues_list` | `GET https://convertlyft.com/api/tools/cvl_issues_list` | `issues:read` |
-| `cvl_error_brief` | `GET https://convertlyft.com/api/tools/cvl_error_brief` | `issues:read` |
-| `cvl_replays_list` | `GET https://convertlyft.com/api/tools/cvl_replays_list` | `replays:read` |
-| `cvl_replay_moment` | `GET https://convertlyft.com/api/tools/cvl_replay_moment` | `replays:read`, `sessions:read` |
+| `cvl_heatmap` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_heatmap` | `sessions:read` |
+| `cvl_issues_list` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_issues_list` | `issues:read` |
+| `cvl_error_brief` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_error_brief` | `issues:read` |
+| `cvl_replays_list` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_replays_list` | `replays:read` |
+| `cvl_replay_moment` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_replay_moment` | `replays:read`, `sessions:read` |
 | `cvl_change_apply` | none (MCP only) | `changes:write` |
 | `cvl_change_undo` | none (MCP only) | `changes:write` |
 | `cvl_propose` | none (MCP only) | `proposals:write` |
