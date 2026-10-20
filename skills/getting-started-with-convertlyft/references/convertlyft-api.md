@@ -65,7 +65,7 @@ Timestamps: strict ISO 8601 with a zone.
 | `cvl_seo_untrack_keywords` | Stop tracking searches | writes | `POST https://convertlyft.com/api/tools/cvl_seo_untrack_keywords` | `seo:write` |
 | `cvl_seo_set_competitor_state` | Pin or dismiss a competitor | writes | `POST https://convertlyft.com/api/tools/cvl_seo_set_competitor_state` | `seo:write` |
 | `cvl_seo_brief_keywords` | Add or skip keywords in an SEO content brief | writes | `POST https://convertlyft.com/api/tools/cvl_seo_brief_keywords` | `seo:write` |
-| `cvl_seo_issue_on_purpose` | Mark a Site audit issue as on purpose | writes | `POST https://convertlyft.com/api/tools/cvl_seo_issue_on_purpose` | `seo:write` |
+| `cvl_seo_issue_on_purpose` | Mark a Site audit issue as on purpose (renamed) | writes | `POST https://convertlyft.com/api/tools/cvl_seo_issue_on_purpose` | `seo:write` |
 | `cvl_seo_opportunity_track` | Track an SEO to-do | writes | `POST https://convertlyft.com/api/tools/cvl_seo_opportunity_track` | `seo:write` |
 | `cvl_seo_set_keyword_money` | Money keyword or not | writes | `POST https://convertlyft.com/api/tools/cvl_seo_set_keyword_money` | `seo:write` |
 | `cvl_seo_map_keyword_page` | Map a search to a page | writes | `POST https://convertlyft.com/api/tools/cvl_seo_map_keyword_page` | `seo:write` |
@@ -79,7 +79,7 @@ Timestamps: strict ISO 8601 with a zone.
 | `cvl_public_agent_readiness` | Can AI agents use this site? | writes | `GET https://convertlyft.com/api/tools/cvl_public_agent_readiness` | none |
 | `cvl_docs_search` | Search the Convertlyft docs | reads | `GET https://convertlyft.com/api/tools/cvl_docs_search` | none |
 | `cvl_replay_moment` | One moment of one visit | reads | `GET https://convertlyft.com/api/tools/cvl_replay_moment` | `replays:read`, `sessions:read` |
-| `cvl_funnel_report` | How many people got through a funnel | reads | `GET https://convertlyft.com/api/tools/cvl_funnel_report` | `reports:read` |
+| `cvl_funnel_report` | How many visits got through a funnel | reads | `GET https://convertlyft.com/api/tools/cvl_funnel_report` | `reports:read` |
 | `cvl_paths` | How people move between pages | reads | `GET https://convertlyft.com/api/tools/cvl_paths` | `reports:read` |
 | `cvl_heatmap` | Where people click on one page, with a picture | reads | `GET https://convertlyft.com/api/tools/cvl_heatmap` | `sessions:read` |
 | `cvl_seo_serp` | Google results for a search | writes | `POST https://convertlyft.com/api/tools/cvl_seo_serp` | `seo:write` |
@@ -110,6 +110,7 @@ Timestamps: strict ISO 8601 with a zone.
 | `cvl_todo_mark` | Mark a to-do | writes | `POST https://convertlyft.com/api/tools/cvl_todo_mark` | `board:write` |
 | `cvl_seo_check_now` | Check where tracked searches rank now | writes | `POST https://convertlyft.com/api/tools/cvl_seo_check_now` | `seo:write` |
 | `cvl_todo_add` | Add a to-do | writes | `POST https://convertlyft.com/api/tools/cvl_todo_add` | `board:write` |
+| `cvl_seo_issue_not_a_problem` | Mark a Site audit issue Not a problem | writes | `POST https://convertlyft.com/api/tools/cvl_seo_issue_not_a_problem` | `seo:write` |
 | `cvl_search_tools` | Find a tool | reads | none (MCP only) | not in manifest |
 | `cvl_call_read` | Run a read tool | reads | none (MCP only) | not in manifest |
 | `cvl_skills_list` | List the Convertlyft skills | reads | none (MCP only) | not in manifest |
