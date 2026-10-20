@@ -23,3 +23,14 @@ Each section is one to-do's steps. A to-do on the What to do page names its sect
 3. If it went up instead, write down what changed while it is still known, so the next drop has something to be read against.
 
 **Check after:** Give it one clear week after any edit before comparing again.
+
+### PB-CONV-TRACKING-BROKE — Results stopped being recorded
+
+**When:** The step before a result carries on (checkouts started, forms started) and no result has been recorded for far longer than the site's own rate explains.
+
+**Do:**
+1. Put the tag and its result event back on the page that recorded the last result. On Shopify, turn the pixel back on in Settings › Customer events.
+2. If that page changed (a new checkout app, a new thank-you page), put the event on the page people now see after a result.
+
+**Check after:** Results are recorded again within 7 days.
+
