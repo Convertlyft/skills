@@ -31,7 +31,8 @@ Each section is one to-do's steps. A to-do on the What to do page names its sect
 **Do:**
 1. Do not blame an app or the platform: nothing shows where it came from.
 2. Answer "Is this mine?" on its page if you know; the answer moves it to the right list.
-3. Watch a recorded visit at the moment it fired to see what the person was doing, and use the page it happened on most to narrow it down.
+3. Make it traceable: on the page it happens on most, add `crossorigin="anonymous"` to the script tags loaded from other domains (that domain must send `Access-Control-Allow-Origin`). A browser hides the stack of an error from another domain's script, and this lets the next report show the file.
+4. Evidence, not the fix: one recording at the moment it fired shows what the person was doing.
 
 **Check after:** Whether a stack arrives on a later report, or the answer moves it.
 
