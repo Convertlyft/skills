@@ -39,8 +39,8 @@ Each section is one to-do's steps. A to-do on the What to do page names its sect
 **When:** Visitors click one spot many times in quick succession.
 
 **Do:**
-1. Watch a recording of one of these visits before changing anything.
-2. Find which control they were hitting and what they expected it to do.
-3. Fix what the recording shows: a slow response, a broken control, or something that only looks interactive.
+1. Make the spot the finding names respond to the click. If it is a button or link that is slow or broken, fix its handler or its link target.
+2. If it only looks clickable (an image, a heading, an icon, styled text), make it a real link to where people expect to go, or remove the clickable look.
+3. Evidence, not the fix: one recording of the burst (`cvl_replay_moment` with `path` and `element`) shows which of the two it is and what people expected.
 
 **Check after:** Repeated clicks on that spot on the next run.
