@@ -19,10 +19,11 @@ Each section is one to-do's steps. A to-do on the What to do page names its sect
 
 **Do:**
 1. Name the element: `cvl_dead_clicks` lists it by its `label` (its words, else its name, id or tag), with `element` for the exact one. "element not recorded" means the tracker captured none, so say that rather than guess.
-2. Make that element do what people expect (a link that opens, a button that answers, a slide that moves on a swipe), or remove the styling that makes it look clickable or swipeable.
-3. Evidence, not the fix: one recording of it (`cvl_replay_moment` with `path` and `element`) shows what people expected.
+2. If its `clicks` lead: make the element answer a click (a link that opens, a button that responds), or remove the styling that makes it look clickable.
+3. If its `swipes` lead: make the card or carousel move on a swipe, or remove what makes it look swipeable (arrows, dots, a cut-off next card).
+4. Evidence, not the fix: one recording of it (`cvl_replay_moment` with `path` and `element`) shows what people expected.
 
-**Check after:** Clicks with no response on that element on the next run.
+**Check after:** Clicks and swipes with no response on that element (`clicks`, `swipes`) on the next run.
 
 ### PB-FRICTION-STUCK-CONTACT — A contact control does not respond
 
