@@ -39,7 +39,7 @@ Each section is one to-do's steps. A to-do on the What to do page names its sect
 **When:** Visitors click one spot many times in quick succession.
 
 **Do:**
-1. Make the spot the finding names respond to the click. If it is a button or link that is slow or broken, fix its handler or its link target.
+1. Make the spot the to-do names respond to the click. If it is a button or link that is slow or broken, fix its handler or its link target.
 2. If it only looks clickable (an image, a heading, an icon, styled text), make it a real link to where people expect to go, or remove the clickable look.
 3. Evidence, not the fix: one recording of the burst (`cvl_replay_moment` with `path` and `element`) shows which of the two it is and what people expected.
 
