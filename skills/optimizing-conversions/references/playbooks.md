@@ -77,3 +77,24 @@ Each section is one to-do's steps. A to-do on the What to do page names its sect
 3. Fix the single biggest one first, so the next run can show whether that step moved.
 
 **Check after:** Step completion for that step, read against the period before the change.
+
+### PB-ACQ-AI-TOOLS — AI tools send people here
+
+**When:** Visits arrive from a link in an AI answer (ChatGPT, Perplexity, Claude, Gemini, Copilot) or an AI tool's own browser, and either end in results more often than the site's average, or come in numbers and none end in a result.
+
+**Do:**
+1. Find where they land: `cvl_page_conversions` with `source` `ai_tools` lists those pages with their visits and results.
+2. On the page most of them land on, put the facts an AI answer quotes (price, place, hours, what is included) and one way to buy or get in touch in the first screen.
+3. When they already do better than average, link that page from the home page so more visits reach it.
+
+**Check after:** Results from AI-tool visits on the next run, against their visits.
+
+### PB-CRO-PRODUCT-SHORT — A product is added to the cart less often than the others
+
+**When:** One product's page is viewed often but added to the cart far less often, per page view, than the shop's other products together.
+
+**Do:**
+1. Give its page what the product that does best shows in its first screen on a phone: the price, delivery and the Add to cart button.
+2. Change one of the three first, so the next run shows which one made the difference.
+
+**Check after:** Visits that add it to the cart, per page view, on the next run.
