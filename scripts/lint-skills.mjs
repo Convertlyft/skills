@@ -19,7 +19,7 @@ const lines = (t) => t.split(/\r?\n/).length;
 const mdFiles = (dir) => existsSync(dir) ? readdirSync(dir).filter((f) => f.endsWith('.md')) : [];
 
 const dirs = readdirSync(SKILLS).filter((d) => statSync(join(SKILLS, d)).isDirectory());
-if (dirs.length < 18 || dirs.length > 24) fail('skills/', `expected about 20 skills, found ${dirs.length}`);
+if (dirs.length < 18 || dirs.length > 28) fail('skills/', `expected about 20 to 28 skills, found ${dirs.length}`);
 
 for (const dir of dirs) {
   const where = `skills/${dir}`;

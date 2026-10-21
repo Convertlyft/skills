@@ -125,6 +125,9 @@ Then hand off by the question:
 | "Research one competitor / their positioning, offer or a SWOT" | `profiling-competitors` |
 | "Write or plan an article, guide or landing-page content" | `planning-content` |
 | "Schema markup / structured data / rich results" | `adding-schema-markup` |
+| "My product or category pages don't sell / product page titles, copy or filter URLs" | `optimizing-product-category-pages` |
+| "Show up in my city / a page per area / local schema / reviews" | `optimizing-local-service-pages` |
+| "The site or a page is slow / Core Web Vitals, LCP, INP or CLS" | `improving-page-speed` |
 | "Sort my pages / which pages need me / how do my product pages or blog posts do" | `sorting-page-types` |
 | "What should I fix first / an overall plan across pages, search and ads" | `planning-improvements` |
 
