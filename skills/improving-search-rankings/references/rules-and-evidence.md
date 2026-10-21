@@ -75,8 +75,8 @@ Say plainly when something cannot be concluded:
 - Ranks wobble daily. Judge trends over weeks.
 - Fixing everything an audit tool flags is not a strategy. The ladder decides
   what matters.
-- `llms.txt` is an emerging convention for AI agents, not a ranking lever.
-  Fine to add; promise nothing from it.
+- `llms.txt` is optional: no proven effect on ranking or AI citations, and
+  Google ignores it. Promise nothing from it.
 
 ## Ads and SEO share one landing page
 

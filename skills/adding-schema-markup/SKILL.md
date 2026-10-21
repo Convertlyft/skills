@@ -52,8 +52,12 @@ If only the raw HTML was available, say the result is provisional.
 | Software or app page | `SoftwareApplication` | `Offer` only if a price is shown on the page |
 | Physical location | `LocalBusiness` (most specific subtype) | opening hours, geo, matching the Business Profile |
 | Any page with breadcrumbs | `BreadcrumbList` | — |
-| Question-and-answer content | `FAQPage` for machine parsing | promise no rich result |
-| Step-by-step tutorial | `HowTo` for machine parsing | promise no rich result |
+
+`FAQPage` and `HowTo` are not on this list. Google shows FAQ rich results only
+for well-known, authoritative government and health sites, and has deprecated
+HowTo rich results. For any other site, adding them earns no rich result;
+answer the questions and steps in plain text on the page instead, and spend
+the markup on the types above that still earn results.
 
 One `Organization` and one `WebSite` per site, not per page. Link entities with
 `@id` so blocks reference each other instead of repeating.
