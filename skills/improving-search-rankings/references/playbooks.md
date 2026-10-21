@@ -60,7 +60,7 @@ Each section is one to-do's steps. A to-do on the What to do page names its sect
 3. If it should, link to it from two or three pages on the same topic, in their main text, with words that say what the linked page is about. A link in the menu or the footer counts too, for pages people look for there.
 4. Link from pages that are themselves linked and indexable, so the link can be followed.
 
-**Check after:** The page is no longer listed for this finding on the next crawl.
+**Check after:** The page is no longer listed for this issue on the next crawl.
 
 ### PB-AI-REFERRALS — AI assistants send visitors here
 
