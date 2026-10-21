@@ -16,8 +16,8 @@ Needs a signed-in connection with the visits scope (`sessions:read`). If `cvl_wh
 ## Step 1 — Pick one window
 
 Ask which period matters, or use the recent window the person names. Use the same
-`from` / `to` on every call. Timestamps are ISO 8601 with a zone; a date alone means
-that whole day in the site's report timezone.
+`from` / `to` on every call. Timestamps are ISO 8601 and carry their zone; a date alone
+(YYYY-MM-DD) means that whole day in UTC on every site.
 
 ## Step 2 — Sweep
 

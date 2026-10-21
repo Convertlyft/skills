@@ -215,6 +215,45 @@ A notary office asks which of its service pages send people to WhatsApp.
 "which product pages have no meta description", "which blog posts are thin".
 Hand the fixing to `auditing-site-seo` and `improving-search-rankings`.
 
+## Playbooks by type
+
+Each playbook below is one section of a skill, opened by its id with
+`cvl_skill_read` and `name` and `section`, for example
+`{"name": "cvl_skill_read", "arguments": {"name": "optimizing-product-category-pages", "section": "PB-CATEGORY-INTRO"}}`.
+A to-do on the What to do page already names its own section: open that one
+first. This table is for a question by kind of page, such as "what can I
+improve on my product pages?".
+
+| Page type | Skill | Playbooks |
+|---|---|---|
+| Product pages | `optimizing-product-category-pages` | PB-PRODUCT-UNIQUE-DESCRIPTION, PB-PRODUCT-OFFER-SHIPPING-RETURNS, PB-PRODUCT-VARIANTS-GROUP, PB-PRODUCT-OUT-OF-STOCK, PB-PRODUCT-IMAGE-ALT |
+| Product pages | `optimizing-conversions` | PB-CRO-PRODUCT-SHORT |
+| Category pages | `optimizing-product-category-pages` | PB-CATEGORY-INTRO, PB-CATEGORY-FACET-CANONICAL |
+| Service pages | `optimizing-local-service-pages` | PB-LOCAL-SERVICE-AREA-PAGE, PB-LOCAL-CONTACT-CTA, PB-EEAT-WHO |
+| Contact, Home | `optimizing-local-service-pages` | PB-SCHEMA-LOCALBUSINESS-NAP, PB-LOCAL-GBP-PARITY |
+| Contact | `finding-ux-friction` | PB-FRICTION-STUCK-CONTACT, PB-FRICTION-FORM-ABANDON |
+| Booking, Sign-up | `finding-ux-friction` | PB-FRICTION-FORM-ABANDON |
+| Booking | `optimizing-local-service-pages` | PB-LOCAL-CONTACT-CTA |
+| Cart, Checkout | `optimizing-conversions` | PB-FUNNEL-BIGGEST-LEAK |
+| Home | `adding-schema-markup` | PB-SCHEMA-NONE |
+| Blog posts | `improving-search-rankings` | PB-INTENT-PAGETYPE, PB-LINKS-ORPHAN, PB-SNIPPET-4-10-LOW-CTR |
+| Any page | `improving-page-speed` | PB-SPEED-LCP, PB-SPEED-INP, PB-SPEED-CLS, PB-SPEED-SLOW-MONEY-PAGE |
+
+Types not in the table (Pricing, About, Legal, Thank-you pages, Search
+results, Blog home, Other) have no playbook of their own; use the to-do's
+section, or the speed row. An id that a skill does not have comes back as
+`unknown_section` with the ids it does have, and a skill the server does not
+serve yet comes back as `unknown_skill`: say so, and never guess the steps.
+
+**Pages with no type yet.** For a Not sorted yet or Needs you page, pick the
+row from the address only: `/products/…` Product pages; `/collections/…` or
+`/category/…` Category pages; `/services/…` Service pages; `/blog/…` Blog
+posts; `/contact…` Contact; `/cart` Cart; `/checkout…` Checkout. Say that the
+row was picked from the address, because the page has no type yet. This
+picks a playbook only: it never sets a type, and a type still needs the
+owner's yes (see "Order of work"). An address that fits none of these gets
+the speed row and an offer to sort the page first.
+
 ## Honesty
 
 - Views are page views, not visits or people, over the last 30 days, from
@@ -258,6 +297,7 @@ Hand the fixing to `auditing-site-seo` and `improving-search-rankings`.
 | `cvl_funnel_report` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_funnel_report` | `reports:read` |
 | `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
 | `cvl_whoami` | `GET https://convertlyft.com/api/tools/cvl_whoami` | none |
+| `cvl_skill_read` | none (MCP only) | none |
 | `cvl_call_read` | none (MCP only) | none |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST.

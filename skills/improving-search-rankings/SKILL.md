@@ -179,6 +179,14 @@ list so absence is not read as a pass. For the full scan workflow see the
 6. `cvl_seo_brief` — the stored brief for one search: what most top pages do
    that this page does not, and the suggested title, meta, outline, questions
    and structured data. Reading it never generates one.
+   To turn a brief into a written draft (owner's yes first: it uses one of
+   the month's SEO content briefs once the brief is Ready), call
+   `cvl_seo_draft` with `keyword` and `market` (and `page_url` for an
+   existing page). It answers at once with `brief_id` and `poll_after_s`;
+   then `cvl_seo_draft_status` with `brief_id` after that wait, until the
+   draft is Ready. The draft is a starting point a person edits and
+   publishes: fill or delete every `[Fill in: …]` gap, never reuse a
+   `refused_text` sentence as fact. Convertlyft never publishes to the site.
 7. `cvl_seo_rank` — positions per market and device with history. `not_seen`
    means not found within the depth checked, never "not ranking"; `missing`
    means it could not be measured. An empty answer means no search is tracked
@@ -202,8 +210,8 @@ list so absence is not read as a pass. For the full scan workflow see the
 acts on a to-do; `cvl_seo_set_competitor_state` pins or dismisses a
 rival. None of them changes the site or buys anything.
 `cvl_seo_submit_sitemap` sends a sitemap to the site's own Search Console: a
-preview unless `confirm: true`, so show the preview and ask first. `cvl_seo_run_flow` and
-`cvl_seo_make_brief` do buy: they run at once, included in the plan inside
+preview unless `confirm: true`, so show the preview and ask first. `cvl_seo_run_flow`,
+`cvl_seo_make_brief` and `cvl_seo_draft` do buy: they run at once, included in the plan inside
 the daily limit, with no per-call confirmation, so ask the owner first.
 `cvl_usage` shows what was used.
 
@@ -239,6 +247,7 @@ A to-do on the What to do page names one section of [references/playbooks.md](re
 | `cvl_seo_competitors` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_competitors` | `reports:read` |
 | `cvl_seo_backlinks` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_backlinks` | `reports:read` |
 | `cvl_seo_ai` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_ai` | `reports:read` |
+| `cvl_page_conversions` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_conversions` | `sessions:read` |
 | `cvl_seo_agency_matrix` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_agency_matrix` | `reports:read` |
 | `cvl_seo_track_keywords` | `POST https://convertlyft.com/api/tools/cvl_seo_track_keywords` | `seo:write` |
 | `cvl_seo_untrack_keywords` | `POST https://convertlyft.com/api/tools/cvl_seo_untrack_keywords` | `seo:write` |
@@ -249,6 +258,8 @@ A to-do on the What to do page names one section of [references/playbooks.md](re
 | `cvl_seo_set_competitor_state` | `POST https://convertlyft.com/api/tools/cvl_seo_set_competitor_state` | `seo:write` |
 | `cvl_seo_run_flow` | `POST https://convertlyft.com/api/tools/cvl_seo_run_flow` | `seo:write` |
 | `cvl_seo_make_brief` | `POST https://convertlyft.com/api/tools/cvl_seo_make_brief` | `seo:write` |
+| `cvl_seo_draft` | `POST https://convertlyft.com/api/tools/cvl_seo_draft` | `seo:write` |
+| `cvl_seo_draft_status` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_draft_status` | `reports:read` |
 | `cvl_seo_serp` | `POST https://convertlyft.com/api/tools/cvl_seo_serp` | `seo:write` |
 | `cvl_seo_sitemaps` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_sitemaps` | `reports:read` |
 | `cvl_seo_submit_sitemap` | `POST https://convertlyft.com/api/tools/cvl_seo_submit_sitemap` | `seo:write` |
