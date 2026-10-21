@@ -30,7 +30,7 @@ is the quarter that leaves. Google's published thresholds:
 
 Between the two is "needs improvement". Field data (what real visitors
 experienced, as Convertlyft and Google's Search Console report it) is the
-result. A lab test (Lighthouse, PageSpeed Insights' lab section) is a single
+result. A lab test (Lighthouse, or the lab part of Google's PageSpeed test) is a single
 synthetic load: use it to find the cause, never as the result.
 
 ## Step 1 — Which pages are slow
@@ -59,7 +59,7 @@ caused it: report the link as a hypothesis.
 
 ## Step 3 — Find the cause on that page
 
-Load the page in PageSpeed Insights or Chrome's Lighthouse on a throttled
+Load the page in Google's PageSpeed test or Chrome's Lighthouse on a throttled
 mobile setting, and match what it flags to the vital that is poor.
 
 **LCP is slow.** The main content arrives late.

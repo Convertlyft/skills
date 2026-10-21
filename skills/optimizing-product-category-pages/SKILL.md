@@ -1,14 +1,14 @@
 ---
 name: optimizing-product-category-pages
-description: Improves a shop's product and category pages on both sides at once, the share of visits that go on to add to cart or buy and how the pages show in search, using measured Convertlyft page conversions, paths, heatmaps and visit recordings, then titles, meta descriptions, unique copy, Product schema and care with filter and duplicate URLs. Use when someone asks why product pages do not sell, which category or product pages to fix, why people view products but do not add to cart, how to write product or category page titles and copy, or how to stop filter URLs and duplicate product pages hurting search.
+description: Improves a shop's product and category pages on both sides at once, the share of visits that go on to add to cart or buy and how the pages show in search, using Convertlyft's measured sales by landing page, paths, heatmaps and visit recordings, then titles, meta descriptions, unique copy, Product schema and care with filter and duplicate URLs. Use when someone asks why product pages do not sell, which category or product pages to fix, why people view products but do not add to cart, how to write product or category page titles and copy, or how to stop filter URLs and duplicate product pages hurting search.
 ---
 
 # Product and category pages
 
 A shop earns on two kinds of page: category pages, where people choose, and
-product pages, where they decide. Both have a conversion side (do the people
+product pages, where they decide. Both have a sales side (do the people
 who arrive go on to add to cart and buy?) and a search side (do the right
-people arrive at all?). Work the conversion side first on pages that already
+people arrive at all?). Work the sales side first on pages that already
 get visits; work the search side on pages that should get visits and do not.
 
 Never invent a number, a benchmark rate or a "typical" add-to-cart share.
@@ -29,7 +29,7 @@ low), say so before any answer by kind of page, and offer
 Use one window for the whole job. A date alone (YYYY-MM-DD) is that whole
 day in UTC; quote the window each answer returns.
 
-## Step 2 — The conversion side: which pages lose people
+## Step 2 — The sales side: which pages lose people
 
 1. **Which pages sell.** `cvl_page_conversions` with `type` (`product`, then
    `category_listing`) gives visits and visits that bought, by the page they
@@ -130,7 +130,7 @@ page offers no way to narrow a long list, or its filters return nothing.
 For each page (top three to five):
 
 - **Page**: path, its page type (and whether confirmed or estimated).
-- **Conversion**: visits, the share that bought or added to cart, the window,
+- **Sales**: visits, the share that bought or added to cart, the window,
   the device, and where people went instead.
 - **Likely cause**: one hypothesis, marked as one, with what the heatmap or
   recording showed.

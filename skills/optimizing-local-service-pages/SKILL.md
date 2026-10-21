@@ -1,6 +1,6 @@
 ---
 name: optimizing-local-service-pages
-description: Improves the service and location pages of a business that serves people in a place, checking that the name, address and phone match everywhere, that LocalBusiness schema carries only true facts, that a page per service area exists only where it has real local content, that the page shows who is behind the business, and that reviews are earned and shown honestly, using Convertlyft's crawl, page conversions and live results pages. Use when a plumber, clinic, law firm, notary, salon or other local business asks how to show up for searches in their city, whether to make a page per area, how to set up local schema, or why their service pages bring visits but no calls or enquiries.
+description: Improves the service and location pages of a business that serves people in a place, checking that the name, address and phone match everywhere, that LocalBusiness schema carries only true facts, that a page per service area exists only where it has real local content, that the page shows who is behind the business, and that reviews are earned and shown honestly, using Convertlyft's crawl, the enquiries each page brings and Google's live results pages. Use when a plumber, clinic, law firm, notary, salon or other local business asks how to show up for searches in their city, whether to make a page per area, how to set up local schema, or why their service pages bring visits but no calls or enquiries.
 ---
 
 # Local service and location pages
