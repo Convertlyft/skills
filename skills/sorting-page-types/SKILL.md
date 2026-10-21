@@ -242,8 +242,8 @@ improve on my product pages?".
 Types not in the table (Pricing, About, Legal, Thank-you pages, Search
 results, Blog home, Other) have no playbook of their own; use the to-do's
 section, or the speed row. An id that a skill does not have comes back as
-`unknown_section` with the ids it does have: say so, and never guess the
-steps.
+`unknown_section` with the ids it does have, and a skill the server does not
+serve yet comes back as `unknown_skill`: say so, and never guess the steps.
 
 **Pages with no type yet.** For a Not sorted yet or Needs you page, pick the
 row from the address only: `/products/…` Product pages; `/collections/…` or
