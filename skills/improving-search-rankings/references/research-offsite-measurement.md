@@ -156,13 +156,16 @@ cited, in current understanding — this field is young, say so:
 - **Be crawlable by AI bots**: check robots.txt for blocks on the AI
   crawlers (GPTBot, ClaudeBot, PerplexityBot and kin) and decide the
   tradeoff deliberately — blocked means invisible to those answers.
-  `llms.txt` is an emerging convention, not a standard; fine to add, no
-  miracles to expect.
+  `llms.txt` is optional: it has no proven effect on ranking or AI
+  citations, and Google ignores it.
 - **Be a consistent entity**: same facts about the business everywhere
   (site, profiles, directories); assistants cross-check and hedge when
   sources disagree.
-- **Structured data** (organization, product, FAQ, how-to schema) helps
-  machines parse claims; it is plumbing, not magic.
+- **Structured data** (organization, product, local business, article,
+  breadcrumbs) is for the rich results it still earns in Google; it is
+  plumbing, not a proven route into AI answers. FAQ rich results are limited
+  to well-known government and health sites, and HowTo rich results are
+  deprecated.
 - **Measurement is immature.** Some referrer data exists; much
   assistant-driven discovery arrives untagged or as direct visits. The
   honest check is asking the assistants the money questions and seeing who

@@ -105,6 +105,26 @@ Plan before drafting:
 - Use the search term naturally where it belongs. Repetition for its own sake
   reads as spam.
 
+**With Convertlyft: a first draft from the SEO content brief.** Ask the owner
+first: a draft uses one of the month's SEO content briefs once its brief is
+Ready (a brief from the last 7 days is reused; `dry_run: true` buys nothing
+and says whether one would be reused, how many briefs are left this month and
+what is missing for a good draft).
+
+1. `cvl_seo_draft` with `keyword` (the brief's search) and `market` (omit it
+   for the primary market); add `page_url` when the draft is for an existing
+   page on the site. It does not wait: it answers at once with `brief_id`,
+   `status` and `poll_after_s`.
+2. `cvl_seo_draft_status` with `brief_id`, once `poll_after_s` has passed,
+   not in a tight loop. When the draft is Ready it returns the title and meta
+   description with their lengths, the H1, outline, body, FAQ, the
+   `[Fill in: …]` gaps and the claim check.
+3. Hand it over as a starting point a person edits and publishes. The draft
+   is written from the site's own words; a claim the site never makes is left
+   as a `[Fill in: …]` gap, and a refused sentence (`refused_text`) is
+   unverified and never reused as fact. Run Step 4 on the edited version.
+   Convertlyft never publishes to the site.
+
 ## Step 4 — Check before handing it over
 
 Pass or fail each, and fix the fails:
@@ -206,6 +226,8 @@ enough data yet" when the rows are thin.
 | `cvl_seo_keywords` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_keywords` | `reports:read` |
 | `cvl_seo_brief` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
 | `cvl_seo_make_brief` | `POST https://convertlyft.com/api/tools/cvl_seo_make_brief` | `seo:write` |
+| `cvl_seo_draft` | `POST https://convertlyft.com/api/tools/cvl_seo_draft` | `seo:write` |
+| `cvl_seo_draft_status` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_draft_status` | `reports:read` |
 | `cvl_site_pages` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
 | `cvl_page_content` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
 | `cvl_call_read` | none (MCP only) | none |

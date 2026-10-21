@@ -23,7 +23,8 @@ arithmetic, not a diagnosis.
 ## Step 1 — Confirm the drop, on one window
 
 Call `cvl_kpi` with `from` and `to` for the window the person means (ask if it is
-unclear; a date alone means that whole day in the site's report timezone). Then reuse the returned
+unclear; a date alone, YYYY-MM-DD, means that whole day in UTC on every site, and a
+timestamp carries its zone). Then reuse the returned
 `window.handle` on every later call that takes one, so the whole chain reads one window.
 
 - Read `state` on every figure first. Only `ok` figures carry `value`, `display`,
