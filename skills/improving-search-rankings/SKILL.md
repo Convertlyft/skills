@@ -241,6 +241,10 @@ A to-do on the What to do page names one section of [references/playbooks.md](re
 | `cvl_seo_ai` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_ai` | `reports:read` |
 | `cvl_seo_agency_matrix` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_agency_matrix` | `reports:read` |
 | `cvl_seo_track_keywords` | `POST https://convertlyft.com/api/tools/cvl_seo_track_keywords` | `seo:write` |
+| `cvl_seo_overview` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_overview` | `reports:read` |
+| `cvl_page_types` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_types` | `reports:read` |
+| `cvl_set_site_type` | none (MCP only) | `pages:write` |
+| `cvl_seo_issue_not_a_problem` | `POST https://convertlyft.com/api/tools/cvl_seo_issue_not_a_problem` | `seo:write` |
 | `cvl_seo_untrack_keywords` | `POST https://convertlyft.com/api/tools/cvl_seo_untrack_keywords` | `seo:write` |
 | `cvl_seo_add_keywords` | `POST https://convertlyft.com/api/tools/cvl_seo_add_keywords` | `seo:write` |
 | `cvl_seo_set_keyword_money` | `POST https://convertlyft.com/api/tools/cvl_seo_set_keyword_money` | `seo:write` |
