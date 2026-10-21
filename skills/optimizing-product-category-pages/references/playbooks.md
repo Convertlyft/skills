@@ -12,19 +12,19 @@ Each section is one to-do's steps. A to-do on the What to do page names its sect
 3. Write what this shop knows about the product: fit, use, what is in the box, the questions customers ask. Take every fact from the owner or the page; never invent a specification or a claim.
 4. Change a few pages first and note the day.
 
-**Check after:** The word count and title of those pages on the next crawl, and their visits and sales with `cvl_page_conversions`.
+**Check after:** The word count and title of those pages on the next crawl, and with `cvl_page_conversions` the visits that landed on them and the share that bought.
 
 ### PB-PRODUCT-OFFER-SHIPPING-RETURNS — Price, delivery and returns are missing from the page or its markup
 
 **When:** A product page does not show its delivery cost or returns terms where people decide, or its `Offer` markup leaves them out.
 
 **Do:**
-1. `cvl_page_content` with `path`: does the page show the price, delivery cost and time, and the returns terms near the Add to cart button?
-2. `cvl_heatmap` with `path` and `device` set to `mobile`: do people on phones scroll far enough to see them?
+1. `cvl_page_content` with `path`: does the page's text give the price, delivery cost and time, and the returns terms?
+2. `cvl_heatmap` with `path` and `device` set to `mobile`: how far people on phones scroll, and whether they reach the part of the page that shows those terms and the Add to cart button.
 3. Show the delivery cost and returns terms beside the price, in the shop's own terms as the owner confirms them.
 4. In the `Product` markup, give the `Offer` its price, currency and availability, with `shippingDetails` and `hasMerchantReturnPolicy` matching what the page shows. See `adding-schema-markup`, and check the page in Google's Rich Results Test.
 
-**Check after:** Visits that added to cart on that page with `cvl_funnel_report`, over the same length of window.
+**Check after:** `cvl_funnel_report` with `steps` `[{"event": "pageview", "path": "<product path>"}, {"event": "add_to_cart"}]`, over the same length of window before and after the change. An `add_to_cart` step in `unknown_events` means the site has never sent that event, not zero.
 
 ### PB-PRODUCT-VARIANTS-GROUP — Each size or colour is its own product with no link between them
 
@@ -71,7 +71,7 @@ Each section is one to-do's steps. A to-do on the What to do page names its sect
 3. Write a short, useful introduction above or below the list: what the category holds and how to choose between the products, in the owner's facts. No block of keywords.
 4. Name the category in the title and H1 the way people search for it.
 
-**Check after:** The word count and title on the next crawl, and visits to that page with `cvl_page_conversions`.
+**Check after:** The word count and title on the next crawl, and with `cvl_page_conversions` the visits that landed on that page.
 
 ### PB-CATEGORY-FACET-CANONICAL — Filters and sorting make many addresses for one category
 
