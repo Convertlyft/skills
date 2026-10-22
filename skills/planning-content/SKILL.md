@@ -44,8 +44,14 @@ one existing page, skip Steps 1 to 3 and do this. Five reads at most.
    - Opening paragraph: answer the search in the first sentence, then the
      facts, then the next step. 50–90 words.
 5. **Check before handing it over.** Count the characters and say the count.
-   Mark each fact in the draft with the page line it came from. Anything
-   without a line comes out.
+   Mark each fact in the draft with the page line it came from. Then run
+   `cvl_check_claim` with `{"sentence": "<the whole draft>", "against": "site"}`:
+   it reads the site's own crawled pages and refuses any figure, price, time,
+   guarantee or name the site does not state in those words, quoting the
+   page's closest sentence. Anything it refuses, or anything without a line,
+   comes out or is reworded to the page's own words. It does not read a
+   sentence with none of these (`checked: false`), so the page line is still
+   your check for those.
 
 ## Step 1 — Decide whether the piece should exist
 
@@ -146,7 +152,11 @@ Pass or fail each, and fix the fails:
 10. A named author and honest dates where the site shows them.
 
 **People**
-11. Every claim is sourced or is the owner's own first-hand account.
+11. Every claim is sourced or is the owner's own first-hand account. Run
+    `cvl_check_claim` with `{"sentence": "<the whole draft>", "against": "site"}`
+    and fix every sentence it refuses (`not_on_site`): use the page's own words
+    from `closest_site_sentence`, or take the claim out. A figure about the
+    site's visitors also needs the `receipt_ids` of the data it came from.
 12. Scannable: lists, tables or images where they help, not decoration.
 13. One clear next action.
 
@@ -230,6 +240,7 @@ enough data yet" when the rows are thin.
 | `cvl_seo_draft_status` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_draft_status` | `reports:read` |
 | `cvl_site_pages` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
 | `cvl_page_content` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
+| `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
 | `cvl_call_read` | none (MCP only) | none |
 | `cvl_seo_serp` | `POST https://convertlyft.com/api/tools/cvl_seo_serp` | `seo:write` |
 | `cvl_seo_rank` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_rank` | `reports:read` |
