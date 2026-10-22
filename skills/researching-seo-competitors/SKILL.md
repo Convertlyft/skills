@@ -127,8 +127,9 @@ limit used and the month's allowances, not a price list.
 
 - `cvl_seo_serp` — the live top 10 Google results for one search in one country, with "People
   also ask".
-- `cvl_seo_keyword_ideas` — searches around one seed: `ideas` (default), `suggestions` (contain
-  the seed) or `related`, each with volume, difficulty, cost per click and intent.
+- `cvl_seo_keyword_ideas` — searches around one seed: `suggestions` (default: they contain the
+  seed), `related`, or `ideas` (wider, often off-topic for a short seed), each with volume,
+  difficulty, cost per click and intent.
 - `cvl_seo_keyword_metrics` — volume, difficulty, intent and twelve months of volume for searches
   you name.
 - `cvl_seo_domain_overview` — any site's organic footprint in one country: searches ranked for,
