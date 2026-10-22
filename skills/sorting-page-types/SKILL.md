@@ -254,7 +254,7 @@ Hand the fixing to `auditing-site-seo` and `improving-search-rankings`.
 | `cvl_remove_page_type_rule` | none (MCP only) | `pages:write` |
 | `cvl_paths` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_paths` | `reports:read` |
 | `cvl_page_conversions` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_conversions` | `sessions:read` |
-| `cvl_site_pages` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
+| `cvl_site_pages` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
 | `cvl_funnel_report` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_funnel_report` | `reports:read` |
 | `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
 | `cvl_whoami` | `GET https://convertlyft.com/api/tools/cvl_whoami` | none |

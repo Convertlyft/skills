@@ -370,7 +370,7 @@
   },
   {
     "name": "cvl_seo_backlinks",
-    "core": false,
+    "core": true,
     "reads": true,
     "args": [
       "fields"
@@ -381,7 +381,7 @@
   },
   {
     "name": "cvl_seo_audit",
-    "core": false,
+    "core": true,
     "reads": true,
     "args": [
       "cursor",
@@ -540,7 +540,7 @@
   },
   {
     "name": "cvl_site_pages",
-    "core": false,
+    "core": true,
     "reads": true,
     "args": [
       "cursor",
@@ -638,7 +638,7 @@
   },
   {
     "name": "cvl_seo_flow",
-    "core": false,
+    "core": true,
     "reads": true,
     "args": [
       "fields"
@@ -663,7 +663,7 @@
   },
   {
     "name": "cvl_seo_opportunities",
-    "core": false,
+    "core": true,
     "reads": true,
     "args": [
       "action",
@@ -768,6 +768,7 @@
     "core": true,
     "reads": false,
     "args": [
+      "dry_run",
       "fields",
       "issue",
       "on_purpose"
@@ -1052,8 +1053,10 @@
       "confirm_cost",
       "dry_run",
       "fields",
+      "history",
       "keywords",
       "language_code",
+      "limit",
       "location_code",
       "refresh"
     ],
@@ -1436,6 +1439,7 @@
     "core": true,
     "reads": false,
     "args": [
+      "dry_run",
       "fields",
       "issue",
       "not_a_problem"
@@ -1471,6 +1475,59 @@
       "fields",
       "keyword",
       "market"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_set_capture",
+    "core": true,
+    "reads": false,
+    "args": [
+      "capture",
+      "confirm",
+      "fields"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_overview",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_seo_search_console",
+    "core": false,
+    "reads": true,
+    "args": [
+      "by",
+      "cursor",
+      "fields",
+      "limit",
+      "page"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_seo_drafts",
+    "core": false,
+    "reads": true,
+    "args": [
+      "cursor",
+      "fields",
+      "id",
+      "status"
     ],
     "scopes": [
       "reports:read"

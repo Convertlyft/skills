@@ -38,8 +38,8 @@ A tool marked "via `cvl_call_read`" is not in the default tool list: find it wit
 | `cvl_seo_rank` | Search rankings | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_rank` | `reports:read` |
 | `cvl_seo_keywords` | Keyword research on file | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_keywords` | `reports:read` |
 | `cvl_seo_competitors` | Search competitors | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_competitors` | `reports:read` |
-| `cvl_seo_backlinks` | Backlink standing | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_backlinks` | `reports:read` |
-| `cvl_seo_audit` | Site audit | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_audit` | `reports:read` |
+| `cvl_seo_backlinks` | Backlink standing | reads | direct | `GET https://convertlyft.com/api/tools/cvl_seo_backlinks` | `reports:read` |
+| `cvl_seo_audit` | Site audit | reads | direct | `GET https://convertlyft.com/api/tools/cvl_seo_audit` | `reports:read` |
 | `cvl_seo_ai` | AI-assistant visibility | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_ai` | `reports:read` |
 | `cvl_dead_clicks` | Clicks that got no answer | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_dead_clicks` | `sessions:read` |
 | `cvl_rage_clicks` | Where people click in frustration | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_rage_clicks` | `sessions:read` |
@@ -51,21 +51,21 @@ A tool marked "via `cvl_call_read`" is not in the default tool list: find it wit
 | `cvl_page_conversions` | Which pages the sales and enquiries came from | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_conversions` | `sessions:read` |
 | `cvl_page_speed` | How fast each page is | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_speed` | `sessions:read` |
 | `cvl_run_crawl` | Crawl this site | writes | direct | none (MCP only) | `crawl:run` |
-| `cvl_site_pages` | The pages on this site | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
+| `cvl_site_pages` | The pages on this site | reads | direct | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
 | `cvl_page_content` | What one page says | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
 | `cvl_error_brief` | The fix brief for one error | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_error_brief` | `issues:read` |
 | `cvl_error_fix_shipped` | Say the fix for one error is live | writes | direct | none (MCP only) | `issues:write` |
 | `cvl_crawl_start` | Crawl any public site | writes | direct | `POST https://convertlyft.com/api/crawl` | `crawl:run` |
 | `cvl_crawl_status` | Where a crawl stands, and its pages | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_crawl_status` | `reports:read` |
 | `cvl_crawl_page` | One crawled page, in full | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_crawl_page` | `reports:read` |
-| `cvl_seo_flow` | SEO chain status | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_flow` | `reports:read` |
+| `cvl_seo_flow` | SEO chain status | reads | direct | `GET https://convertlyft.com/api/tools/cvl_seo_flow` | `reports:read` |
 | `cvl_seo_keyword` | One keyword in detail | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_keyword` | `reports:read` |
-| `cvl_seo_opportunities` | SEO to-dos | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
+| `cvl_seo_opportunities` | SEO to-dos | reads | direct | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
 | `cvl_seo_brief` | Competitor page brief | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
 | `cvl_seo_agency_matrix` | Competitors across your sites | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_agency_matrix` | `reports:read` |
 | `cvl_seo_track_keywords` | Track searches | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_track_keywords` | `seo:write` |
 | `cvl_seo_untrack_keywords` | Stop tracking searches | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_untrack_keywords` | `seo:write` |
-| `cvl_seo_set_competitor_state` | Pin or dismiss a competitor | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_set_competitor_state` | `seo:write` |
+| `cvl_seo_set_competitor_state` | Pin or hide a competitor | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_set_competitor_state` | `seo:write` |
 | `cvl_seo_brief_keywords` | Add or skip keywords in an SEO content brief | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_brief_keywords` | `seo:write` |
 | `cvl_seo_issue_on_purpose` | Mark a Site audit issue as on purpose (deprecated: use cvl_seo_issue_not_a_problem) | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_issue_on_purpose` | `seo:write` |
 | `cvl_seo_opportunity_track` | Track an SEO to-do | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_opportunity_track` | `seo:write` |
@@ -115,6 +115,10 @@ A tool marked "via `cvl_call_read`" is not in the default tool list: find it wit
 | `cvl_seo_issue_not_a_problem` | Mark a Site audit issue Not a problem | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_issue_not_a_problem` | `seo:write` |
 | `cvl_seo_draft` | Draft a page for a search | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_draft` | `seo:write` |
 | `cvl_seo_draft_status` | A page draft, and where it stands | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_draft_status` | `reports:read` |
+| `cvl_set_capture` | Record every visit, or only the ones that matter | writes | direct | `POST https://convertlyft.com/api/tools/cvl_set_capture` | `seo:write` |
+| `cvl_seo_overview` | How search is doing, in one answer | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_overview` | `reports:read` |
+| `cvl_seo_search_console` | Searches and pages from Google Search Console | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_search_console` | `reports:read` |
+| `cvl_seo_drafts` | Your page drafts | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_drafts` | `reports:read` |
 | `cvl_search_tools` | Find a tool | reads | direct | none (MCP only) | not in manifest |
 | `cvl_call_read` | Run a read tool | reads | direct | none (MCP only) | not in manifest |
 | `cvl_skills_list` | List the Convertlyft skills | reads | direct | none (MCP only) | not in manifest |
