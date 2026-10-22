@@ -15,13 +15,15 @@ Each section is one to-do's steps. A to-do on the What to do page names its sect
 
 ### PB-FRICTION-STUCK-BLOCK — People click something that does nothing
 
-**When:** Visitors click a block, image or text that looks clickable but does nothing.
+**When:** Visitors click or swipe a block, image or text that looks interactive but does nothing.
 
 **Do:**
-1. Decide what people expect it to do.
-2. Either make it do that, or remove the styling that makes it look clickable.
+1. Name the element: `cvl_dead_clicks` lists it by its `label` (its words, else its name, id or tag), with `element` for the exact one. "element not recorded" means the tracker captured none, so say that rather than guess.
+2. If its `clicks` lead: make the element answer a click (a link that opens, a button that responds), or remove the styling that makes it look clickable.
+3. If its `swipes` lead: make the card or carousel move on a swipe, or remove what makes it look swipeable (arrows, dots, a cut-off next card).
+4. Evidence, not the fix: one recording of it (`cvl_replay_moment` with `path` and `element`) shows what people expected.
 
-**Check after:** Clicks with no response on that element on the next run.
+**Check after:** `clicks` and `swipes` on that element in `cvl_dead_clicks` on the next run; the to-do clears when the page's count falls under its bar.
 
 ### PB-FRICTION-STUCK-CONTACT — A contact control does not respond
 
