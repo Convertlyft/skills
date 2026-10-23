@@ -1,6 +1,6 @@
 {
   "name": "convertlyft",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Skills for reading website behaviour, conversion and SEO evidence with the Convertlyft MCP server and REST API.",
   "author": { "name": "Convertlyft", "url": "https://convertlyft.com" },
   "homepage": "https://convertlyft.com",
