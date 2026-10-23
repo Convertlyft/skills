@@ -196,7 +196,7 @@ test.
 
 Before stating any figure from an answer that carries a `receipt_id`, run
 `cvl_check_claim` with `sentence` and `receipt_ids`. A rate always carries its
-denominator ("1.2% of 66,199 visits").
+denominator ("3.1% of 2,400 visits").
 
 For each change, top first:
 
