@@ -136,7 +136,9 @@
     "core": true,
     "reads": true,
     "args": [
+      "against",
       "fields",
+      "pages",
       "receipt_ids",
       "sentence"
     ],
@@ -709,6 +711,7 @@
     "core": true,
     "reads": false,
     "args": [
+      "dry_run",
       "fields",
       "keywords",
       "location_code",
@@ -738,6 +741,7 @@
     "reads": false,
     "args": [
       "domain",
+      "dry_run",
       "fields",
       "location_code",
       "market",
@@ -1442,7 +1446,8 @@
       "dry_run",
       "fields",
       "issue",
-      "not_a_problem"
+      "not_a_problem",
+      "page"
     ],
     "scopes": [
       "seo:write"
@@ -1531,6 +1536,37 @@
     ],
     "scopes": [
       "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_seo_ranked_keywords",
+    "core": true,
+    "reads": false,
+    "args": [
+      "confirm_cost",
+      "domain",
+      "dry_run",
+      "fields",
+      "language_code",
+      "limit",
+      "location_code",
+      "refresh"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_draft_publish",
+    "core": true,
+    "reads": false,
+    "args": [
+      "draft_id",
+      "fields",
+      "url"
+    ],
+    "scopes": [
+      "seo:write"
     ]
   },
   {

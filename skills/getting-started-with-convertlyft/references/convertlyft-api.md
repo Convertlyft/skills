@@ -119,6 +119,8 @@ A tool marked "via `cvl_call_read`" is not in the default tool list: find it wit
 | `cvl_seo_overview` | How search is doing, in one answer | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_overview` | `reports:read` |
 | `cvl_seo_search_console` | Searches and pages from Google Search Console | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_search_console` | `reports:read` |
 | `cvl_seo_drafts` | Your page drafts | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_drafts` | `reports:read` |
+| `cvl_seo_ranked_keywords` | Searches a domain ranks for | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_ranked_keywords` | `seo:write` |
+| `cvl_seo_draft_publish` | Mark a page draft published | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_draft_publish` | `seo:write` |
 | `cvl_search_tools` | Find a tool | reads | direct | none (MCP only) | not in manifest |
 | `cvl_call_read` | Run a read tool | reads | direct | none (MCP only) | not in manifest |
 | `cvl_skills_list` | List the Convertlyft skills | reads | direct | none (MCP only) | not in manifest |
