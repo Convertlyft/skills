@@ -68,24 +68,37 @@ one device points at layout or speed on that device.
 ## Step 4 — Pages against the site's own baseline
 
 `cvl_page_conversions` with `from` and `to` lists landing pages with visits
-(`sessions`), visits that bought (`purchase_sessions`) and `purchase_rate` (null
-under 30 visits). The baseline is the site's own rate: total
-`purchase_sessions` over total `sessions` in the same answer. Never use an outside
-benchmark.
+(`sessions`), visits that bought (`purchase_sessions`), `purchase_rate` (null
+under 30 visits) and each page's `page_type`.
 
-For each page, expected orders = `sessions` × baseline. Flag:
+**Baselines by page type.** Add up `sessions` and `purchase_sessions` per page
+type from that one answer: journeys that start on the home page, on a product
+page, on a category page, on search. That gives one baseline rate per type. Report
+it as a small table with both counts per type, before any page. Never use an
+outside benchmark.
 
-- **Zero-sale page**: `purchase_sessions` is 0 while expected orders is 5 or more.
-  The chance of a page selling as well as the site and still getting zero orders
-  is under 1% at that size, so treat it as a real problem.
-- **Under baseline**: `purchase_rate` below half the baseline with expected orders
-  of 10 or more.
-- **Above baseline**: pages well above it. Protect these in any redesign.
+**Pages against their type's baseline.** For each page, expected orders =
+`sessions` × its type's baseline. Work out the chance of seeing that few (or that
+many) orders if the page sold at its type's rate: a Poisson tail with the expected
+orders as its mean.
 
-Compare pages with pages of the same job: `cvl_page_types` with `type` and
-`with_views` sorts them. Do not call a legal, account or blog page a failure for
-not selling, and leave out cart, checkout and thank-you pages: rates here count
-the page a visit landed on, not where it bought.
+- **Strong below**: chance under 1% and expected orders 5 or more. Zero orders
+  where 5 were expected is always here.
+- **Watch below**: chance under 5% and expected orders 3 or more.
+- **Above**: chance under 1% on the high side. Protect these pages in any redesign,
+  and copy what they do.
+
+Sort pages by type with `cvl_page_types` with `type` and `with_views` if
+`page_type` is missing or `estimated` for many of them. Do not call a legal,
+account or blog page a failure for not selling, and leave out cart, checkout and
+thank-you pages.
+
+**Landing is not the whole story.** These rates credit the order to the page a
+visit landed on. A page people reach mid-journey (a catalogue, a size guide, a
+comparison page) will show almost no orders that way even when it sells well.
+Before calling such a page a failure, `cvl_funnel_report` with `steps` (a
+`pageview` step whose `path` is the page, then `purchase`) counts visits that saw
+it at any point and went on to buy. Report both numbers.
 
 For every flagged page, read it: `cvl_page_content` with `path` gives its words.
 Then open it on the live site if you can. Look for a page that offers nothing to
