@@ -121,6 +121,11 @@ A tool marked "via `cvl_call_read`" is not in the default tool list: find it wit
 | `cvl_seo_drafts` | Your page drafts | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_drafts` | `reports:read` |
 | `cvl_seo_ranked_keywords` | Searches a domain ranks for | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_ranked_keywords` | `seo:write` |
 | `cvl_seo_draft_publish` | Mark a page draft published | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_draft_publish` | `seo:write` |
+| `cvl_page_baselines` | How each kind of landing page sells, and which pages fall short | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_baselines` | `sessions:read` |
+| `cvl_checkout_values` | Orders by cart value at checkout | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_checkout_values` | `sessions:read` |
+| `cvl_traffic_breakdown` | Visits by country, hour, device, source or landing page | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_traffic_breakdown` | `sessions:read` |
+| `cvl_site_search` | What people search for on the site | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_site_search` | `sessions:read` |
+| `cvl_checkout_health` | Do add to cart and payment work | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_checkout_health` | `sessions:read` |
 | `cvl_search_tools` | Find a tool | reads | direct | none (MCP only) | not in manifest |
 | `cvl_call_read` | Run a read tool | reads | direct | none (MCP only) | not in manifest |
 | `cvl_skills_list` | List the Convertlyft skills | reads | direct | none (MCP only) | not in manifest |

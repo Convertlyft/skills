@@ -1570,6 +1570,79 @@
     ]
   },
   {
+    "name": "cvl_page_baselines",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "from",
+      "limit",
+      "min_visits",
+      "path",
+      "to",
+      "type"
+    ],
+    "scopes": [
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_checkout_values",
+    "core": false,
+    "reads": true,
+    "args": [
+      "bucket",
+      "fields",
+      "from",
+      "to"
+    ],
+    "scopes": [
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_traffic_breakdown",
+    "core": false,
+    "reads": true,
+    "args": [
+      "by",
+      "fields",
+      "from",
+      "limit",
+      "to"
+    ],
+    "scopes": [
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_site_search",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "from",
+      "limit",
+      "to"
+    ],
+    "scopes": [
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_checkout_health",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "from",
+      "to"
+    ],
+    "scopes": [
+      "sessions:read"
+    ]
+  },
+  {
     "name": "cvl_search_tools",
     "core": true,
     "reads": true,
