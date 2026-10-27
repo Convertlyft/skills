@@ -75,8 +75,8 @@ swapped is a doorway page: it adds nothing and can harm the whole site.
   `keyword` (the service plus the place, as people type it) and
   `location_code` (a country, such as 2840 for the United States) shows the live first page, including any map pack in
   `features`, and `this_site`. It buys the answer inside the daily limit,
-  with no per-call confirmation: ask the owner before running more than a
-  few, and use `dry_run: true` to see the cost first.
+  with no per-call confirmation, so ask the owner before every call, naming
+  the searches; `dry_run: true` shows the cost and buys nothing.
 - `cvl_seo_brief` with `keyword` reads a stored SEO content brief for the
   search, when one exists: what most top pages do that this one does not.
 
@@ -99,7 +99,7 @@ shows. Missing ones are questions for the owner, not text to write.
 ## Step 6 — Reviews
 
 - Ask every customer, at the moment the job is done, with a direct link to
-  the review form. A steady flow beats a burst.
+  the review form.
 - Never buy, invent, filter or gate reviews (asking only happy customers to
   post publicly). Reply to every review, including bad ones, calmly.
 - Show real reviews on the service pages, quoted word for word with the
@@ -123,16 +123,19 @@ day in UTC; quote the window each answer returns.
    never read it as zero.
 3. `cvl_heatmap` with `path` and `device` set to `mobile`: whether people on
    phones reach and press the phone number or booking button, and clicks that
-   got no answer (a phone number that is plain text, not a link, is a common
-   one).
+   got no answer. When the phone number is among them, check on the page
+   whether it is a `tel:` link.
 4. `cvl_seo_rank` for tracked searches in each market. `not_seen` means not
    found within the depth checked, never "not ranking".
 
 ## Report
 
-For each page: the path, what it ranks for if tracked, visits and visits that
-got in touch with the window, the name/address/phone check, the schema to
-add, the who-is-behind-it gaps, and one next change. Before stating a number
+For each page: the path, what it ranks for if tracked (with the date of the
+check), visits and visits that got in touch with the window, the
+name/address/phone check, the schema to add, the who-is-behind-it gaps, and
+one next change. Every figure carries its evidence class: `measured` for
+visits and enquiries counted from this site, `indexed` for a stored search
+check, and "estimated" for any provider figure such as a search volume. Before stating a number
 from an answer that carries a `receipt_id`, run `cvl_check_claim` with the
 sentence and that id.
 

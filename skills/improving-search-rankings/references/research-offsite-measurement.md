@@ -130,9 +130,9 @@ Priority order for a local business:
    strongest lever on the profile; wrong category, wrong searches. Fill
    services, hours, photos (real ones, added regularly), and keep them
    current.
-2. **Reviews**: a steady flow beats a burst; the reply habit is visible to
-   every reader and signals a live business. Never fake or gate reviews —
-   ask every happy customer, make the link effortless.
+2. **Reviews**: replying to every review is visible to
+   every reader. Never fake or gate reviews —
+   ask every customer, with a direct link to the form.
 3. **Consistency**: the business name, address, and phone should match
    across the site, the profile, and major directories. Fix the big
    inconsistencies; do not buy bulk citation packages.

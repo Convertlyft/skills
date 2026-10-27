@@ -164,7 +164,7 @@ fourth competitor without asking.
 stored. For a competitor that is not, these work on any domain (scope
 `seo:write`). Each answer is bought live, included in the plan, inside the
 site's daily limit, with no per-call confirmation, so never call them free and
-ask the owner before buying more than a few. An answer is stored, so the same
+ask the owner before every call, naming the domains. An answer is stored, so the same
 question again reads the stored answer unless `refresh: true`. Their traffic and
 volume figures are the provider's estimates: label them.
 

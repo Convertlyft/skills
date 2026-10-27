@@ -233,7 +233,7 @@ the daily limit, with no per-call confirmation, so ask the owner first.
 the results-page reading rungs 2 and 3 need when no stored top 10 exists.
 It needs `seo:write` and buys the answer live, included in the plan inside
 the site's daily limit, with no per-call confirmation. Never call it free,
-and ask the owner before running more than a few. The answer is stored, so
+and ask the owner before every call, naming the searches. The answer is stored, so
 the same search again reads the stored answer unless `refresh: true`.
 
 ## Playbooks
