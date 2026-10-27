@@ -12,7 +12,10 @@ people arrive at all?). Work the sales side first on pages that already
 get visits; work the search side on pages that should get visits and do not.
 
 Never invent a number, a benchmark rate or a "typical" add-to-cart share.
-Every figure comes from a tool answer with its window and sample.
+Every figure comes from a tool answer with its window, its sample and its
+evidence class, as the answer's `evidence` gives it: `measured` (counted from
+this site's visitors), `indexed` (read from a stored crawl, search check or
+record) or an estimate, which is always called "estimated".
 
 Needs a signed-in connection (`cvl_whoami`). If it fails, run
 `getting-started-with-convertlyft` first.
@@ -69,16 +72,20 @@ For the one or two pages that lose the most:
    phone.
 2. `cvl_page_attention` with `path`: views, typical scroll depth, engaged
    time. A median from too few visits comes back null with its sample.
-3. `cvl_dead_clicks`: elements people click that do nothing. On product
-   pages this is often a product photo that does not zoom, a size or colour
-   swatch, or a delivery line that looks like a link.
+3. `cvl_dead_clicks`: elements people click that do nothing. Quote the
+   labels it returns for these pages; a photo, a size or colour swatch and a
+   delivery line are places to look in its list, not causes to assume.
 4. `cvl_replay_moment` with `path` and `element` from a `cvl_dead_clicks`
    row, and `kind` `dead`, opens the newest such moment in a visit recording:
    10 seconds either side, the pages, the labels clicked, errors, and how
-   many characters were typed (never what). An error there often explains an
-   Add to cart that does nothing. See `watching-session-replays`.
-5. `cvl_page_speed`: a slow product page loses people before it can sell.
-   For the fixes, see `improving-page-speed`.
+   many characters were typed (never what). An error right after an Add to
+   cart press is a lead, not a cause: one recording does not say how often it
+   happens, so count it with `fixing-production-errors`. See
+   `watching-session-replays`.
+5. `cvl_page_speed`: whether this page is slow for real visitors. Before
+   saying speed costs sales, compare its share that added to cart with the
+   site's faster product pages over the same window. For the fixes, see
+   `improving-page-speed`.
 
 Behaviour data shows where, not why. Report each cause as a hypothesis until
 a recording or a test confirms it.
@@ -131,7 +138,7 @@ For each page (top three to five):
 
 - **Page**: path, its page type (and whether confirmed or estimated).
 - **Sales**: visits, the share that bought or added to cart, the window,
-  the device, and where people went instead.
+  the device, the evidence class, and where people went instead.
 - **Likely cause**: one hypothesis, marked as one, with what the heatmap or
   recording showed.
 - **Search**: the title, copy, schema or URL fix, quoting the current text.

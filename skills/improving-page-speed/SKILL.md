@@ -5,10 +5,12 @@ description: Finds which pages are slow for real visitors and what to change, re
 
 # Page speed
 
-Speed matters because slow pages lose people before they can buy or get in
-touch, and because Google uses real-visitor speed as a small ranking signal
-that decides close contests. It is rarely why a page ranks nowhere; for that,
-see `improving-search-rankings`. Frame speed work as keeping visitors first.
+Speed work can pay two ways. A slow page may lose people before they buy or
+get in touch: check that on this site's own pages (Step 2) rather than assume
+it. And Google counts real-visitor speed among its page experience signals,
+which do not make up for a page that does not answer the search; for a page
+that ranks nowhere, see `improving-search-rankings`. Frame speed work as
+keeping visitors first.
 
 Convertlyft measures speed from the site's own visitors and says which pages
 are slow. It never changes the site: every fix here is steps, and a snippet
@@ -19,8 +21,9 @@ Needs a signed-in connection with the visits scope (`sessions:read`). If
 
 ## The three Core Web Vitals
 
-Each is judged at the 75th percentile of visits: the slowest quarter, which
-is the quarter that leaves. Google's published thresholds:
+Each is judged at the 75th percentile of visits: three visits in four were
+this fast or faster, so the figure describes the slower end of real visits,
+not the average. Google's published thresholds:
 
 | Vital | What it means for a visitor | Good | Poor |
 |---|---|---|---|
@@ -117,7 +120,9 @@ instead of code where that is what the person can change.
 For each page, top three at most:
 
 - **Page and vital**: the path, which vital is poor and its value, the
-  window, and the share of results the page carries.
+  number of readings, the window, the evidence class (`measured`, from this
+  site's visitors; a lab score is one synthetic load and never the result),
+  and the share of results the page carries.
 - **Cause**: what the lab test flagged, marked as a hypothesis until the
   field data moves.
 - **Fix**: the steps, and the snippet where one helps, in the order that

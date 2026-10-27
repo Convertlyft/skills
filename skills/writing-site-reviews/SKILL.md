@@ -173,8 +173,9 @@ Build the review as pages, in this order:
    - A phone screenshot when the cause is visible on the page; say what the
      screenshot does and does not show.
 5. **Checked and fine · not worth chasing · set up to unlock** — one page, three
-   lists. Non-findings live here, worded as reassurance ("frustrated tapping comes
-   mostly from people about to buy; no sign it loses orders"), never as a leak page
+   lists. Non-findings live here, worded as reassurance tied to the comparison that
+   cleared them ("visits with repeated taps ordered at 2.1% against 1.9% for visits
+   without them, made-up numbers; no sign the tapping loses orders"), never as a leak page
    whose title contradicts itself. "Set up to unlock" lists only what the reader can
    switch on today, in Convertlyft or their own tools (connect Search Console, tag ad
    links with campaign names, mark an event as the result, mark the team's own
