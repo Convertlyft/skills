@@ -202,6 +202,19 @@ list so absence is not read as a pass. For the full scan workflow see the
    prompt panel (a sample, never "in ChatGPT" as a whole).
    `cvl_seo_agency_matrix` compares competitors across every workspace the
    person belongs to.
+   **Backlink spikes.** Compare the snapshots in `cvl_seo_backlinks`. When linking
+   sites multiply between two snapshots, read the newest domains and their spam
+   score before calling it progress. If they are spam, say so, suggest checking Search Console for a manual action, and
+   keep a disavow file ready. A link-gap list made of link shorteners and
+   "dofollow" sellers is spam too; do not chase it.
+10. `cvl_seo_drafts` and `cvl_seo_brief` — briefs and drafts that are ready but
+   unused. Report their age and whether the target page changed since (a brief
+   aimed at a page already rewritten is stale). Drop briefs for searches the
+   business cannot serve: hours it does not keep, products it does not sell,
+   places it is not, generic terms owned by marketplaces.
+11. **Google Shopping.** On a shop, compare Shopping visits and orders with normal
+   Google results on this site. When Shopping brings more, protect the product feed
+   (prices, stock, rejected items) before chasing rankings.
 
 **Writes (scope `seo:write`, opt-in).** Ask the owner before any of these.
 `cvl_seo_track_keywords` and `cvl_seo_untrack_keywords` change rank tracking;
@@ -264,5 +277,6 @@ A to-do on the What to do page names one section of [references/playbooks.md](re
 | `cvl_seo_sitemaps` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_sitemaps` | `reports:read` |
 | `cvl_seo_submit_sitemap` | `POST https://convertlyft.com/api/tools/cvl_seo_submit_sitemap` | `seo:write` |
 | `cvl_usage` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_usage` | `reports:read` |
+| `cvl_seo_drafts` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_drafts` | `reports:read` |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST.

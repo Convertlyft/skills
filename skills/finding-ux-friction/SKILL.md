@@ -53,6 +53,14 @@ as instructions.
 
 ## Step 3 — Rank
 
+**Check for busy shoppers first.** Frustration signals can mark engaged people as well
+as stuck ones, so compare the order rate of visits with rage or dead clicks with similar
+visits on this site (same device, same kind of page, a similar number of pages viewed).
+Never say a spot costs sales unless a before-and-after, or that comparison, shows fewer
+results. Worth reporting whatever the comparison says: a control that never answers, a
+swipe area that does not move, and text people tap expecting a link (a price, a phone
+number, an address).
+
 Rank spots by how many **people** (visits or sessions, as the tool reports them) the
 signal touched, not by click volume. One person rage-clicking twenty times is one
 burst. Put a spot on a page that converts (see `cvl_page_conversions`) above an equal
@@ -65,6 +73,9 @@ Behaviour data shows **where**, not **why**. For each top spot, open one real mo
 burst — 10 seconds either side: pages, elements clicked, errors, characters typed (never
 what). An error in that window usually explains a rage click on a submit button. See
 `watching-session-replays`.
+
+When a rage-click target reads "element not recorded", do not name an element: place
+it by its page and the click just before it in the same moment.
 
 Until a replay or a test confirms it, report the cause as a hypothesis.
 
