@@ -15,8 +15,8 @@ tour of every chart.
 1. **What we saw** — a count with its denominator, its window and its evidence class
    ("12 adds to cart from 1,000 views, 1–14 Mar, measured"; made-up numbers). Measured
    is counted from this site's own visitors; indexed is read from Search Console, a
-   crawl or a backlink check; modelled is a provider's estimate, such as search volume,
-   and is always said as "estimated".
+   crawl or a backlink check; estimated is a provider's figure, such as search volume,
+   never a count, and is always said as "estimated".
 2. **Compared with what** — the same kind of page, same device, same market, same
    window. Never an industry average.
 3. **Why** — the element, page, product, campaign or sequence that explains it. Say
@@ -194,7 +194,7 @@ Rules for the words:
   "product page", "a 1-in-20 chance it is luck".
 - No percentage without its counts. Money only as Estimate with its method.
 - Every figure carries its evidence class. Never put a measured count and an indexed or
-  modelled figure in one sentence without saying which is which; search volumes and
+  estimated figure in one sentence without saying which is which; search volumes and
   traffic estimates are always "estimated".
 - Every claim about the page itself (prices, opening hours, "sold out", stars,
   "since" a founding year) must be checked on the page. Badges with no source (stars, counts of
