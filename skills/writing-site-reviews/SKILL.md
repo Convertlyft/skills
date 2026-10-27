@@ -141,18 +141,69 @@ and what growing them would and would not do: searches the business cannot serve
 hours it does not keep, products it does not sell, places it is not), markets it does not
 deliver to, generic terms owned by marketplaces.
 
-### 9. Write it
-- One item per page or block, in the chain above. Plain words. No percentages without
-  their counts. Money only as Estimate with its method.
-- Rank by what it is worth and how sure you are; repairs before experiments.
-- A "checked and fine" list: things looked at that showed nothing. It saves the owner
-  from chasing them.
-- A "set up to unlock more" list: Search Console, ad cost, purchase tracking, AI mentions.
-- Our own faults go in a separate "what we are fixing" box, never in the owner's list.
-- Last page: how to get the same answers through the Convertlyft MCP — the questions,
-  not the tool names.
-- Before stating any number, run `cvl_check_claim` with the sentence and the receipts of
-  the answers it came from. Drop a sentence that fails rather than soften it.
+### 9. Write it — the page design
+
+Build the review as pages, in this order:
+
+1. **Cover** — the site, the window, three figures: results, the real result rate,
+   and one more the owner cares about.
+2. **The short version** (the manager's page) — three tiles (results; the result rate
+   before and after cleaning; anything that makes every rate a floor) and a table:
+   what to change · worth · effort · who. At most six rows.
+3. **Can we trust the numbers?** — automated visits taken out, results the data cannot
+   see (for example shoppers who reject cookies vanish from the cart and order
+   counts), and when counting began. Say how each one moves the headline.
+4. **One leak per page**, ranked:
+   - A title that is the conclusion, with one number, about 15 words at most.
+   - One comparison in big type with its counts underneath ("0.47% vs 1.01%",
+     then "3,165 visits vs 32,109").
+   - One chart that shows that comparison and nothing else.
+   - Four short lines, about 20 words each: **Why** · **Worth** (with its label:
+     Estimate, measured, or not measured) · **Fix** (who and how big) · **Check**.
+   - A footnote: window, sample, method, and the plain question that rebuilds the
+     page through the MCP ("Ask your AI: …").
+   - A phone screenshot when the cause is visible on the page; say what the
+     screenshot does and does not show.
+5. **Checked and fine · not worth chasing · set up to unlock** — one page, three
+   lists. Non-findings live here, worded as reassurance ("frustrated tapping comes
+   mostly from people about to buy; no sign it loses orders"), never as a finding
+   whose title contradicts itself.
+6. **Do these next** — the ranked table with how each will be checked, and a separate
+   "our side" box for faults in Convertlyft itself.
+7. **Get this yourself** — the questions, in plain words, not tool names.
+
+A weekly review keeps pages 2, 4 (at most four) and 6. A site with too little data
+gets a short review that says so on its first page and leads with what is fixable.
+
+Rules for the words:
+- Plain words; no "matched peers", "PDP", "CLP", "z", "p75". Say "similar visits",
+  "product page", "a 1-in-20 chance it is luck".
+- No percentage without its counts. Money only as Estimate with its method.
+- Every claim about the page itself (prices, opening hours, "sold out", stars,
+  "since 1997") must be checked on the page. Badges with no source (stars, counts of
+  staff, years) are questions for the owner, not facts to repeat.
+
+### 10. Check every number
+Before stating any number, run `cvl_check_claim` with the sentence and the receipts
+of the answers it came from. Write the sentence with the figure named the way the
+answer names it, and the figure copied exactly as returned; a plain-language
+paraphrase of the figure's name can fail the check even when the number is right.
+Drop a sentence that fails rather than soften it.
+
+## Gotchas found in real runs
+
+- Find a tool's exact name with `cvl_search_tools` before calling it; guessed names fail.
+- `cvl_funnel_report` matches a step by its exact page `path`. Do not rely on any other
+  way of matching pages in a step; check the step counts look like page visits.
+- `cvl_kpi` with a `campaign` that does not exist answers with zeros rather than an
+  error. Take campaign names from an answer that listed them (for example
+  `cvl_page_conversions` with `source` paid, or `cvl_attribution`) before filtering.
+- Search Console data runs a few days behind and cannot take a custom range: label
+  search figures with their own window, not the review's.
+- A lead site rarely carries a value per enquiry: price leads only when the owner gives
+  one, otherwise count enquiries.
+- On a big site, reads over long windows can fail on our side instead of answering 409:
+  retry on a shorter window and add up the counts.
 
 ## Tools
 
@@ -186,4 +237,5 @@ deliver to, generic terms owned by marketplaces.
 | `cvl_seo_drafts` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_drafts` | `reports:read` |
 | `cvl_seo_brief` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
 | `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
+| `cvl_search_tools` | none (MCP only) | none |
 | `cvl_call_read` | none (MCP only) | none |
