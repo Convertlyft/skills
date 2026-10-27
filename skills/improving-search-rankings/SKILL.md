@@ -202,9 +202,9 @@ list so absence is not read as a pass. For the full scan workflow see the
    prompt panel (a sample, never "in ChatGPT" as a whole).
    `cvl_seo_agency_matrix` compares competitors across every workspace the
    person belongs to.
-   **Backlink spikes.** Compare the snapshots in `cvl_seo_backlinks`: linking
-   sites multiplying in one snapshot is usually a wave of spam links, not
-   progress. Say so, suggest checking Search Console for a manual action, and
+   **Backlink spikes.** Compare the snapshots in `cvl_seo_backlinks`. When linking
+   sites multiply between two snapshots, read the newest domains and their spam
+   score before calling it progress. If they are spam, say so, suggest checking Search Console for a manual action, and
    keep a disavow file ready. A link-gap list made of link shorteners and
    "dofollow" sellers is spam too; do not chase it.
 10. `cvl_seo_drafts` and `cvl_seo_brief` — briefs and drafts that are ready but
@@ -212,9 +212,9 @@ list so absence is not read as a pass. For the full scan workflow see the
    aimed at a page already rewritten is stale). Drop briefs for searches the
    business cannot serve: hours it does not keep, products it does not sell,
    places it is not, generic terms owned by marketplaces.
-11. **Google Shopping.** On a shop, Shopping visits can outnumber normal Google
-   results several times over. Protect the product feed (prices, stock, rejected
-   items) before chasing rankings.
+11. **Google Shopping.** On a shop, compare Shopping visits and orders with normal
+   Google results on this site. When Shopping brings more, protect the product feed
+   (prices, stock, rejected items) before chasing rankings.
 
 **Writes (scope `seo:write`, opt-in).** Ask the owner before any of these.
 `cvl_seo_track_keywords` and `cvl_seo_untrack_keywords` change rank tracking;

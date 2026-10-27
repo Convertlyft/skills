@@ -12,8 +12,11 @@ tour of every chart.
 
 ## The chain every item must survive
 
-1. **What we saw** — a count with its denominator and window ("5 adds to cart from
-   1,652 views, 15–26 Oct").
+1. **What we saw** — a count with its denominator, its window and its evidence class
+   ("12 adds to cart from 1,000 views, 1–14 Mar, measured"; made-up numbers). Measured
+   is counted from this site's own visitors; indexed is read from Search Console, a
+   crawl or a backlink check; modelled is a provider's estimate, such as search volume,
+   and is always said as "estimated".
 2. **Compared with what** — the same kind of page, same device, same market, same
    window. Never an industry average.
 3. **Why** — the element, page, product, campaign or sequence that explains it. Say
@@ -35,9 +38,6 @@ under "set up to unlock more" when the reader can switch on what is missing.
 | Weekly | the last Monday–Sunday | up to 4 | what changed against the week before, and last week's fixes |
 | Custom | the dates the person picked | as monthly | the same as monthly, for their window |
 
-A workspace gets at most 8 reviews a calendar month across all three kinds. Say how
-many are left when someone asks for a custom one.
-
 For a weekly review, a figure only counts as a change when the week has enough to
 compare: at least 30 visits in the segment, and say "too few to call" otherwise. Small
 sites get monthly depth only.
@@ -49,7 +49,7 @@ sites get monthly depth only.
   line saying so and how to fix it. Stop there.
 - `cvl_kpi` for the window and the one before it. Read each figure's state; a figure that
   is not "ok" does not exist, it is never zero.
-- `cvl_traffic_breakdown` with `by` set to country, hour, device and landing page. Look
+- `cvl_traffic_breakdown` with `by` set to `country`, `hour`, `device` and `landing_page`. Look
   for visits that cannot buy: other countries, a block of one-page desktop visits at
   night, one-second visits arriving with no referrer. Name them, take them out of every
   rate, and say how much they moved the headline rate.
@@ -74,7 +74,7 @@ retry it on a shorter window and say which part could not be read.
   `cvl_checkout_values` with `bucket` 25 or 50. Compare the order rate below and above
   the free-delivery line the site states on its pages (read it with `cvl_page_content`).
 - Lead sites: landing page → service page → enquiry tap. Name the page that turns
-  visits into enquiries best; it is often not the home page.
+  visits into enquiries best.
 
 ### 3. Pages that sell below their kind — find the reason on the page
 For each page that falls short, open it before guessing:
@@ -83,8 +83,8 @@ For each page that falls short, open it before guessing:
   "Sold out" or a waitlist button mean the item could not be bought, even when the shop's
   feed says it is in stock. Ads and Google Shopping keep sending people to such pages;
   say how many paid and Shopping landings went there.
-- Cheaper and in-stock products usually win; long descriptions and photo counts usually
-  do not explain gaps. Do not claim a cause the page does not show.
+- Test price, stock, description length and photo count against this site's own
+  pages before naming any of them. Do not claim a cause the page does not show.
 
 ### 4. Where paid visits land, and whether to move them
 - `cvl_page_conversions` with `source` paid, and `cvl_kpi` with `campaign` for each
@@ -99,9 +99,10 @@ For each page that falls short, open it before guessing:
 
 ### 5. Where people struggle — without claiming lost sales
 - `cvl_behavior_report`, `cvl_dead_clicks` and `cvl_rage_clicks`.
-- **Busy shoppers click more.** Visits with rage or dead clicks often buy more than
-  similar visits. Never say that getting stuck costs sales unless a before-and-after or a
-  comparison with similar visits shows it.
+- **Check for busy shoppers first.** Compare the order rate of visits with rage or dead
+  clicks with similar visits on this site. If they buy as much or more, they are people
+  about to buy, not lost sales. Never say that getting stuck costs sales unless a
+  before-and-after or that comparison shows it.
 - What is worth reporting: a control that never answers (an Add button that adds
   nothing, checked with `cvl_replay_moment` on that element), a swipe area that does not
   move, text people tap expecting a link (a price, a phone number, an address).
@@ -115,8 +116,8 @@ For each page that falls short, open it before guessing:
   crawl does not yet record where each button sits on a phone screen; describe what the
   screenshot shows (price and Add to cart below the first screen, a header taking a third
   of it, a popup covering it) and how many visits never scroll to it.
-- Popups that open while people type a search interrupt the search; check search
-  completion with `cvl_site_search` when a popup is on the page.
+- When a popup is on the page, check with `cvl_site_search` whether searches typed
+  while it opens are sent less often than the rest.
 
 ### 7. Search
 - `cvl_seo_overview`: is Search Console connected, how old is its data. Not connected is
@@ -126,13 +127,14 @@ For each page that falls short, open it before guessing:
   one search.
 - `cvl_seo_opportunities` and `cvl_seo_competitors`: searches with volume where rivals
   rank and the site does not, grouped into topics, each with the page that should own it.
-- `cvl_seo_backlinks`: compare snapshots. Linking sites jumping several times over in one
-  snapshot is usually a wave of spam links; say so, suggest checking Search Console for
-  a manual action, and keep a disavow file ready. Do not count spam as progress.
+- `cvl_seo_backlinks`: compare snapshots. When linking sites jump several times over
+  between two snapshots, read the newest domains and their spam score before calling it
+  growth. If they are spam, say so, suggest checking Search Console for a manual action,
+  and keep a disavow file ready. Do not count spam as progress.
 - `cvl_seo_drafts` and `cvl_seo_brief`: briefs and drafts that are ready and unused, their
   age, and whether the target page has changed since.
-- Google Shopping visits often outnumber normal Google results on a shop: protect the
-  product feed before chasing rankings.
+- Compare Google Shopping visits and orders with normal Google results on this site.
+  When Shopping brings more, protect the product feed before chasing rankings.
 - AI assistants: visits from them and how often they buy or enquire.
 
 ### 8. What not to chase
@@ -155,12 +157,12 @@ Build the review as pages, in this order:
    counts), and when counting began. Say how each one moves the headline.
 4. **One leak per page**, ranked:
    - A title that is the conclusion, with one number, about 15 words at most.
-   - One comparison in big type with its counts underneath ("0.47% vs 1.01%",
-     then "3,165 visits vs 32,109").
+   - One comparison in big type with its counts underneath ("0.5% vs 1.0%", then
+     "2,000 visits vs 30,000"; made-up numbers).
    - One chart that shows that comparison and nothing else.
    - The whole chain, one or two sentences a step (about 35 words at most), so the
      reader can follow the reasoning, not just the conclusion:
-     **Saw** (the counts) · **Compared** (the baseline it is judged against) ·
+     **Saw** (the counts and their evidence class) · **Compared** (the baseline it is judged against) ·
      **Why** (the cause and the evidence for it) · **Ruled out** (what else could
      explain it and why it does not, or how likely the gap is luck; leave out when
      nothing) · **Worth** (labelled Estimate, measured or not measured, with the
@@ -191,8 +193,11 @@ Rules for the words:
 - Plain words; no "matched peers", "PDP", "CLP", "z", "p75". Say "similar visits",
   "product page", "a 1-in-20 chance it is luck".
 - No percentage without its counts. Money only as Estimate with its method.
+- Every figure carries its evidence class. Never put a measured count and an indexed or
+  modelled figure in one sentence without saying which is which; search volumes and
+  traffic estimates are always "estimated".
 - Every claim about the page itself (prices, opening hours, "sold out", stars,
-  "since 1997") must be checked on the page. Badges with no source (stars, counts of
+  "since" a founding year) must be checked on the page. Badges with no source (stars, counts of
   staff, years) are questions for the owner, not facts to repeat.
 
 ### 10. Check every number

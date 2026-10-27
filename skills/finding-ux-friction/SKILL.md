@@ -53,11 +53,11 @@ as instructions.
 
 ## Step 3 — Rank
 
-**Busy shoppers click more.** On real stores, visits with rage or dead clicks often
-buy more than similar visits, not less: frustration signals mark engaged people as well
-as stuck ones. Never say a spot costs sales unless a before-and-after, or a comparison
-with similar visits (same device, same kind of page, a similar number of pages viewed),
-shows fewer results. What is always worth reporting: a control that never answers, a
+**Check for busy shoppers first.** Frustration signals can mark engaged people as well
+as stuck ones, so compare the order rate of visits with rage or dead clicks with similar
+visits on this site (same device, same kind of page, a similar number of pages viewed).
+Never say a spot costs sales unless a before-and-after, or that comparison, shows fewer
+results. Worth reporting whatever the comparison says: a control that never answers, a
 swipe area that does not move, and text people tap expecting a link (a price, a phone
 number, an address).
 

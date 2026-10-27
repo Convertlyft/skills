@@ -130,8 +130,8 @@ account, start with the `getting-started-with-convertlyft` skill.
   cut).
 - **Which landing pages sell.** `cvl_page_conversions` gives visits, and
   visits that bought or got in touch, by entry page; pass `source` to read paid
-  visits only. `cvl_traffic_breakdown` with `by` set to landing page, source or
-  country shows where paid visits go and from where; `cvl_page_baselines` shows how
+  visits only. `cvl_traffic_breakdown` with `by` set to `landing_page`, `source` or
+  `country` shows where paid visits go and from where; `cvl_page_baselines` shows how
   each kind of landing page sells and which pages fall short of their kind.
 - **Move the visits, or change the audience?** Before sending an ad to another
   page, compare campaigns on the **same** landing page (`cvl_kpi` with `campaign`,
