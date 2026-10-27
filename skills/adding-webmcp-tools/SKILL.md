@@ -145,7 +145,7 @@ Run Convertlyft's free agent-readiness check on the live site:
    seconds. If it says the scan is still running, call it again with the `scan_id` it gave.
 2. Report, exactly as returned:
    - the level (L0 Unreachable to L3 Operable on a free scan) and the check that holds it there;
-   - the WebMCP tool forms found in the HTML and any findings on them;
+   - the WebMCP tool forms found in the HTML and any problems the scan raised on them;
    - `report_url`, the full result on convertlyft.com/agent-readiness. Always include it.
 3. Say plainly what the free check cannot see: it reads the HTML the server sends and never runs
    JavaScript, so script tools (`registerTool`) are not in it. Whether Chrome actually holds the
