@@ -1,6 +1,6 @@
 ---
 name: adding-webmcp-tools
-description: Adds WebMCP tools to a website so AI agents in the browser can call named actions (search, book, look up an order) instead of guessing at buttons, choosing which actions become tools, writing form tools or script tools that match the current draft (document.modelContext), marking risky tools, testing them in Chrome, and then verifying the result with Convertlyft's no-account agent-readiness check. Use when someone asks to "add WebMCP", "make the site agent-ready", "expose tools to AI agents", "register a WebMCP tool", fix "navigator.modelContext" code, or check why an agent cannot use a site's forms. For llms.txt, robots rules for AI crawlers and SEO, use auditing-site-seo instead.
+description: Guides a site's developer or owner through adding WebMCP tools to a website, so AI agents in the browser can call named actions (search, book, look up an order) instead of guessing at buttons. It covers choosing which actions become tools, writing form tools or script tools that match the current draft (document.modelContext), marking risky tools, testing them in Chrome, and then verifying the result with Convertlyft's no-account agent-readiness check. Convertlyft never changes the site's code; a person applies each step. Use when someone asks to "add WebMCP", "make the site agent-ready", "expose tools to AI agents", "register a WebMCP tool", fix "navigator.modelContext" code, or check why an agent cannot use a site's forms. For llms.txt, robots rules for AI crawlers and SEO, use auditing-site-seo instead.
 ---
 
 # Adding WebMCP tools
@@ -13,6 +13,9 @@ Tools run in the visitor's own tab, with whatever they are signed in to.
 The draft changes often. Everything below matches the 20 October 2026 draft and Chrome's
 documentation as read on 23–24 October 2026. If the code you find disagrees, check the current
 spec at https://webmachinelearning.github.io/webmcp/ before "fixing" it.
+
+Convertlyft never changes a site's code. Everything below is steps and snippets that the
+site's developer or owner applies; the check in section 8 only reads the live site.
 
 ## 1. Pick the actions
 
@@ -27,8 +30,7 @@ sentence, and they already exist as a form or a request on the site:
 Leave out: login, password reset, payment entry, account deletion. Never make a tool whose
 inputs include a password, card number or government ID.
 
-Fewer, clear tools beat many. Lighthouse warns above 40 tools on a page; there is no browser
-limit, but every tool costs the agent context.
+Keep the list short: every tool's name, description and schema go into the agent's context.
 
 ## 2. Form tool or script tool
 
@@ -42,7 +44,7 @@ Prefer a script tool for anything new. Use a form tool to expose an existing sim
 
 ## 3. Form tool
 
-Only these four attributes are documented: `toolname`, `tooldescription` (both on `<form>`),
+The developer adds attributes to a form the site already has. Only these four attributes are documented: `toolname`, `tooldescription` (both on `<form>`),
 `toolparamdescription` (on each control), `toolautosubmit` (boolean, on `<form>`). Do not use
 `tooltitle` or `toolparamtitle`: no primary source documents them.
 
@@ -69,6 +71,9 @@ form.addEventListener('submit', (e) => {
 ```
 
 ## 4. Script tool
+
+The developer adds this to a script the page already loads, with the site's own names and
+endpoints in place of the examples.
 
 ```js
 if (window.isSecureContext && document.modelContext?.registerTool) {
@@ -119,6 +124,8 @@ Also:
 
 ## 6. Old code to replace
 
+When the developer finds older WebMCP code on the site, they replace it:
+
 | Found in code | Replace with |
 |---|---|
 | `navigator.modelContext` | `document.modelContext` (moved on 19 May 2026) |
@@ -132,10 +139,11 @@ Also:
 
 1. Serve the page over https or localhost (WebMCP is secure-context only).
 2. In Chrome, turn on `chrome://flags/#enable-webmcp-testing`, or add the site's WebMCP origin
-   trial token (Chrome 149 to 156).
+   trial token (Chrome 149 to 156, per Chrome's documentation as read on 23–24 October 2026;
+   check the trial's current range there).
 3. DevTools → Application → WebMCP lists the registered tools, logs each call, and can run one.
 4. Lighthouse → Agentic browsing reports registered tools, schema problems and forms that could
-   be tools.
+   be tools (Chrome's documentation as read on 23–24 October 2026).
 
 ## 8. Verify with Convertlyft (no account)
 

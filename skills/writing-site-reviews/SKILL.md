@@ -49,16 +49,19 @@ sites get monthly depth only.
   line saying so and how to fix it. Stop there.
 - `cvl_kpi` for the window and the one before it. Read each figure's state; a figure that
   is not "ok" does not exist, it is never zero.
-- **Clean the base before judging any rate.** Visits that cannot buy pull every rate
-  down and hide real leaks.
-  - `cvl_traffic_breakdown` with `by` set to `country`, `hour`, `device` and
-    `landing_page`: visits, visits that converted, new visits and the median engaged
-    time per row. Countries the site does not serve, fixed hours with bursts of new
-    one-page visits and no results, and one-second visits with no referrer are visits
-    that cannot buy.
-  - `cvl_page_conversions` with `source` set to each large source: one source and one
-    landing page with thousands of visits, almost no engaged time and no results is a
-    monitor, a scraper or a prefetch, not shoppers.
+- **Clean the base before judging any rate.** Visits that likely cannot buy pull every
+  rate down and hide real leaks.
+  - `cvl_traffic_breakdown` with `by` set to `country`, `hour`, `device`, `source` and
+    `landing_page`: visits, visits that converted, the share of new visits and the
+    median engaged time per row. `source` is one of the site's nine traffic sources (as
+    Traffic › Sources shows them), not a referring site. Visits from countries the site
+    does not serve cannot buy there; fixed hours with bursts of new visits and no results
+    likely cannot buy.
+  - `cvl_page_conversions` with `source` set to each large source from that read gives
+    its landing pages with visits and results, but no engaged time. Put it beside the
+    `landing_page` rows above, which carry engaged time across all sources: one source
+    sending thousands of visits to one landing page with almost no engaged time and no
+    results is likely a monitor, a scraper or a prefetch, not shoppers.
   - Name each group, take it out of every rate, and give the headline rate with and
     without it, each with its denominator. When the tools cannot separate a group, say
     so; never estimate its size.
@@ -97,12 +100,18 @@ For each page that falls short, open it before guessing:
 
 **Shops: products against their sister products.** A product can sell far below products
 like it while its kind of page looks fine.
-- `cvl_page_types` with `type` product and `with_views` lists the busiest product pages.
-  For the top 20, `cvl_funnel_report` with `steps` (a `pageview` step whose `path` is
-  the page, then `add_to_cart`) gives the share of visits that added to cart.
-- Compare each with its sisters on this site: the same brand, range or price band. Flag a
-  page with at least 100 visits whose add rate is under a fifth of its sisters' median,
-  and quote both rates with their counts.
+- `cvl_page_types` with `type` `["product"]` and `with_views` lists the busiest product
+  pages. Its views are always the last 30 days, whatever the review's window: use them to
+  pick pages, never quote them as the window's.
+- For the top 20, `cvl_funnel_report` with `steps` (a `pageview` step whose `path` is
+  the page, then `add_to_cart`) gives the share of visits that added to cart. A step's
+  `path` matches every page whose path contains it, so `/products/shoe` also counts
+  `/products/shoe-blue`: say so when a sister's path starts with the page's. If
+  `add_to_cart` comes back in `unknown_events`, the site does not send it: report the
+  check as not measured, never as zero.
+- Compare each with its sisters on this site: the same brand, range or price band, read
+  from each page with `cvl_page_content`. Flag a page with at least 100 visits whose add
+  rate is under a fifth of its sisters' median, and quote both rates with their counts.
 - Read a flagged page with `cvl_page_content`: a wrong description, name or tags, no
   price, out of stock, no images. If it gets paid visits, the ad or Shopping listing may
   promise what the page does not show: a thing to check, not a cause.
@@ -232,7 +241,8 @@ Drop a sentence that fails rather than soften it.
 ## Gotchas found in real runs
 
 - Find a tool's exact name with `cvl_search_tools` before calling it; guessed names fail.
-- `cvl_funnel_report` matches a step by its exact page `path`. Do not rely on any other
+- `cvl_funnel_report` matches a step's `path` as part of the page path (`/products/shoe`
+  also counts `/products/shoe-blue`). Do not rely on any other
   way of matching pages in a step; check the step counts look like page visits.
 - `cvl_kpi` with a `campaign` that does not exist answers with zeros rather than an
   error. Take campaign names from an answer that listed them (for example
