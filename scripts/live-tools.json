@@ -715,7 +715,8 @@
       "fields",
       "keywords",
       "location_code",
-      "market"
+      "market",
+      "swapOut"
     ],
     "scopes": [
       "seo:write"
@@ -884,7 +885,8 @@
       "fresh",
       "keyword",
       "location_code",
-      "market"
+      "market",
+      "page_url"
     ],
     "scopes": [
       "seo:write"
@@ -1640,6 +1642,49 @@
     ],
     "scopes": [
       "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_seo_server_logs",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_seo_brief_published",
+    "core": true,
+    "reads": false,
+    "args": [
+      "fields",
+      "keyword",
+      "location_code",
+      "market",
+      "search",
+      "url"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_opportunity_set",
+    "core": true,
+    "reads": false,
+    "args": [
+      "fields",
+      "keyword",
+      "location_code",
+      "mark",
+      "market",
+      "when"
+    ],
+    "scopes": [
+      "seo:write"
     ]
   },
   {
