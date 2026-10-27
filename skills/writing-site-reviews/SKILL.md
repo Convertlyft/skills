@@ -1,6 +1,6 @@
 ---
 name: writing-site-reviews
-description: Writes a site review an owner and their team can act on — monthly, weekly, or for any date range they pick — from measured Convertlyft data, where every item is a chain from what was seen, against a like-for-like baseline, to why, what it is worth, the fix, and how the next review will check it. Covers who really visited, where sales or enquiries come from, the funnel step that loses the most people, pages that sell below their kind, where paid visits land, where people struggle, what sits above the fold on phones, search, backlinks, briefs waiting, and what not to chase. Use when someone asks for a monthly or weekly review, a site report, "what should we fix this month", a review for a custom period, or a deck for a manager and an e-commerce team.
+description: Writes a site review an owner and their team can act on — monthly, weekly, or for any date range they pick — from measured Convertlyft data, where every item is a chain from what was seen, against a like-for-like baseline, to why, what it is worth, the fix, and how the next review will check it. Covers who really visited, where sales or enquiries come from, the funnel step that loses the most people, pages that sell below their kind, products that sell below their sister products, where paid visits land, where people struggle, what sits above the fold on phones, search, backlinks, briefs waiting, and what not to chase. Use when someone asks for a monthly or weekly review, a site report, "what should we fix this month", a review for a custom period, or a deck for a manager and an e-commerce team.
 ---
 
 # Writing site reviews
@@ -49,10 +49,19 @@ sites get monthly depth only.
   line saying so and how to fix it. Stop there.
 - `cvl_kpi` for the window and the one before it. Read each figure's state; a figure that
   is not "ok" does not exist, it is never zero.
-- `cvl_traffic_breakdown` with `by` set to `country`, `hour`, `device` and `landing_page`. Look
-  for visits that cannot buy: other countries, a block of one-page desktop visits at
-  night, one-second visits arriving with no referrer. Name them, take them out of every
-  rate, and say how much they moved the headline rate.
+- **Clean the base before judging any rate.** Visits that cannot buy pull every rate
+  down and hide real leaks.
+  - `cvl_traffic_breakdown` with `by` set to `country`, `hour`, `device` and
+    `landing_page`: visits, visits that converted, new visits and the median engaged
+    time per row. Countries the site does not serve, fixed hours with bursts of new
+    one-page visits and no results, and one-second visits with no referrer are visits
+    that cannot buy.
+  - `cvl_page_conversions` with `source` set to each large source: one source and one
+    landing page with thousands of visits, almost no engaged time and no results is a
+    monitor, a scraper or a prefetch, not shoppers.
+  - Name each group, take it out of every rate, and give the headline rate with and
+    without it, each with its denominator. When the tools cannot separate a group, say
+    so; never estimate its size.
 
 **Big sites.** A read that would scan too much answers 409 and names a smaller window
 that fits. Split the range into those windows, add up counts, and recompute rates from
@@ -85,6 +94,18 @@ For each page that falls short, open it before guessing:
   say how many paid and Shopping landings went there.
 - Test price, stock, description length and photo count against this site's own
   pages before naming any of them. Do not claim a cause the page does not show.
+
+**Shops: products against their sister products.** A product can sell far below products
+like it while its kind of page looks fine.
+- `cvl_page_types` with `type` product and `with_views` lists the busiest product pages.
+  For the top 20, `cvl_funnel_report` with `steps` (a `pageview` step whose `path` is
+  the page, then `add_to_cart`) gives the share of visits that added to cart.
+- Compare each with its sisters on this site: the same brand, range or price band. Flag a
+  page with at least 100 visits whose add rate is under a fifth of its sisters' median,
+  and quote both rates with their counts.
+- Read a flagged page with `cvl_page_content`: a wrong description, name or tags, no
+  price, out of stock, no images. If it gets paid visits, the ad or Shopping listing may
+  promise what the page does not show: a thing to check, not a cause.
 
 ### 4. Where paid visits land, and whether to move them
 - `cvl_page_conversions` with `source` paid, and `cvl_kpi` with `campaign` for each
@@ -233,6 +254,7 @@ Drop a sentence that fails rather than soften it.
 | `cvl_traffic_breakdown` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_traffic_breakdown` | `sessions:read` |
 | `cvl_page_baselines` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_baselines` | `sessions:read` |
 | `cvl_page_conversions` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_conversions` | `sessions:read` |
+| `cvl_page_types` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_types` | `reports:read` |
 | `cvl_attribution` | `GET https://convertlyft.com/api/tools/cvl_attribution` | `sessions:read`, `reports:read` |
 | `cvl_funnels_list` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_funnels_list` | `reports:read` |
 | `cvl_funnel_report` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_funnel_report` | `reports:read` |
