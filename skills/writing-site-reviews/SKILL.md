@@ -24,8 +24,8 @@ tour of every chart.
 5. **Fix** — one concrete step, who does it, and the size (small, medium, large).
 6. **How we will know** — the reading the next review repeats.
 
-An item that cannot reach step 2 is not an item. Put it under "checked and fine" or
-"set up to unlock more".
+An item that cannot reach step 2 is not an item. Put it under "checked and fine", or
+under "set up to unlock more" when the reader can switch on what is missing.
 
 ## Three kinds of review
 
@@ -158,8 +158,14 @@ Build the review as pages, in this order:
    - One comparison in big type with its counts underneath ("0.47% vs 1.01%",
      then "3,165 visits vs 32,109").
    - One chart that shows that comparison and nothing else.
-   - Four short lines, about 20 words each: **Why** · **Worth** (with its label:
-     Estimate, measured, or not measured) · **Fix** (who and how big) · **Check**.
+   - The whole chain, one or two sentences a step (about 35 words at most), so the
+     reader can follow the reasoning, not just the verdict:
+     **Saw** (the counts) · **Compared** (the baseline it is judged against) ·
+     **Why** (the cause and the evidence for it) · **Ruled out** (what else could
+     explain it and why it does not, or how likely the gap is luck; leave out when
+     nothing) · **Worth** (labelled Estimate, measured or not measured, with the
+     arithmetic on one line underneath) · **Fix** (who and how big) · **Check** (the
+     reading, today's value, and what would show it worked).
    - A footnote: window, sample, method, and the plain question that rebuilds the
      page through the MCP ("Ask your AI: …").
    - A phone screenshot when the cause is visible on the page; say what the
@@ -167,7 +173,12 @@ Build the review as pages, in this order:
 5. **Checked and fine · not worth chasing · set up to unlock** — one page, three
    lists. Non-findings live here, worded as reassurance ("frustrated tapping comes
    mostly from people about to buy; no sign it loses orders"), never as a finding
-   whose title contradicts itself.
+   whose title contradicts itself. "Set up to unlock" lists only what the reader can
+   switch on today, in Convertlyft or their own tools (connect Search Console, tag ad
+   links with campaign names, mark an event as the result), each with what it
+   unlocks. Never a Convertlyft gap (ad cost, AI-mention tracking, map-pack
+   insights) and never waiting ("a few more weeks of data"); those go to the "our
+   side" box or nowhere. No such item: drop the list.
 6. **Do these next** — the ranked table with how each will be checked, and a separate
    "our side" box for faults in Convertlyft itself.
 7. **Get this yourself** — the questions, in plain words, not tool names.
