@@ -54,6 +54,7 @@ about what a call may do.
 | `watching-session-replays` | Finds the right recorded visit and reads one moment of it — the pages, the elements clicked, errors and typing lengths in the seconds around a rage click, dead click or error — so a hypothesis from analytics can be confirmed or ruled out. |
 | `writing-copy` | Writes, rewrites and edits marketing copy for homepages, landing pages, pricing pages, ads, emails and calls to action, checking clarity, specificity, benefits, proof and customer language. |
 | `writing-daily-site-briefs` | Writes a short daily brief for a site from Convertlyft, covering whether the tag is sending, what the live watcher flagged, the key figures for yesterday against the day before, new errors, what is open on the action board and what waits for the owner's decision, without repeating what the workspace already knows. |
+| `writing-site-reviews` | Writes a monthly, weekly or custom-range site review an owner and their team can act on, where every item runs from what was seen, against a like-for-like baseline, to why, what it is worth, the fix and how the next review checks it — covering real visitors, the leaking funnel step, pages below their kind, where paid visits land, struggle spots, phones above the fold, search, backlinks, briefs waiting and what not to chase. |
 
 ## Checks
 

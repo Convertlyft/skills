@@ -129,9 +129,20 @@ account, start with the `getting-started-with-convertlyft` skill.
   `path`, `device` and `converted` (capped at 50, and it says when it was
   cut).
 - **Which landing pages sell.** `cvl_page_conversions` gives visits, and
-  visits that bought or got in touch, by entry page. It is not split by channel, so pair it
-  with `cvl_sessions_search` or a `cvl_kpi` campaign filter when the question
-  is about paid traffic only.
+  visits that bought or got in touch, by entry page; pass `source` to read paid
+  visits only. `cvl_traffic_breakdown` with `by` set to landing page, source or
+  country shows where paid visits go and from where; `cvl_page_baselines` shows how
+  each kind of landing page sells and which pages fall short of their kind.
+- **Move the visits, or change the audience?** Before sending an ad to another
+  page, compare campaigns on the **same** landing page (`cvl_kpi` with `campaign`,
+  per campaign). If one campaign sells there and another does not, the problem is
+  who the ad reaches, not the page: fix targeting, not the landing page. Move an ad
+  only when the same audience sells better on another page; its worth is the
+  difference in rates times the visits, labelled as an estimate. Count paid visits
+  from countries the business does not serve, and paid landings on pages that show
+  "sold out" or "notify me" in `cvl_heatmap` — both are spend that cannot sell.
+- **Big sites.** A read that would scan too much answers 409 with a smaller window
+  that fits. Split the range, add up the counts, and recompute rates from the sums.
 - **What people did on the landing page.** `cvl_heatmap` (top clicked
   elements, scroll depth, rage and dead clicks, sample size and window; under
   30 clicks it says "not enough data"), `cvl_funnel_report` (people through
@@ -171,5 +182,7 @@ A to-do on the What to do page names one section of [references/playbooks.md](re
 | `cvl_seo_rank` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_rank` | `reports:read` |
 | `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
 | `cvl_call_read` | none (MCP only) | none |
+| `cvl_traffic_breakdown` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_traffic_breakdown` | `sessions:read` |
+| `cvl_page_baselines` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_baselines` | `sessions:read` |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST.
