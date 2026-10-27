@@ -175,7 +175,8 @@ Build the review as pages, in this order:
    mostly from people about to buy; no sign it loses orders"), never as a leak page
    whose title contradicts itself. "Set up to unlock" lists only what the reader can
    switch on today, in Convertlyft or their own tools (connect Search Console, tag ad
-   links with campaign names, mark an event as the result), each with what it
+   links with campaign names, mark an event as the result, mark the team's own
+   devices under Settings › Kept out of your numbers), each with what it
    unlocks. Never a Convertlyft gap (ad cost, AI-mention tracking, map-pack
    insights) and never waiting ("a few more weeks of data"); those go to the "our
    side" box or nowhere. No such item: drop the list.
