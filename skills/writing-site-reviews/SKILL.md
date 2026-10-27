@@ -100,7 +100,7 @@ For each page that falls short, open it before guessing:
 ### 5. Where people struggle — without claiming lost sales
 - `cvl_behavior_report`, `cvl_dead_clicks` and `cvl_rage_clicks`.
 - **Busy shoppers click more.** Visits with rage or dead clicks often buy more than
-  similar visits. Never say friction costs sales unless a before-and-after or a
+  similar visits. Never say that getting stuck costs sales unless a before-and-after or a
   comparison with similar visits shows it.
 - What is worth reporting: a control that never answers (an Add button that adds
   nothing, checked with `cvl_replay_moment` on that element), a swipe area that does not
@@ -159,7 +159,7 @@ Build the review as pages, in this order:
      then "3,165 visits vs 32,109").
    - One chart that shows that comparison and nothing else.
    - The whole chain, one or two sentences a step (about 35 words at most), so the
-     reader can follow the reasoning, not just the verdict:
+     reader can follow the reasoning, not just the conclusion:
      **Saw** (the counts) · **Compared** (the baseline it is judged against) ·
      **Why** (the cause and the evidence for it) · **Ruled out** (what else could
      explain it and why it does not, or how likely the gap is luck; leave out when
@@ -172,7 +172,7 @@ Build the review as pages, in this order:
      screenshot does and does not show.
 5. **Checked and fine · not worth chasing · set up to unlock** — one page, three
    lists. Non-findings live here, worded as reassurance ("frustrated tapping comes
-   mostly from people about to buy; no sign it loses orders"), never as a finding
+   mostly from people about to buy; no sign it loses orders"), never as a leak page
    whose title contradicts itself. "Set up to unlock" lists only what the reader can
    switch on today, in Convertlyft or their own tools (connect Search Console, tag ad
    links with campaign names, mark an event as the result), each with what it
