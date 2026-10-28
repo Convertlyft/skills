@@ -27,7 +27,7 @@ about what a call may do.
 
 | Skill | What it does |
 |---|---|
-| `adding-webmcp-tools` | Adds WebMCP tools to a website (form tools or `document.modelContext.registerTool`), matching the current draft, marking risky tools, testing in Chrome, and verifying with Convertlyft's no-account agent-readiness check. |
+| `adding-webmcp-tools` | Adds WebMCP tools to a website (form tools or `document.modelContext.registerTool`), matching the current draft, marking risky tools, testing in Chrome, and verifying with Convertlyft's no-account agent-readiness check. Background reading: [webmcpagency.com](https://webmcpagency.com). |
 | `adding-schema-markup` | Plans, writes and audits structured data (schema.org JSON-LD) for a site, choosing types by page, filling them only with facts visible on the page, and validating before release. |
 | `applying-marketing-psychology` | Explains the behavioural principles behind persuasive marketing — social proof, authority, scarcity, reciprocity, loss aversion, anchoring, the decoy effect, commitment, framing, the endowment effect, familiarity, the peak-end rule, choice overload, working-memory limits, distinctiveness, the halo effect and cognitive fluency — with when to use each and the honest limits. |
 | `auditing-shop-journeys` | Audits an online shop's whole buying journey from measured Convertlyft data, cleaning out visits that are not shoppers, finding the step that loses the most people, flagging pages that sell far below the site's own baseline and product pages that lag their sister products, and ranking changes with two certainties: the problem is real, and the change lifts orders. |
