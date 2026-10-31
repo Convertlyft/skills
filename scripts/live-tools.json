@@ -1688,6 +1688,24 @@
     ]
   },
   {
+    "name": "cvl_seo_referring_domains",
+    "core": true,
+    "reads": false,
+    "args": [
+      "confirm_cost",
+      "cursor",
+      "domain",
+      "dry_run",
+      "fields",
+      "limit",
+      "refresh",
+      "since"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
     "name": "cvl_search_tools",
     "core": true,
     "reads": true,

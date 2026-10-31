@@ -129,6 +129,7 @@ A tool marked "via `cvl_call_read`" is not in the default tool list: find it wit
 | `cvl_seo_server_logs` | What crawlers asked the site for, from its server logs | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_server_logs` | `reports:read` |
 | `cvl_seo_brief_published` | Say a brief’s page is live | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_brief_published` | `seo:write` |
 | `cvl_seo_opportunity_set` | Not for us, or Later, on a content brief idea | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_opportunity_set` | `seo:write` |
+| `cvl_seo_referring_domains` | Sites that link to a site | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_referring_domains` | `seo:write` |
 | `cvl_search_tools` | Find a tool | reads | direct | none (MCP only) | not in manifest |
 | `cvl_call_read` | Run a read tool | reads | direct | none (MCP only) | not in manifest |
 | `cvl_skills_list` | List the Convertlyft skills | reads | direct | none (MCP only) | not in manifest |
