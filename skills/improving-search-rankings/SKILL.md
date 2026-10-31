@@ -203,8 +203,11 @@ list so absence is not read as a pass. For the full scan workflow see the
    `cvl_seo_agency_matrix` compares competitors across every workspace the
    person belongs to.
    **Backlink spikes.** Compare the snapshots in `cvl_seo_backlinks`. When linking
-   sites multiply between two snapshots, read the newest domains and their spam
-   score before calling it progress. If they are spam, say so, suggest checking Search Console for a manual action, and
+   sites multiply between two snapshots, read the new ones before calling it
+   progress: `cvl_seo_referring_domains` with the site's `domain` and `since` set
+   to the day of the snapshot before the jump lists the sites first seen since,
+   each with its spam score and rank. It buys its answer like `cvl_seo_serp`
+   (included in the plan inside the daily limit), so ask the owner first. If they are spam, say so, suggest checking Search Console for a manual action, and
    keep a disavow file ready. A link-gap list made of link shorteners and
    "dofollow" sellers is spam too; do not chase it.
 10. `cvl_seo_drafts` and `cvl_seo_brief` — briefs and drafts that are ready but
@@ -274,6 +277,7 @@ A to-do on the What to do page names one section of [references/playbooks.md](re
 | `cvl_seo_draft` | `POST https://convertlyft.com/api/tools/cvl_seo_draft` | `seo:write` |
 | `cvl_seo_draft_status` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_draft_status` | `reports:read` |
 | `cvl_seo_serp` | `POST https://convertlyft.com/api/tools/cvl_seo_serp` | `seo:write` |
+| `cvl_seo_referring_domains` | `POST https://convertlyft.com/api/tools/cvl_seo_referring_domains` | `seo:write` |
 | `cvl_seo_sitemaps` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_sitemaps` | `reports:read` |
 | `cvl_seo_submit_sitemap` | `POST https://convertlyft.com/api/tools/cvl_seo_submit_sitemap` | `seo:write` |
 | `cvl_usage` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_usage` | `reports:read` |
