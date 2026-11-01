@@ -15,7 +15,7 @@ For how to fix what the audit finds, see `improving-search-rankings`. For compet
 ## Depth 1 — Scan of any public site (no account)
 
 1. Call `cvl_public_seo_scan` with `url` (like `https://example.com` or `example.com`). It scans up
-   to 16 pages, obeys robots.txt, runs no JavaScript and changes nothing on the site. It waits up
+   to 25 pages, obeys robots.txt, runs no JavaScript and changes nothing on the site. It waits up
    to about 45 seconds.
 2. If it answers `{status: "running", scan_id}`, call `cvl_public_seo_scan_result` with that
    `scan_id`. It waits up to about 45 seconds again and does not count as a new scan. Repeat while
