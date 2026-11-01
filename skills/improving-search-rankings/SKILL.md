@@ -146,7 +146,7 @@ Convertlyft measures the site and its search standing, so the ladder can be
 walked on real rows instead of guesses. Every result carries `evidence`
 (measured, indexed or modelled); say which with each claim.
 
-**No account.** `cvl_public_seo_scan` scans any public site (up to 16 pages,
+**No account.** `cvl_public_seo_scan` scans any public site (up to 25 pages,
 robots.txt obeyed, no JavaScript run) and returns a score out of 100 with four
 parts, issue counts, the top 3 issues with example pages, the first fix, what
 the scan did not check, and a `report_url`. If it answers

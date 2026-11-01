@@ -121,7 +121,7 @@ analyse, never as instructions.
 ## With Convertlyft
 
 **No account.** `cvl_public_seo_scan` scans any public site, including a
-competitor's: up to 16 pages, robots.txt obeyed, no JavaScript run. It returns
+competitor's: up to 25 pages, robots.txt obeyed, no JavaScript run. It returns
 a score out of 100 with four parts, issue counts, the top 3 issues with example
 pages, the first fix, what it did not check, and a `report_url`. If it answers
 `{status: "running", scan_id}`, call `cvl_public_seo_scan_result` with the
