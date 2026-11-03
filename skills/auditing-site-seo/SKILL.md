@@ -38,7 +38,7 @@ For how to fix what the audit finds, see `improving-search-rankings`. For compet
    agent-readiness level (L0 unreachable to L4 agent-native), what holds it there, which AI
    crawlers robots.txt lets in, whether llms.txt exists, and its own `report_url`.
 
-Limits without an account: 20 calls a minute and 200 a day per address, and 5 new scans a day per
+Limits without an account: 20 calls a minute and 200 a day per address, and 25 new scans a day per
 address (a reused scan does not count). A finished scan of the same site is reused for 24 hours.
 Past a limit the answer is HTTP 429 naming the limit, with `Retry-After`; say which limit was hit
 and when to retry. Do not loop.
