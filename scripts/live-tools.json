@@ -140,6 +140,7 @@
       "fields",
       "pages",
       "receipt_ids",
+      "scan_ids",
       "sentence"
     ],
     "scopes": []
