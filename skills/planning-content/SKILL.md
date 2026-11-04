@@ -214,7 +214,7 @@ estimated figure is called an estimate.
   whether the piece brings people who act. Attribution is the entry page,
   so this counts visits that started on the piece.
 
-Quote the window and sample size with any behaviour reading, and say "not
+Quote the window and sample size with any behaviour measurement, and say "not
 enough data yet" when the rows are thin.
 
 ## Tools

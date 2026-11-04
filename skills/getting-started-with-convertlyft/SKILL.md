@@ -27,7 +27,7 @@ What the tools show it can see, once the site's tag is installed and a person ha
 - JavaScript errors visitors hit, grouped, with a fix brief (`cvl_issues_list`, `cvl_error_brief`).
 - Visit recordings (session replays) — the structure of a visit: what was reached, clicked and typed
   into as lengths, never the content typed (`cvl_replays_list`, `cvl_replay_moment`).
-- SEO readings on file: rankings, keyword research, competitors, backlinks, crawls,
+- SEO figures on file: rankings, keyword research, competitors, backlinks, crawls,
   AI-assistant mentions.
 
 With no account at all, it can still scan any public site for SEO problems

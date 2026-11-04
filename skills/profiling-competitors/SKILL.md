@@ -102,7 +102,7 @@ Write each quadrant as what you found → evidence → what to do about it.
   differentiate.
 
 Then up to five moves, ordered by effort against impact, each naming the
-evidence and the reading that will show whether it worked. No move rests on
+evidence and the figure that will show whether it worked. No move rests on
 an inference alone.
 
 ## Deliverable

@@ -142,7 +142,7 @@ For each page (top three to five):
 - **Likely cause**: one hypothesis, marked as one, with what the heatmap or
   recording showed.
 - **Search**: the title, copy, schema or URL fix, quoting the current text.
-- **Next**: one change, and the reading that will show whether it worked.
+- **Next**: one change, and the figure that will show whether it worked.
 
 Before stating a number from an answer that carries a `receipt_id`, run
 `cvl_check_claim` with the sentence and that id. Convertlyft never changes
