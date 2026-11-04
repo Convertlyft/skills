@@ -25,7 +25,7 @@ tour of every chart.
 4. **What it is worth** — orders, enquiries or sign-ups, and money at the site's own
    average value, labelled **Estimate** with the method; or **not measured** and why.
 5. **Fix** — one concrete step, who does it, and the size (small, medium, large).
-6. **How we will know** — the reading the next review repeats.
+6. **How we will know** — the figure the next review repeats.
 
 An item that cannot reach step 2 is not an item. Put it under "checked and fine", or
 under "set up to unlock more" when the reader can switch on what is missing.
@@ -197,7 +197,7 @@ Build the review as pages, in this order:
      explain it and why it does not, or how likely the gap is luck; leave out when
      nothing) · **Worth** (labelled Estimate, measured or not measured, with the
      arithmetic on one line underneath) · **Fix** (who and how big) · **Check** (the
-     reading, today's value, and what would show it worked).
+     figure, today's value, and what would show it worked).
    - A footnote: window, sample, method, and the plain question that rebuilds the
      page through the MCP ("Ask your AI: …").
    - A phone screenshot when the cause is visible on the page; say what the

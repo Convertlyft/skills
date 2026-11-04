@@ -124,7 +124,7 @@ A short pass that finds most of the serious problems:
   Say this plainly rather than blessing a site on a scan.
 - Behaviour analytics say little about accessibility directly: replays
   mostly show pointer and touch behavior, and people using assistive
-  technology are invisible in aggregate readings, not absent from the
+  technology are invisible in aggregate figures, not absent from the
   audience. Absence of evidence here is not evidence of absence — the audit
   methods above are the evidence, not the analytics.
 - Do not certify. You can say a page passes or fails specific AA checks you

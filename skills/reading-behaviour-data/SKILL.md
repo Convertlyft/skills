@@ -1,12 +1,12 @@
 ---
 name: reading-behaviour-data
-description: Teaches how to read visitor behaviour evidence honestly — heatmaps, scroll depth, rage and dead clicks, where people get stuck on forms, funnels, paths and visit recordings (session replays) — and how to turn a reading into a page diagnosis and a testable hypothesis. Use when interpreting any heatmap, click map, scroll map, replay, funnel or form-abandonment data, when asked "why aren't people clicking", "where do people get stuck" or "what does this heatmap mean", or before recommending a change to a page based on behaviour.
+description: Teaches how to read visitor behaviour evidence honestly — heatmaps, scroll depth, rage and dead clicks, where people get stuck on forms, funnels, paths and visit recordings (session replays) — and how to turn a measurement into a page diagnosis and a testable hypothesis. Use when interpreting any heatmap, click map, scroll map, replay, funnel or form-abandonment data, when asked "why aren't people clicking", "where do people get stuck" or "what does this heatmap mean", or before recommending a change to a page based on behaviour.
 ---
 
 # Reading behaviour data
 
 Behaviour data shows **where** people clicked, scrolled, stalled and left. It does
-not show **why**. Every reading in this skill becomes a hypothesis, and stays one
+not show **why**. Every measurement in this skill becomes a hypothesis, and stays one
 until a replay or a test confirms it. Say so plainly when reporting.
 
 Plain English, point first. Say "people" or "visitors".
@@ -15,7 +15,7 @@ Adapted in part from Corey Haines' `cro` skill (MIT licence; see NOTICE in the
 repository root). The page-analysis framework lives in
 `references/page-analysis.md`.
 
-## The honesty rules (apply to every reading)
+## The honesty rules (apply to every measurement)
 
 1. **Quote the sample and the window.** Every figure comes with how many clicks,
    visits or people it is based on, and the dates it covers. "`<n>` of `<total>`
@@ -167,7 +167,7 @@ and say there was no picture.
 
 ## With Convertlyft
 
-The tools below return the readings this skill interprets. All need a signed-in
+The tools below return the measurements this skill interprets. All need a signed-in
 connection with the scope shown; see `getting-started-with-convertlyft` for
 sign-in. Read-only: none of them changes the site.
 

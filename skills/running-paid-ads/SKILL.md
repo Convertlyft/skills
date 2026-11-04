@@ -40,7 +40,7 @@ Each step can invalidate everything after it.
    The keyword list is the intent; the search terms are the reality.
 5. **Landing experience fifth.** Follow the click. Does the page keep the
    ad's promise, load properly, and give a clear next step? Funnels,
-   heatmaps, replays and error readings are the evidence the ad platform
+   heatmaps, replays and error figures are the evidence the ad platform
    cannot see.
 6. **Mechanics last.** Bidding strategy, Quality Score, campaign structure,
    ad copy testing. Tuning these on top of broken tracking, bad economics or

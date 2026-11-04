@@ -37,8 +37,8 @@ Start broad, then go narrow:
    - `cvl_form_friction` — per form: visits that focused a field, visits that
      submitted, the gap. A form nobody started has completion rate null, never 0%.
    - `cvl_page_attention` — per page: views, typical scroll depth, engaged time. A
-     median over too few readings comes back with its sample count; withhold it.
-   - `cvl_page_speed` — slow pages at the 75th percentile (pages with too few readings
+     median over too few measurements comes back with its sample count; withhold it.
+   - `cvl_page_speed` — slow pages at the 75th percentile (pages with too few measurements
      are left out).
 4. For the one or two worst pages, `cvl_heatmap` with `path` — the most-clicked
    elements, scroll reach, rage and dead clicks, and a numbered picture. Under 30

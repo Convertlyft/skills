@@ -40,7 +40,7 @@ synthetic load: use it to find the cause, never as the result.
 
 1. `cvl_page_speed` with `from` and `to` (YYYY-MM-DD; it defaults to the last
    30 days). Per page: LCP, INP and CLS at the 75th percentile. Pages with
-   fewer than 30 readings are left out rather than reported thin: quote the
+   fewer than 30 measurements are left out rather than reported thin: quote the
    answer's `note`, which says how many pages that was, and name no page it
    did not list. Quote the window the answer returns.
 2. `cvl_kpi` gives one speed figure for the whole site for the same window;
@@ -120,7 +120,7 @@ instead of code where that is what the person can change.
 For each page, top three at most:
 
 - **Page and vital**: the path, which vital is poor and its value, the
-  number of readings, the window, the evidence class (`measured`, from this
+  number of measurements, the window, the evidence class (`measured`, from this
   site's visitors; a lab score is one synthetic load and never the result),
   and the share of results the page carries.
 - **Cause**: what the lab test flagged, marked as a hypothesis until the

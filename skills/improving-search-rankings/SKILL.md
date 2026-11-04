@@ -9,7 +9,7 @@ Answer a website owner, not an SEO professional. Plain English, short
 sentences, the one thing to do next before the background. Say "people" or
 "visitors". Never invent a number: no made-up search volumes, difficulty
 scores, percentages or "studies show" claims. If a claim needs data that is
-not in hand, name the reading that would settle it instead of guessing.
+not in hand, name the figure that would settle it instead of guessing.
 
 ## The diagnosis ladder
 
@@ -55,7 +55,7 @@ the problem on the ladder first.
   define how many clicks are even available.
 
 More decision rules (Core Web Vitals, single backlinks, brand-new sites,
-rewrite or new page, template pages at scale), what each reading can and
+rewrite or new page, template pages at scale), what each measurement can and
 cannot prove, counter-intuitive gotchas, and how Ads and SEO share a landing
 page: [references/rules-and-evidence.md](references/rules-and-evidence.md).
 
@@ -64,9 +64,9 @@ page: [references/rules-and-evidence.md](references/rules-and-evidence.md).
 1. The point first: the one thing to do next, and the rung of the ladder it
    sits on.
 2. Up to five to-dos, highest impact first, each with its evidence and the
-   reading it came from.
+   figure it came from.
 3. Exact specifics: URLs, the tag or setting to change, the page to merge.
-4. How to tell whether it worked: which reading to check, and over what
+4. How to tell whether it worked: which figure to check, and over what
    window (weeks, not days).
 
 **Changes for one page and one search** ("what should I change on my homepage
@@ -135,7 +135,7 @@ quote it as Google's words with its date.
   visibility, Ads overlap.
 
 - `references/rules-and-evidence.md` — the longer decision rules, what each
-  reading can and cannot prove, gotchas, and the Ads landing-page overlap.
+  measurement can and cannot prove, gotchas, and the Ads landing-page overlap.
   Load before stating a cause or a conclusion.
 
 Load only what the question needs.
@@ -160,7 +160,7 @@ list so absence is not read as a pass. For the full scan workflow see the
 
 1. `cvl_seo_flow` — where the automatic chain stands (crawl, keywords,
    competitors, to-dos, SEO content briefs) and why a step is waiting or failed.
-   Read it first; a step that has not run means its readings are empty, not
+   Read it first; a step that has not run means its figures are empty, not
    zero.
 2. `cvl_seo_audit` and `cvl_site_pages` — rung 1 and 4: what the newest crawl
    found, joined to counted visits, and one row per page (status, title,
@@ -233,7 +233,7 @@ the daily limit, with no per-call confirmation, so ask the owner first.
 
 **A live results page (bought live, included in the plan).** `cvl_seo_serp` returns the live top
 10 Google results for one search in one country, with "People also ask" —
-the results-page reading rungs 2 and 3 need when no stored top 10 exists.
+the results-page figures rungs 2 and 3 need when no stored top 10 exists.
 It needs `seo:write` and buys the answer live, included in the plan inside
 the site's daily limit, with no per-call confirmation. Never call it free,
 and ask the owner before every call, naming the searches. The answer is stored, so

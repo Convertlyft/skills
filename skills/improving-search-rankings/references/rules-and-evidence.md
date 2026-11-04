@@ -1,7 +1,7 @@
 # Rules and evidence — decisions, conclusions, gotchas, Ads overlap
 
 Loaded from the improving-search-rankings skill when a question needs more
-than the short decision rules, or before stating what a reading proves.
+than the short decision rules, or before stating what a figure proves.
 
 ## More fast decision rules
 
@@ -25,7 +25,7 @@ than the short decision rules, or before stating what a reading proves.
 
 ## What can and cannot be concluded
 
-Ground every claim in a reading and say which one backs it.
+Ground every claim in a figure and say which one backs it.
 
 - **Visits** (sessions) show search volume over time and which landing pages get it.
   They show that traffic changed, never why a rank changed.
@@ -37,7 +37,7 @@ Ground every claim in a reading and say which one backs it.
   fail to find. Hypotheses, not statistics.
 - **Errors** show broken experiences that waste organic clicks, and reveal
   tracking breaks that masquerade as traffic drops.
-- **Rank data** is the only reading that speaks about rankings directly. It
+- **Rank data** is the only measurement that speaks about rankings directly. It
   shows movement, not cause.
 - **Ads search terms** show what real searchers type and what it costs —
   the most honest keyword research there is.
