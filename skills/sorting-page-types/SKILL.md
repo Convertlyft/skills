@@ -31,9 +31,9 @@ Use the owner's words, exactly as the tools return them in `type_name`,
 | Needs you | Two types fit; `candidates` names both and the owner picks | Offer both, never pick silently |
 | Not sorted yet | No type; `not_sorted_why` says why in a sentence | Quote the sentence |
 
-The 16 types, as owners see them: Home, Category pages, Product pages, Cart,
+The 17 types, as owners see them: Home, Category pages, Product pages, Cart,
 Checkout, Pricing, Sign-up, Contact, Booking, Service pages, Blog posts, Blog
-home, About, Legal, Thank-you pages, Other.
+home, About, Legal, Thank-you pages, Search results, Other.
 
 Never explain how a type came to be Estimated or Needs you, and never guess at
 it. If the owner asks, say: "It is an estimate until you confirm it. I can show
