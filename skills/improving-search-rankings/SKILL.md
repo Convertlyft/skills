@@ -9,7 +9,7 @@ Answer a website owner, not an SEO professional. Plain English, short
 sentences, the one thing to do next before the background. Say "people" or
 "visitors". Never invent a number: no made-up search volumes, difficulty
 scores, percentages or "studies show" claims. If a claim needs data that is
-not in hand, name the reading that would settle it instead of guessing.
+not in hand, name the figure that would settle it instead of guessing.
 
 ## The diagnosis ladder
 
@@ -55,7 +55,7 @@ the problem on the ladder first.
   define how many clicks are even available.
 
 More decision rules (Core Web Vitals, single backlinks, brand-new sites,
-rewrite or new page, template pages at scale), what each reading can and
+rewrite or new page, template pages at scale), what each measurement can and
 cannot prove, counter-intuitive gotchas, and how Ads and SEO share a landing
 page: [references/rules-and-evidence.md](references/rules-and-evidence.md).
 
@@ -64,9 +64,9 @@ page: [references/rules-and-evidence.md](references/rules-and-evidence.md).
 1. The point first: the one thing to do next, and the rung of the ladder it
    sits on.
 2. Up to five to-dos, highest impact first, each with its evidence and the
-   reading it came from.
+   figure it came from.
 3. Exact specifics: URLs, the tag or setting to change, the page to merge.
-4. How to tell whether it worked: which reading to check, and over what
+4. How to tell whether it worked: which figure to check, and over what
    window (weeks, not days).
 
 **Changes for one page and one search** ("what should I change on my homepage
@@ -135,7 +135,7 @@ quote it as Google's words with its date.
   visibility, Ads overlap.
 
 - `references/rules-and-evidence.md` — the longer decision rules, what each
-  reading can and cannot prove, gotchas, and the Ads landing-page overlap.
+  measurement can and cannot prove, gotchas, and the Ads landing-page overlap.
   Load before stating a cause or a conclusion.
 
 Load only what the question needs.
@@ -146,7 +146,7 @@ Convertlyft measures the site and its search standing, so the ladder can be
 walked on real rows instead of guesses. Every result carries `evidence`
 (measured, indexed or modelled); say which with each claim.
 
-**No account.** `cvl_public_seo_scan` scans any public site (up to 16 pages,
+**No account.** `cvl_public_seo_scan` scans any public site (up to 25 pages,
 robots.txt obeyed, no JavaScript run) and returns a score out of 100 with four
 parts, issue counts, the top 3 issues with example pages, the first fix, what
 the scan did not check, and a `report_url`. If it answers
@@ -160,7 +160,7 @@ list so absence is not read as a pass. For the full scan workflow see the
 
 1. `cvl_seo_flow` — where the automatic chain stands (crawl, keywords,
    competitors, to-dos, SEO content briefs) and why a step is waiting or failed.
-   Read it first; a step that has not run means its readings are empty, not
+   Read it first; a step that has not run means its figures are empty, not
    zero.
 2. `cvl_seo_audit` and `cvl_site_pages` — rung 1 and 4: what the newest crawl
    found, joined to counted visits, and one row per page (status, title,
@@ -179,6 +179,14 @@ list so absence is not read as a pass. For the full scan workflow see the
 6. `cvl_seo_brief` — the stored brief for one search: what most top pages do
    that this page does not, and the suggested title, meta, outline, questions
    and structured data. Reading it never generates one.
+   To turn a brief into a written draft (owner's yes first: it uses one of
+   the month's SEO content briefs once the brief is Ready), call
+   `cvl_seo_draft` with `keyword` and `market` (and `page_url` for an
+   existing page). It answers at once with `brief_id` and `poll_after_s`;
+   then `cvl_seo_draft_status` with `brief_id` after that wait, until the
+   draft is Ready. The draft is a starting point a person edits and
+   publishes: fill or delete every `[Fill in: …]` gap, never reuse a
+   `refused_text` sentence as fact. Convertlyft never publishes to the site.
 7. `cvl_seo_rank` — positions per market and device with history. `not_seen`
    means not found within the depth checked, never "not ranking"; `missing`
    means it could not be measured. An empty answer means no search is tracked
@@ -194,6 +202,22 @@ list so absence is not read as a pass. For the full scan workflow see the
    prompt panel (a sample, never "in ChatGPT" as a whole).
    `cvl_seo_agency_matrix` compares competitors across every workspace the
    person belongs to.
+   **Backlink spikes.** Compare the snapshots in `cvl_seo_backlinks`. When linking
+   sites multiply between two snapshots, read the new ones before calling it
+   progress: `cvl_seo_referring_domains` with the site's `domain` and `since` set
+   to the day of the snapshot before the jump lists the sites first seen since,
+   each with its spam score and rank. It buys its answer like `cvl_seo_serp`
+   (included in the plan inside the daily limit), so ask the owner first. If they are spam, say so, suggest checking Search Console for a manual action, and
+   keep a disavow file ready. A link-gap list made of link shorteners and
+   "dofollow" sellers is spam too; do not chase it.
+10. `cvl_seo_drafts` and `cvl_seo_brief` — briefs and drafts that are ready but
+   unused. Report their age and whether the target page changed since (a brief
+   aimed at a page already rewritten is stale). Drop briefs for searches the
+   business cannot serve: hours it does not keep, products it does not sell,
+   places it is not, generic terms owned by marketplaces.
+11. **Google Shopping.** On a shop, compare Shopping visits and orders with normal
+   Google results on this site. When Shopping brings more, protect the product feed
+   (prices, stock, rejected items) before chasing rankings.
 
 **Writes (scope `seo:write`, opt-in).** Ask the owner before any of these.
 `cvl_seo_track_keywords` and `cvl_seo_untrack_keywords` change rank tracking;
@@ -202,17 +226,17 @@ list so absence is not read as a pass. For the full scan workflow see the
 acts on a to-do; `cvl_seo_set_competitor_state` pins or dismisses a
 rival. None of them changes the site or buys anything.
 `cvl_seo_submit_sitemap` sends a sitemap to the site's own Search Console: a
-preview unless `confirm: true`, so show the preview and ask first. `cvl_seo_run_flow` and
-`cvl_seo_make_brief` do buy: they run at once, included in the plan inside
+preview unless `confirm: true`, so show the preview and ask first. `cvl_seo_run_flow`,
+`cvl_seo_make_brief` and `cvl_seo_draft` do buy: they run at once, included in the plan inside
 the daily limit, with no per-call confirmation, so ask the owner first.
 `cvl_usage` shows what was used.
 
 **A live results page (bought live, included in the plan).** `cvl_seo_serp` returns the live top
 10 Google results for one search in one country, with "People also ask" —
-the results-page reading rungs 2 and 3 need when no stored top 10 exists.
+the results-page figures rungs 2 and 3 need when no stored top 10 exists.
 It needs `seo:write` and buys the answer live, included in the plan inside
 the site's daily limit, with no per-call confirmation. Never call it free,
-and ask the owner before running more than a few. The answer is stored, so
+and ask the owner before every call, naming the searches. The answer is stored, so
 the same search again reads the stored answer unless `refresh: true`.
 
 ## Playbooks
@@ -226,19 +250,20 @@ A to-do on the What to do page names one section of [references/playbooks.md](re
 | `cvl_public_seo_scan` | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan` | none (no account over MCP) |
 | `cvl_public_seo_scan_result` | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan_result` | none (no account over MCP) |
 | `cvl_public_agent_readiness` | `GET https://convertlyft.com/api/tools/cvl_public_agent_readiness` | none (no account over MCP) |
-| `cvl_seo_flow` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_flow` | `reports:read` |
-| `cvl_seo_audit` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_audit` | `reports:read` |
-| `cvl_site_pages` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
+| `cvl_seo_flow` | `GET https://convertlyft.com/api/tools/cvl_seo_flow` | `reports:read` |
+| `cvl_seo_audit` | `GET https://convertlyft.com/api/tools/cvl_seo_audit` | `reports:read` |
+| `cvl_site_pages` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
 | `cvl_page_content` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
 | `cvl_call_read` | none (MCP only) | none |
-| `cvl_seo_opportunities` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
+| `cvl_seo_opportunities` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
 | `cvl_seo_keyword` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_keyword` | `reports:read` |
 | `cvl_seo_keywords` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_keywords` | `reports:read` |
 | `cvl_seo_brief` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
 | `cvl_seo_rank` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_rank` | `reports:read` |
 | `cvl_seo_competitors` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_competitors` | `reports:read` |
-| `cvl_seo_backlinks` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_backlinks` | `reports:read` |
+| `cvl_seo_backlinks` | `GET https://convertlyft.com/api/tools/cvl_seo_backlinks` | `reports:read` |
 | `cvl_seo_ai` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_ai` | `reports:read` |
+| `cvl_page_conversions` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_conversions` | `sessions:read` |
 | `cvl_seo_agency_matrix` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_agency_matrix` | `reports:read` |
 | `cvl_seo_track_keywords` | `POST https://convertlyft.com/api/tools/cvl_seo_track_keywords` | `seo:write` |
 | `cvl_seo_untrack_keywords` | `POST https://convertlyft.com/api/tools/cvl_seo_untrack_keywords` | `seo:write` |
@@ -249,9 +274,13 @@ A to-do on the What to do page names one section of [references/playbooks.md](re
 | `cvl_seo_set_competitor_state` | `POST https://convertlyft.com/api/tools/cvl_seo_set_competitor_state` | `seo:write` |
 | `cvl_seo_run_flow` | `POST https://convertlyft.com/api/tools/cvl_seo_run_flow` | `seo:write` |
 | `cvl_seo_make_brief` | `POST https://convertlyft.com/api/tools/cvl_seo_make_brief` | `seo:write` |
+| `cvl_seo_draft` | `POST https://convertlyft.com/api/tools/cvl_seo_draft` | `seo:write` |
+| `cvl_seo_draft_status` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_draft_status` | `reports:read` |
 | `cvl_seo_serp` | `POST https://convertlyft.com/api/tools/cvl_seo_serp` | `seo:write` |
+| `cvl_seo_referring_domains` | `POST https://convertlyft.com/api/tools/cvl_seo_referring_domains` | `seo:write` |
 | `cvl_seo_sitemaps` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_sitemaps` | `reports:read` |
 | `cvl_seo_submit_sitemap` | `POST https://convertlyft.com/api/tools/cvl_seo_submit_sitemap` | `seo:write` |
 | `cvl_usage` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_usage` | `reports:read` |
+| `cvl_seo_drafts` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_drafts` | `reports:read` |
 
 REST calls send `Authorization: Bearer cvl_pat_…`; arguments go in the query string for GET and a JSON body for POST.

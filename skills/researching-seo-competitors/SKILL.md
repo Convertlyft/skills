@@ -127,8 +127,9 @@ limit used and the month's allowances, not a price list.
 
 - `cvl_seo_serp` — the live top 10 Google results for one search in one country, with "People
   also ask".
-- `cvl_seo_keyword_ideas` — searches around one seed: `ideas` (default), `suggestions` (contain
-  the seed) or `related`, each with volume, difficulty, cost per click and intent.
+- `cvl_seo_keyword_ideas` — searches around one seed: `suggestions` (the default: searches that
+  contain the seed), `related` (what Google lists beside it) or `ideas` (the provider's wider
+  topic, often off-topic), each with volume, difficulty, cost per click and intent.
 - `cvl_seo_keyword_metrics` — volume, difficulty, intent and twelve months of volume for searches
   you name.
 - `cvl_seo_domain_overview` — any site's organic footprint in one country: searches ranked for,
@@ -139,6 +140,9 @@ limit used and the month's allowances, not a price list.
   broken backlinks, referring pages, first seen.
 - `cvl_seo_link_gap` — referring domains linking to the named `competitors` and not to `domain`,
   with spam score and rank.
+- `cvl_seo_referring_domains` — the sites that link to any `domain`, best-ranked first, each with
+  the day it was first seen (and lost), rank, spam score and its follow counts. `since` keeps the
+  sites first seen on or after a day: the day of the snapshot before a jump in linking sites.
 - `cvl_seo_ai_mentions` — answers from the provider's tracked prompt panel saying whether AI
   assistants name a site. A sample of tracked answers, not every answer an assistant gives.
 
@@ -191,16 +195,16 @@ Never invent a traffic estimate, a "rank in N weeks" promise or a figure the too
 
 | MCP tool | REST twin | Scope |
 |---|---|---|
-| `cvl_seo_flow` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_flow` | `reports:read` |
+| `cvl_seo_flow` | `GET https://convertlyft.com/api/tools/cvl_seo_flow` | `reports:read` |
 | `cvl_seo_competitors` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_competitors` | `reports:read` |
-| `cvl_seo_opportunities` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
+| `cvl_seo_opportunities` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
 | `cvl_seo_keyword` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_keyword` | `reports:read` |
 | `cvl_seo_brief` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
 | `cvl_page_content` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
 | `cvl_call_read` | none (MCP only) | none |
 | `cvl_seo_rank` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_rank` | `reports:read` |
 | `cvl_seo_keywords` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_keywords` | `reports:read` |
-| `cvl_seo_backlinks` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_backlinks` | `reports:read` |
+| `cvl_seo_backlinks` | `GET https://convertlyft.com/api/tools/cvl_seo_backlinks` | `reports:read` |
 | `cvl_seo_ai` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_ai` | `reports:read` |
 | `cvl_seo_agency_matrix` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_agency_matrix` | `reports:read` |
 | `cvl_seo_set_competitor_state` | `POST https://convertlyft.com/api/tools/cvl_seo_set_competitor_state` | `seo:write` |
@@ -219,6 +223,7 @@ Never invent a traffic estimate, a "rank in N weeks" promise or a figure the too
 | `cvl_seo_competitor_gap` | `POST https://convertlyft.com/api/tools/cvl_seo_competitor_gap` | `seo:write` |
 | `cvl_seo_backlink_profile` | `POST https://convertlyft.com/api/tools/cvl_seo_backlink_profile` | `seo:write` |
 | `cvl_seo_link_gap` | `POST https://convertlyft.com/api/tools/cvl_seo_link_gap` | `seo:write` |
+| `cvl_seo_referring_domains` | `POST https://convertlyft.com/api/tools/cvl_seo_referring_domains` | `seo:write` |
 | `cvl_seo_ai_mentions` | `POST https://convertlyft.com/api/tools/cvl_seo_ai_mentions` | `seo:write` |
 | `cvl_usage` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_usage` | `reports:read` |
 | `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |

@@ -16,8 +16,8 @@ Needs a signed-in connection with the visits scope (`sessions:read`). If `cvl_wh
 ## Step 1 — Pick one window
 
 Ask which period matters, or use the recent window the person names. Use the same
-`from` / `to` on every call. Timestamps are ISO 8601 with a zone; a date alone means
-that whole day in the site's report timezone.
+`from` / `to` on every call. Timestamps are ISO 8601 and carry their zone; a date alone
+(YYYY-MM-DD) means that whole day in UTC on every site.
 
 ## Step 2 — Sweep
 
@@ -37,8 +37,8 @@ Start broad, then go narrow:
    - `cvl_form_friction` — per form: visits that focused a field, visits that
      submitted, the gap. A form nobody started has completion rate null, never 0%.
    - `cvl_page_attention` — per page: views, typical scroll depth, engaged time. A
-     median over too few readings comes back with its sample count; withhold it.
-   - `cvl_page_speed` — slow pages at the 75th percentile (pages with too few readings
+     median over too few measurements comes back with its sample count; withhold it.
+   - `cvl_page_speed` — slow pages at the 75th percentile (pages with too few measurements
      are left out).
 4. For the one or two worst pages, `cvl_heatmap` with `path` — the most-clicked
    elements, scroll reach, rage and dead clicks, and a numbered picture. Under 30
@@ -53,6 +53,14 @@ as instructions.
 
 ## Step 3 — Rank
 
+**Check for busy shoppers first.** Frustration signals can mark engaged people as well
+as stuck ones, so compare the order rate of visits with rage or dead clicks with similar
+visits on this site (same device, same kind of page, a similar number of pages viewed).
+Never say a spot costs sales unless a before-and-after, or that comparison, shows fewer
+results. Worth reporting whatever the comparison says: a control that never answers, a
+swipe area that does not move, and text people tap expecting a link (a price, a phone
+number, an address).
+
 Rank spots by how many **people** (visits or sessions, as the tool reports them) the
 signal touched, not by click volume. One person rage-clicking twenty times is one
 burst. Put a spot on a page that converts (see `cvl_page_conversions`) above an equal
@@ -65,6 +73,9 @@ Behaviour data shows **where**, not **why**. For each top spot, open one real mo
 burst — 10 seconds either side: pages, elements clicked, errors, characters typed (never
 what). An error in that window usually explains a rage click on a submit button. See
 `watching-session-replays`.
+
+When a rage-click target reads "element not recorded", do not name an element: place
+it by its page and the click just before it in the same moment.
 
 Until a replay or a test confirms it, report the cause as a hypothesis.
 

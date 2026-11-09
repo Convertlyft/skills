@@ -6,7 +6,7 @@ MIT licence, Copyright (c) 2025 Corey Haines). Changes: rewritten for reading
 alongside behaviour data, examples with figures removed, and each dimension
 paired with the behaviour signal that points to it.
 
-Use this after the behaviour readings have told you **where** the trouble is.
+Use this after the behaviour measurements have told you **where** the trouble is.
 It gives the order in which to look at the page itself.
 
 ## Before you start
@@ -49,7 +49,7 @@ mismatch between what brought people and what the headline says.
 ### 3. Call to action: placement, words, hierarchy
 
 - Is there one clear primary action?
-- Can people reach it? Compare its position with the scroll reading: if many
+- Can people reach it? Compare its position with the scroll measurement: if many
   visitors never reach it, it sits too low for them.
 - Does the button say what people get ("Get my report") rather than only an
   action ("Submit")?
@@ -113,9 +113,9 @@ Group recommendations as:
 1. **Quick wins**: small changes with a likely immediate effect.
 2. **High-impact changes**: bigger changes worth prioritising.
 3. **Test ideas**: hypotheses to test rather than assume, each with the
-   behaviour reading that prompted it and how it would be confirmed.
+   behaviour measurement that prompted it and how it would be confirmed.
 4. **Copy alternatives**: for the headline and the main call to action, two or
    three options with the reasoning for each.
 
-Every recommendation names the reading behind it, with its sample and window, or
+Every recommendation names the figure behind it, with its sample and window, or
 says plainly that it comes from the page alone and has not been measured.

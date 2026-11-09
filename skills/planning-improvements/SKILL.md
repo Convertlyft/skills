@@ -40,13 +40,13 @@ Each stage can make later ones pointless, so do not skip ahead.
    whichever half it sits in: a button that does nothing, visits ending in an
    error, a form people start and cannot finish, an important page with a crawl
    problem, tracked searches that fell out of sight. Broken things are not
-   hypotheses. Fix, then confirm the reading clears.
+   hypotheses. Fix, then confirm the figure clears.
 3. **The biggest leak on the money path.** With measurement and repairs in
    place, the funnel shows where the most people are lost closest to the money.
    That step, split by device and source, is the heart of the on-site half.
 4. **Supply after the site can convert.** More traffic poured onto a leaking
    page is wasted, so rankings, content, links and ads come after the leak.
-   The exception: a site with almost no visitors. There, on-site readings
+   The exception: a site with almost no visitors. There, on-site figures
    cannot conclude anything yet, so search demand and getting found come first,
    and the on-site half shrinks to "make sure measurement is ready".
 
@@ -74,7 +74,7 @@ it. Typical gaps:
   campaign expensive without the cost.
 - **Search Console.** Without it, impressions, queries and click-through from
   Google's side are unknown. Stored rankings answer a narrower question.
-- **Too little traffic.** Below the sample a reading needs, say "not enough data
+- **Too little traffic.** Below the sample a figure needs, say "not enough data
   yet", never "no problem".
 
 Do not let a gap silently become a guess.
@@ -86,11 +86,11 @@ your site". One item per line, repairs first within each list, evidence or the
 missing measurement named in the same line. Close with the single item to do
 first across both lists and why it outranks the rest. If one list is empty
 because nothing on that side has been measured, say so and make its first item
-the reading or connection that would change that.
+the measurement or connection that would change that.
 
 ## With Convertlyft
 
-With a connected workspace, build the plan from stored readings in this order.
+With a connected workspace, build the plan from stored figures in this order.
 
 1. **What is already known.** `cvl_recall` returns what was found before, decisions
    and unanswered questions with their evidence. Do not re-derive what is
@@ -158,9 +158,9 @@ gap and say so.
 | `cvl_funnel_report` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_funnel_report` | `reports:read` |
 | `cvl_page_conversions` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_conversions` | `sessions:read` |
 | `cvl_todo_mark` | `POST https://convertlyft.com/api/tools/cvl_todo_mark` | `board:write` |
-| `cvl_seo_flow` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_flow` | `reports:read` |
+| `cvl_seo_flow` | `GET https://convertlyft.com/api/tools/cvl_seo_flow` | `reports:read` |
 | `cvl_seo_rank` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_rank` | `reports:read` |
-| `cvl_seo_opportunities` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
+| `cvl_seo_opportunities` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
 | `cvl_public_seo_scan` | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan` | none (no account over MCP) |
 | `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
 | `cvl_propose` | none (MCP only) | `proposals:write` |

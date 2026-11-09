@@ -23,7 +23,8 @@ arithmetic, not a diagnosis.
 ## Step 1 — Confirm the drop, on one window
 
 Call `cvl_kpi` with `from` and `to` for the window the person means (ask if it is
-unclear; a date alone means that whole day in the site's report timezone). Then reuse the returned
+unclear; a date alone, YYYY-MM-DD, means that whole day in UTC on every site, and a
+timestamp carries its zone). Then reuse the returned
 `window.handle` on every later call that takes one, so the whole chain reads one window.
 
 - Read `state` on every figure first. Only `ok` figures carry `value`, `display`,
@@ -68,7 +69,7 @@ Work down this list and stop at the first place the drop concentrates. Use the s
    inside the window, read it with `cvl_issue_detail` (pass the same window — an error
    outside the window is not an error that does not exist).
 4. **Speed** — `cvl_page_speed` for the pages found in 1 or 2. It reports the 75th
-   percentile; pages with too few readings are left out rather than reported thin.
+   percentile; pages with too few measurements are left out rather than reported thin.
 5. **Where people get stuck** — `cvl_form_friction` if the sale or enquiry is a form; `cvl_behavior_report`
    for rage and dead clicks on the pages found above. Interpretation rules live in
    `reading-behaviour-data`.

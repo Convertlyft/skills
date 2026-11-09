@@ -141,7 +141,7 @@ What it looks like on the page, in fixable terms:
   in" only when true.
 - **Trust**: a real organization visibly behind the site — contact page
   with an address, who-we-are, policies where money changes hands, working
-  customer service paths, no dark patterns. Errors readings that show broken
+  customer service paths, no dark patterns. Errors figures that show broken
   checkout or form flows are trust damage in the most literal sense.
 
 Honest limits: E-E-A-T improvements are slow, sitewide, and unprovable in
