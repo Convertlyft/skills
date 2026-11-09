@@ -1,6 +1,6 @@
 # Reading the Evidence
 
-How to interpret each behaviour reading — funnels, heatmaps, replays, paths, errors — and turn what you see into a diagnosis of where people get stuck. The summary of what each reading can and cannot support lives in claims-and-answers.md; this file is the working method.
+How to interpret each behaviour measurement — funnels, heatmaps, replays, paths, errors — and turn what you see into a diagnosis of where people get stuck. The summary of what each measurement can and cannot support lives in claims-and-answers.md; this file is the working method.
 
 ## Stuck-spot classes
 
@@ -50,7 +50,7 @@ Judging whether a drop is even a problem: hold each step against its realistic i
 
 **Aggregation traps.**
 - Always split by device; a blended map of phone and desktop layouts describes neither.
-- Check deploy dates against the reading window; a map spanning a page change is a blend of two pages.
+- Check deploy dates against the measurement window; a map spanning a page change is a blend of two pages.
 - A map built from a handful of visits is noise. Say so rather than reading tea leaves.
 
 What a heatmap proves: what got seen and clicked on this page, in aggregate. What it cannot prove: intent, emotion, comprehension, or anything off the page.

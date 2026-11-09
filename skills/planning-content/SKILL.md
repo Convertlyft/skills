@@ -44,8 +44,15 @@ one existing page, skip Steps 1 to 3 and do this. Five reads at most.
    - Opening paragraph: answer the search in the first sentence, then the
      facts, then the next step. 50–90 words.
 5. **Check before handing it over.** Count the characters and say the count.
-   Mark each fact in the draft with the page line it came from. Anything
-   without a line comes out.
+   Mark each fact in the draft with the page line it came from. Then run
+   `cvl_check_claim` with `{"sentence": "<the whole draft>", "against": "site"}`:
+   it reads the site's own crawled pages and refuses any figure, price, time,
+   guarantee, superlative, credential or name the site does not state in those
+   words, quoting the page's closest sentence when the site has one
+   (`closest_site_sentence`, null when none is close). Anything it refuses, or
+   anything without a line, comes out or is reworded to the page's own words.
+   It does not read a sentence with none of these (`checked: false`), so the
+   page line is still your check for those.
 
 ## Step 1 — Decide whether the piece should exist
 
@@ -105,6 +112,26 @@ Plan before drafting:
 - Use the search term naturally where it belongs. Repetition for its own sake
   reads as spam.
 
+**With Convertlyft: a first draft from the SEO content brief.** Ask the owner
+first: a draft uses one of the month's SEO content briefs once its brief is
+Ready (a brief from the last 7 days is reused; `dry_run: true` buys nothing
+and says whether one would be reused, how many briefs are left this month and
+what is missing for a good draft).
+
+1. `cvl_seo_draft` with `keyword` (the brief's search) and `market` (omit it
+   for the primary market); add `page_url` when the draft is for an existing
+   page on the site. It does not wait: it answers at once with `brief_id`,
+   `status` and `poll_after_s`.
+2. `cvl_seo_draft_status` with `brief_id`, once `poll_after_s` has passed,
+   not in a tight loop. When the draft is Ready it returns the title and meta
+   description with their lengths, the H1, outline, body, FAQ, the
+   `[Fill in: …]` gaps and the claim check.
+3. Hand it over as a starting point a person edits and publishes. The draft
+   is written from the site's own words; a claim the site never makes is left
+   as a `[Fill in: …]` gap, and a refused sentence (`refused_text`) is
+   unverified and never reused as fact. Run Step 4 on the edited version.
+   Convertlyft never publishes to the site.
+
 ## Step 4 — Check before handing it over
 
 Pass or fail each, and fix the fails:
@@ -126,7 +153,12 @@ Pass or fail each, and fix the fails:
 10. A named author and honest dates where the site shows them.
 
 **People**
-11. Every claim is sourced or is the owner's own first-hand account.
+11. Every claim is sourced or is the owner's own first-hand account. Run
+    `cvl_check_claim` with `{"sentence": "<the whole draft>", "against": "site"}`
+    and fix every sentence it refuses (`not_on_site`): use the page's own words
+    from `closest_site_sentence` when it gives one, or take the claim out. A
+    figure about the site's visitors also needs the `receipt_ids` of the data
+    it came from.
 12. Scannable: lists, tables or images where they help, not decoration.
 13. One clear next action.
 
@@ -194,20 +226,23 @@ estimated figure is called an estimate.
   whether the piece brings people who act. Attribution is the entry page,
   so this counts visits that started on the piece.
 
-Quote the window and sample size with any behaviour reading, and say "not
+Quote the window and sample size with any behaviour measurement, and say "not
 enough data yet" when the rows are thin.
 
 ## Tools
 
 | MCP tool | REST twin | Scope |
 |---|---|---|
-| `cvl_seo_opportunities` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
+| `cvl_seo_opportunities` | `GET https://convertlyft.com/api/tools/cvl_seo_opportunities` | `reports:read` |
 | `cvl_seo_keyword` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_keyword` | `reports:read` |
 | `cvl_seo_keywords` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_keywords` | `reports:read` |
 | `cvl_seo_brief` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
 | `cvl_seo_make_brief` | `POST https://convertlyft.com/api/tools/cvl_seo_make_brief` | `seo:write` |
-| `cvl_site_pages` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
+| `cvl_seo_draft` | `POST https://convertlyft.com/api/tools/cvl_seo_draft` | `seo:write` |
+| `cvl_seo_draft_status` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_draft_status` | `reports:read` |
+| `cvl_site_pages` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
 | `cvl_page_content` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
+| `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
 | `cvl_call_read` | none (MCP only) | none |
 | `cvl_seo_serp` | `POST https://convertlyft.com/api/tools/cvl_seo_serp` | `seo:write` |
 | `cvl_seo_rank` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_rank` | `reports:read` |

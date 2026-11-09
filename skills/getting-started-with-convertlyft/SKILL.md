@@ -27,7 +27,7 @@ What the tools show it can see, once the site's tag is installed and a person ha
 - JavaScript errors visitors hit, grouped, with a fix brief (`cvl_issues_list`, `cvl_error_brief`).
 - Visit recordings (session replays) — the structure of a visit: what was reached, clicked and typed
   into as lengths, never the content typed (`cvl_replays_list`, `cvl_replay_moment`).
-- SEO readings on file: rankings, keyword research, competitors, backlinks, crawls,
+- SEO figures on file: rankings, keyword research, competitors, backlinks, crawls,
   AI-assistant mentions.
 
 With no account at all, it can still scan any public site for SEO problems
@@ -125,6 +125,9 @@ Then hand off by the question:
 | "Research one competitor / their positioning, offer or a SWOT" | `profiling-competitors` |
 | "Write or plan an article, guide or landing-page content" | `planning-content` |
 | "Schema markup / structured data / rich results" | `adding-schema-markup` |
+| "My product or category pages don't sell / product page titles, copy or filter URLs" | `optimizing-product-category-pages` |
+| "Show up in my city / a page per area / local schema / reviews" | `optimizing-local-service-pages` |
+| "The site or a page is slow / Core Web Vitals, LCP, INP or CLS" | `improving-page-speed` |
 | "Sort my pages / which pages need me / how do my product pages or blog posts do" | `sorting-page-types` |
 | "What should I fix first / an overall plan across pages, search and ads" | `planning-improvements` |
 

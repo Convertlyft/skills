@@ -23,8 +23,8 @@ Never open with a fix. Run this order every time:
    to-do number one. An element is good if it moves people toward the job,
    noise if it does not.
 2. **Check what evidence exists.** Traffic summary, funnels, heatmaps,
-   replays, errors, search rankings, ad data. Match every claim to a reading
-   that can support it (see Before you claim anything). No reading, no claim — say "I
+   replays, errors, search rankings, ad data. Match every claim to a measurement
+   that can support it (see Before you claim anything). No measurement, no claim — say "I
    would need to see X to confirm this".
 3. **Check the device mix, then review the bigger device first.** Phones hide
    problems desktop review never shows: cramped tap targets, keyboards
@@ -59,8 +59,8 @@ tiers one to three — redirect them, with evidence.
 
 ## Before you claim anything
 
-- Every claim needs a reading that supports it; no reading, no claim. Which
-  reading supports which claim (traffic, funnels, heatmaps, replays, errors,
+- Every claim needs a measurement that supports it; no measurement, no claim. Which
+  measurement supports which claim (traffic, funnels, heatmaps, replays, errors,
   rankings, ads) is in `references/diagnosis.md`.
 - Never predict a numeric outcome, never quote a remembered industry
   benchmark, and never blame design for a drop before ruling out new errors,
@@ -69,7 +69,7 @@ tiers one to three — redirect them, with evidence.
   zone means unseen or unwanted; only replays or a test tell which.
 - The quick judgment tools (glance, one primary action, visitor language,
   the stranger test for trust) are in
-  [references/page-craft.md](references/page-craft.md). What each reading
+  [references/page-craft.md](references/page-craft.md). What each measurement
   supports, what cannot be concluded, and the gotchas (mixed-layout heatmaps,
   no single fold, content hidden in tabs, lab versus felt speed, fixing the
   wrong step) are in [references/diagnosis.md](references/diagnosis.md).
@@ -77,7 +77,7 @@ tiers one to three — redirect them, with evidence.
 ## Delivering a critique
 
 Lead with the single highest-severity to-do and its evidence. Then a short
-ranked list: what you observed, which reading shows it, what to change, and
+ranked list: what you observed, which measurement shows it, what to change, and
 how to verify it worked. Qualify confidence honestly: "confirmed by errors"
 beats "suggested by one replay" beats "hypothesis — needs replays to
 confirm". One primary recommendation, never a wall of twenty tips. The full
@@ -86,8 +86,8 @@ write-up shape is in `references/diagnosis.md`.
 ## References
 
 - `references/diagnosis.md` — interpreting real funnels, heatmaps, replays
-  and errors, the full walkthrough protocol, misread traps per reading, the
-  anti-pattern catalogue, what each reading supports, what cannot be
+  and errors, the full walkthrough protocol, misread traps per measurement, the
+  anti-pattern catalogue, what each measurement supports, what cannot be
   concluded, the gotchas and the full critique write-up. Load it before
   making an evidence claim.
 - `references/page-craft.md` — decision rules for visual hierarchy,
@@ -104,7 +104,7 @@ With a Convertlyft account, the evidence for each to-do can come from the
 owner's own visitors. The tools need a token with the scope shown. With no
 account, run the method on whatever the owner has, or start with the
 `getting-started-with-convertlyft` skill. The `reading-behaviour-data` skill
-covers how to interpret these readings in depth. When the fix is the words on
+covers how to interpret these measurements in depth. When the fix is the words on
 the page (a headline, a label, an error message), hand off to `writing-copy`.
 
 - **Device and traffic.** `cvl_sessions_search` filters visits by `device`,

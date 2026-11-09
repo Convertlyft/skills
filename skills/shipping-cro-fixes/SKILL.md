@@ -27,7 +27,7 @@ Call `cvl_propose` with:
 - `fix_identity` — a stable id for this fix. Proposing the same `fix_identity` twice replaces the
   earlier card rather than adding a second one.
 - `title` — one plain sentence: what changes, on which page.
-- `baseline` — what was measured before proposing: the reading, its window and its sample size.
+- `baseline` — what was measured before proposing: the figure, its window and its sample size.
   Required. Copy the figures from the tool results; do not round or restate them from memory.
 - `revert_plan` — how to undo the change on the site. Required.
 - `detail` — the evidence and why this fix comes first.

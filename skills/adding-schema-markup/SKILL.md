@@ -52,8 +52,12 @@ If only the raw HTML was available, say the result is provisional.
 | Software or app page | `SoftwareApplication` | `Offer` only if a price is shown on the page |
 | Physical location | `LocalBusiness` (most specific subtype) | opening hours, geo, matching the Business Profile |
 | Any page with breadcrumbs | `BreadcrumbList` | — |
-| Question-and-answer content | `FAQPage` for machine parsing | promise no rich result |
-| Step-by-step tutorial | `HowTo` for machine parsing | promise no rich result |
+
+`FAQPage` and `HowTo` are not on this list. Google shows FAQ rich results only
+for well-known, authoritative government and health sites, and has deprecated
+HowTo rich results. For any other site, adding them earns no rich result;
+answer the questions and steps in plain text on the page instead, and spend
+the markup on the types above that still earn results.
 
 One `Organization` and one `WebSite` per site, not per page. Link entities with
 `@id` so blocks reference each other instead of repeating.
@@ -209,7 +213,7 @@ suggestions where a brief exists:
 - `cvl_seo_brief` — the stored brief for one search, which includes suggested
   structured data from the top pages studied. Treat it as a suggestion to
   check against the page, not markup to paste.
-- `cvl_public_seo_scan` — no account needed: a scan of up to 16 pages that
+- `cvl_public_seo_scan` — no account needed: a scan of up to 25 pages that
   lists what it did not check. If structured data is not in what it found,
   that is not a pass.
 
@@ -225,7 +229,7 @@ A to-do on the What to do page names one section of [references/playbooks.md](re
 | MCP tool | REST twin | Scope |
 |---|---|---|
 | `cvl_page_content` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
-| `cvl_site_pages` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
+| `cvl_site_pages` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
 | `cvl_seo_brief` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
 | `cvl_public_seo_scan` | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan` | none (no account over MCP) |
 | `cvl_call_read` | none (MCP only) | none |
