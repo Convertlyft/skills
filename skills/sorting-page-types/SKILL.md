@@ -31,9 +31,9 @@ Use the owner's words, exactly as the tools return them in `type_name`,
 | Needs you | Two types fit; `candidates` names both and the owner picks | Offer both, never pick silently |
 | Not sorted yet | No type; `not_sorted_why` says why in a sentence | Quote the sentence |
 
-The 16 types, as owners see them: Home, Category pages, Product pages, Cart,
+The 17 types, as owners see them: Home, Category pages, Product pages, Cart,
 Checkout, Pricing, Sign-up, Contact, Booking, Service pages, Blog posts, Blog
-home, About, Legal, Thank-you pages, Other.
+home, About, Legal, Thank-you pages, Search results, Other.
 
 Never explain how a type came to be Estimated or Needs you, and never guess at
 it. If the owner asks, say: "It is an estimate until you confirm it. I can show
@@ -191,7 +191,7 @@ A jewellery shop asks which products people add to the cart most.
 3. `cvl_paths` with `type: "blog_post"`: where readers went next and how
    many left the site from a blog post.
 4. Say it plainly: "<n> of <m> visits that started on a blog post converted
-   in <window>." Never call the blog "worth" an amount; the reading does not
+   in <window>." Never call the blog "worth" an amount; the figure does not
    show that.
 
 ### Worked example — which service pages bring WhatsApp messages
@@ -240,7 +240,7 @@ Hand the fixing to `auditing-site-seo` and `improving-search-rankings`.
 - That an Estimated type is confirmed, or that a Needs you page is one type.
 - A figure "for all product pages" while some product pages are unsorted.
 - A sale, an enquiry or a message from a page view or a tap.
-- Why one page converts better than another; the readings show where, not
+- Why one page converts better than another; the figures show where, not
   why.
 
 ## Tools

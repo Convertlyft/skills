@@ -36,7 +36,7 @@ people who would pay actually search. Method:
 
 ## Reading a SERP as evidence
 
-Treat every results page as a data source with several readings:
+Treat every results page as a data source with several measurements:
 
 - **Features present** — ads on top, shopping units, a map pack, an AI
   Overview, video carousels — each one removes clicks from the plain
@@ -81,7 +81,7 @@ Decision rules:
   journalists, and being the primary source for anything. Frame link
   earning as publishing things worth citing, plus telling the right people
   they exist.
-- **Competitor gap reading**: pages linking to several competitors but not
+- **Competitor gap measurement**: pages linking to several competitors but not
   to the owner's site are the warmest outreach list that exists.
 
 Cannot be concluded: that any specific link caused a rank change, or a
@@ -90,7 +90,7 @@ useful for rough sorting, never to be quoted as Google's view.
 
 ## Rank tracking — interpretation discipline
 
-Rank data is the only reading that speaks about rankings directly, and the
+Rank data is the only measurement that speaks about rankings directly, and the
 easiest to over-read.
 
 - **Volatility is baseline.** Positions wobble daily without cause worth
@@ -130,9 +130,9 @@ Priority order for a local business:
    strongest lever on the profile; wrong category, wrong searches. Fill
    services, hours, photos (real ones, added regularly), and keep them
    current.
-2. **Reviews**: a steady flow beats a burst; the reply habit is visible to
-   every reader and signals a live business. Never fake or gate reviews —
-   ask every happy customer, make the link effortless.
+2. **Reviews**: replying to every review is visible to
+   every reader. Never fake or gate reviews —
+   ask every customer, with a direct link to the form.
 3. **Consistency**: the business name, address, and phone should match
    across the site, the profile, and major directories. Fix the big
    inconsistencies; do not buy bulk citation packages.
@@ -201,7 +201,7 @@ Rank causes cannot be proven, only correlated. Search volumes, difficulty
 scores, and competitor traffic must come from a live data source or not be
 stated at all. Assistant citation behavior must be checked, not assumed.
 Link value cannot be reduced to a vendor score. Where a claim in an answer
-depends on any of these, name the reading that would settle it — Search
+depends on any of these, name the figure that would settle it — Search
 Console, the Ads search-terms report, rank data, or a live SERP check — and
 offer that check as the next step.
 

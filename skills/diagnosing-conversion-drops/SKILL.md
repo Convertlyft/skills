@@ -69,7 +69,7 @@ Work down this list and stop at the first place the drop concentrates. Use the s
    inside the window, read it with `cvl_issue_detail` (pass the same window — an error
    outside the window is not an error that does not exist).
 4. **Speed** — `cvl_page_speed` for the pages found in 1 or 2. It reports the 75th
-   percentile; pages with too few readings are left out rather than reported thin.
+   percentile; pages with too few measurements are left out rather than reported thin.
 5. **Where people get stuck** — `cvl_form_friction` if the sale or enquiry is a form; `cvl_behavior_report`
    for rage and dead clicks on the pages found above. Interpretation rules live in
    `reading-behaviour-data`.

@@ -15,7 +15,7 @@ For how to fix what the audit finds, see `improving-search-rankings`. For compet
 ## Depth 1 — Scan of any public site (no account)
 
 1. Call `cvl_public_seo_scan` with `url` (like `https://example.com` or `example.com`). It scans up
-   to 16 pages, obeys robots.txt, runs no JavaScript and changes nothing on the site. It waits up
+   to 25 pages, obeys robots.txt, runs no JavaScript and changes nothing on the site. It waits up
    to about 45 seconds.
 2. If it answers `{status: "running", scan_id}`, call `cvl_public_seo_scan_result` with that
    `scan_id`. It waits up to about 45 seconds again and does not count as a new scan. Repeat while
@@ -38,7 +38,7 @@ For how to fix what the audit finds, see `improving-search-rankings`. For compet
    agent-readiness level (L0 unreachable to L4 agent-native), what holds it there, which AI
    crawlers robots.txt lets in, whether llms.txt exists, and its own `report_url`.
 
-Limits without an account: 20 calls a minute and 200 a day per address, and 5 new scans a day per
+Limits without an account: 20 calls a minute and 200 a day per address, and 25 new scans a day per
 address (a reused scan does not count). A finished scan of the same site is reused for 24 hours.
 Past a limit the answer is HTTP 429 naming the limit, with `Retry-After`; say which limit was hit
 and when to retry. Do not loop.

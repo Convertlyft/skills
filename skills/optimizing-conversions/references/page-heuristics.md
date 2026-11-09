@@ -1,10 +1,10 @@
 # Page Heuristics
 
-Walkthrough heuristics for the three surfaces where most sales and enquiries are won or lost: landing pages, forms, and checkout. Use these after the funnel has pointed at a page — heuristics generate hypotheses, they do not replace evidence. Every point here should be paired with a reading that confirms people actually hit the problem.
+Walkthrough heuristics for the three surfaces where most sales and enquiries are won or lost: landing pages, forms, and checkout. Use these after the funnel has pointed at a page — heuristics generate hypotheses, they do not replace evidence. Every point here should be paired with a figure that confirms people actually hit the problem.
 
 ## Landing pages
 
-**The glance test.** Looking only at the first screen, on a phone, a first-time visitor should be able to answer: what is this, who is it for, why should I care, and what do I do next. If any answer takes scrolling or deciphering, that is a clarity failure — and it will show in the readings as a scroll collapse near the top and short visits ending at this page.
+**The glance test.** Looking only at the first screen, on a phone, a first-time visitor should be able to answer: what is this, who is it for, why should I care, and what do I do next. If any answer takes scrolling or deciphering, that is a clarity failure — and it will show in the figures as a scroll collapse near the top and short visits ending at this page.
 
 **Message match.** The headline should continue the sentence the ad or the search query started. A person who clicked "emergency plumber near me" and lands on "Welcome to our company" has been broken mid-thought. Check ads data and rank data for what actually brought people here, then read the page as that person.
 
@@ -60,7 +60,7 @@ What bad looks like, quickly: a headline about the company instead of the visito
 
 ## Accessibility as a reason people do not buy
 
-WCAG failures are lost sales and enquiries that show up in the readings:
+WCAG failures are lost sales and enquiries that show up in the figures:
 
 - Low-contrast text goes unread — the value proposition may as well be absent, and scroll maps show nobody reaching it.
 - Missing focus states and keyboard traps abandon everyone navigating by keyboard, and break form completion for them entirely.

@@ -136,8 +136,11 @@
     "core": true,
     "reads": true,
     "args": [
+      "against",
       "fields",
+      "pages",
       "receipt_ids",
+      "scan_ids",
       "sentence"
     ],
     "scopes": []
@@ -709,10 +712,12 @@
     "core": true,
     "reads": false,
     "args": [
+      "dry_run",
       "fields",
       "keywords",
       "location_code",
-      "market"
+      "market",
+      "swapOut"
     ],
     "scopes": [
       "seo:write"
@@ -738,6 +743,7 @@
     "reads": false,
     "args": [
       "domain",
+      "dry_run",
       "fields",
       "location_code",
       "market",
@@ -880,7 +886,8 @@
       "fresh",
       "keyword",
       "location_code",
-      "market"
+      "market",
+      "page_url"
     ],
     "scopes": [
       "seo:write"
@@ -1020,7 +1027,8 @@
       "keyword",
       "language_code",
       "location_code",
-      "refresh"
+      "refresh",
+      "serp_id"
     ],
     "scopes": [
       "seo:write"
@@ -1442,7 +1450,8 @@
       "dry_run",
       "fields",
       "issue",
-      "not_a_problem"
+      "not_a_problem",
+      "page"
     ],
     "scopes": [
       "seo:write"
@@ -1531,6 +1540,192 @@
     ],
     "scopes": [
       "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_seo_ranked_keywords",
+    "core": true,
+    "reads": false,
+    "args": [
+      "confirm_cost",
+      "domain",
+      "dry_run",
+      "fields",
+      "language_code",
+      "limit",
+      "location_code",
+      "refresh"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_draft_publish",
+    "core": true,
+    "reads": false,
+    "args": [
+      "draft_id",
+      "fields",
+      "url"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_page_baselines",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "from",
+      "limit",
+      "min_visits",
+      "path",
+      "to",
+      "type"
+    ],
+    "scopes": [
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_checkout_values",
+    "core": false,
+    "reads": true,
+    "args": [
+      "bucket",
+      "fields",
+      "from",
+      "to"
+    ],
+    "scopes": [
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_traffic_breakdown",
+    "core": false,
+    "reads": true,
+    "args": [
+      "by",
+      "fields",
+      "from",
+      "limit",
+      "to"
+    ],
+    "scopes": [
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_site_search",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "from",
+      "limit",
+      "to"
+    ],
+    "scopes": [
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_checkout_health",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields",
+      "from",
+      "to"
+    ],
+    "scopes": [
+      "sessions:read"
+    ]
+  },
+  {
+    "name": "cvl_seo_server_logs",
+    "core": false,
+    "reads": true,
+    "args": [
+      "fields"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_seo_brief_published",
+    "core": true,
+    "reads": false,
+    "args": [
+      "fields",
+      "keyword",
+      "location_code",
+      "market",
+      "search",
+      "url"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_opportunity_set",
+    "core": true,
+    "reads": false,
+    "args": [
+      "fields",
+      "keyword",
+      "location_code",
+      "mark",
+      "market",
+      "when"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_referring_domains",
+    "core": true,
+    "reads": false,
+    "args": [
+      "confirm_cost",
+      "cursor",
+      "domain",
+      "dry_run",
+      "fields",
+      "limit",
+      "refresh",
+      "since"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_long_tail",
+    "core": true,
+    "reads": false,
+    "args": [
+      "confirm_cost",
+      "dry_run",
+      "fields",
+      "language_code",
+      "limit",
+      "location_code",
+      "max_difficulty",
+      "min_volume",
+      "min_words",
+      "refresh",
+      "seeds"
+    ],
+    "scopes": [
+      "seo:write"
     ]
   },
   {

@@ -127,7 +127,7 @@ Run in order; each step can end the audit early with a clear answer.
    remembers, counting mode, attribution window.
 7. **Follow the click** for the heaviest ad groups: does the landing page
    keep the promise on the first screen; do funnels, heatmaps, replays,
-   and error readings show the page doing its job? A broken or mismatched
+   and error figures show the page doing its job? A broken or mismatched
    page reframes the whole audit.
 8. **Judge bidding fit**: strategy versus the volume of sales and enquiries (starved smart
    bidding thrashes), targets versus recent actuals (an aggressive target
@@ -144,7 +144,7 @@ Advising zero is a legitimate expert output. The cases:
 - **Blind spending.** Tracking broken or unverifiable: pause, fix, then
   return. Money spent blind cannot even buy learning.
 - **A page that cannot sell.** Evidence first: near-total funnel
-  drop-off, error readings on the path to buying, replays showing people
+  drop-off, error figures on the path to buying, replays showing people
   failing at the form. Ads amplify the page; amplifying failure costs
   double - the spend and the reputation with the platform's quality
   systems.
@@ -165,7 +165,7 @@ Advising zero is a legitimate expert output. The cases:
   to send people into it.
 
 The alternative to spending is never "nothing": fix the page (evidence
-already in hand from behaviour readings), build the organic position
+already in hand from behaviour measurements), build the organic position
 rank data shows is close, or bank the budget until a real test is
 affordable.
 

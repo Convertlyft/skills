@@ -213,7 +213,7 @@ suggestions where a brief exists:
 - `cvl_seo_brief` — the stored brief for one search, which includes suggested
   structured data from the top pages studied. Treat it as a suggestion to
   check against the page, not markup to paste.
-- `cvl_public_seo_scan` — no account needed: a scan of up to 16 pages that
+- `cvl_public_seo_scan` — no account needed: a scan of up to 25 pages that
   lists what it did not check. If structured data is not in what it found,
   that is not a pass.
 

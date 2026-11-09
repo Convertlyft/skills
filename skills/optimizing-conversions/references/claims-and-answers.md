@@ -1,12 +1,12 @@
 # Claims and answers
 
-What each reading can support, what no reading here can conclude, how to
-shape the common answers, and the traps that make a correct reading say the
+What each measurement can support, what no measurement here can conclude, how to
+shape the common answers, and the traps that make a correct figure say the
 wrong thing. Load before writing a diagnosis or result for the owner.
 
-## Which reading supports which claim
+## Which measurement supports which claim
 
-| Reading | Supports claims about | Cannot tell you |
+| Measurement | Supports claims about | Cannot tell you |
 |---|---|---|
 | Traffic summary | Volume, trend, source and device mix; whether there is enough traffic to test | Why anything happens |
 | Funnels | Which step loses the most people; differences between segments | The reason for the loss |
@@ -16,7 +16,7 @@ wrong thing. Load before writing a diagnosis or result for the owner.
 | Search rankings | How people find the site; whether query intent matches the landing page | On-page behaviour |
 | Ad data | Paid intent, ad-to-page message match, the money cost of a leak | On-page behaviour |
 
-A claim is strong when two independent readings point the same way — for
+A claim is strong when two independent measurements point the same way — for
 example, a drop at the payment step, plus replays showing hesitation at card
 entry, plus no error spike, together support "anxiety, not breakage".
 
@@ -47,11 +47,11 @@ Say these limits plainly.
 ***A diagnosis** ("why aren't people buying?"): what the funnel shows, then
 what the segments show, then page evidence, then the stuck-spot class, then
 the change —
-each with its reading named, facts and inferences visibly separate.
+each with its measurement named, facts and inferences visibly separate.
 
 **A page review** ("what do you think of my landing page?"): use
 page-heuristics.md, but first check whether this page is where
-the funnel leaks, and pair every heuristic point with the reading that
+the funnel leaks, and pair every heuristic point with the measurement that
 would confirm people hit it.
 
 **A test recommendation** ("should I A/B test this?"): is it testable at this
@@ -60,7 +60,7 @@ metric and the stopping rule. If volume is too low, say so and offer the
 alternatives ladder in hypotheses-and-testing.md.
 
 ***The result of a past change** ("did the redesign work?"): what the
-before-and-after readings honestly support given the traffic mix, and what
+before-and-after figures honestly support given the traffic mix, and what
 they do not. "Not determinable from this data" is often the honest answer.
 
 ***Life after the first sale or sign-up** (onboarding, activation, cancellations,
@@ -73,11 +73,11 @@ failed payments, win-back): read after-the-conversion.md.
   is concentrated on phones (funnel by device); replays show the card field
   rejecting valid input; fix the card field validation."
 - A plain confidence label on every claim: "confirmed" (reproduced, or
-  several readings agree), "likely" (one clear reading), "possible" (pattern
+  several measurements agree), "likely" (one clear measurement), "possible" (pattern
   or inference). Never present a "possible" as something we found.
 - Quantify impact only in observed terms — people lost at a step in a named
-  window, from the actual reading — never as a projected uplift.
-- Every recommendation states how it will be verified and which reading will
+  window, from the actual figure — never as a projected uplift.
+- Every recommendation states how it will be verified and which figure will
   be checked afterwards.
 - When the data cannot answer, say so, and name the cheapest way to make it
   answerable.
