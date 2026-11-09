@@ -213,7 +213,7 @@ suggestions where a brief exists:
 - `cvl_seo_brief` — the stored brief for one search, which includes suggested
   structured data from the top pages studied. Treat it as a suggestion to
   check against the page, not markup to paste.
-- `cvl_public_seo_scan` — no account needed: a scan of up to 16 pages that
+- `cvl_public_seo_scan` — no account needed: a scan of up to 25 pages that
   lists what it did not check. If structured data is not in what it found,
   that is not a pass.
 
@@ -229,7 +229,7 @@ A to-do on the What to do page names one section of [references/playbooks.md](re
 | MCP tool | REST twin | Scope |
 |---|---|---|
 | `cvl_page_content` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_content` | `reports:read` |
-| `cvl_site_pages` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
+| `cvl_site_pages` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
 | `cvl_seo_brief` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_seo_brief` | `reports:read` |
 | `cvl_public_seo_scan` | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan` | none (no account over MCP) |
 | `cvl_call_read` | none (MCP only) | none |

@@ -191,7 +191,7 @@ A jewellery shop asks which products people add to the cart most.
 3. `cvl_paths` with `type: "blog_post"`: where readers went next and how
    many left the site from a blog post.
 4. Say it plainly: "<n> of <m> visits that started on a blog post converted
-   in <window>." Never call the blog "worth" an amount; the reading does not
+   in <window>." Never call the blog "worth" an amount; the figure does not
    show that.
 
 ### Worked example — which service pages bring WhatsApp messages
@@ -279,7 +279,7 @@ the speed row and an offer to sort the page first.
 - That an Estimated type is confirmed, or that a Needs you page is one type.
 - A figure "for all product pages" while some product pages are unsorted.
 - A sale, an enquiry or a message from a page view or a tap.
-- Why one page converts better than another; the readings show where, not
+- Why one page converts better than another; the figures show where, not
   why.
 
 ## Tools
@@ -293,7 +293,7 @@ the speed row and an offer to sort the page first.
 | `cvl_remove_page_type_rule` | none (MCP only) | `pages:write` |
 | `cvl_paths` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_paths` | `reports:read` |
 | `cvl_page_conversions` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_page_conversions` | `sessions:read` |
-| `cvl_site_pages` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
+| `cvl_site_pages` | `GET https://convertlyft.com/api/tools/cvl_site_pages` | `reports:read` |
 | `cvl_funnel_report` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_funnel_report` | `reports:read` |
 | `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
 | `cvl_whoami` | `GET https://convertlyft.com/api/tools/cvl_whoami` | none |

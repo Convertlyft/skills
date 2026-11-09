@@ -1,8 +1,8 @@
 # Diagnosis: reading the evidence and running a critique
 
-How to turn behaviour readings (funnels, heatmaps, replays, errors) into to-dos you can defend, and how to run a
+How to turn behaviour measurements (funnels, heatmaps, replays, errors) into to-dos you can defend, and how to run a
 page critique that a skeptical owner will believe. Load this when you have
-actual readings in front of you or are asked to critique a specific page.
+actual figures in front of you or are asked to critique a specific page.
 
 ## The first-visit walkthrough protocol
 
@@ -25,7 +25,7 @@ hypotheses instead of writing them for you.
    How the page fails tells you how it treats people.
 6. Write down every hypothesis as a checkable claim: "people abandon the form
    at the phone-number field", "nobody scrolls past the testimonials". Then
-   go to the readings.
+   go to the figures.
 
 ## Reading each source correctly
 
@@ -64,7 +64,7 @@ hypotheses instead of writing them for you.
   (b) attention on secondary actions while the primary action goes cold;
   (c) rapid repeated clicks in one spot, a frustration signal usually meaning
   something failed to respond.
-- Scroll maps: how far people get. The reading that matters is where the sharp
+- Scroll maps: how far people get. The figure that matters is where the sharp
   drop sits relative to the primary call to action — if most people never
   reach the button, its quality is irrelevant.
 - Move maps: weak evidence on their own. Pointer position loosely tracks
@@ -82,7 +82,7 @@ hypotheses instead of writing them for you.
 
 ### Replays
 
-- The only reading that shows struggle directly: hesitation before a field,
+- The only measurement that shows struggle directly: hesitation before a field,
   backtracking, re-reading, form corrections, abandoning mid-payment.
 - Watch replays selected by the question, not at random: visits that dropped
   at the leaking funnel step, visits with rage clicks, visits that hit an
@@ -129,11 +129,11 @@ hypotheses instead of writing them for you.
 
 ## Triangulation rules
 
-- What you found is **confirmed** when two independent readings agree (funnel leak
+- What you found is **confirmed** when two independent measurements agree (funnel leak
   at a step plus replays showing the struggle there; dead-click cluster plus
   replays of people tapping it) or when errors prove breakage directly.
-- What you found is **supported** on one strong reading with a plausible mechanism.
-- Anything else is a **hypothesis** — say so, and name the reading that would
+- What you found is **supported** on one strong measurement with a plausible mechanism.
+- Anything else is a **hypothesis** — say so, and name the figure that would
   settle it.
 - Present each to-do with these labels. Advice inherits the confidence of its
   weakest evidence.
@@ -148,7 +148,7 @@ an unranked list.
 
 ## The anti-pattern catalog, with evidence signatures
 
-Each entry: what it is, why it hurts, and the trace it leaves in readings.
+Each entry: what it is, why it hurts, and the trace it leaves in figures.
 
 - **The everything hero.** First screenful packed with a carousel, several
   messages, and multiple buttons. Nobody's eye lands anywhere. Signature:
@@ -198,13 +198,13 @@ Each entry: what it is, why it hurts, and the trace it leaves in readings.
 
 ## Writing up the critique
 
-Structure every to-do as: observation (what the reading shows), mechanism
+Structure every to-do as: observation (what the figure shows), mechanism
 (why that behavior follows from the design), recommendation (the one change),
-verification (which reading should move after the fix, and in which
+verification (which figure should move after the fix, and in which
 direction). If the owner implements the fix, the follow-up is to re-check that
-reading — that closes the loop and keeps you honest.
+figure — that closes the loop and keeps you honest.
 
-## Evidence: what each reading supports
+## Evidence: what each measurement supports
 
 - **Traffic summary** — how many people, on what devices, from where,
   landing on which pages. Supports "where" and "who". Cannot say why anyone
@@ -217,7 +217,7 @@ reading — that closes the loop and keeps you honest.
   be clickable". Cannot reveal intent or satisfaction.
 - **Replays** — the closest thing to "why": people hesitating, backtracking,
   fighting a form. Strongest evidence for a struggle, weakest for frequency.
-- **Errors** — what actually broke, for whom. The only reading that proves
+- **Errors** — what actually broke, for whom. The only measurement that proves
   "broken". Check it before any design theory about a sudden drop.
 - **Search rankings** — which searches bring people in, so whether the
   landing page answers the question they arrived with.
@@ -245,8 +245,8 @@ reading — that closes the loop and keeps you honest.
 - **Heatmaps mix layouts.** Desktop and mobile place elements differently;
   read position claims only off a single-device heatmap.
 - **There is no single fold.** Screen heights vary. Treat "above the fold" as
-  "the first screenful on a typical phone" and check the scroll reading.
-- **Carousels, tabs and accordions hide content.** A healthy scroll reading
+  "the first screenful on a typical phone" and check the scroll measurement.
+- **Carousels, tabs and accordions hide content.** A healthy scroll measurement
   can coexist with content nobody opens.
 - **Dead clicks flag phantom affordances.** Clicks on images, headings or
   cards that do nothing: make them clickable or make them look less so.
@@ -261,7 +261,7 @@ reading — that closes the loop and keeps you honest.
 ## Delivering a critique — the full shape
 
 Lead with the single highest-severity to-do and its evidence. Then a short
-ranked list — for each item: what you observed, which reading shows it, what
+ranked list — for each item: what you observed, which measurement shows it, what
 to change, and how to verify it worked (the funnel step recovering, dead
 clicks disappearing, the error count falling to zero). Qualify confidence
 honestly: "confirmed by errors" beats "suggested by one replay" beats

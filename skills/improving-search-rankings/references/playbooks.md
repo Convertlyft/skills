@@ -25,6 +25,17 @@ Each section is one to-do's steps. A to-do on the What to do page names its sect
 
 **Check after:** The position of those searches on the next check.
 
+### PB-BRAND-UNRECOGNISED — Google may not recognise your brand yet
+
+**When:** A search for the site's own name, checked in the last 30 days, did not show the site in the top 10 in any market, and none of that page's "People also ask" questions name the brand. Only once the site's first crawl is 28 days old.
+
+**Do:**
+1. Write your name the same way everywhere on your site: page titles, footer and about page.
+2. Add Organization structured data with your name, logo and links to your profiles (sameAs).
+3. Use the same name on the profiles and listings that link back to you.
+
+**Check after:** Searches for your own name that do not show your site, on the next check.
+
 ### PB-SNIPPET-4-10-LOW-CTR — Shown on Google's first page, but rarely clicked
 
 **When:** A search shows the site at positions 4–10 in Search Console over the last 28 days, with enough views to judge (20 or more), and the page gets no clicks, or fewer clicks per view than the site's other searches in that band.

@@ -12,8 +12,8 @@ Convertlyft data.
 
 ## Stance
 
-- **Evidence before opinion.** Every diagnosis names the reading it came
-  from. If the reading does not exist yet, say what to collect instead of
+- **Evidence before opinion.** Every diagnosis names the figure it came
+  from. If the figure does not exist yet, say what to collect instead of
   guessing.
 - **Never invent numbers.** No industry benchmarks, no "typical uplift", no
   "studies show". Compare the site only with its own history and its own
@@ -39,7 +39,7 @@ good?" — do not critique from taste. Establish the picture first:
 
 1. Confirm what counts as a sale, enquiry or sign-up for this business, and
    whether it happens on the site or off it (calls, walk-ins, replies). Sales
-   and enquiries that happen off the site limit what any reading can prove;
+   and enquiries that happen off the site limit what any measurement can prove;
    say so early.
 2. Read overall traffic: how much, from where, on what devices, trending
    which way.
@@ -72,10 +72,10 @@ to look.
    technical causes, paths for detours and loops. Read
    `references/evidence-reading.md` before interpreting any of these.
 6. **Classify where people get stuck** (below). The class decides the kind of fix.
-7. **Write a falsifiable hypothesis** ("Because we observed [reading], we
-   believe [change] will [effect] for [segment], seen in [reading]") — full
+7. **Write a falsifiable hypothesis** ("Because we observed [figure], we
+   believe [change] will [effect] for [segment], seen in [figure]") — full
    template in `references/hypotheses-and-testing.md`. One mechanism per
-   hypothesis; a "because" naming no reading is a guess and goes last.
+   hypothesis; a "because" naming no figure is a guess and goes last.
 8. **Prioritize by evidence strength, not enthusiasm** — ICE or a PXL-style
    checklist, in `references/hypotheses-and-testing.md`.
 9. **Choose how to verify: test, ship-and-watch, or just fix.** Whether the
@@ -92,12 +92,12 @@ order to work them in: `references/evidence-reading.md`.
 
 ## Before reporting to the owner
 
-Read `references/claims-and-answers.md` first: which reading supports which
+Read `references/claims-and-answers.md` first: which measurement supports which
 claim, what cannot be concluded, the answer shapes (diagnosis, page review,
 test recommendation, result of a past change), how to report, and the
 gotchas. The rules that never bend:
 
-- A claim is strong when two independent readings point the same way.
+- A claim is strong when two independent measurements point the same way.
 - Label every claim "confirmed", "likely" or "possible"; never present a
   "possible" as something we found.
 - Quantify impact only as visits lost at a step in a named window, never as
@@ -108,13 +108,13 @@ gotchas. The rules that never bend:
 ## References
 
 - `references/evidence-reading.md` — interpreting a funnel, heatmap, replay
-  set, path or error reading; the six stuck-spot classes and choosing one.
+  set, path or error measurement; the six stuck-spot classes and choosing one.
 - `references/page-heuristics.md` — reviewing a landing page, form, checkout,
   call to action, trust signals and accessibility as a reason people do not buy.
 - `references/hypotheses-and-testing.md` — hypotheses, LIFT, Fogg and
   Cialdini applied honestly, ICE and PXL ranking, experiment design, and
   what to do with too little traffic to test.
-- `references/claims-and-answers.md` — which reading supports which claim,
+- `references/claims-and-answers.md` — which measurement supports which claim,
   what cannot be concluded, answer shapes, and gotchas. Load before writing
   any diagnosis or result for the owner.
 - `references/after-the-conversion.md` — onboarding, activation, cancel
@@ -170,7 +170,7 @@ How the method maps to the tools:
    error `fingerprint`, or by `path` plus `element` from a rage-click row.
 6. **Breakage.** `cvl_issues_list` and `cvl_issue_detail` for JavaScript
    errors; `cvl_page_speed` for load speed by page (pages with too few
-   readings are left out rather than reported thin).
+   measurements are left out rather than reported thin).
 7. **What is already on the list.** `cvl_todos_list` is What to do, broken
    ones first; `cvl_todo_detail` opens one with the change to make. Start from
    a to-do that is already there before naming a new change, and never attach

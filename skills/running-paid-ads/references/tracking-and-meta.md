@@ -43,7 +43,7 @@ change, and whenever numbers feel off:
    generation should almost always count one per click, or one person
    submitting twice becomes two leads).
 5. **Walk the path to buying with behaviour analytics**: the funnel shows whether
-   people reach the counted step; error readings show whether the path
+   people reach the counted step; error figures show whether the path
    throws errors; a recording of a visit that bought shows whether the
    confirmation state the tag depends on actually appears. A form that
    fails silently for some people undercounts sales and leads and miscounts

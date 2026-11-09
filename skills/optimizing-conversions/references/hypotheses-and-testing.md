@@ -6,19 +6,19 @@ How to move from a diagnosed leak to a change worth making: forming hypotheses, 
 
 The chain is: observed evidence, then an inferred cause, then a change that targets that cause, then an expected observable effect. Every link must be explicit.
 
-> Because we observed [specific reading and what it showed], we believe [specific change] on [page or step] will [expected behavior change] for [audience segment], which should appear as [metric movement in a named reading]. We will review after [a defined traffic period].
+> Because we observed [specific figure and what it showed], we believe [specific change] on [page or step] will [expected behavior change] for [audience segment], which should appear as [metric movement in a named measurement]. We will review after [a defined traffic period].
 
 Rules:
 
 - **One mechanism per hypothesis.** A change that bundles a rewrite, a layout shift, and a new form teaches nothing about which part mattered. Bundling is allowed only when the owner explicitly trades learning for speed.
-- **Falsifiable or it is not a hypothesis.** Name the metric, the reading it lives in, and what result would count as a loss. If no result could prove it wrong, it is a belief.
+- **Falsifiable or it is not a hypothesis.** Name the metric, the measurement it lives in, and what result would count as a loss. If no result could prove it wrong, it is a belief.
 - **Inference labeled as inference.** The "we believe" clause is honest about being a guess; the "we observed" clause is not allowed to be one.
 
 ## LIFT, applied honestly
 
 Use LIFT as a structured vocabulary for critiquing a page that should sell or get enquiries. The value proposition is the anchor; relevance, clarity, and urgency lift it; anxiety and distraction drag it.
 
-- **Value proposition.** The strongest lever and the hardest to fix with tactics. If the offer is weak relative to alternatives, no button color rescues it. Evidence that the value proposition itself is the problem: strong traffic, clean pages, no breakage, and still few sales or enquiries across all segments. Say this to the owner plainly when the readings point there.
+- **Value proposition.** The strongest lever and the hardest to fix with tactics. If the offer is weak relative to alternatives, no button color rescues it. Evidence that the value proposition itself is the problem: strong traffic, clean pages, no breakage, and still few sales or enquiries across all segments. Say this to the owner plainly when the figures point there.
 - **Relevance.** Continuity between what brought the person (ad, query, link) and what the page says. Diagnose with ads data and rank data against the page's actual first screen.
 - **Clarity.** Can the visitor understand the offer and the next step at a glance? Diagnosed through scroll collapse, short visits, and the glance test in the page heuristics reference.
 - **Urgency, honestly.** Only real deadlines and real limits: an actual booking cutoff, actual remaining stock, a genuine seasonal reason. Manufactured countdowns that reset and fake "only a few left" claims destroy trust when discovered and can be unlawful. If nothing is genuinely urgent, do not simulate it — remove the stuck spots instead; that lever is always available.
@@ -54,7 +54,7 @@ The test for any persuasion tactic: would it survive the owner explaining it to 
 **ICE**, with discipline on the middle letter:
 
 - **Impact:** size of the leak the idea touches, weighted by proximity to money. An idea aimed at a step that loses few people cannot have high impact whatever its elegance.
-- **Confidence:** strength of evidence, ranked from strongest to weakest: reproduced breakage; multiple independent readings converging; a single clear reading; a pattern that worked elsewhere; an opinion. Confidence scores come from this ladder, never from enthusiasm.
+- **Confidence:** strength of evidence, ranked from strongest to weakest: reproduced breakage; multiple independent measurements converging; a single clear measurement; a pattern that worked elsewhere; an opinion. Confidence scores come from this ladder, never from enthusiasm.
 - **Ease:** build cost plus risk plus how reversible it is.
 
 **PXL-style scoring** replaces gut feel with mostly yes-or-no questions, answered from evidence: Is the change above the fold? Would a visitor notice it within a glance? Does it add or remove something, rather than restyle? Does it remove a stuck spot? Is it supported by qualitative evidence from this site? By quantitative evidence from this site? Is it on a high-traffic page or step? Is it cheap to build? Count the yeses and rank. The virtue of this style is that "I love this idea" earns nothing.
@@ -78,12 +78,12 @@ Judge by sales or enquiries at the tested step, not by visits. A rough rule expr
 When testing is out of reach, work down this ladder instead:
 
 1. **Repair everything broken.** Errors, dead clicks, device cliffs. No test needed, pure gain.
-2. **Ship strong-evidence changes and watch.** Before-and-after on the same reading, full traffic cycles on both sides, traffic mix compared, seasonality and campaign changes named in the write-up. Label the conclusion as observational, because it is.
+2. **Ship strong-evidence changes and watch.** Before-and-after on the same measurement, full traffic cycles on both sides, traffic mix compared, seasonality and campaign changes named in the write-up. Label the conclusion as observational, because it is.
 3. **Test only big swings.** Whole-step or whole-page changes with plausibly large effects, not button shades.
 4. **Move the test up-funnel** to a higher-traffic step, accepting that the metric is now a micro-step — and always report the money metric alongside it, since moving more people to the next step is worthless if the money metric stays flat.
 5. **Run qualitative rounds.** Watch replays at the step until failure modes repeat; have a handful of real or representative people attempt the task while thinking aloud. A small number of observed attempts reliably surfaces the gross problems, though it cannot rank subtle ones.
 6. **Painted-door checks for demand questions.** A real-looking entry point for a not-yet-built offer, measuring clicks, with an honest "not available yet" page behind it. Use sparingly and apologize well — it spends a little trust to answer a demand question cheaply.
-7. **Accumulate learning with a ritual.** Sequential changes, one at a time, each measured the same way against the same reading, each written down. Slow, but honest — and over time it builds real knowledge of what this site's audience responds to.
+7. **Accumulate learning with a ritual.** Sequential changes, one at a time, each measured the same way against the same measurement, each written down. Slow, but honest — and over time it builds real knowledge of what this site's audience responds to.
 
 ## After the change
 
@@ -94,10 +94,10 @@ When testing is out of reach, work down this ladder instead:
 
 ## Hypothesis template
 
-> Because we observed [specific reading and what it showed], we believe
+> Because we observed [specific figure and what it showed], we believe
 > [specific change] on [page or step] will [expected behaviour change] for
-> [segment], which should appear as [metric movement in a named reading]. We
+> [segment], which should appear as [metric movement in a named measurement]. We
 > will review after [a defined traffic period].
 
-If the "because" clause names no reading, it is a guess. Guesses are allowed,
+If the "because" clause names no figure, it is a guess. Guesses are allowed,
 but they go to the bottom of the list and are labelled as guesses.
