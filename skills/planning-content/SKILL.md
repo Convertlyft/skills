@@ -47,11 +47,12 @@ one existing page, skip Steps 1 to 3 and do this. Five reads at most.
    Mark each fact in the draft with the page line it came from. Then run
    `cvl_check_claim` with `{"sentence": "<the whole draft>", "against": "site"}`:
    it reads the site's own crawled pages and refuses any figure, price, time,
-   guarantee or name the site does not state in those words, quoting the
-   page's closest sentence. Anything it refuses, or anything without a line,
-   comes out or is reworded to the page's own words. It does not read a
-   sentence with none of these (`checked: false`), so the page line is still
-   your check for those.
+   guarantee, superlative, credential or name the site does not state in those
+   words, quoting the page's closest sentence when the site has one
+   (`closest_site_sentence`, null when none is close). Anything it refuses, or
+   anything without a line, comes out or is reworded to the page's own words.
+   It does not read a sentence with none of these (`checked: false`), so the
+   page line is still your check for those.
 
 ## Step 1 — Decide whether the piece should exist
 
@@ -155,8 +156,9 @@ Pass or fail each, and fix the fails:
 11. Every claim is sourced or is the owner's own first-hand account. Run
     `cvl_check_claim` with `{"sentence": "<the whole draft>", "against": "site"}`
     and fix every sentence it refuses (`not_on_site`): use the page's own words
-    from `closest_site_sentence`, or take the claim out. A figure about the
-    site's visitors also needs the `receipt_ids` of the data it came from.
+    from `closest_site_sentence` when it gives one, or take the claim out. A
+    figure about the site's visitors also needs the `receipt_ids` of the data
+    it came from.
 12. Scannable: lists, tables or images where they help, not decoration.
 13. One clear next action.
 
