@@ -1027,7 +1027,8 @@
       "keyword",
       "language_code",
       "location_code",
-      "refresh"
+      "refresh",
+      "serp_id"
     ],
     "scopes": [
       "seo:write"
@@ -1701,6 +1702,27 @@
       "limit",
       "refresh",
       "since"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_seo_long_tail",
+    "core": true,
+    "reads": false,
+    "args": [
+      "confirm_cost",
+      "dry_run",
+      "fields",
+      "language_code",
+      "limit",
+      "location_code",
+      "max_difficulty",
+      "min_volume",
+      "min_words",
+      "refresh",
+      "seeds"
     ],
     "scopes": [
       "seo:write"
