@@ -143,7 +143,7 @@ gap and say so.
 
 | MCP tool | REST twin | Scope |
 |---|---|---|
-| `cvl_recall` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_recall` | `memory:read` |
+| `cvl_recall` | `GET https://convertlyft.com/api/tools/cvl_recall` | `memory:read` |
 | `cvl_todos_list` | `GET https://convertlyft.com/api/tools/cvl_todos_list` | `board:read` |
 | `cvl_todo_detail` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_todo_detail` | `board:read` |
 | `cvl_install_verify` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_install_verify` | `workspaces:read` |

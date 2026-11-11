@@ -77,7 +77,7 @@ the `receipt_id` and window it came from). Do not log the brief itself.
 
 | MCP tool | REST twin | Scope |
 |---|---|---|
-| `cvl_recall` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_recall` | `memory:read` |
+| `cvl_recall` | `GET https://convertlyft.com/api/tools/cvl_recall` | `memory:read` |
 | `cvl_live_feed` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_live_feed` | `sessions:read` |
 | `cvl_install_verify` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_install_verify` | `workspaces:read` |
 | `cvl_watch` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_watch` | `sessions:read` |

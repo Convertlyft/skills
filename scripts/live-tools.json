@@ -47,6 +47,7 @@
     "core": false,
     "reads": true,
     "args": [
+      "all_time",
       "fields",
       "fingerprint",
       "from",
@@ -82,6 +83,7 @@
     "core": true,
     "reads": true,
     "args": [
+      "all_time",
       "dead_clicks_cursor",
       "fields",
       "from",
@@ -100,6 +102,7 @@
     "core": true,
     "reads": true,
     "args": [
+      "all_time",
       "campaign",
       "fields",
       "from",
@@ -117,6 +120,7 @@
     "core": true,
     "reads": true,
     "args": [
+      "all_time",
       "campaign",
       "fields",
       "figure",
@@ -187,7 +191,7 @@
   },
   {
     "name": "cvl_recall",
-    "core": false,
+    "core": true,
     "reads": true,
     "args": [
       "fields",
@@ -203,6 +207,7 @@
     "core": true,
     "reads": false,
     "args": [
+      "confirm",
       "fields",
       "from",
       "kind",
@@ -1723,6 +1728,35 @@
       "min_words",
       "refresh",
       "seeds"
+    ],
+    "scopes": [
+      "seo:write"
+    ]
+  },
+  {
+    "name": "cvl_site_context",
+    "core": true,
+    "reads": true,
+    "args": [
+      "fields"
+    ],
+    "scopes": [
+      "reports:read"
+    ]
+  },
+  {
+    "name": "cvl_set_site_context",
+    "core": true,
+    "reads": false,
+    "args": [
+      "confirm",
+      "fields",
+      "goal",
+      "market",
+      "overview",
+      "positioning",
+      "rivals",
+      "writing"
     ],
     "scopes": [
       "seo:write"
