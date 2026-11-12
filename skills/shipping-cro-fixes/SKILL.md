@@ -110,7 +110,7 @@ When there is a conclusion — the fix helped, did not help, or it is too early 
 
 | MCP tool | REST twin | Scope |
 |---|---|---|
-| `cvl_recall` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_recall` | `memory:read` |
+| `cvl_recall` | `GET https://convertlyft.com/api/tools/cvl_recall` | `memory:read` |
 | `cvl_proposals_list` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_proposals_list` | `proposals:read` |
 | `cvl_propose` | none (MCP only) | `proposals:write` |
 | `cvl_change_preview` | `GET https://convertlyft.com/api/tools/cvl_change_preview` | `changes:read` |

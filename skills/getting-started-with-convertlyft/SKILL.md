@@ -167,7 +167,7 @@ A to-do on the What to do page names one section of [references/playbooks.md](re
 | `cvl_workspaces_list` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_workspaces_list` | `workspaces:read` |
 | `cvl_install_verify` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_install_verify` | `workspaces:read` |
 | `cvl_live_feed` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_live_feed` | `sessions:read` |
-| `cvl_recall` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_recall` | `memory:read` |
+| `cvl_recall` | `GET https://convertlyft.com/api/tools/cvl_recall` | `memory:read` |
 | `cvl_check_claim` | `GET https://convertlyft.com/api/tools/cvl_check_claim` | none |
 | `cvl_docs_search` | `GET https://convertlyft.com/api/tools/cvl_docs_search` | none (no account over MCP) |
 | `cvl_public_seo_scan` | `GET https://convertlyft.com/api/tools/cvl_public_seo_scan` | none (no account over MCP) |

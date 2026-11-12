@@ -114,7 +114,7 @@ A to-do on the What to do page names one section of [references/playbooks.md](re
 
 | MCP tool | REST twin | Scope |
 |---|---|---|
-| `cvl_recall` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_recall` | `memory:read` |
+| `cvl_recall` | `GET https://convertlyft.com/api/tools/cvl_recall` | `memory:read` |
 | `cvl_watch` via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_watch` | `sessions:read` |
 | `cvl_kpi` | `GET https://convertlyft.com/api/tools/cvl_kpi` | `sessions:read`, `reports:read` |
 | `cvl_explain` | `GET https://convertlyft.com/api/tools/cvl_explain` | `sessions:read`, `reports:read` |

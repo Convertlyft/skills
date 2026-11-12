@@ -25,7 +25,7 @@ A tool marked "via `cvl_call_read`" is not in the default tool list: find it wit
 | `cvl_change_preview` | Preview a change marker | reads | direct | `GET https://convertlyft.com/api/tools/cvl_change_preview` | `changes:read` |
 | `cvl_change_apply` | Mark a change | writes | direct | none (MCP only) | `changes:write` |
 | `cvl_change_undo` | Undo a change marker | writes | direct | none (MCP only) | `changes:write` |
-| `cvl_recall` | What this workspace already knows | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_recall` | `memory:read` |
+| `cvl_recall` | What this workspace already knows | reads | direct | `GET https://convertlyft.com/api/tools/cvl_recall` | `memory:read` |
 | `cvl_remember` | Record what you concluded | writes | direct | `POST https://convertlyft.com/api/memory` | `memory:write` |
 | `cvl_board_list` | What is waiting on this workspace | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_board_list` | `board:read` |
 | `cvl_proposals_list` | What is queued for the owner to decide | reads | via `cvl_call_read` | `GET https://convertlyft.com/api/tools/cvl_proposals_list` | `proposals:read` |
@@ -131,6 +131,8 @@ A tool marked "via `cvl_call_read`" is not in the default tool list: find it wit
 | `cvl_seo_opportunity_set` | Not for us, or Later, on a content brief idea | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_opportunity_set` | `seo:write` |
 | `cvl_seo_referring_domains` | Sites that link to a site | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_referring_domains` | `seo:write` |
 | `cvl_seo_long_tail` | Long-tail searches from seed searches | writes | direct | `POST https://convertlyft.com/api/tools/cvl_seo_long_tail` | `seo:write` |
+| `cvl_site_context` | What the owner says about this site | reads | direct | `GET https://convertlyft.com/api/tools/cvl_site_context` | `reports:read` |
+| `cvl_set_site_context` | Save what the owner says about this site | writes | direct | `POST https://convertlyft.com/api/tools/cvl_set_site_context` | `seo:write` |
 | `cvl_search_tools` | Find a tool | reads | direct | none (MCP only) | not in manifest |
 | `cvl_call_read` | Run a read tool | reads | direct | none (MCP only) | not in manifest |
 | `cvl_skills_list` | List the Convertlyft skills | reads | direct | none (MCP only) | not in manifest |
